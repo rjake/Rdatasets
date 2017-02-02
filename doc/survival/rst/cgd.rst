@@ -9,13 +9,8 @@ Description
 ~~~~~~~~~~~
 
 Data are from a placebo controlled trial of gamma interferon in chronic
-granulotomous disease (CGD). Uses the complete data on time to first
-serious infection observed through end of study for each patient, which
-includes the initial serious infections observed through the 7/15/89
-interim analysis data cutoff, plus the residual data on occurence of
-initial serious infections between the interim analysis cutoff and the
-final blinded study visit for each patient. Only one patient was taken
-off on the day of his last infection.
+granulotomous disease (CGD). Contains the data on time to serious
+infections observed through end of study for each patient.
 
 Usage
 ~~~~~
@@ -27,66 +22,67 @@ Usage
 Format
 ~~~~~~
 
-id:
+id
+    subject identifiction number
 
-subject identifiction number
+center
+    enrolling center
 
-center:
+random
+    date of randomization
 
-enrolling center
+treatment
+    placebo or gamma interferon
 
-random:
+sex
+    sex
 
-date of randomization
+age
+    age in years, at study entry
 
-treatment:
+height
+    height in cm at study entry
 
-placebo or gamma interferon
+weight
+    weight in kg at study entry
 
-sex:
+inherit
+    pattern of inheritance
 
-age:
+steroids
+    use of steroids at study entry,1=yes
 
-age in years, at study entry
+propylac
+    use of prophylactic antibiotics at study entry
 
-height:
+hos.cat
+    a categorization of the centers into 4 groups
 
-height in cm at study entry
+tstart, tstop
+    start and end of each time interval
 
-weight:
+status
+    1=the interval ends with an infection
 
-weight in kg at study entry
+enum
+    observation number within subject
 
-inherit:
+Details
+~~~~~~~
 
-pattern of inheritance
-
-steroids:
-
-use of steroids at study entry,1=yes
-
-propylac:
-
-use of prophylactic antibiotics at study entry
-
-hos.cat:
-
-a categorization of the centers into 4 groups
-
-tstart, tstop:
-
-start and end of each time interval
-
-status:
-
-1=the interval ends with an infection
-
-enum:
-
-observation number within subject
+The ``cgd0`` data set is in the form found in the references, with one
+line per patient and no recoding of the variables. The ``cgd`` data set
+(this one) has been cast into (start, stop] format with one line per
+event, and covariates such as center recoded as factors to include
+meaningful labels.
 
 Source
 ~~~~~~
 
 Fleming and Harrington, Counting Processes and Survival Analysis,
 appendix D.2.
+
+See Also
+~~~~~~~~
+
+``link{cgd0}``

@@ -28,31 +28,31 @@ Usage
 Format
 ~~~~~~
 
-A data frame with 52 observations on the following 5 variables.
+A data frame with 52 observations on the following 8 variables.
 
 ``cones``
-    total fish counted per site
+    number cones stripped by squirrels
 
 ``ntrees``
-    mean water depth per site
+    number of trees per plot
 
 ``dbh``
-    adjusted area of site
+    number DBH per plot
 
 ``height``
-    total fish counted per site
+    mean tree height per plot
 
 ``cover``
-    mean water depth per site
+    canopy closure (as a percentage)
 
 ``sntrees``
-    standardized mean water depth per site
+    standardized number of trees per plot
 
 ``sheight``
-    standardized total fish counted per site
+    standardized mean tree height per plot
 
 ``scover``
-    standardized mean water depth per site
+    standardized canopy closure (as a percentage)
 
 Details
 ~~~~~~~
@@ -64,6 +64,7 @@ Source
 ~~~~~~
 
 Zuur, Hilbe, Ieno (2013), A Beginner's Guide to GLM and GLMM using R,
+Highlands
 
 References
 ~~~~~~~~~~
@@ -79,6 +80,9 @@ Examples
 ::
 
     data(nuts)
-    nut <- subset(nuts, dbh<.6)
+    nut <- subset(nuts, dbh < 0.6)
+    # sntrees <- scale(nuts$ntrees)
+    # sheigtht <- scale(nuts$height)
+    # scover <- scale(nuts$cover)
     summary(PO <- glm(cones ~ sntrees + sheight + scover, family=quasipoisson, data=nut))
 

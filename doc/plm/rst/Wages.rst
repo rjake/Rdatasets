@@ -8,8 +8,10 @@ Panel Data of Individual Wages
 Description
 ~~~~~~~~~~~
 
-A panel of 595 observations from 1976 to 1982, taken from the Panel
+| A panel of 595 individuals from 1976 to 1982, taken from the Panel
 Study of Income Dynamics (PSID).
+|  The data are organized as a stacked time series/balanced panel, see
+**Examples** on how to convert to a ``pdata.frame``.
 
 *total number of observations* : 4165
 
@@ -51,7 +53,7 @@ married
     married?
 
 sex
-    a factor with levels ``"male", "female"``
+    a factor with levels ``"male"`` and ``"female"``
 
 union
     individual's wage set by a union contract?
@@ -68,16 +70,33 @@ lwage
 Source
 ~~~~~~
 
-Online complements to Baltagi (2001).
+Online complements to Baltagi (2001):
 
 `http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__
+
+Online complements to Baltagi (2013):
+
+`http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452 <http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452>`__
 
 References
 ~~~~~~~~~~
 
-Baltagi, Badi H. (2003) *Econometric Analysis of Panel Data*, 2nd ed.,
+Baltagi, Badi H. (2001) *Econometric Analysis of Panel Data*, 2nd ed.,
+John Wiley and Sons.
+
+Baltagi, Badi H. (2013) *Econometric Analysis of Panel Data*, 5th ed.,
 John Wiley and Sons.
 
 Cornwell, C. and P. Rupert (1988) “Efficient estimation with panel data:
 an empirical comparison of instrumental variables estimators”, *Journal
-of Applied Econometrics*, **3**, 149–155.
+of Applied Econometrics*, **3**\ (2), pp. 149–155.
+
+Examples
+~~~~~~~~
+
+::
+
+    # data set 'Wages' is organized as a stacked time series/balanced panel
+    data("Wages", package = "plm")
+    Wag <- pdata.frame(Wages, index=595)
+

@@ -8,9 +8,9 @@ Data from the National Wilm's Tumor Study
 Description
 ~~~~~~~~~~~
 
-Missing data/masurement error example. Tumor histology predicts
-survival, but prediction is stronger with central lab histology than
-with the local institution determination.
+Measurement error example. Tumor histology predicts survival, but
+prediction is stronger with central lab histology than with the local
+institution determination.
 
 Usage
 ~~~~~
@@ -50,11 +50,6 @@ A data frame with 4028 observations on the following 9 variables.
 
 ``in.subcohort``
     Included in the subcohort for the example in the paper
-
-Source
-~~~~~~
-
-`http://faculty.washington.edu/norm/software.html <http://faculty.washington.edu/norm/software.html>`__
 
 References
 ~~~~~~~~~~

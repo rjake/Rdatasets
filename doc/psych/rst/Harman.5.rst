@@ -63,7 +63,8 @@ Examples
 ::
 
     data(Harman.5)
+    if(require('GPArotation')){
     pc2 <- principal(Harman.5,2,scores=TRUE)
     pc2$residual
-    biplot(pc2,main="Biplot of the Harman 5 socio-demographic variables")
+    biplot(pc2,main="Biplot of the Harman 5 socio-demographic variables") }
 

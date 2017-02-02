@@ -50,11 +50,8 @@ the individual departments (females used to apply *more* to departments
 with higher rejection rates).
 
 This data set can also be used for illustrating methods for graphical
-display of categorical data, such as the general-purpose mosaic plot or
-the fourfold display for 2-by-2-by-*k* tables. See the home page of
-Michael Friendly
-(`http://www.math.yorku.ca/SCS/friendly.html <http://www.math.yorku.ca/SCS/friendly.html>`__)
-for further information.
+display of categorical data, such as the general-purpose mosaicplot or
+the fourfoldplot for 2-by-2-by-*k* tables.
 
 References
 ~~~~~~~~~~

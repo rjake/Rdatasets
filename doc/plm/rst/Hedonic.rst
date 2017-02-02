@@ -38,10 +38,10 @@ zn
     proportion of 25,000 square feet residential lots
 
 indus
-    proportion of nonretail business acres
+    proportion of no–retail business acres
 
 chas
-    is the tract bounds the Charles River ?
+    is the tract bounds the Charles River?
 
 nox
     annual average nitrogen oxide concentration in parts per hundred
@@ -60,7 +60,7 @@ rad
     index of accessibility to radial highways
 
 tax
-    full value property tax rate (\\$/\\$10,000)
+    full value property tax rate ($/$10,000)
 
 ptratio
     pupil/teacher ratio
@@ -77,20 +77,27 @@ townid
 Source
 ~~~~~~
 
-Online complements to Baltagi (2001).
+Online complements to Baltagi (2001):
 
-`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__.
+`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__
+
+Online complements to Baltagi (2013):
+
+`http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452 <http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452>`__
 
 References
 ~~~~~~~~~~
 
-Baltagi, Badi H. (2001): *Econometric Analysis of Panel Data*, 2nd ed.,
+Baltagi, Badi H. (2001) *Econometric Analysis of Panel Data*, 2nd ed.,
+John Wiley and Sons.
+
+Baltagi, Badi H. (2013) *Econometric Analysis of Panel Data*, 5th ed.,
 John Wiley and Sons.
 
 Belsley, D.A., E. Kuh and R. E. Welsch (1980): *Regression Diagnostics:
-Identifying Influencial Data and Sources of Collinearity*, John Wiley,
+Identifying Influential Data and Sources of Collinearity*, John Wiley,
 New York.
 
 Harrison, D. and D.L. Rubinfeld (1978): “Hedonic housing prices and the
 demand for clean air”, *Journal of Environmental Economics and
-Management*, **5**, 81–102.
+Management*, **5**\ (1), pp. 81–102.

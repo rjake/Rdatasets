@@ -48,10 +48,8 @@ European Community Household Panel.
 References
 ~~~~~~~~~~
 
-Verbeek, Marno (2004) *A guide to modern econometrics*, John Wiley and
-Sons,
-`http://www.econ.kuleuven.ac.be/GME <http://www.econ.kuleuven.ac.be/GME>`__,
-chapter 3.
+Verbeek, Marno (2004) *A Guide to Modern Econometrics*, John Wiley and
+Sons, chapter 3.
 
 See Also
 ~~~~~~~~

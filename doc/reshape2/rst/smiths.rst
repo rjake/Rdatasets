@@ -16,7 +16,7 @@ Usage
 
 ::
 
-    data(smiths)
+    smiths
 
 Format
 ~~~~~~

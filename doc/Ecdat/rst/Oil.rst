@@ -29,9 +29,9 @@ Format
 A dataframe containing :
 
 dur
-    duration of the appraisal lag in mounths (time span between
-    discovery of an oil field and beginning of development, i.e.
-    approval of annex B).
+    duration of the appraisal lag in months (time span between discovery
+    of an oil field and beginning of development, i.e. approval of annex
+    B).
 
 size
     size of recoverable reserves in millions of barrels
@@ -54,22 +54,22 @@ vardp
     recursive standard errors of the regression of pt-pt-1 on a constant
 
 p97
-    adaptative expectations (with parameter theta=0.97) for the real
+    adaptive expectations (with parameter theta=0.97) for the real
     after–tax oil prices formed at the time of annex B approval
 
 varp97
-    volatility of the adaptative expectations (with parameter
-    theta=0.97) for real after tax oil prices measured as the squared
-    recursive standard errors of the regression of pt on pte(theta)
+    volatility of the adaptive expectations (with parameter theta=0.97)
+    for real after tax oil prices measured as the squared recursive
+    standard errors of the regression of pt on pte(theta)
 
 p98
-    adaptative expectations (with parameter theta=0.98) for the real
+    adaptive expectations (with parameter theta=0.98) for the real
     after–tax oil prices formed at the time of annex B approval
 
 varp98
-    volatility of the adaptative expectations (with parameter
-    theta=0.98) for real after tax oil prices measured as the squared
-    recursive standard errors of the regression of pt on pte(theta)
+    volatility of the adaptive expectations (with parameter theta=0.98)
+    for real after tax oil prices measured as the squared recursive
+    standard errors of the regression of pt on pte(theta)
 
 Source
 ~~~~~~
@@ -82,7 +82,7 @@ References
 ~~~~~~~~~~
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
 
 See Also
 ~~~~~~~~

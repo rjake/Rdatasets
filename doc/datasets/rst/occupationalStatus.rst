@@ -33,8 +33,8 @@ Cross-Classifications having Ordered Categories. *J. Am. Stat. Assoc.*,
 **74** (367), 537–552.
 
 The data set has been in package
-`gnm <http://CRAN.R-project.org/package=gnm>`__ and been provided by the
-package authors.
+`gnm <https://CRAN.R-project.org/package=gnm>`__ and been provided by
+the package authors.
 
 Examples
 ~~~~~~~~

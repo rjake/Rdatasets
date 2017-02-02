@@ -49,9 +49,13 @@ lcarpcap
 Source
 ~~~~~~
 
-Online complements to Baltagi (2001).
+Online complements to Baltagi (2001):
 
-`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__.
+`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__
+
+Online complements to Baltagi (2013):
+
+`http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452 <http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452>`__
 
 References
 ~~~~~~~~~~
@@ -59,6 +63,9 @@ References
 Baltagi, Badi H. (2001) *Econometric Analysis of Panel Data*, 2nd ed.,
 John Wiley and Sons.
 
+Baltagi, Badi H. (2013) *Econometric Analysis of Panel Data*, 5th ed.,
+John Wiley and Sons.
+
 Baltagi, B.H. and J.M. Griffin (1983) “Gasoline demand in the OECD: An
 application of pooling and testing procedures”, *European Economic
-Review*, **22**\ (2), 117–137.
+Review*, **22**\ (2), pp. 117–137.

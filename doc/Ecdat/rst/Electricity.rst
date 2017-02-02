@@ -67,7 +67,7 @@ Greene, W.H. (2003) *Econometric Analysis*, Prentice Hall,
 chapter 4, 317-320.
 
 Hayashi, F. (2000) *Econometrics*, Princeton University Press,
-`http://www.e.u-tokyo.ac.jp/~hayashi/hayashi\_econometrics.htm <http://www.e.u-tokyo.ac.jp/~hayashi/hayashi_econometrics.htm>`__,
+`http://fhayashi.fc2web.com/hayashi\_econometrics.htm <http://fhayashi.fc2web.com/hayashi_econometrics.htm>`__,
 chapter 1, 76-84.
 
 See Also

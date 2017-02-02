@@ -8,4 +8,4 @@ Table of links for Zelig
 Description
 ~~~~~~~~~~~
 
-Table of linds for ``help.zelig`` for the core Zelig package.
+Table of links for ``help.zelig`` for the core Zelig package.

@@ -8,7 +8,7 @@ Crime in North Carolina
 Description
 ~~~~~~~~~~~
 
-a panel of 90 observations (counties) from 1981 to 1987
+a panel of 90 observational units (counties) from 1981 to 1987
 
 *total number of observations* : 630
 
@@ -44,7 +44,7 @@ prbconv
     'probability' of conviction
 
 prbpris
-    'probability' of prison sentenc
+    'probability' of prison sentence
 
 avgsen
     average sentence, days
@@ -87,7 +87,7 @@ wmfg
     weekly wage in manufacturing
 
 wfed
-    weekly wage of federal emplyees
+    weekly wage of federal employees
 
 wsta
     weekly wage of state employees
@@ -104,26 +104,31 @@ pctymle
 Source
 ~~~~~~
 
-Online complements to Baltagi (2001).
+Online complements to Baltagi (2001):
 
-`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__,
-.
+`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__
+
+Online complements to Baltagi (2013):
+
+`http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452 <http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452>`__
 
 See also Journal of Applied Econometrics data archive entry for Baltagi
 (2006) at
-
-`http://www.econ.queensu.ca/jae/2006-v21.4/baltagi/ <http://www.econ.queensu.ca/jae/2006-v21.4/baltagi/>`__.
+`http://qed.econ.queensu.ca/jae/2006-v21.4/baltagi/ <http://qed.econ.queensu.ca/jae/2006-v21.4/baltagi/>`__.
 
 References
 ~~~~~~~~~~
 
 Cornwell, C. and W.N. Trumbull (1994) “Estimating the economic model of
-crime with panel data”, *Review of Economics and Statistics*, **76**,
-360–366.
+crime with panel data”, *Review of Economics and Statistics*,
+**76**\ (2), pp. 360–366.
 
 Baltagi, B. H. (2006) “Estimating an economic model of crime using panel
-data from North Carolina”, *Journal of Applied Econometrics*, 21(4),
-543–547.
+data from North Carolina”, *Journal of Applied Econometrics*,
+**21**\ (4), pp. 543–547.
 
-Baltagi, B. H. (2001) *Econometric Analysis of Panel Data*, John Wiley
-and Sons.
+Baltagi, Badi H. (2001) *Econometric Analysis of Panel Data*, 2nd ed.,
+John Wiley and Sons.
+
+Baltagi, Badi H. (2013) *Econometric Analysis of Panel Data*, 5th ed.,
+John Wiley and Sons.

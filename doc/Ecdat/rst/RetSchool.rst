@@ -59,7 +59,7 @@ sinmom14
     lived with mother only at age 14 ?
 
 nodaded
-    father has no formal eduction ?
+    father has no formal education ?
 
 nomomed
     mother has no formal education ?

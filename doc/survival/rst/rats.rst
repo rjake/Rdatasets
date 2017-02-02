@@ -37,14 +37,15 @@ Format
 Note
 ~~~~
 
-The subset of females (odd numbered litters) was used Lee et al.
+Since only 2/150 of the male rats have a tumor, most analyses use only
+females (odd numbered litters), e.g. Lee et al.
 
 Source
 ~~~~~~
 
-N. R. Bohidar and J. L. Ciminera. Mantel-Haenszel analyses of
+N. Mantel, N. R. Bohidar and J. L. Ciminera. Mantel-Haenszel analyses of
 litter-matched time to response data, with modifications for recovery of
-interlitter information. Cancer Research, 37:3863-3868, 1977. 5
+interlitter information. Cancer Research, 37:3863-3868, 1977.
 
 References
 ~~~~~~~~~~

@@ -28,16 +28,12 @@ A data frame with 8088 observations on the following 4 variables.
     24 hourly measurements.
 
 ``LNOx``
-    *\\log*
-
-    of hourly mean of NOx concentration in ambient air [ppb] next to a
-    highly frequented motorway.
+    *\\log* of hourly mean of NOx concentration in ambient air [ppb]
+    next to a highly frequented motorway.
 
 ``LNOxEm``
-    *\\log*
-
-    of hourly sum of NOx emission of cars on this motorway in arbitrary
-    units.
+    *\\log* of hourly sum of NOx emission of cars on this motorway in
+    arbitrary units.
 
 ``sqrtWS``
     Square root of wind speed [m/s].

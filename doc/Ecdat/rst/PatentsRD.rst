@@ -39,7 +39,7 @@ sector
     (chemistry), comput (computer), drugs, elec (electricity), food,
     fuel (fuel and mining), glass, instr (instruments), machin
     (machinery), metals, other, paper, soft (software), motor (motor
-    vehicules)
+    vehicles)
 
 geo
     geographic area, one of eu (European Union), japan, usa, rotw (rest
@@ -65,10 +65,9 @@ References
 ~~~~~~~~~~
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__. Verbeek,
-Marno (2004) *A guide to modern econometrics*, John Wiley and Sons,
-`http://www.econ.kuleuven.ac.be/GME <http://www.econ.kuleuven.ac.be/GME>`__,
-chapter 7.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
+Verbeek, Marno (2004) *A Guide to Modern Econometrics*, John Wiley and
+Sons, chapter 7.
 
 See Also
 ~~~~~~~~

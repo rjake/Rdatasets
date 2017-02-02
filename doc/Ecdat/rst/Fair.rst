@@ -51,7 +51,7 @@ occupation
     (reverse numbering)
 
 rate
-    self rating of mariage, from 1 (very unhappy) to 5 (very happy)
+    self rating of marriage, from 1 (very unhappy) to 5 (very happy)
 
 nbaffairs
     number of affairs in past year

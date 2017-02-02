@@ -52,7 +52,7 @@ References
 ~~~~~~~~~~
 
 Journal of Business Economics and Statistics web site :
-`http://www.amstat.org/publications/jbes/ <http://www.amstat.org/publications/jbes/>`__.
+`http://amstat.tandfonline.com/loi/ubes20 <http://amstat.tandfonline.com/loi/ubes20>`__.
 
 See Also
 ~~~~~~~~

@@ -35,7 +35,7 @@ year
     year
 
 cpi
-    consummer price index
+    consumer price index
 
 pop
     state population
@@ -59,15 +59,13 @@ taxs
 Source
 ~~~~~~
 
-Professor Jonhatan Gruber, MIT.
+Professor Jonathan Gruber, MIT.
 
 References
 ~~~~~~~~~~
 
 Stock, James H. and Mark W. Watson (2003) *Introduction to
-Econometrics*, Addison-Wesley Educational Publishers,
-`http://wps.aw.com/aw\_stockwatsn\_economtrcs\_1 <http://wps.aw.com/aw_stockwatsn_economtrcs_1>`__,
-chapter 10.
+Econometrics*, Addison-Wesley Educational Publishers, chapter 10.
 
 See Also
 ~~~~~~~~

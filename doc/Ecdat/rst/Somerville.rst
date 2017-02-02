@@ -71,7 +71,7 @@ References
 ~~~~~~~~~~
 
 Journal of Business Economics and Statistics web site :
-`http://www.amstat.org/publications/jbes/ <http://www.amstat.org/publications/jbes/>`__.
+`http://amstat.tandfonline.com/loi/ubes20 <http://amstat.tandfonline.com/loi/ubes20>`__.
 Cameron, A.C. and Trivedi P.K. (1998) *Regression analysis of count
 data*, Cambridge University Press,
 `http://cameron.econ.ucdavis.edu/racd/racddata.html <http://cameron.econ.ucdavis.edu/racd/racddata.html>`__,

@@ -47,7 +47,7 @@ illness
     number of illness in past 2 weeks
 
 actdays
-    number of days of reduced activiy in past 2 weeks due to illness or
+    number of days of reduced activity in past 2 weeks due to illness or
     injury
 
 hscore

@@ -44,7 +44,7 @@ A data frame with 15 observations on the following 4 variables.
     height of cross fertilized plant, a numeric vector
 
 ``self``
-    height of cross fertilized plant, a numeric vector
+    height of self fertilized plant, a numeric vector
 
 ``diff``
     ``cross - self`` for each pair
@@ -78,8 +78,7 @@ Vegetable Kingdom*, 2nd Ed. London: John Murray.
 
 Andrews, D. and Herzberg, A. (1985) *Data: a collection of problems from
 many fields for the student and research worker*. New York: Springer.
-Data retrieved from:
-`http://lib.stat.cmu.edu/datasets/Andrews/ <http://lib.stat.cmu.edu/datasets/Andrews/>`__
+Data retrieved from: ``https://www.stat.cmu.edu/StatDat/``
 
 References
 ~~~~~~~~~~

@@ -48,8 +48,9 @@ combine these plutonium patches in three groups of similar size.
 Source
 ~~~~~~
 
-Available as ‘pluton.dat’ from the archive currently
-`http://www.agoras.ua.ac.be/datasets/clusplot-examples.tar.gz <http://www.agoras.ua.ac.be/datasets/clusplot-examples.tar.gz>`__.
+Available as ‘pluton.dat’ from the archive of the University of
+Antwerpen, ‘..../datasets/clusplot-examples.tar.gz’, no longer
+available.
 
 References
 ~~~~~~~~~~

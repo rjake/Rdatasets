@@ -29,10 +29,10 @@ Format
 A dataframe containing :
 
 id
-    individual identifient
+    individual identifier
 
 choiceid
-    choice identifient
+    choice identifier
 
 choice
     one of choice1, choice2
@@ -69,7 +69,7 @@ References
 ~~~~~~~~~~
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
 
 See Also
 ~~~~~~~~

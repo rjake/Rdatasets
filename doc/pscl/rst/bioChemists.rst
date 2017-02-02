@@ -39,12 +39,6 @@ Format
 ``ment``
     count of articles produced by Ph.D. mentor during last 3 years
 
-Source
-~~~~~~
-
-found in Stata format at
-`http://www.indiana.edu/~jslsoc/stata/socdata/couart2.dta <http://www.indiana.edu/~jslsoc/stata/socdata/couart2.dta>`__
-
 References
 ~~~~~~~~~~
 

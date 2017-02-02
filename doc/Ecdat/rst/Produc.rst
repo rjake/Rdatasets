@@ -53,7 +53,7 @@ gsp
     gross state products
 
 emp
-    labor input measured by the employement in non–agricultural payrolls
+    labor input measured by the employment in non–agricultural payrolls
 
 unemp
     state unemployment rate
@@ -61,7 +61,7 @@ unemp
 Source
 ~~~~~~
 
-Munnel, A. (1990) “Why has productivity growth declined? Productivity
+Munnell, A. (1990) “Why has productivity growth declined? Productivity
 and public investment”, *New England Economic Review*, 3–22.
 
 Baltagi, B. H. and N. Pinnoi (1995) “Public capital stock and state

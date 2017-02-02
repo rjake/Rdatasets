@@ -34,7 +34,7 @@ capexp
     Investment Abroad: 1982 Benchmark Survey data." Table III.C 6.
 
 gdp
-    gross pomestic product. Source: "World Bank, World Development
+    gross domestic product. Source: "World Bank, World Development
     Report 1984." Table 3. (This variable is scaled by a factor of
     1/100,000)
 
@@ -66,7 +66,7 @@ References
 ~~~~~~~~~~
 
 Journal of Business Economics and Statistics web site :
-`http://www.amstat.org/publications/jbes/ <http://www.amstat.org/publications/jbes/>`__.
+`http://amstat.tandfonline.com/loi/ubes20 <http://amstat.tandfonline.com/loi/ubes20>`__.
 
 See Also
 ~~~~~~~~

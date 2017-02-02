@@ -53,14 +53,14 @@ Source
 ~~~~~~
 
 Summers, R. and A. Heston (1991) “The Penn world table (mark 5): an
-exanded set of international comparaisons, 1950-1988”, *Quarterly
+expanded set of international comparisons, 1950-1988”, *Quarterly
 Journal of Economics*, **29**, 229-256.
 
 References
 ~~~~~~~~~~
 
 Hayashi, F. (2000) *Econometrics*, Princeton University Press,
-`http://www.e.u-tokyo.ac.jp/~hayashi/hayashi\_econometrics.htm <http://www.e.u-tokyo.ac.jp/~hayashi/hayashi_econometrics.htm>`__,
+`http://fhayashi.fc2web.com/hayashi\_econometrics.htm <http://fhayashi.fc2web.com/hayashi_econometrics.htm>`__,
 chapter 5, 358-363.
 
 See Also

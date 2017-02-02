@@ -8,9 +8,7 @@ Militarized Interstate Disputes
 Description
 ~~~~~~~~~~~
 
-A small sample from the militarized interstate disputes database,
-available at
-`http://pss.la.psu.edu/MID\_DATA.HTM <http://pss.la.psu.edu/MID_DATA.HTM>`__.
+A small sample from the militarized interstate disputes (MID) database.
 
 Usage
 ~~~~~

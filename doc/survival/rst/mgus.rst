@@ -18,7 +18,6 @@ Usage
 
     mgus
     mgus1
-    mgus2
 
 Format
 ~~~~~~
@@ -31,7 +30,7 @@ subject id
 
 age:
 
-age in years
+age in years at the detection of MGUS
 
 sex:
 
@@ -49,7 +48,7 @@ the subtype of malignancy: multiple myeloma (MM) is the
 
 most common, followed by amyloidosis (AM), macroglobulinemia (MA),
 
-and other lymphprolifative (LP)
+and other lymphprolifative disorders (LP)
 
 pctime:
 
@@ -82,34 +81,15 @@ size of the monoclonal protien spike at diagnosis
 mgus1: The same data set in start,stop format. Contains the id, age,
 sex, and laboratory variable described above along with
 
-start, stop:
-
-sequential intervals of time for each subject
-
-status:
-
-=1 if the interval ends in an event
-
-event:
-
-the event type
-
-mgus2: The mgus data, but formatted in the competing risks style. Each
-subject has three observations, one for time to death, one for time to
-MM, and one for time to a PC malignancy other than MM. Contains the id,
-age, sex, and laboratory variable described above along with
-
-time:
-
-time to event or censoring
-
-status:
-
-1 if the event occured, 0 otherwise
-
-event:
-
-death, myeloma, or other
++----------------+--------------------------------------------------------------------------------+
+| start, stop:   | sequential intervals of time for each subject                                  |
++----------------+--------------------------------------------------------------------------------+
+| status:        | =1 if the interval ends in an event                                            |
++----------------+--------------------------------------------------------------------------------+
+| event:         | a factor containing the event type: censor, death, or plasma cell malignancy   |
++----------------+--------------------------------------------------------------------------------+
+| enum:          | event number for each subject: 1 or 2                                          |
++----------------+--------------------------------------------------------------------------------+
 
 Details
 ~~~~~~~
@@ -124,7 +104,14 @@ electrophoresis. Monoclonal gammapothy of undertermined significance
 (MGUS) is the presence of such a spike, but in a patient with no
 evidence of overt malignancy. This data set of 241 sequential subjects
 at Mayo Clinic was the groundbreaking study defining the natural history
-of such subjects.
+of such subjects. Due to the diligence of the principle investigator 0
+subjects have been lost to follow-up.
+
+Three subjects had MGUS detected on the day of death. In data set
+``mgus1`` these subjects have the time to MGUS coded as .5 day before
+the death in order to avoid tied times.
+
+These data sets were updated in Jan 2015 to correct some small errors.
 
 Source
 ~~~~~~
@@ -136,3 +123,22 @@ References
 
 R Kyle, Benign monoclonal gammopathy – after 20 to 35 years of
 follow-up, Mayo Clinic Proc 1993; 68:26-36.
+
+Examples
+~~~~~~~~
+
+::
+
+    # Create the competing risk curves for time to first of death or PCM
+    sfit <- survfit(Surv(start, stop, event) ~ sex, mgus1, subset=(enum==1))
+    print(sfit)  # the order of printout is the order in which they plot
+
+    plot(sfit, xscale=365.25, lty=c(2,1,2,1), col=c(1,1,2,2),
+         xlab="Years after MGUS detection", ylab="Proportion")
+    legend(0, .8, c("Death/male", "Death/female", "PCM/male", "PCM/female"),
+           lty=c(1,1,2,2), col=c(2,1,2,1), bty='n')
+
+    title("Curves for the first of plasma cell malignancy or death")
+    # The plot shows that males have a higher death rate than females (no
+    # surprise) but their rates of conversion to PCM are essentially the same.
+

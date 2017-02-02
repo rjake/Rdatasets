@@ -34,7 +34,7 @@ rate
 len
     length of the ``Highway1`` segment in miles
 
-ADT
+adt
     average daily traffic count in thousands
 
 trks
@@ -63,15 +63,16 @@ itg
 lwid
     lane width, in feet
 
-hwy
+htype
     An indicator of the type of roadway or the source of funding for the
     road, either MC, FAI, PA, or MA
 
 Source
 ~~~~~~
 
-Carl Hoffstedt. This differs from the dataset ``highway`` in the
-``alr3`` package only by transformation of some of the columns.
+Carl Hoffstedt. This differs from the dataset ``Highway`` in the
+``alr4`` package only by addition of transformation of some of the
+columns.
 
 References
 ~~~~~~~~~~

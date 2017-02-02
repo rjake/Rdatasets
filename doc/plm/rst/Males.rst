@@ -69,17 +69,14 @@ Source
 ~~~~~~
 
 Journal of Applied Econometrics data archive
-
-`http://www.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/ <http://www.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/>`__.
+`http://qed.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/ <http://qed.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/>`__.
 
 References
 ~~~~~~~~~~
 
 Vella, F. and M. Verbeek (1998) “Whose Wages Do Unions Raise? A Dynamic
 Model of Unionism and Wage Rate Determination for Young Men”, *Journal
-of Applied Econometrics*, **13**\ (2), 163–183.
+of Applied Econometrics*, **13**\ (2), pp. 163–183.
 
 Verbeek, M. (2004) *A Guide to Modern Econometrics*, John Wiley and
-Sons,
-`http://www.econ.kuleuven.ac.be/GME <http://www.econ.kuleuven.ac.be/GME>`__,
-chapter 10.
+Sons, chapter 10.

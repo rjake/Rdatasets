@@ -51,7 +51,7 @@ Source
 Online complements to Ziliak (1997).
 
 Journal of Business Economics and Statistics web site:
-`http://www.amstat.org/publications/jbes/ <http://www.amstat.org/publications/jbes/>`__.
+`http://amstat.tandfonline.com/loi/ubes20/ <http://amstat.tandfonline.com/loi/ubes20/>`__.
 
 References
 ~~~~~~~~~~
@@ -62,4 +62,4 @@ applications*, Cambridge, pp. 708–15, 754–6.
 Ziliak, J.P. (1997) “Efficient Estimation With Panel Data when
 Instruments are Predetermined: An Empirical Comparison of
 Moment-Condition Estimators”, *Journal of Business and Economic
-Statistics*, **419–431**.
+Statistics*, **15**\ (4), pp. 419–431.

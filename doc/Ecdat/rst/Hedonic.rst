@@ -2,7 +2,7 @@
 | Hedonic   | R Documentation   |
 +-----------+-------------------+
 
-Hedonic Prices of Cencus Tracts in Boston
+Hedonic Prices of Census Tracts in Boston
 -----------------------------------------
 
 Description
@@ -82,7 +82,7 @@ demand for clean air”, *Journal of Environmental Economics Ans
 Management*, **5**, 81–102.
 
 Belsley, D.A., E. Kuh and R. E. Welsch (1980) *Regression diagnostics:
-identifying influencal data ans sources of collinearity*, John Wiley,
+identifying influential data and sources of collinearity*, John Wiley,
 New–York.
 
 References

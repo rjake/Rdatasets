@@ -73,8 +73,8 @@ the constant Regularity observ'd in the Births of both Sexes,"
 References
 ~~~~~~~~~~
 
-Campbell, R. B., Arbuthnot and the Human Sex Ratio,
-`http://www.math.uni.edu/~campbell/arbuth.html <http://www.math.uni.edu/~campbell/arbuth.html>`__
+Campbell, R. B., Arbuthnot and the Human Sex Ratio (2001). *Human
+Biology*, 73:4, 605-610.
 
 Creighton, C. (1965). A History of Epidemics in Britain, 2nd edition,
 vol. 1 and 2. NY: Barnes and Noble.

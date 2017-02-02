@@ -25,7 +25,7 @@ Format
 A ``data.frame`` containing 12 columns and 4 rows.
 
 country
-    a ``factor`` of Denmark, Finland, UK, and US, being the four
+    a character vector of Denmark, Finland, UK, and US, being the four
     countries comparied in this data set.
 
 DomesticKnowledge.hs, DomesticKnowledge.sc, DomesticKnowledge.c

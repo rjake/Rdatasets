@@ -325,14 +325,14 @@ rating scale:
 |  0—————-1—————-2—————-3
 |  Not at all A little Moderately Very much
 
-The original version of the MSQ included 70 items. Intermediate analyses
+The original version of the MSQ included 72 items. Intermediate analyses
 (done with 1840 subjects) demonstrated a concentration of items in some
 sections of the two dimensional space, and a paucity of items in others.
 To begin correcting this, 3 items from redundantly measured sections
 (alone, kindly, scornful) were removed, and 5 new ones (anxious,
 cheerful, idle, inactive, and tranquil) were added. Thus, the
-correlation matrix is missing the correlations between items 4, 41, and
-54 and 71-75.
+correlation matrix is missing the correlations between items anxious,
+cheerful, idle, inactive, and tranquil with alone, kindly, and scornful.
 
 Procedure. The data were collected over nine years, as part of a series
 of studies examining the effects of personality and situational factors
@@ -341,22 +341,34 @@ on motivational state and subsequent cognitive performance. In each of
 participants signed a consent form and filled out the MSQ. (The
 procedures of the individual studies are irrelevant to this data set and
 could not affect the responses to the MSQ, since this instrument was
-completed before any further instructions or tasks).
+completed before any further instructions or tasks). Some MSQ post test
+(after manipulations) is available in ``affect``.
 
 The EA and TA scales are from Thayer, the PA and NA scales are from
 Watson et al. (1988). Scales and items:
 
-Energetic Arousal: Active, Energetic, Vigorous, Wakeful, Wideawake, Full
-of Pep, Lively, -sleepy, -tired, - drowsy (ADACL)
+Energetic Arousal: active, energetic, vigorous, wakeful, wide.awake,
+full.of.pep, lively, -sleepy, -tired, - drowsy (ADACL)
 
 Tense Arousal: Intense, Jittery, fearful, tense, clutched up, -quiet,
 -still, - placid, - calm, -at rest (ADACL)
 
-Positive Affect: active, excited, strong, inspired, determined,
-attentive, interested, enthusiastic, proud, alert (PANAS)
+Positive Affect: active, alert, attentive, determined, enthusiastic,
+excited, inspired, interested, proud, strong (PANAS)
 
-Negative Affect: jittery, nervous, scared, afraid, guilty, ashamed,
-distressed, upset, hostile, irritable (PANAS)
+Negative Affect: afraid, ashamed, distressed, guilty, hostile, irritable
+, jittery, nervous, scared, upset (PANAS)
+
+The PA and NA scales can in turn can be thought of as having subscales:
+(See the PANAS-X) Fear: afraid, scared, nervous, jittery (not included
+frightened, shaky) Hostility: angry, hostile, irritable, (not included:
+scornful, disgusted, loathing guilt: ashamed, guilty, (not included:
+blameworthy, angry at self, disgusted with self, dissatisfied with self)
+sadness: alone, blue, lonely, sad, (not included: downhearted)
+joviality: cheerful, delighted, energetic, enthusiastic, excited, happy,
+lively, (not included: joyful) self-assurance: proud, strong, confident,
+(not included: bold, daring, fearless ) attentiveness: alert, attentive,
+determined (not included: concentrating)
 
 The next set of circumplex scales were taken (I think) from Larsen and
 Diener (1992). High activation: active, aroused, surprised, intense,
@@ -404,9 +416,10 @@ See Also
 ``affect`` for an example of the use of some of these adjectives in a
 mood manipulation study.
 
-``make.keys`` and ``score.items`` for instructions on how to score
-multiple scales, and ``fa`` and ``fa.extension`` for instructions on how
-to do factor analyses or factor extension.
+``make.keys``, ``scoreItems`` and ``scoreOverlap`` for instructions on
+how to score multiple scales with and without item overlap. Also see
+``fa`` and ``fa.extension`` for instructions on how to do factor
+analyses or factor extension.
 
 Examples
 ~~~~~~~~
@@ -418,40 +431,56 @@ Examples
     #basic descriptive statistics
     describe(msq)
     }
-    #score them for 12 short scales
-     
-    keys <- make.keys(colnames(msq)[1:75], list(
-     EA = c("active", "energetic", "vigorous", "wakeful", "wide.awake", "full.of.pep",
+    #score them for 20 short scales -- note that these have item overlap
+    #The first 2 are from Thayer
+    #The next 2 are classic positive and negative affect
+    #The next 9 are circumplex scales
+    #the last 7 are msq estimates of PANASX scales (missing some items)
+    keys <- make.keys(msq[1:75],list(
+    EA = c("active", "energetic", "vigorous", "wakeful", "wide.awake", "full.of.pep",
            "lively", "-sleepy", "-tired", "-drowsy"),
-      TA =c("intense", "jittery", "fearful", "tense", "clutched.up", "-quiet", "-still", 
+    TA =c("intense", "jittery", "fearful", "tense", "clutched.up", "-quiet", "-still", 
            "-placid", "-calm", "-at.rest") ,
-      PA =c("active", "excited", "strong", "inspired", "determined", "attentive", 
+    PA =c("active", "excited", "strong", "inspired", "determined", "attentive", 
               "interested", "enthusiastic", "proud", "alert"),
-     NAf =c("jittery", "nervous", "scared", "afraid", "guilty", "ashamed", "distressed",  
+    NAf =c("jittery", "nervous", "scared", "afraid", "guilty", "ashamed", "distressed",  
              "upset", "hostile", "irritable" ),
-     HAct = c("active", "aroused", "surprised", "intense", "astonished"),
-     aPA = c("elated", "excited", "enthusiastic", "lively"),
-     uNA = c("calm", "serene", "relaxed", "at.rest", "content", "at.ease"),
-     pa = c("happy", "warmhearted", "pleased", "cheerful", "delighted" ),
-     LAct = c("quiet", "inactive", "idle", "still", "tranquil"),
-      uPA =c( "dull", "bored", "sluggish", "tired", "drowsy"),
-     naf = c( "sad", "blue", "unhappy", "gloomy", "grouchy"),
-     aNA = c("jittery", "anxious", "nervous", "fearful", "distressed"))
-           )
+    HAct = c("active", "aroused", "surprised", "intense", "astonished"),
+    aPA = c("elated", "excited", "enthusiastic", "lively"),
+    uNA = c("calm", "serene", "relaxed", "at.rest", "content", "at.ease"),
+    pa = c("happy", "warmhearted", "pleased", "cheerful", "delighted" ),
+    LAct = c("quiet", "inactive", "idle", "still", "tranquil"),
+    uPA =c( "dull", "bored", "sluggish", "tired", "drowsy"),
+    naf = c( "sad", "blue", "unhappy", "gloomy", "grouchy"),
+    aNA = c("jittery", "anxious", "nervous", "fearful", "distressed"),
+    Fear = c("afraid" , "scared" , "nervous" , "jittery" ) ,
+    Hostility = c("angry" ,  "hostile", "irritable", "scornful" ), 
+    Guilt = c("guilty" , "ashamed" ),
+    Sadness = c( "sad"  , "blue" , "lonely",  "alone" ),
+    Joviality =c("happy","delighted", "cheerful", "excited", "enthusiastic", "lively", "energetic"), 
+    Self.Assurance=c( "proud","strong" , "confident" , "-fearful" ),
+    Attentiveness = c("alert" , "determined" , "attentive" )
+    #acquiscence = c("sleepy" ,  "wakeful" ,  "relaxed","tense")
+       ))
            
     msq.scores <- scoreItems(keys,msq[1:75])
 
-    #show a circumplex structure 
+    #show a circumplex structure for the non-overlapping items
     fcirc <- fa(msq.scores$scores[,5:12],2)  
     fa.plot(fcirc,labels=colnames(msq.scores$scores)[5:12])
+
+    #now, find the correlations corrected for item overlap
+    msq.overlap <- scoreOverlap(keys,msq[1:75])
+    f2 <- fa(msq.overlap$cor,2)
+    fa.plot(f2,labels=colnames(msq.overlap$cor),title="2 dimensions of affect, corrected for overlap")
     if(FALSE) {
     #extend this solution to EA/TA  NA/PA space
     fe  <- fa.extension(cor(msq.scores$scores[,5:12],msq.scores$scores[,1:4]),fcirc)
     fa.diagram(fcirc,fe=fe,main="Extending the circumplex structure to  EA/TA and PA/NA ")
 
     #show the 2 dimensional structure
-    f2 <- fa(msq[1:70],2)
-    fa.plot(f2,labels=colnames(msq)[1:70],title="2 dimensions of affect")
+    f2 <- fa(msq[1:72],2)
+    fa.plot(f2,labels=colnames(msq)[1:72],title="2 dimensions of affect at the item level")
 
     #sort them by polar coordinates
     round(polar(f2),2)

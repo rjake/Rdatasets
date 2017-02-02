@@ -72,7 +72,7 @@ Source
 ~~~~~~
 
 Olson, Craig A. (1998) “A comparison of parametric and semiparametric
-estimates of the effect of spousal healpth insurance coverage on weekly
+estimates of the effect of spousal health insurance coverage on weekly
 hours worked by wiwes”, *Journal of Applied Econometrics*, **13(5)**,
 september–october, 543–565.
 
@@ -80,7 +80,7 @@ References
 ~~~~~~~~~~
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
 
 See Also
 ~~~~~~~~

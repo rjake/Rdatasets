@@ -17,9 +17,12 @@ genotype
      2  7  7  7  1  3  2  2  2  2  6  3
      3  8 10  8  3  9  3  4  2  2  7  5
 
-has not been included. The inter-marker distances (Morgan) are as
-follows, 0.03, 0.065, 0.00125, 0.00125, 0.00125, 0.00125, 0.00125,
-0.00125, 0.00125, 0.00125, 0.045
+has not been included.
+
+The inter-marker distances (Morgan) are as follows,
+
+0.03, 0.065, 0.00125, 0.00125, 0.00125, 0.00125, 0.00125, 0.00125,
+0.00125, 0.00125, 0.045
 
 Usage
 ~~~~~

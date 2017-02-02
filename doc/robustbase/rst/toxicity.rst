@@ -29,9 +29,7 @@ are attributes for carboxylic acids:
     “response”.
 
 ``logKow``
-    *log Kow*
-
-    , the partition coefficient
+    *log Kow*, the partition coefficient
 
 ``pKa``
     pKa: the dissociation constant

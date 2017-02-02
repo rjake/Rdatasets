@@ -45,7 +45,7 @@ A data frame containing 5 variables ("gameno", "month", "homeruns",
 Source
 ~~~~~~
 
-`http://www.amstat.org <http://www.amstat.org>`__
+`https://ww2.amstat.org/publications/jse/v6n3/datasets.simonoff.html <https://ww2.amstat.org/publications/jse/v6n3/datasets.simonoff.html>`__
 
 References
 ~~~~~~~~~~

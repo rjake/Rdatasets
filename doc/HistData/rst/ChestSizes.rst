@@ -35,9 +35,8 @@ Source
 
 Velleman, P. F. and Hoaglin, D. C. (1981). *Applications, Basics, and
 Computing of Exploratory Data Analysis*. Belmont. CA: Wadsworth.
-
-Statlib:
-`http://lib.stat.cmu.edu/DASL/Datafiles/MilitiamenChests.html <http://lib.stat.cmu.edu/DASL/Datafiles/MilitiamenChests.html>`__
+Retrieved from Statlib:
+``https://www.stat.cmu.edu/StatDat/Datafiles/MilitiamenChests.html``
 
 References
 ~~~~~~~~~~

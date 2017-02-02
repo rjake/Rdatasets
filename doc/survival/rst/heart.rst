@@ -51,7 +51,7 @@ prior bypass surgery
 
 age:
 
-age (in days)
+age (in years)
 
 futime:
 

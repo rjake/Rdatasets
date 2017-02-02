@@ -74,13 +74,11 @@ hedonic price function”, *Journal of Applied Econometrics*, **11(6)**,
 References
 ~~~~~~~~~~
 
-Verbeek, Marno (2004) *A guide to modern econometrics*, John Wiley and
-Sons,
-`http://www.econ.kuleuven.ac.be/GME <http://www.econ.kuleuven.ac.be/GME>`__,
-chapter 3.
+Verbeek, Marno (2004) *A Guide to Modern Econometrics*, John Wiley and
+Sons, chapter 3.
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
 
 See Also
 ~~~~~~~~

@@ -46,7 +46,7 @@ recparks
 
 jobs
     jobs are the most important thing in deciding how to use our natural
-    ressources (from 1 to 5)
+    resources (from 1 to 5)
 
 lowrisk
     development should be allowed to proceed where environmental damage
@@ -66,7 +66,7 @@ aboriginal
     (from 1 to 5)
 
 finben
-    in deciding how to use our natural ressources such as mineral
+    in deciding how to use our natural resources such as mineral
     deposits and forests, the most important thing is the financial
     benefits for Australia (from 1 to 5)
 
@@ -92,8 +92,8 @@ vparks
     area in the previous 12 months ?
 
 tvenv
-    the respondent watchs tv programs about the environment ? (from 1 to
-    9)
+    the respondent watches tv programs about the environment ? (from 1
+    to 9)
 
 conservation
     the respondent is member of a conservation organization ?
@@ -125,7 +125,7 @@ References
 ~~~~~~~~~~
 
 Journal of Business Economics and Statistics web site :
-`http://www.amstat.org/publications/jbes/ <http://www.amstat.org/publications/jbes/>`__.
+`http://amstat.tandfonline.com/loi/ubes20 <http://amstat.tandfonline.com/loi/ubes20>`__.
 
 See Also
 ~~~~~~~~

@@ -33,8 +33,8 @@ gdp
 Source
 ~~~~~~
 
-United Nations (1998) Social indicators.
-`http://www.un.org/Depts/unsd/social/main.htm <http://www.un.org/Depts/unsd/social/main.htm>`__.
+United Nations (1998) Social indicators. Originally from
+http://www.un.org/Depts/unsd/social/main.htm but no longer there.
 
 References
 ~~~~~~~~~~

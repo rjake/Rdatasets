@@ -8,7 +8,9 @@ Flow of the River Nile
 Description
 ~~~~~~~~~~~
 
-Measurements of the annual flow of the river Nile at Ashwan 1871–1970.
+Measurements of the annual flow of the river Nile at Aswan (formerly
+``Assuan``), 1871–1970, in *10^8 m^3*, “with apparent changepoint near
+1898” (Cobb(1978), Table 1, p.249).
 
 Usage
 ~~~~~

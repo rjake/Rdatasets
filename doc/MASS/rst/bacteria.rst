@@ -56,11 +56,13 @@ The presence of *H. influenzae* was checked at weeks 0, 2, 4, 6 and 11:
 Source
 ~~~~~~
 
-Menzies School of Health Research 1999–2000 Annual Report pp. 18–21
-(`http://www.menzies.edu.au/publications/anreps/MSHR00.pdf <http://www.menzies.edu.au/publications/anreps/MSHR00.pdf>`__).
+Dr Amanda Leach *via* Mr James McBroom.
 
 References
 ~~~~~~~~~~
+
+Menzies School of Health Research 1999–2000 Annual Report. p.20.
+`http://www.menzies.edu.au/icms\_docs/172302\_2000\_Annual\_report.pdf <http://www.menzies.edu.au/icms_docs/172302_2000_Annual_report.pdf>`__.
 
 Venables, W. N. and Ripley, B. D. (2002) *Modern Applied Statistics with
 S.* Fourth edition. Springer.

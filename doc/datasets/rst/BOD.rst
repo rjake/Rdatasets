@@ -23,10 +23,10 @@ Format
 
 This data frame contains the following columns:
 
-Time
+``Time``
     A numeric vector giving the time of the measurement (days).
 
-demand
+``demand``
     A numeric vector giving the biochemical oxygen demand (mg/l).
 
 Source

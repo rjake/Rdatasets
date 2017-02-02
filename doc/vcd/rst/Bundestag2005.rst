@@ -54,7 +54,7 @@ Source
 ~~~~~~
 
 Der Bundeswahlleiter, Statistisches Bundesamt.
-`http://www.bundeswahlleiter.de/bundestagswahl2005/ <http://www.bundeswahlleiter.de/bundestagswahl2005/>`__
+`http://www.bundeswahlleiter.de/de/bundestagswahlen/fruehere\_bundestagswahlen/btw2005.html <http://www.bundeswahlleiter.de/de/bundestagswahlen/fruehere_bundestagswahlen/btw2005.html>`__
 
 Examples
 ~~~~~~~~

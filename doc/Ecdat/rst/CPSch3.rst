@@ -40,16 +40,14 @@ sex
 Source
 ~~~~~~
 
-Bureau of labor statistics, U.S. Departement of Labor
+Bureau of labor statistics, U.S. Department of Labor
 `http://www.bls.gov <http://www.bls.gov>`__.
 
 References
 ~~~~~~~~~~
 
 Stock, James H. and Mark W. Watson (2003) *Introduction to
-Econometrics*, Addison-Wesley Educational Publishers,
-`http://wps.aw.com/aw\_stockwatsn\_economtrcs\_1 <http://wps.aw.com/aw_stockwatsn_economtrcs_1>`__,
-chapter 3.
+Econometrics*, Addison-Wesley Educational Publishers, chapter 3.
 
 See Also
 ~~~~~~~~

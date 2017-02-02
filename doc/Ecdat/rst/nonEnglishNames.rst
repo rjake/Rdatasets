@@ -46,6 +46,6 @@ Examples
     data(nonEnglishNames)
 
 
-    all.equal(dim(nonEnglishNames), c(17, 2))
+    all.equal(ncol(nonEnglishNames), 2)
 
 

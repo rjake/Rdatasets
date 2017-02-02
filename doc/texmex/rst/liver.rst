@@ -23,31 +23,31 @@ Format
 
 A data frame with 606 observations on the following 9 variables.
 
-``ALP.B``
+ALP.B
     Alkaline phosphatase at baseline. A numeric vector.
 
-``ALT.B``
+ALT.B
     Alanine aminotransferase at baseline. A numeric vector.
 
-``AST.B``
+AST.B
     Aspartate aminotransferase at baseline. A numeric vector.
 
-``TBL.B``
+TBL.B
     Total bilirubin at baseline. A numeric vector.
 
-``ALP.M``
+ALP.M
     Alkaline phosphatase after treatment. A numeric vector.
 
-``ALT.M``
+ALT.M
     Alanine aminotransferase after treatment. A numeric vector.
 
-``AST.M``
+AST.M
     Aspartate aminotransferase after treatment. A numeric vector.
 
-``TBL.M``
+TBL.M
     Total bilirubin after treatment. A numeric vector.
 
-``dose``
+dose
     The treatment group (i.e. dose group). A factor with levels ``A``
     ``B`` ``C`` ``D``
 

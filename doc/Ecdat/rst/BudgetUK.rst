@@ -47,11 +47,11 @@ wother
     budget share for other good expenditure
 
 totexp
-    total houshold expenditure (rounded to the nearest 10 UK pounds
+    total household expenditure (rounded to the nearest 10 UK pounds
     sterling)
 
 income
-    total net houshold income (rounded to the nearest 10 UK pounds
+    total net household income (rounded to the nearest 10 UK pounds
     sterling)
 
 age
@@ -71,7 +71,7 @@ References
 ~~~~~~~~~~
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
 
 See Also
 ~~~~~~~~

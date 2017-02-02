@@ -45,7 +45,7 @@ play
     trust bix and the "friend" player nothing
 
 round
-    round in which constestant is eliminated, a factor with levels
+    round in which contestant is eliminated, a factor with levels
     ("1","2","3")
 
 season
@@ -82,7 +82,7 @@ References
 ~~~~~~~~~~
 
 Journal of Statistics Education's data archive :
-`http://www.amstat.org/publications/jse/jse\_data\_archive.html <http://www.amstat.org/publications/jse/jse_data_archive.html>`__.
+`http://www.amstat.org/publications/jse/jse\_data\_archive.htm <http://www.amstat.org/publications/jse/jse_data_archive.htm>`__.
 
 See Also
 ~~~~~~~~

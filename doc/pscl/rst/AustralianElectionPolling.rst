@@ -113,7 +113,7 @@ Examples
 ::
 
     data(AustralianElectionPolling)
-    xyplot(ALP ~ startDate | org, 
+    lattice::xyplot(ALP ~ startDate | org, 
            data=AustralianElectionPolling,
            layout=c(1,5),
            type="b",
@@ -121,11 +121,10 @@ Examples
            ylab="ALP")
 
     ## test for house effects
-    library(gam)
     y <- AustralianElectionPolling$ALP/100
     v <- y*(1-y)/AustralianElectionPolling$sampleSize
     w <- 1/v
-    m1 <- gam(y ~ lo(startDate,span=1/10),
+    m1 <- mgcv::gam(y ~ s(as.numeric(startDate)),
               weight=w,       
               data=AustralianElectionPolling)
     m2 <- update(m1, ~ . + org)

@@ -35,7 +35,7 @@ Status
 
 ISO, ANSI.letters, ANSI.digits, USPS, USCG, Old.GPO, AP, Other
     Alternative abbreviations used per different standards. The most
-    commmonly used among these may be the 2-letter codes officially used
+    commonly used among these may be the 2-letter codes officially used
     by the US Postal Service (``USPS``).
 
 Details
@@ -69,6 +69,8 @@ Examples
     ##
     ## to update
     ##
-
+    ## Not run: 
     USstateAbb2 <- readUSstateAbbreviations()
+
+    ## End(Not run)
 

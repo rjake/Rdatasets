@@ -24,7 +24,7 @@ Usage
 Format
 ~~~~~~
 
-A data frame contains the following components:
+A data frame with 100 observations on the following 3 variables.
 
 ``Expt``
     The experiment number, from 1 to 5.
@@ -47,7 +47,7 @@ Note
 ~~~~
 
 This is the same dataset as ``michelson`` in package
-`MASS <http://CRAN.R-project.org/package=MASS>`__.
+`MASS <https://CRAN.R-project.org/package=MASS>`__.
 
 Source
 ~~~~~~

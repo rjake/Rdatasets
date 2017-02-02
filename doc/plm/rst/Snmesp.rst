@@ -57,11 +57,11 @@ Source
 
 Journal of Business Economics and Statistics data archive:
 
-`http://www.amstat.org/publications/jbes/ <http://www.amstat.org/publications/jbes/>`__.
+`http://amstat.tandfonline.com/loi/ubes20/ <http://amstat.tandfonline.com/loi/ubes20/>`__.
 
 References
 ~~~~~~~~~~
 
 Alonso–Borrego, C. and Arellano, M. (1999). Symmetrically Normalized
 Instrumental-Variable Estimation Using Panel Data, *Journal of Business
-and Economic Statistics*, **17(1)**, 36–49.
+and Economic Statistics*, **17(1)**, pp. 36–49.

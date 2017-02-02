@@ -29,7 +29,7 @@ Format
 A dataframe containing :
 
 nr
-    identifiant
+    identifier
 
 year
     year
@@ -50,7 +50,7 @@ maried
     maried ?
 
 health
-    healph problem ?
+    health problem ?
 
 wage
     log of hourly wage
@@ -77,13 +77,11 @@ model of unionism and wage”, *Journal of Applied Econometrics*, **13**,
 References
 ~~~~~~~~~~
 
-Verbeek, Marno (2004) *A guide to modern econometrics*, John Wiley and
-Sons,
-`http://www.econ.kuleuven.ac.be/GME <http://www.econ.kuleuven.ac.be/GME>`__,
-chapter 10.
+Verbeek, Marno (2004) *A Guide to Modern Econometrics*, John Wiley and
+Sons, chapter 10.
 
 Journal of Applied Econometrics data archive :
-`http://jae.wiley.com/jae/ <http://jae.wiley.com/jae/>`__.
+`http://qed.econ.queensu.ca/jae/ <http://qed.econ.queensu.ca/jae/>`__.
 
 See Also
 ~~~~~~~~

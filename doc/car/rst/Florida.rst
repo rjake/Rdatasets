@@ -61,5 +61,4 @@ Source
 
 Adams, G. D. and Fastnow, C. F. (2000) A note on the voting
 irregularities in Palm Beach, FL. Formerly at
-`http://madison.hss.cmu.edu/ <http://madison.hss.cmu.edu/>`__, but no
-longer available there.
+http://madison.hss.cmu.edu/, but no longer available there.

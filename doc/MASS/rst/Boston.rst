@@ -57,9 +57,7 @@ This data frame contains the following columns:
     pupil-teacher ratio by town.
 
 ``black``
-    *1000(Bk - 0.63)^2*
-
-    where *Bk* is the proportion of blacks by town.
+    *1000(Bk - 0.63)^2* where *Bk* is the proportion of blacks by town.
 
 ``lstat``
     lower status of the population (percent).

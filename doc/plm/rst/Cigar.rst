@@ -58,9 +58,13 @@ pimin
 Source
 ~~~~~~
 
-Online complements to Baltagi (2001).
+Online complements to Baltagi (2001):
 
-`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__.
+`http://www.wiley.com/legacy/wileychi/baltagi/ <http://www.wiley.com/legacy/wileychi/baltagi/>`__
+
+Online complements to Baltagi (2013):
+
+`http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452 <http://bcs.wiley.com/he-bcs/Books?action=resource&bcsId=4338&itemId=1118672321&resourceId=13452>`__
 
 References
 ~~~~~~~~~~
@@ -68,10 +72,13 @@ References
 Baltagi, Badi H. (2001) *Econometric Analysis of Panel Data*, 2nd ed.,
 John Wiley and Sons.
 
+Baltagi, Badi H. (2013) *Econometric Analysis of Panel Data*, 5th ed.,
+John Wiley and Sons.
+
 Baltagi, B.H. and D. Levin (1992) “Cigarette taxation: raising revenues
 and reducing consumption”, *Structural Changes and Economic Dynamics*,
-**3**, 321–335.
+**3**\ (2), pp. 321–335.
 
 Baltagi, B.H., J.M. Griffin and W. Xiong (2000) “To pool or not to pool:
 homogeneous versus heterogeneous estimators applied to cigarette
-demand”, *Review of Economics and Statistics*, **82**, 117–126.
+demand”, *Review of Economics and Statistics*, **82**\ (1), pp. 117–126.

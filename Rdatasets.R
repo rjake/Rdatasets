@@ -8,6 +8,7 @@ if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstud
 index = data(package=packages)$results[,c(1,3,4)]
 index = data.frame(index, stringsAsFactors=FALSE)
 index_out = NULL
+size_out = NULL
 
 # Load packages which store datasets
 for (i in packages) {
@@ -41,9 +42,15 @@ for (i in 1:nrow(index)) {
         tools::Rd2HTML(help.file, out=dest_doc)
         # Add entry to index out
         index_out = rbind(index_out, index[i,])
+        # Add entry to dimensions out
+        size_d = dim(d)
+        if (is.null(size_d)) size_d = c(length(d), 1)  # numeric vector
+        size_out = rbind(size_out, data.frame(Rows=size_d[1], Cols=size_d[2]))
     }
 }
 
+# Size details
+index_out = cbind(index_out, size_out)
 # CSV index
 index_out$csv = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/',
                       index_out$Package, '/', index_out$Item, '.csv', sep='')

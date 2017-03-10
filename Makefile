@@ -4,7 +4,6 @@ gh:
 	mkdir csv
 	mkdir doc
 	R CMD BATCH Rdatasets.R
-	python docs2rst.py
 	git add csv
 	git add doc
 	git add datasets.html

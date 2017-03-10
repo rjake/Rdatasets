@@ -14,8 +14,6 @@ The list of available datasets (csv and docs) is available here:
 On the github repository you will also find: 
 
 * ``Rdatasets.R``: ``R`` script to download CSV copies and HTML docs for all datasets distributed in ``Base R`` and a list of R packages. 
-* ``docs2rst``: A python script which calls ``pandoc`` to convert the HTML documentation to human readable text files. 
-* Plain text versions (reStructuredText) of all doc files
 
 Adding data
 ===========

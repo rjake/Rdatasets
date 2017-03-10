@@ -1,19 +1,13 @@
+library(pacman)
 library(R2HTML)
+packages = c("datasets", "boot", "DAAG", "gamclass", "KMsurv", "robustbase", "car", "cluster", "COUNT", "Ecdat", "gap", "ggplot2", "HistData", "lattice", "MASS", "plm", "plyr", "pscl", "reshape2", "rpart", "sandwich", "sem",  "survival", "vcd", "Zelig", "HSAUR", "psych", "quantreg", "geepack", "texmex", "multgee", "evir", "lme4", "mosaicData", "ISLR","Stat2Data")
+p_load(char = packages)
 
-packages = c("datasets", "boot", "KMsurv", "robustbase", "car", "cluster", "COUNT", "Ecdat", "gap", "ggplot2", "HistData", "lattice", "MASS", "plm", "plyr", "pscl", "reshape2", "rpart", "sandwich", "sem",  "survival", "vcd", "Zelig", "HSAUR", "psych", "quantreg", "geepack", "texmex", "multgee", "evir", "lme4", "mosaicData", "ISLR","Stat2Data")
-# Installed only packages that are not pre-installed.
-# Credits: http://stackoverflow.com/a/9345167/756986
-new.packages <- packages[!(packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages, repos="http://cran.rstudio.com")
+# Index
 index = data(package=packages)$results[,c(1,3,4)]
 index = data.frame(index, stringsAsFactors=FALSE)
 index_out = NULL
 size_out = NULL
-
-# Load packages which store datasets
-for (i in packages) {
-        library(i, character.only=TRUE)
-}
 
 # Save datasets
 for (i in 1:nrow(index)) {

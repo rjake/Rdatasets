@@ -41,8 +41,8 @@ write_data = function(i) {
     dat = data[[i]]
     doc = docs[[i]]
     cat(package, ' -- ', dataset, '\n')
-    try(dir.create('csv/'), silent = TRUE)
-    try(dir.create('doc/'), silent = TRUE)
+    try(dir.create('csv'), silent = TRUE)
+    try(dir.create('doc'), silent = TRUE)
     try(dir.create(paste0('csv/', package)), silent = TRUE)
     try(dir.create(paste0('doc/', package)), silent = TRUE)
     fn_csv = paste0('csv/', package, '/', dataset, '.csv')
@@ -65,6 +65,11 @@ idx = as.logical(pmin(idx1, idx2))
 data = data[idx]
 docs = docs[idx]
 index = index[idx,]
+
+# Write to file
+for (i in 1:nrow(index)) {
+    write_data(i)
+}
 
 # Index
 index$Rows = sapply(data, nrow)
@@ -92,7 +97,3 @@ rss = '
 cat(rss, file='datasets.html')
 HTML(index, file='datasets.html', row.names=FALSE, append=TRUE)
 
-# Write to file
-for (i in 1:nrow(index)) {
-    write_data(i)
-}

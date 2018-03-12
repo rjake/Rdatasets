@@ -1,46 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Stage C Prostate Cancer</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A data set from Cushny and Peebles (1905) on the effect of...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for stagec"><tr><td>stagec</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cushny"><tr><td>cushny</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Stage C Prostate Cancer</h2>
+<h2>
+A data set from Cushny and Peebles (1905) on the effect of three drugs on hours of sleep, used by Student (1908)
+</h2>
 
 <h3>Description</h3>
 
-<p>A set of 146 patients with stage C prostate cancer, from a
-study exploring the prognostic value of flow cytometry.</p>
+<p>The classic data set used by Gossett (publishing as Student) for the introduction of the t-test.  The design was a within subjects study with hours of sleep in a control condition compared to those in 3 drug conditions.  Drug1 was 06mg of L Hscyamine, Drug 2L and Drug2R were said to be .6 mg of  Left and Right isomers of Hyoscine. As discussed by Zabell (2008) these were not optical isomers. The detal1, delta2L and delta2R are changes from the baseline control.  
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>data(stagec)</pre>
+<pre>data(cushny)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 146 observations on the following 8 variables.
+<p>A data frame with 10 observations on the following 7 variables.
 </p>
 
 <dl>
-<dt><code>pgtime</code></dt><dd><p>Time to progression or last follow-up (years)</p>
+<dt><code>Control</code></dt><dd><p>Hours of sleep in a control condition</p>
 </dd>
-<dt><code>pgstat</code></dt><dd><p>1 = progression observed, 0 = censored</p>
+<dt><code>drug1</code></dt><dd><p>Hours of sleep in Drug condition 1</p>
 </dd>
-<dt><code>age</code></dt><dd><p>age in years</p>
+<dt><code>drug2L</code></dt><dd><p>Hours of sleep in Drug condition 2</p>
 </dd>
-<dt><code>eet</code></dt><dd><p>early endocrine therapy, 1 = no, 2 = yes</p>
+<dt><code>drug2R</code></dt><dd><p>Hours of sleep in Drug condition 3 (an isomer of the drug in condition 2</p>
 </dd>
-<dt><code>g2</code></dt><dd><p>percent of cells in G2 phase, as found by flow cytometry</p>
+<dt><code>delta1</code></dt><dd><p>Change from control, drug 1</p>
 </dd>
-<dt><code>grade</code></dt><dd><p>grade of the tumor, Farrow system</p>
+<dt><code>delta2L</code></dt><dd><p>Change from control, drug 2L</p>
 </dd>
-<dt><code>gleason</code></dt><dd><p>grade of the tumor, Gleason system</p>
-</dd>
-<dt><code>ploidy</code></dt><dd><p>the ploidy status of the tumor, from flow
-cytometry. Values are <span class="samp">diploid</span>, <span class="samp">tetraploid</span>,
-and <span class="samp">aneuploid</span></p>
+<dt><code>delta2R</code></dt><dd><p>Change from control, drug 2R</p>
 </dd>
 </dl>
 
@@ -48,19 +46,33 @@ and <span class="samp">aneuploid</span></p>
 
 <h3>Details</h3>
 
-<p>A tumor is called diploid (normal complement of dividing cells) if the
-fraction of cells in G2 phase was determined to be 13% or less.
-Aneuploid cells have a measurable fraction with a chromosome count that
-is neither 24 nor 48, for these the G2 percent is difficult or
-impossible to measure.
+<p>The original analysis by Student is used as an example for the t-test function, both as a paired t-test and a two group t-test.  The data are also useful for a repeated measures analysis of variance.  
 </p>
+
+
+<h3>Source</h3>
+
+<p>Cushny, A.R. and Peebles, A.R. (1905) The action of optical isomers: II hyoscines.  The Journal of Physiology 32, 501-510.
+</p>
+<p>Student (1908) The probable error of the mean.  Biometrika, 6 (1) , 1-25.
+</p>
+
+
+<h3>References</h3>
+
+<p>See also the data set sleep and the examples for the t.test
+</p>
+<p>S. L. Zabell.  On Student's 1908 Article &quot;The Probable Error of a Mean&quot; Journal of the American Statistical Association, Vol. 103, No. 481 (Mar., 2008), pp. 1- 20</p>
 
 
 <h3>Examples</h3>
 
 <pre>
-require(survival)
-rpart(Surv(pgtime, pgstat) ~ ., stagec)
+data(cushny)
+with(cushny, t.test(drug1,drug2L,paired=TRUE)) #within subjects 
+
+error.bars(cushny[1:4],within=TRUE,ylab="Hours of sleep",xlab="Drug condition", 
+       main="95% confidence of within subject effects")
 </pre>
 
 

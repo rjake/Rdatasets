@@ -1,43 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Record Times in Scottish Hill Races</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Saturated Steam Pressure Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for hills"><tr><td>hills</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for steam"><tr><td>steam</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Record Times in Scottish Hill Races
+The Saturated Steam Pressure Data
 </h2>
 
 <h3>Description</h3>
 
-<p>The record times in 1984 for 35 Scottish hill races.
+<p>Temperature and pressure in a saturated steam driven experimental device.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-hills
+steam
 </pre>
 
 
 <h3>Format</h3>
 
-<p>The components are:
+<p>The data frame contains the following components:
 </p>
 
 <dl>
-<dt><code>dist</code></dt><dd>
-<p>distance in miles (on the map).
+<dt><code>Temp</code></dt><dd>
+<p>temperature, in degrees Celsius.
 </p>
 </dd>
-<dt><code>climb</code></dt><dd>
-<p>total height gained during the route, in feet.
-</p>
-</dd>
-<dt><code>time</code></dt><dd>
-<p>record time in minutes.
+<dt><code>Press</code></dt><dd>
+<p>pressure, in Pascals.
 </p>
 </dd>
 </dl>
@@ -46,19 +42,16 @@ hills
 
 <h3>Source</h3>
 
-<p>A.C. Atkinson (1986) Comment: Aspects of diagnostic regression analysis.
-<em>Statistical Science</em> <b>1</b>, 397&ndash;402.
-</p>
-<p>[A.C. Atkinson (1988) Transformations unmasked. <em>Technometrics</em>
-<b>30</b>, 311&ndash;318 &ldquo;corrects&rdquo; the time for Knock Hill from 78.65
-to 18.65. It is unclear if this based on the original records.]
+<p>N.R. Draper  and H. Smith (1981)
+<em>Applied Regression Analysis.</em> Wiley, pp. 518&ndash;9.
 </p>
 
 
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>Venables, W. N. and Ripley, B. D. (1999)
+<em>Modern Applied Statistics with S-PLUS.</em> Third
+Edition. Springer.
 </p>
 
 

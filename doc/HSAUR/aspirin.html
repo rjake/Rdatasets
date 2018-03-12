@@ -1,65 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Aspirin Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 'colors()' in Luv space</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for aspirin"><tr><td>aspirin</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for luv_colours"><tr><td>luv_colours</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2> Aspirin Data </h2>
+<h2><code>colors()</code> in Luv space</h2>
 
 <h3>Description</h3>
 
-<p>Efficacy of Aspirin in preventing death after a myocardial infarct.
+<p>All built-in <code>colors()</code> translated into Luv colour space.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("aspirin")</pre>
+<pre>
+luv_colours
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 7 observations on the following 4 variables.
+<p>A data frame with 657 observations and 4 variables:
 </p>
 
 <dl>
-<dt><code>dp</code></dt><dd><p>number of deaths after placebo.</p>
+<dt>L,u,v</dt><dd><p>Position in Luv colour space</p>
 </dd>
-<dt><code>tp</code></dt><dd><p>total number subjects treated with placebo.</p>
-</dd>
-<dt><code>da</code></dt><dd><p>number of deaths after Aspirin.</p>
-</dd>
-<dt><code>ta</code></dt><dd><p>total number of subjects treated with Aspirin.</p>
+<dt>col</dt><dd><p>Colour name</p>
 </dd>
 </dl>
-
-
-
-<h3>Details</h3>
-
-<p>The data were collected for a meta-analysis
-of the effectiveness of Aspirin (versus placebo) in preventing 
-death after a myocardial infarction. 
-</p>
-
-
-<h3>Source</h3>
-
-<p>J. L. Fleiss (1993), The statistical basis of meta-analysis.
-<em>Statistical Methods in Medical Research</em> <b>2</b>, 
-121&ndash;145.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-
-  data("aspirin", package = "HSAUR")
-  aspirin
-
-</pre>
 
 
 </body></html>

@@ -1,65 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Aircraft Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rearrests of Juvenile Felons</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for aircraft"><tr><td>aircraft</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for rearrests"><tr><td>rearrests</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Aircraft Data</h2>
+<h2> Rearrests of Juvenile Felons </h2>
 
 <h3>Description</h3>
 
-<p>Aircraft Data, deals with 23 single-engine aircraft built
-over the years 1947-1979, from Office of Naval Research.
-The dependent variable is cost  (in units of \$100,000)
-and the explanatory variables are aspect ratio, lift-to-drag ratio,
-weight of plane (in pounds) and maximal thrust.
+<p>Rearrests of juventile felons by type of court in which they were tried.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(aircraft)</pre>
+<pre>data("rearrests")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 23 observations on the following 5 variables.
+<p>A two-way classification, see <code>table</code>.
 </p>
 
-<dl>
-<dt><code>X1</code></dt><dd><p>Aspect Ratio</p>
-</dd>
-<dt><code>X2</code></dt><dd><p>Lift-to-Drag Ratio</p>
-</dd>
-<dt><code>X3</code></dt><dd><p>Weight</p>
-</dd>
-<dt><code>X4</code></dt><dd><p>Thrust</p>
-</dd>
-<dt><code>Y</code></dt><dd><p>Cost</p>
-</dd>
-</dl>
 
+<h3>Details</h3>
+
+<p>The data (taken from Agresti, 1996) arise from a 
+sample of juveniles convicted of felony in Florida in 1987. Matched
+pairs were formed using criteria such as age and the number of
+previous offences. For each pair, one subject was handled in
+the juvenile court and the other was transferred to the adult
+court. Whether or not the juvenile was rearrested by the end 
+of 1988 was then noted. Here the question of interest is whether
+the true proportions rearrested were identical for the adult 
+and juvenile court assignments?
+</p>
 
 
 <h3>Source</h3>
 
-<p>P. J. Rousseeuw and A. M. Leroy (1987)
-<em>Robust Regression and Outlier Detection</em>;
-Wiley, page 154, table 22.
+<p>A. Agresti (1996). <em>An Introduction to Categorical Data Analysis</em>. 
+Wiley, New York.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(aircraft)
-summary( lm.airc &lt;-        lm(Y ~ ., data = aircraft))
-summary(rlm.airc &lt;- MASS::rlm(Y ~ ., data = aircraft))
 
-aircraft.x &lt;- data.matrix(aircraft[,1:4])
-c_air &lt;- covMcd(aircraft.x)
-c_air
+  data("rearrests", package = "HSAUR")
+  rearrests
+
 </pre>
 
 

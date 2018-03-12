@@ -1,61 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Road Accident Deaths in US States</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Batting Averages for 18 major league baseball players, 1970</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for road"><tr><td>road</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for EfronMorris"><tr><td>EfronMorris</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Road Accident Deaths in US States
-</h2>
+<h2>Batting Averages for 18 major league baseball players, 1970</h2>
 
 <h3>Description</h3>
 
-<p>A data frame with the annual deaths in road accidents for half
-the US states.
-</p>
+<p>Batting averages for 18 major league baseball players,
+first 45 at bats of the 1970 season.</p>
 
 
 <h3>Usage</h3>
 
-<pre>
-road
-</pre>
+<pre>data(EfronMorris)</pre>
 
 
 <h3>Format</h3>
 
-<p>Columns are:
-</p>
 
 <dl>
-<dt><code>state</code></dt><dd>
-<p>name.
-</p>
+<dt><code>name</code></dt><dd><p>character, name of player</p>
 </dd>
-<dt><code>deaths</code></dt><dd>
-<p>number of deaths.
-</p>
+<dt><code>team</code></dt><dd><p>character, team of player, abbreviated</p>
 </dd>
-<dt><code>drivers</code></dt><dd>
-<p>number of drivers (in 10,000s).
-</p>
+<dt><code>league</code></dt><dd><p>character, National League or American League</p>
 </dd>
-<dt><code>popden</code></dt><dd>
-<p>population density in people per square mile.
-</p>
+<dt><code>r</code></dt><dd><p>numeric, hits in 1st 45 at bats</p>
 </dd>
-<dt><code>rural</code></dt><dd>
-<p>length of rural roads, in 1000s of miles.
-</p>
+<dt><code>y</code></dt><dd><p>numeric, <code>r</code>/45, batting average over 1st
+45 at bats</p>
 </dd>
-<dt><code>temp</code></dt><dd>
-<p>average daily maximum temperature in January.
-</p>
+<dt><code>n</code></dt><dd><p>numeric, number of at bats, remainder of 1970
+season</p>
 </dd>
-<dt><code>fuel</code></dt><dd>
-<p>fuel consumption in 10,000,000 US gallons per year.
-</p>
+<dt><code>p</code></dt><dd><p>numeric, batting average over remainder of 1970 season</p>
 </dd>
 </dl>
 
@@ -63,8 +44,24 @@ road
 
 <h3>Source</h3>
 
-<p>Imperial College, London M.Sc. exercise
+<p>Efron, Bradley and Carl Morris. 1975. Data Analysis Using
+Stein's Estimator and Its Generalizations.  <em>Journal of the American
+Statistical Association</em>. 70:311-319.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(EfronMorris)
+attach(EfronMorris)
+plot(p~y,
+     xlim=range(p,y),
+     ylim=range(p,y),
+     xlab="Batting Average, 1st 45 at bats",
+     ylab="Batting Average, Remainder of Season")
+abline(0,1)
+</pre>
 
 
 </body></html>

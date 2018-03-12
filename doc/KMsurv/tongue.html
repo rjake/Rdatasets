@@ -1,34 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: data from Section 1.11</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Veteran's Administration Lung Cancer Trial</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for tongue"><tr><td>tongue</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for VA"><tr><td>VA</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>data from Section 1.11</h2>
+<h2>
+Veteran's Administration Lung Cancer Trial
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>tongue</code> data frame has 80 rows and 3 columns.
+<p>Veteran's Administration lung cancer trial from Kalbfleisch &amp; Prentice.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+VA
+</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with columns:
 </p>
 
 <dl>
-<dt>type</dt><dd>
-<p>Tumor DNA profile (1=Aneuploid Tumor, 2=Diploid Tumor)
+<dt><code>stime</code></dt><dd>
+<p>survival or follow-up time in days.
 </p>
 </dd>
-<dt>time</dt><dd>
-<p>Time to death or on-study time, weeks
+<dt><code>status</code></dt><dd>
+<p>dead or censored.
 </p>
 </dd>
-<dt>delta</dt><dd>
-<p>Death indicator (0=alive, 1=dead)
+<dt><code>treat</code></dt><dd>
+<p>treatment: standard or test.
+</p>
+</dd>
+<dt><code>age</code></dt><dd>
+<p>patient's age in years.
+</p>
+</dd>
+<dt><code>Karn</code></dt><dd>
+<p>Karnofsky score of patient's performance on a scale of 0 to 100.
+</p>
+</dd>
+<dt><code>diag.time</code></dt><dd>
+<p>times since diagnosis in months at entry to trial.
+</p>
+</dd>
+<dt><code>cell</code></dt><dd>
+<p>one of four cell types.
+</p>
+</dd>
+<dt><code>prior</code></dt><dd>
+<p>prior therapy?
 </p>
 </dd>
 </dl>
@@ -37,17 +66,17 @@
 
 <h3>Source</h3>
 
-<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
-and truncated data</em>, Springer.
-Sickle-Santanello et al. Cytometry 9 (1988): 594-599.
+<p>Kalbfleisch, J.D. and Prentice R.L. (1980)
+<em>The Statistical Analysis of Failure Time Data.</em>
+Wiley.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-data(tongue)
-</pre>
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
 
 
 </body></html>

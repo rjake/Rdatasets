@@ -1,91 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival Times and White Blood Counts for Leukaemia Patients</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Synthetic Classification Problem</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for leuk"><tr><td>leuk</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for synth.tr"><tr><td>synth.tr</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Survival Times and White Blood Counts for Leukaemia Patients
+Synthetic Classification Problem
 </h2>
 
 <h3>Description</h3>
 
-<p>A data frame of data from 33 leukaemia patients.
+<p>The <code>synth.tr</code> data frame has 250 rows and 3 columns.
+The <code>synth.te</code> data frame has 100 rows and 3 columns.
+It is intended that <code>synth.tr</code> be used from training and
+<code>synth.te</code> for testing.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-leuk
+synth.tr
+synth.te
 </pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with columns:
+<p>These data frames contains the following columns:
 </p>
 
 <dl>
-<dt><code>wbc</code></dt><dd>
-<p>white blood count.
+<dt><code>xs</code></dt><dd>
+<p>x-coordinate
 </p>
 </dd>
-<dt><code>ag</code></dt><dd>
-<p>a test result, <code>"present"</code> or <code>"absent"</code>.
+<dt><code>ys</code></dt><dd>
+<p>y-coordinate
 </p>
 </dd>
-<dt><code>time</code></dt><dd>
-<p>survival time in weeks.
+<dt><code>yc</code></dt><dd>
+<p>class, coded as 0 or 1.
 </p>
-</dd>
-</dl>
-
-
-
-<h3>Details</h3>
-
-<p>Survival times are given for 33 patients who died from acute
-myelogenous leukaemia.  Also measured was the patient's white blood cell
-count at the time of diagnosis.  The patients were also factored into 2
-groups according to the presence or absence of a morphologic
-characteristic of white blood cells. Patients termed AG positive were
-identified by the presence of Auer rods and/or significant granulation
-of the leukaemic cells in the bone marrow at the time of diagnosis.
-</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Cox, D. R. and Oakes, D. (1984) <em>Analysis of Survival Data</em>.
-Chapman &amp; Hall, p. 9.
+<p>Ripley, B.D. (1994)
+Neural networks and related methods for
+classification (with discussion).
+<em>Journal of the Royal Statistical Society series B</em>
+<b>56</b>, 409&ndash;456.
 </p>
-<p>Taken from
+<p>Ripley, B.D. (1996)
+<em>Pattern Recognition and Neural Networks.</em>
+Cambridge: Cambridge University Press.
 </p>
-<p>Feigl, P. &amp; Zelen, M. (1965) Estimation of exponential survival
-probabilities with concomitant information.
-<em>Biometrics</em> <b>21</b>, 826&ndash;838.
-</p>
-
-
-<h3>References</h3>
-
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-library(survival)
-plot(survfit(Surv(time) ~ ag, data = leuk), lty = 2:3, col = 2:3)
-
-# now Cox models
-leuk.cox &lt;- coxph(Surv(time) ~ ag + log(wbc), leuk)
-summary(leuk.cox)
-</pre>
 
 
 </body></html>

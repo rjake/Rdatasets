@@ -1,88 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lifeboats on the Titanic</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Olives</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Lifeboats"><tr><td>Lifeboats</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Olives"><tr><td>Olives</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Lifeboats on the Titanic</h2>
+<h2>
+Olives
+</h2>
 
 <h3>Description</h3>
 
-<p>Data from Mersey (1912) about the 18 (out of 20) lifeboats launched
-before the sinking of the S. S. Titanic.
+<p>Measurements of the pesticide fenthion in olive oil over time
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>data("Lifeboats")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 18 observations and 8 variables.
+<p>A dataset with 18 observations on the following 7 variables.
 </p>
 
-<dl>
-<dt>launch</dt><dd><p>launch time in <code>"POSIXt"</code> format.</p>
-</dd>
-<dt>side</dt><dd><p>factor.  Side of the boat.</p>
-</dd>
-<dt>boat</dt><dd><p>factor indicating the boat.</p>
-</dd>
-<dt>crew</dt><dd><p>number of male crew members on board.</p>
-</dd>
-<dt>men</dt><dd><p>number of men on board.</p>
-</dd>
-<dt>women</dt><dd><p>number of women (including female crew) on board.</p>
-</dd>
-<dt>total</dt><dd><p>total number of passengers.</p>
-</dd>
-<dt>cap</dt><dd><p>capacity of the boat.</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>SampleNumber</code> </td><td style="text-align: left;"> Code (1-6) for sample of olive oil</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Group</code> </td><td style="text-align: left;"> Code for group: <code>1</code> or <code>2</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Day</code> </td><td style="text-align: left;"> Time (in days) when sample was measured: <code>0</code>, <code>281</code>, or <code>365</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Fenthion</code> </td><td style="text-align: left;"> Amount of fenthion (pesticide)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>FenthionSulphoxide</code> </td><td style="text-align: left;"> Amount of fenthion sulfide</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>FenthionSulphone</code> </td><td style="text-align: left;"> Amount of fenthion sulphone</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Time</code> </td><td style="text-align: left;"> Code (0, 3, or 4) for the number of days</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
 
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>Fenthion is a pesticide used against the olive fruit fly in olive groves. It is toxic
+to humans so it is important that there be no residue left on the fruit or in olive oil that will be
+consumed. One theory was that if there is residue of the pesticide left in the olive oil, it would
+dissipate over time. Chemists set out to test that theory by taking a random sample of small
+amounts of olive oil with fenthion residue and measuring the amount of fenthion in the oil at three
+different times over the year - day 0, day 281 and day 365.
+</p>
 
 
 <h3>Source</h3>
 
-<p>M. Friendly (2000),
-Visualizing Categorical Data:
-<a href="http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/lifeboat.sas">http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/lifeboat.sas</a>
+<p>Data provided by Rosemary Roberts and discussed in &quot;Persistence of fenthion residues in olive oil&quot; by Chaido
+Lentza-Rizos, Elizabeth J. Avramides, and Rosemary A. Roberts in Pest Management Science, Vol. 40, Issue 1, Jan.
+1994, pp. 63-69.
 </p>
-
-
-<h3>References</h3>
-
-<p>L. Mersey (1912),
-Report on the loss of the &ldquo;Titanic&rdquo; (S. S.).
-Parliamentary command paper 6452.
-</p>
-<p>M. Friendly (2000),
-<em>Visualizing Categorical Data</em>.
-SAS Institute, Cary, NC.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data("Lifeboats")
-attach(Lifeboats)
-ternaryplot(
-  Lifeboats[,4:6],
-  pch = ifelse(side == "Port", 1, 19),
-  col = ifelse(side == "Port", "red", "blue"),
-  id  = ifelse(men / total &gt; 0.1, as.character(boat), NA),
-  prop_size = 2,
-  dimnames_position = "edge",
-  main = "Lifeboats on the Titanic"
-)
-grid_legend(0.8, 0.9, c(1, 19), c("red", "blue"),
-  c("Port", "Starboard"), title = "SIDE")
-detach(Lifeboats)
-</pre>
 
 
 </body></html>

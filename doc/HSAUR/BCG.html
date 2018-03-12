@@ -1,90 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: BCG Vaccine Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Midwest demographics</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for BCG"><tr><td>BCG</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for midwest"><tr><td>midwest</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2> BCG Vaccine Data </h2>
+<h2>Midwest demographics</h2>
 
 <h3>Description</h3>
 
-<p>A meta-analysis on the efficacy of BCG vaccination against tuberculosis (TB).
+<p>Demographic information of midwest counties
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("BCG")</pre>
+<pre>
+midwest
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 13 observations on the following 7 variables.
+<p>A data frame with 437 rows and 28 variables
 </p>
 
 <dl>
-<dt><code>Study</code></dt><dd><p>an identifier of the study.</p>
+<dt>PID</dt><dd></dd>
+<dt>county</dt><dd></dd>
+<dt>state</dt><dd></dd>
+<dt>area</dt><dd></dd>
+<dt>poptotal</dt><dd><p>Total population</p>
 </dd>
-<dt><code>BCGTB</code></dt><dd><p>the number of subjects suffering from TB after a BCG
-vaccination.</p>
+<dt>popdensity</dt><dd><p>Population density</p>
 </dd>
-<dt><code>BCGVacc</code></dt><dd><p>the number of subjects with BCG vaccination.</p>
+<dt>popwhite</dt><dd><p>Number of whites.</p>
 </dd>
-<dt><code>NoVaccTB</code></dt><dd><p>the number of subjects suffering from TB without
-BCG vaccination.</p>
+<dt>popblack</dt><dd><p>Number of blacks.</p>
 </dd>
-<dt><code>NoVacc</code></dt><dd><p>the total number of subjects without BCG
-vaccination.</p>
+<dt>popamerindian</dt><dd><p>Number of American Indians.</p>
 </dd>
-<dt><code>Latitude</code></dt><dd><p>geographic position of the place the study was
-undertaken.</p>
+<dt>popasian</dt><dd><p>Number of Asians.</p>
 </dd>
-<dt><code>Year</code></dt><dd><p>the year the study was undertaken.</p>
+<dt>popother</dt><dd><p>Number of other races.</p>
 </dd>
+<dt>percwhite</dt><dd><p>Percent white.</p>
+</dd>
+<dt>percblack</dt><dd><p>Percent black.</p>
+</dd>
+<dt>percamerindan</dt><dd><p>Percent American Indian.</p>
+</dd>
+<dt>percasian</dt><dd><p>Percent Asian.</p>
+</dd>
+<dt>percother</dt><dd><p>Percent other races.</p>
+</dd>
+<dt>popadults</dt><dd><p>Number of adults.</p>
+</dd>
+<dt>perchsd</dt><dd></dd>
+<dt>percollege</dt><dd><p>Percent college educated.</p>
+</dd>
+<dt>percprof</dt><dd><p>Percent profession.</p>
+</dd>
+<dt>poppovertyknown</dt><dd></dd>
+<dt>percpovertyknown</dt><dd></dd>
+<dt>percbelowpoverty</dt><dd></dd>
+<dt>percchildbelowpovert</dt><dd></dd>
+<dt>percadultpoverty</dt><dd></dd>
+<dt>percelderlypoverty</dt><dd></dd>
+<dt>inmetro</dt><dd><p>In a metro area.</p>
+</dd>
+<dt>category</dt><dd></dd>
 </dl>
-
-
-
-<h3>Details</h3>
-
-<p>Bacille Calmette Guerin (BCG) is the most widely used vaccination
-in the world. Developed in the 1930s and made of a live, weakened
-strain of Mycobacterium bovis, the BCG is the only vaccination
-available against tuberculosis today. Colditz et al. (1994)
-report  data from 13 clinical trials of BCG vaccine each investigating   
-its efficacy in the treatment of tuberculosis. The number of subjects 
-suffering from TB with or without BCG vaccination are 
-given here. 
-In addition, the data contains the values of two other 
-variables for each study, namely, the geographic latitude of
-the place where the study was undertaken and the year of publication.
-These two variables will be used to investigate and perhaps explain
-any heterogeneity among the studies.
-</p>
-
-
-<h3>Source</h3>
-
-<p>G. A. Colditz, T. F. Brewer, C. S. Berkey, M. E. Wilson,
-E. Burdick, H. V. Fineberg and F. Mosteller (1994),
-Efficacy of BCG vaccine in the prevention of tuberculosis.
-Meta-analysis of the published literature. 
-<em>Journal of the American Medical Association</em>, <b>271</b>(2),
-698&ndash;702.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-
-  data("BCG", package = "HSAUR")
-  boxplot(BCG$BCGTB/BCG$BCGVacc, BCG$NoVaccTB/BCG$NoVacc,
-          names = c("BCG Vaccination", "No Vaccination"), 
-          ylab = "Percent BCG cases")
-
-</pre>
 
 
 </body></html>

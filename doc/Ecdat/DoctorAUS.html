@@ -1,64 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Doctor Visits in Australia</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Prestige of Canadian Occupations</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for DoctorAUS"><tr><td>DoctorAUS</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Prestige"><tr><td>Prestige</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Doctor Visits in Australia </h2>
+<h2>Prestige of Canadian Occupations</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1977&ndash;1978
-</p>
-<p><em>number of observations</em> :  5190
-</p>
-<p><em>observation</em> :  individuals
-</p>
-<p><em>country</em> :  Australia
+<p>The <code>Prestige</code> data frame has 102 rows and 6 columns.
+The observations are occupations.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(DoctorAUS)</pre>
+<pre>
+Prestige
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>sex</dt><dd><p>sex</p>
+<dt>education</dt><dd>
+<p>Average education of occupational incumbents, years, in 1971. 
+</p>
 </dd>
-<dt>age</dt><dd><p>age</p>
+<dt>income</dt><dd>
+<p>Average income of incumbents, dollars, in 1971.
+</p>
 </dd>
-<dt>income</dt><dd><p>annual income in tens of thousands of dollars</p>
+<dt>women</dt><dd>
+<p>Percentage of incumbents who are women.
+</p>
 </dd>
-<dt>insurance</dt><dd><p>insurance contract (medlevy : medibanl levy, levyplus : private health insurance, freepoor : government insurance due to low income, freerepa : government insurance due to old age disability or veteran status</p>
+<dt>prestige</dt><dd>
+<p>Pineo-Porter prestige score for occupation, from a social survey
+conducted in the mid-1960s.
+</p>
 </dd>
-<dt>illness</dt><dd><p>number of illness in past 2 weeks</p>
+<dt>census</dt><dd>
+<p>Canadian Census occupational code.
+</p>
 </dd>
-<dt>actdays</dt><dd><p>number of days of reduced activity in past 2 weeks due to illness or injury</p>
-</dd>
-<dt>hscore</dt><dd><p>general health score using Goldberg's method (from 0 to 12)</p>
-</dd>
-<dt>chcond</dt><dd><p>chronic condition (np : no problem, la : limiting activity, nla : not limiting activity)</p>
-</dd>
-<dt>doctorco</dt><dd><p>number of consultations with a doctor or specialist in the past 2 weeks</p>
-</dd>
-<dt>nondocco</dt><dd><p> number of consultations with non-doctor health professionals (chemist, optician, physiotherapist, social worker, district community nurse, chiropodist or chiropractor) in the past 2 weeks</p>
-</dd>
-<dt>hospadmi</dt><dd><p> number of admissions to a hospital, psychiatric hospital, nursing or convalescent home in the past 12 months (up to 5 or more admissions which is coded as 5)</p>
-</dd>
-<dt>hospdays</dt><dd><p>number of nights in a hospital, etc. during most recent admission: taken, where appropriate, as the mid-point of the intervals 1, 2, 3, 4, 5, 6, 7, 8-14, 15-30, 31-60, 61-79 with 80 or more admissions coded as 80. If no admission in past 12 months then equals zero.</p>
-</dd>
-<dt>medecine</dt><dd><p>total number of prescribed and nonprescribed medications used in past 2 days</p>
-</dd>
-<dt>prescrib</dt><dd><p> total number of prescribed medications used in past 2 days</p>
-</dd>
-<dt>nonpresc</dt><dd><p>total number of nonprescribed medications used in past 2 days</p>
+<dt>type</dt><dd>
+<p>Type of occupation.
+A factor with levels (note: out of order):
+<code>bc</code>, Blue Collar;
+<code>prof</code>, Professional, Managerial, and Technical;
+<code>wc</code>, White Collar. 
+</p>
 </dd>
 </dl>
 
@@ -66,19 +62,24 @@
 
 <h3>Source</h3>
 
-<p>Cameron, A.C.  and  P.K.  Trivedi (1986) &ldquo;Econometric Models Based on Count Data: Comparisons and Applications of  Some Estimators and Tests&rdquo;, <em>Journal of Applied Econometrics</em>, <b>1</b>, 29-54..
+<p>Canada (1971)
+<em>Census of Canada</em>. Vol. 3, Part 6. Statistics Canada [pp. 19-1&ndash;19-21].
+</p>
+<p>Personal communication from B. Blishen, W. Carroll, and
+C. Moore, Departments of Sociology, York University and
+University of Victoria.
 </p>
 
 
 <h3>References</h3>
 
-<p>Cameron, A.C.  and   Trivedi P.K. (1998) <em>Regression analysis of count data</em>, Cambridge University Press, <a href="http://cameron.econ.ucdavis.edu/racd/racddata.html">http://cameron.econ.ucdavis.edu/racd/racddata.html</a>, chapter 3.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+</p>
 
 
 </body></html>

@@ -1,136 +1,110 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yearly batting records for all major league baseball players</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rochdale Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for baseball"><tr><td>baseball</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Rochdale"><tr><td>Rochdale</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Yearly batting records for all major league baseball players</h2>
+<h2>Rochdale Data</h2>
 
 <h3>Description</h3>
 
-<p>This data frame contains batting statistics for a subset of players
-collected from <a href="http://www.baseball-databank.org/">http://www.baseball-databank.org/</a>. There are a total
-of 21,699 records, covering 1,228 players from 1871 to 2007. Only players
-with more 15 seasons of play are included.
+<p>Information on 665 households of Rochdale, Lancashire, UK.
+The study was conducted to identify influence factors on economical
+activity of wives. 
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-baseball
+data("Rochdale")
 </pre>
 
 
 <h3>Format</h3>
 
-<p>A 21699 x 22 data frame</p>
-
-
-<h3>Variables</h3>
-
-<p>Variables:
+<p>A 8-dimensional array resulting from cross-tabulating 665 observations
+on 8 variables.  The variables and their levels are as follows:
 </p>
 
-<ul>
-<li><p> id, unique player id
-</p>
-</li>
-<li><p> year, year of data
-</p>
-</li>
-<li><p> stint
-</p>
-</li>
-<li><p> team, team played for
-</p>
-</li>
-<li><p> lg, league
-</p>
-</li>
-<li><p> g, number of games
-</p>
-</li>
-<li><p> ab, number of times at bat
-</p>
-</li>
-<li><p> r, number of runs
-</p>
-</li>
-<li><p> h, hits, times reached base because of a batted, fair ball without
-error by the defense
-</p>
-</li>
-<li><p> X2b, hits on which the batter reached second base safely
-</p>
-</li>
-<li><p> X3b, hits on which the batter reached third base safely
-</p>
-</li>
-<li><p> hr, number of home runs
-</p>
-</li>
-<li><p> rbi, runs batted in
-</p>
-</li>
-<li><p> sb, stolen bases
-</p>
-</li>
-<li><p> cs, caught stealing
-</p>
-</li>
-<li><p> bb, base on balls (walk)
-</p>
-</li>
-<li><p> so, strike outs
-</p>
-</li>
-<li><p> ibb, intentional base on balls
-</p>
-</li>
-<li><p> hbp, hits by pitch
-</p>
-</li>
-<li><p> sh, sacrifice hits
-</p>
-</li>
-<li><p> sf, sacrifice flies
-</p>
-</li>
-<li><p> gidp, ground into double play
-</p>
-</li></ul>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    1 </td><td style="text-align: left;"> EconActive </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    2 </td><td style="text-align: left;"> Age </td><td style="text-align: left;"> &lt;38, &gt;38 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    3 </td><td style="text-align: left;"> HusbandEmployed </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    4 </td><td style="text-align: left;"> Child </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    5 </td><td style="text-align: left;"> Education </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    6 </td><td style="text-align: left;"> HusbandEducation </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    7 </td><td style="text-align: left;"> Asian </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    8 </td><td style="text-align: left;"> HouseholdWorking </td><td style="text-align: left;"> yes, no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
 
+</table>
+
+
+
+<h3>Note</h3>
+
+<p>Many observations are missing: only 91 out of all 256 combinations
+contain information.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Whittaker (1990).
+</p>
 
 
 <h3>References</h3>
 
-<p><a href="http://www.baseball-databank.org/">http://www.baseball-databank.org/</a>
+<p>H. Hofmann (2003).
+Constructing and reading mosaicplots.
+<em>Computational Statistics &amp; Data Analysis</em>,
+<b>43</b>, 4, 565&ndash;580.
+</p>
+<p>J. Whittaker (1990),
+<em>Graphical Models on Applied Multivariate Statistics</em>,
+Wiley, New York.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-baberuth &lt;- subset(baseball, id == "ruthba01")
-baberuth$cyear &lt;- baberuth$year - min(baberuth$year) + 1
-
-calculate_cyear &lt;- function(df) {
-  mutate(df,
-    cyear = year - min(year),
-    cpercent = cyear / (max(year) - min(year))
-  )
-}
-
-baseball &lt;- ddply(baseball, .(id), calculate_cyear)
-baseball &lt;- subset(baseball, ab &gt;= 25)
-
-model &lt;- function(df) {
-  lm(rbi / ab ~ cyear, data=df)
-}
-model(baberuth)
-models &lt;- dlply(baseball, .(id), model)
+data("Rochdale")
+mosaic(Rochdale)
 </pre>
 
 

@@ -1,17 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Labor Supply Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Unemployment of Blue Collar Workers</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Mroz"><tr><td>Mroz</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Benefits"><tr><td>Benefits</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Labor Supply Data </h2>
+<h2>Unemployment of Blue Collar Workers </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section
+<p>a cross-section from 1972
 </p>
-<p><em>number of observations</em> :  753
+<p><em>number of observations</em> :  4877
 </p>
 <p><em>observation</em> :  individuals
 </p>
@@ -21,50 +21,50 @@
 
 <h3>Usage</h3>
 
-<pre>data(Mroz)</pre>
+<pre>data(Benefits)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A time serie containing :
 </p>
 
 <dl>
-<dt>work</dt><dd><p>participation in 1975 ?</p>
+<dt>stateur</dt><dd><p>state unemployment rate (in %)</p>
 </dd>
-<dt>hoursw</dt><dd><p>wife's hours of work in 1975</p>
+<dt>statemb</dt><dd><p>state maximum benefit level</p>
 </dd>
-<dt>child6</dt><dd><p>number of children less than 6 years old in household</p>
+<dt>state</dt><dd><p>state of residence code</p>
 </dd>
-<dt>child618</dt><dd><p>number of children between ages 6 and 18 in household</p>
+<dt>age</dt><dd><p>age in years</p>
 </dd>
-<dt>agew</dt><dd><p>wife's age</p>
+<dt>tenure</dt><dd><p>  years of tenure in job lost</p>
 </dd>
-<dt>educw</dt><dd><p>wife's educational attainment, in years</p>
+<dt>joblost</dt><dd><p>a factor with levels (slack\_work,position\_abolished,seasonal\_job\_ended,other)</p>
 </dd>
-<dt>hearnw</dt><dd><p>wife's average hourly earnings, in 1975 dollars</p>
+<dt>nwhite</dt><dd><p>non-white ?</p>
 </dd>
-<dt>wagew</dt><dd><p>wife's wage reported at the time of the 1976 interview  (not= 1975 estimated wage)</p>
+<dt>school12</dt><dd><p>more than 12 years of school ?</p>
 </dd>
-<dt>hoursh</dt><dd><p>husband's hours worked in 1975</p>
+<dt>sex</dt><dd><p>a factor with levels (male,female) </p>
 </dd>
-<dt>ageh</dt><dd><p>husband's age</p>
+<dt>bluecol</dt><dd><p>blue collar worker ?</p>
 </dd>
-<dt>educh</dt><dd><p>husband's educational attainment, in years</p>
+<dt>smsa</dt><dd><p>lives is smsa ?</p>
 </dd>
-<dt>wageh</dt><dd><p>husband's wage, in 1975 dollars</p>
+<dt>married</dt><dd><p>married ?</p>
 </dd>
-<dt>income</dt><dd><p>family income, in 1975 dollars</p>
+<dt>dkids</dt><dd><p>has kids ?</p>
 </dd>
-<dt>educwm</dt><dd><p>wife's mother's educational attainment, in years</p>
+<dt>dykids</dt><dd><p>has young kids (0-5 yrs) ?</p>
 </dd>
-<dt>educwf</dt><dd><p>wife's father's educational attainment, in years</p>
+<dt>yrdispl</dt><dd><p> year of job displacement (1982=1,..., 1991=10)</p>
 </dd>
-<dt>unemprate</dt><dd><p>unemployment rate in county of residence, in percentage points</p>
+<dt>rr</dt><dd><p>replacement rate</p>
 </dd>
-<dt>city</dt><dd><p>lives in large city (SMSA) ?</p>
+<dt>head</dt><dd><p>is  head of household ?</p>
 </dd>
-<dt>experience</dt><dd><p>actual years of wife's previous labor market experience</p>
+<dt>ui</dt><dd><p> applied for (and received) UI benefits ?</p>
 </dd>
 </dl>
 
@@ -72,21 +72,23 @@
 
 <h3>Source</h3>
 
-<p>Mroz, T. (1987) &ldquo;The sensitivity of an empirical model of married women's hours of work to economic and statistical assumptions&rdquo;, <em>Econometrica</em>, <b>55</b>, 765-799.
-</p>
-<p>1976 Panel Study of Income Dynamics.
+<p>McCall, B.P. (1995) &ldquo;The impact of unemployment insurance benefit levels on recipiency&rdquo;, <em>Journal of Business and Economic Statistics</em>, <b>13</b>, 189&ndash;198.
 </p>
 
 
 <h3>References</h3>
 
-<p>Greene, W.H. (2003) <em>Econometric Analysis</em>, Prentice Hall, <a href="http://www.prenhall.com/greene/greene1.html">http://www.prenhall.com/greene/greene1.html</a>, Table F4.1.
+<p>Verbeek, Marno (2004) <em>A Guide to Modern Econometrics</em>, John Wiley and Sons, chapter 7.
+</p>
+<p>Journal of Business Economics and Statistics web site : <a href="http://amstat.tandfonline.com/loi/ubes20">http://amstat.tandfonline.com/loi/ubes20</a>.
 </p>
 
 
 <h3>See Also</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
+</p>
+<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

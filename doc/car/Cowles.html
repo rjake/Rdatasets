@@ -1,49 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cowles and Davis's Data on Volunteering</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Average Yearly Temperatures in New Haven</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Cowles"><tr><td>Cowles</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for nhtemp"><tr><td>nhtemp</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Cowles and Davis's Data on Volunteering</h2>
+<h2>Average Yearly Temperatures in New Haven</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Cowles</code> data frame has 1421 rows and 4 columns.
-These data come from a study of the personality determinants
-of volunteering for psychological research.
+<p>The mean annual temperature in degrees Fahrenheit in New Haven,
+Connecticut, from 1912 to 1971.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>Cowles</pre>
+<pre>nhtemp</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
-</p>
-
-<dl>
-<dt>neuroticism</dt><dd><p>scale from Eysenck personality inventory</p>
-</dd>
-<dt>extraversion</dt><dd><p>scale from Eysenck personality inventory</p>
-</dd>
-<dt>sex</dt><dd><p>a factor with levels: <code>female</code>; <code>male</code></p>
-</dd>
-<dt>volunteer</dt><dd><p>volunteeing, a factor with levels: <code>no</code>; <code>yes</code></p>
-</dd>
-</dl>
-
+<p>A time series of 60 observations.</p>
 
 
 <h3>Source</h3>
 
-<p>Cowles, M. and C. Davis (1987)
-The subject matter of psychology: Volunteers.
-<em>British Journal of Social Psychology</em> <b>26</b>, 97&ndash;102.
+<p>Vaux, J. E. and Brinker, N. B. (1972)
+<em>Cycles</em>, <b>1972</b>, 117&ndash;121.
 </p>
+
+
+<h3>References</h3>
+
+<p>McNeil, D. R. (1977)
+<em>Interactive Data Analysis</em>.
+New York: Wiley.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(stats); require(graphics)
+plot(nhtemp, main = "nhtemp data",
+  ylab = "Mean annual temperature in New Haven, CT (deg. F)")
+</pre>
 
 
 </body></html>

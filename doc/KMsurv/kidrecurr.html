@@ -1,48 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on 38 individuals using a kidney dialysis machine</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Blood Pressure in Rabbits</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for kidrecurr"><tr><td>kidrecurr</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Rabbit"><tr><td>Rabbit</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Data on 38 individuals using a kidney dialysis machine</h2>
+<h2>
+Blood Pressure in Rabbits
+</h2>
 
 <h3>Description</h3>
 
-<p>Data on 38 individuals using a kidney dialysis machine See Problem 13.5.2
+<p>Five rabbits were studied on two occasions, after treatment with
+saline (control) and after treatment with the <i>5-HT_3</i> antagonist MDL
+72222.  After each treatment ascending doses of phenylbiguanide were
+injected intravenously at 10 minute intervals and the responses of
+mean blood pressure measured.  The goal was to test whether the
+cardiogenic chemoreflex elicited by phenylbiguanide depends on the
+activation of <i>5-HT_3</i> receptors.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(kidrecurr)</pre>
+<pre>
+Rabbit
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 38 observations on the following 10 variables.
+<p>This data frame contains 60 rows and the following variables:
 </p>
 
 <dl>
-<dt>patient</dt><dd><p>Patient number</p>
+<dt><code>BPchange</code></dt><dd>
+<p>change in blood pressure relative to the start of the experiment.
+</p>
 </dd>
-<dt>time1</dt><dd><p>Time one of recurrence of infection, days</p>
+<dt><code>Dose</code></dt><dd>
+<p>dose of Phenylbiguanide in micrograms.
+</p>
 </dd>
-<dt>infect1</dt><dd><p>Indicator infection one (1=yes, 0=no)</p>
+<dt><code>Run</code></dt><dd>
+<p>label of run (<code>"C1"</code> to <code>"C5"</code>, then <code>"M1"</code> to <code>"M5"</code>).
+</p>
 </dd>
-<dt>time2</dt><dd><p>Time two of recurrence of infection, days</p>
+<dt><code>Treatment</code></dt><dd>
+<p>placebo or the <i>5-HT_3</i> antagonist MDL 72222.
+</p>
 </dd>
-<dt>infect2</dt><dd><p>Indicator infection two (1=yes, 0=no)</p>
-</dd>
-<dt>age</dt><dd><p>Patient's age</p>
-</dd>
-<dt>gender</dt><dd><p>Patient's gender</p>
-</dd>
-<dt>gn</dt><dd><p>Disease type GN (1=yes, 0=no)</p>
-</dd>
-<dt>an</dt><dd><p>Disease type AN (1=yes, 0=no)</p>
-</dd>
-<dt>pkd</dt><dd><p>Disease type PKD (1=yes, 0=no)</p>
+<dt><code>Animal</code></dt><dd>
+<p>label of animal used (<code>"R1"</code> to <code>"R5"</code>).
+</p>
 </dd>
 </dl>
 
@@ -50,17 +60,20 @@
 
 <h3>Source</h3>
 
-<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
-and truncated data</em>, Springer.
-McGilchrist and Aisbett 47 (1991):461-466.
+<p>J. Ludbrook (1994)
+Repeated measurements and multiple comparisons in cardiovascular research.
+<em>Cardiovascular Research</em>
+<b>28</b>, 303&ndash;311.<br />
+[The numerical data are not in the paper but were supplied by
+Professor Ludbrook]
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-data(kidrecurr)
-</pre>
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
 
 
 </body></html>

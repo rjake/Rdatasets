@@ -1,42 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Example Data for the Crossover Encouragement Design</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Petersen's Simulated Data for Assessing Clustered Standard...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for CEDdata"><tr><td>CEDdata</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for PetersenCL"><tr><td>PetersenCL</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Example Data for the Crossover Encouragement Design</h2>
+<h2>Petersen's Simulated Data for Assessing Clustered Standard Errors</h2>
 
 <h3>Description</h3>
 
-<p>A randomly generated dataset containing 2000 rows and 7 columns with no missing values.
+<p>Artificial balanced panel data set from Petersen (2009) for
+illustrating and benchmarking clustered standard errors.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>CEDdata</pre>
+<pre>data("PetersenCL")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing the following variables, which are interpreted as results from a hypothetical randomized trial employing the crossover encouragement design. 
+<p>A data frame containing 5000 observations on 4 variables.
 </p>
 
 <dl>
-<dt>T1:</dt><dd><p> The binary treatment indicator in the first stage.</p>
+<dt>firm</dt><dd><p>integer. Firm identifier (500 firms).</p>
 </dd>
-<dt>M1:</dt><dd><p> The binary mediator variable recorded in the first stage.</p>
+<dt>year</dt><dd><p>integer. Time variable (10 years per firm).</p>
 </dd>
-<dt>Y1:</dt><dd><p> The binary outcome variable recorded in the first stage.</p>
+<dt>x</dt><dd><p>numeric. Independent regressor variable.</p>
 </dd>
-<dt>T2:</dt><dd><p> The binary treatment in the second stage. Equal to 1 - T1 by design.</p>
-</dd>
-<dt>Z:</dt><dd><p> The binary encouragement indicator for the second stage.</p>
-</dd>
-<dt>M2:</dt><dd><p> The binary mediator recorded in the second stage.</p>
-</dd>
-<dt>Y2:</dt><dd><p> The binary outcome recorded in the second stage.</p>
+<dt>y</dt><dd><p>numeric. Dependent response variable.</p>
 </dd>
 </dl>
 
@@ -44,13 +39,26 @@
 
 <h3>Details</h3>
 
-<p>Note that all the observed responses are generated from an underlying distribution of potential outcomes and mediators (not shown in this dataset) satisfying the assumptions described in Imai, Tingley and Yamamoto (2012). 
+<p>This simulated data set was created to illustrate and benchmark clustered standard errors.
+The residual and the regressor variable both contain a firm effect, but no year effect.
+Thus, standard errors clustered by firm are different from the OLS standard errors
+and similarly double-clustered standard errors (by firm and year) are different from
+the standard errors clustered by year.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Imai, K., Tingley, D. and Yamamoto, T. (2012) Experimental Designs for Identifying Causal Mechanisms. Journal of the Royal Statistical Society, Series A (Statistics in Society)
+<p><a href="http://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/test_data.htm">http://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/test_data.htm</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Petersen MA (2009).
+&ldquo;Estimating Standard Errors in Finance Panel Data Sets: Comparing Approaches&rdquo;,
+<em>The Review of Financial Studies</em>, <b>22</b>(1), 435&ndash;480.
+doi: <a href="http://doi.org/10.1093/rfs/hhn053">10.1093/rfs/hhn053</a>
 </p>
 
 

@@ -1,27 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Official Secrecy of the United States Government</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Boston HMDA Data Set</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for USclassifiedDocuments"><tr><td>USclassifiedDocuments</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Hmda"><tr><td>Hmda</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Official Secrecy of the United States Government 
-</h2>
+<h2>The Boston HMDA Data Set </h2>
 
 <h3>Description</h3>
 
-<p>Data on classification activity of the United States government.  
+<p>a cross-section from 1997-1998
 </p>
-<p>Fitzpatrick (2013) notes that the dramatic jump in derivative classification activity (<code>DerivClassActivity</code>) that occurred in 2009 coincided with &quot;New guidance issued to include electronic environment&quot;.  Apart from the jump in 2009, the <code>DerivClassActivity</code> tended to increase by roughly 12 percent per year (with a standard deviation of the increase in the natural logarithm of <code>DerivClassActivity</code> of 0.18).  
+<p><em>number of observations</em> : 2381
+<em>observation</em> : individuals
+<em>country</em> : United States
+</p>
+<p>In package version 0.2-9 and earlier this dataset was called Hdma.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-data(USclassifiedDocuments)
-</pre>
+<pre>data(Hmda)</pre>
 
 
 <h3>Format</h3>
@@ -30,83 +30,53 @@ data(USclassifiedDocuments)
 </p>
 
 <dl>
-<dt>year</dt><dd>
-<p>the calendar year 
-</p>
+<dt>dir</dt><dd><p>debt payments to total income ratio</p>
 </dd>
-<dt>OCAuthority</dt><dd>
-<p>Number of people in the government designated as Original Classification Authorities for the indicated <code>year</code>.  
-</p>
+<dt>hir</dt><dd><p>housing expenses to income ratio</p>
 </dd>
-<dt>OCActivity</dt><dd>
-<p>Original classification activity for the indicated year:  These are the number of documents created with an original classification, i.e., so designated by an official Original Classification Authority.  
-</p>
+<dt>lvr</dt><dd><p>ratio of size of loan to assessed value of property</p>
 </dd>
-<dt>TenYearDeclass</dt><dd>
-<p>Percent of <code>OCActivity</code> covered by the 10 year declassification rules.  
-</p>
+<dt>ccs</dt><dd><p>consumer credit score from 1 to 6 (a low value being a good score) </p>
 </dd>
-<dt>DerivClassActivity</dt><dd>
-<p>Derivative classification activity for the indicated year:  
-These are the number of documents created that claim another 
-document as the authority for classification.  
-</p>
+<dt>mcs</dt><dd><p>mortgage credit score from 1 to 4 (a low value being a good score) </p>
+</dd>
+<dt>pbcr</dt><dd><p>public bad credit record ?</p>
+</dd>
+<dt>dmi</dt><dd><p>denied mortgage insurance ?</p>
+</dd>
+<dt>self</dt><dd><p>self employed ?</p>
+</dd>
+<dt>single</dt><dd><p>is the applicant  single ?</p>
+</dd>
+<dt>uria</dt><dd><p>1989 Massachusetts unemployment rate in the applicant's industry</p>
+</dd>
+<dt>condominium</dt><dd><p>is unit a condominium ? (was called comdominiom in version 0.2-9 and earlier versions of the package)</p>
+</dd>
+<dt>black</dt><dd><p>is the applicant black ?</p>
+</dd>
+<dt>deny</dt><dd><p>mortgage application denied ?</p>
 </dd>
 </dl>
-    
 
-
-<h3>Details</h3>
-
-<p>The lag 1 autocorrrelation of the first difference of the 
-logarithms of <code>DerivClassActivity</code> through 2008 is 
-<code>-0.52</code>.  However, because there are only 13 numbers 
-(12 differences), this negative correlation is not statistically 
-significant.  
-</p>
 
 
 <h3>Source</h3>
 
-<p>Fitzpatrick, John P. (2013) 
-<em>Annual Report to the President for 2012</em>, United States Information Security Oversight Office, National Archives and Record Administration, June 20, 2013 (https://www.archives.gov/isoo/reports)
-
-
+<p>Federal Reserve Bank of Boston.
+</p>
+<p>Munnell, Alicia H.,  Geoffrey M.B.   Tootell,  Lynne E.   Browne and  James  McEneaney (1996) &ldquo;Mortgage lending in Boston: Interpreting HMDA data&rdquo;, <em>American Economic Review</em>, 25-53.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-##
-## 1.  plot DerivClassActivity 
-##
-plot(DerivClassActivity~year, USclassifiedDocuments)
-#  Exponential growth?  
+<p>Stock, James H.  and  Mark W.  Watson (2003) <em>Introduction to Econometrics</em>, Addison-Wesley Educational Publishers, chapter 9.
+</p>
 
-plot(DerivClassActivity~year, USclassifiedDocuments, 
-     log='y')
-# A jump in 2009 as discussed by Fitzpatrick (2013).  
-# Otherwise plausibly a straight line.   
 
-##
-## 2.  First difference? 
-##
-plot(diff(log(DerivClassActivity))~year[-1], 
-     USclassifiedDocuments)
-# Jump in 2009 but otherwise on distribution 
+<h3>See Also</h3>
 
-##
-## 3.  autocorrelation?  
-##
-sel &lt;- with(USclassifiedDocuments, 
-            (1995 &lt; year) &amp; (year &lt; 2009) )
-acf(diff(log(USclassifiedDocuments$
-             DerivClassActivity[sel])))
-# lag 1 autocorrelation = (-0.52).  
-# However, with only 12 numbers, 
-# this is not statistically significant.  
-</pre>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

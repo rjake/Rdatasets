@@ -1,42 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Batting Averages for 18 major league baseball players, 1970</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Von Bortkiewicz Horse Kicks Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for EfronMorris"><tr><td>EfronMorris</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for VonBort"><tr><td>VonBort</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Batting Averages for 18 major league baseball players, 1970</h2>
+<h2>Von Bortkiewicz Horse Kicks Data</h2>
 
 <h3>Description</h3>
 
-<p>Batting averages for 18 major league baseball players,
-first 45 at bats of the 1970 season.</p>
+<p>Data from von Bortkiewicz (1898), given by Andrews \&amp; Herzberg (1985),
+on number of deaths by horse or mule kicks in 14 corps of the Prussian
+army.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>data(EfronMorris)</pre>
+<pre>
+data("VonBort")
+</pre>
 
 
 <h3>Format</h3>
 
+<p>A data frame with 280 observations and 4 variables.
+</p>
 
 <dl>
-<dt><code>name</code></dt><dd><p>character, name of player</p>
+<dt>deaths</dt><dd><p>number of deaths.</p>
 </dd>
-<dt><code>team</code></dt><dd><p>character, team of player, abbreviated</p>
+<dt>year</dt><dd><p>year of the deaths.</p>
 </dd>
-<dt><code>league</code></dt><dd><p>character, National League or American League</p>
+<dt>corps</dt><dd><p>factor indicating the corps.</p>
 </dd>
-<dt><code>r</code></dt><dd><p>numeric, hits in 1st 45 at bats</p>
-</dd>
-<dt><code>y</code></dt><dd><p>numeric, <code>r</code>/45, batting average over 1st
-45 at bats</p>
-</dd>
-<dt><code>n</code></dt><dd><p>numeric, number of at bats, remainder of 1970
-season</p>
-</dd>
-<dt><code>p</code></dt><dd><p>numeric, batting average over remainder of 1970 season</p>
+<dt>fisher</dt><dd><p>factor indicating whether the corresponding corps was
+considered by Fisher (1925) or not.</p>
 </dd>
 </dl>
 
@@ -44,23 +43,45 @@ season</p>
 
 <h3>Source</h3>
 
-<p>Efron, Bradley and Carl Morris. 1975. Data Analysis Using
-Stein's Estimator and Its Generalizations.  <em>Journal of the American
-Statistical Association</em>. 70:311-319.
+<p>Michael Friendly (2000),
+Visualizing Categorical Data:
+<a href="http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/vonbort.sas">http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/vonbort.sas</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>D. F. Andrews \&amp; A. M. Herzberg (1985),
+<em>Data: A Collection of Problems from Many Fields for the Student
+and Research Worker</em>.
+Springer-Verlag, New York, NY.
+</p>
+<p>R. A. Fisher (1925),
+<em>Statistical Methods for Research Workers</em>.
+Oliver &amp; Boyd, London.
+</p>
+<p>L. von Bortkiewicz (1898),
+<em>Das Gesetz der kleinen Zahlen</em>.
+Teubner, Leipzig.
+</p>
+<p>M. Friendly (2000),
+<em>Visualizing Categorical Data</em>.
+SAS Institute, Cary, NC.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>HorseKicks</code> for a popular subsample.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(EfronMorris)
-attach(EfronMorris)
-plot(p~y,
-     xlim=range(p,y),
-     ylim=range(p,y),
-     xlab="Batting Average, 1st 45 at bats",
-     ylab="Batting Average, Remainder of Season")
-abline(0,1)
+data("VonBort")
+## HorseKicks data
+xtabs(~ deaths, data = VonBort, subset = fisher == "yes")
 </pre>
 
 

@@ -1,78 +1,81 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: U.S. Senate vote on the use of force against Iraq, 2002.</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Weldon's Dice Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for iraqVote"><tr><td>iraqVote</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for WeldonDice"><tr><td>WeldonDice</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-U.S. Senate vote on the use of force against Iraq, 2002.	
-</h2>
+<h2>Weldon's Dice Data</h2>
 
 <h3>Description</h3>
 
-<p>On October 11, 2002, the United States Senate
-voted 77-23 to authorize the use of military force against Iraq.  This data set lists the &ldquo;Ayes&rdquo; and &ldquo;Nays&rdquo; for each Senator and some covariates.
+<p>Data from Pearson (1900) about the frequency of 5s and 6s in throws of
+12 dice.  Weldon tossed the dice 26,306 times and reported his results
+in a letter to Francis Galton on 1894-02-02.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(iraqVote)</pre>
+<pre>
+data("WeldonDice")
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 100 observations on the following 6 variables.
+<p>A 1-way table giving the frequency of a 5 or a 6 in 26,306 throws of
+12 dice where 10 indicates &lsquo;10 or more&rsquo; 5s or 6s.  The variable
+and its levels are
 </p>
 
-<dl>
-<dt><code>y</code></dt><dd><p>a numeric vector, the recorded vote (1 if Aye, 0 if Nay)</p>
-</dd>
-<dt><code>state.abb</code></dt><dd><p>two letter abbreviation for each state</p>
-</dd>
-<dt><code>name</code></dt><dd><p>senator name, party and state, e.g., <code>AKAKA (D HI)</code></p>
-</dd>
-<dt><code>rep</code></dt><dd><p>logical, <code>TRUE</code> for Republican senators</p>
-</dd>
-<dt><code>state.name</code></dt><dd><p>name of state</p>
-</dd>
-<dt><code>gorevote</code></dt><dd><p>numeric, the vote share recorded by Al Gore in the corresponding state in the 2000 Presidential election</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    1 </td><td style="text-align: left;"> n56 </td><td style="text-align: left;"> 0, 1, ..., 10 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
 
+</table>
 
-
-<h3>Details</h3>
-
-<p>The only Republican to vote against the resolution was Lincoln
-Chafee (Rhode Island); Democrats split 29-22 in favor of the
-resolution.
-</p>
 
 
 <h3>Source</h3>
 
-<p>Keith Poole, 107th Senate Roll Call Data. <a href="ftp://voteview.com/sen107kh.ord">ftp://voteview.com/sen107kh.ord</a>  The Iraq vote is vote number 617.
-</p>
-<p>David Leip's Atlas of U.S. Presidential Elections.  <a href="http://uselectionatlas.org">http://uselectionatlas.org</a> 
+<p>M. Friendly (2000),
+Visualizing Categorical Data,
+pages 20&ndash;21.
 </p>
 
 
 <h3>References</h3>
 
-<p>Jackman, Simon. 2009.  <em>Bayesian Analysis for the Social Sciences</em>.  Wiley: Chichester.  Example 8.3.
+<p>K. Pearson (1900),
+On the criterion that a given system of deviations from the probable
+in the case of a correlated system of variables is such that it can be
+reasonably supposed to have arisen by random sampling,
+<em>Philosophical Magazine</em>, <b>50</b> (5th series), 157&ndash;175.
+</p>
+<p>M. Friendly (2000),
+<em>Visualizing Categorical Data</em>.
+SAS Institute, Cary, NC.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(iraqVote)
-## probit model
-glm1 &lt;- glm(y ~ gorevote + rep,
-            data=iraqVote,
-            family=binomial(link=probit))
+data("WeldonDice")
+gf &lt;- goodfit(WeldonDice, type = "binomial")
+summary(gf)
+plot(gf)
 </pre>
 
 

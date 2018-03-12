@@ -1,52 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data from an Oats Field Trial</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Purchasing Power Parity and other parity relationships</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for oats"><tr><td>oats</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Parity"><tr><td>Parity</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Data from an Oats Field Trial
-</h2>
+<h2>Purchasing Power Parity and other parity relationships</h2>
 
 <h3>Description</h3>
 
-<p>The yield of oats from a split-plot field trial using three varieties and
-four levels of manurial treatment.  The experiment was laid out in 6 blocks
-of 3 main plots, each split into 4 sub-plots.  The varieties were applied
-to the main plots and the manurial treatments to the sub-plots.
+<p>A panel of 104 quarterly observations from 1973Q1 to 1998Q4
+</p>
+<p><em>total number of observations</em> : 1768
+</p>
+<p><em>observation</em> :  country
+</p>
+<p><em>country</em> :  OECD
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-oats
-</pre>
+<pre>data(Parity)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame containing :
 </p>
 
 <dl>
-<dt><code>B</code></dt><dd>
-<p>Blocks, levels I, II, III, IV, V and VI.
-</p>
+<dt>country</dt><dd><p>country codes: a factor with 17 levels</p>
 </dd>
-<dt><code>V</code></dt><dd>
-<p>Varieties, 3 levels.
-</p>
+<dt>time</dt><dd><p>the quarter index, 1973Q1-1998Q4</p>
 </dd>
-<dt><code>N</code></dt><dd>
-<p>Nitrogen (manurial) treatment, levels  0.0cwt, 0.2cwt, 0.4cwt and 0.6cwt,
-showing the application in cwt/acre.
-</p>
+<dt>ls</dt><dd><p>log spot exchange rate vs. USD</p>
 </dd>
-<dt><code>Y</code></dt><dd>
-<p>Yields in 1/4lbs per sub-plot, each of area 1/80 acre.
-</p>
+<dt>lp</dt><dd><p>log price level</p>
+</dd>
+<dt>is</dt><dd><p>short term interest rate</p>
+</dd>
+<dt>il</dt><dd><p>long term interest rate</p>
+</dd>
+<dt>ld</dt><dd><p>log price differential vs. USA</p>
+</dd>
+<dt>uis</dt><dd><p>U.S. short term interest rate</p>
+</dd>
+<dt>uil</dt><dd><p>U.S. long term interest rate</p>
 </dd>
 </dl>
 
@@ -54,42 +54,22 @@ showing the application in cwt/acre.
 
 <h3>Source</h3>
 
-<p>Yates, F. (1935) Complex experiments,
-<em>Journal of the Royal Statistical Society Suppl.</em>
-<b>2</b>, 181&ndash;247.
-</p>
-<p>Also given in
-Yates, F. (1970)
-<em>Experimental design: Selected papers of Frank Yates, C.B.E, F.R.S.</em>
-London: Griffin.
+<p>Coakley, J., Fuertes, A. M., and Smith, R. (2006) &ldquo;Unobserved
+heterogeneity in panel time series models&rdquo;, <em>Computational
+Statistics &amp; Data Analysis</em>, <b>50</b>(9), 2361&ndash;2380.
 </p>
 
 
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>Coakley, J., Fuertes, A. M., and Smith, R. (2006) &ldquo;Unobserved
+heterogeneity in panel time series models&rdquo;, <em>Computational
+Statistics &amp; Data Analysis</em>, <b>50</b>(9), 2361&ndash;2380.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-oats$Nf &lt;- ordered(oats$N, levels = sort(levels(oats$N)))
-oats.aov &lt;- aov(Y ~ Nf*V + Error(B/V), data = oats, qr = TRUE)
-summary(oats.aov)
-summary(oats.aov, split = list(Nf=list(L=1, Dev=2:3)))
-par(mfrow = c(1,2), pty = "s")
-plot(fitted(oats.aov[[4]]), studres(oats.aov[[4]]))
-abline(h = 0, lty = 2)
-oats.pr &lt;- proj(oats.aov)
-qqnorm(oats.pr[[4]][,"Residuals"], ylab = "Stratum 4 residuals")
-qqline(oats.pr[[4]][,"Residuals"])
-
-par(mfrow = c(1,1), pty = "m")
-oats.aov2 &lt;- aov(Y ~ N + V + Error(B/V), data = oats, qr = TRUE)
-model.tables(oats.aov2, type = "means", se = TRUE)
-</pre>
+<p>Driscoll, J. C., and Kraay, A. C. (1998). &ldquo;Consistent
+covariance matrix estimation with spatially dependent panel data&rdquo;,
+<em>Review of Economics and Statistics</em>, <b>80</b>(4), 549&ndash;560.
+</p>
 
 
 </body></html>

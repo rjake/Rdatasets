@@ -1,66 +1,221 @@
-"","body","brain"
-"Lesser short-tailed shrew",0.005,0.14
-"Little brown bat",0.01,0.25
-"Big brown bat",0.023,0.3
-"Mouse",0.023,0.4
-"Musk shrew",0.048,0.33
-"Star-nosed mole",0.06,1
-"E. American mole",0.075,1.2
-"Ground squirrel",0.101,4
-"Tree shrew",0.104,2.5
-"Golden hamster",0.12,1
-"Mole",0.122,3
-"Galago",0.2,5
-"Rat",0.28,1.9
-"Chinchilla",0.425,6.4
-"Owl monkey",0.48,15.5
-"Desert hedgehog",0.55,2.4
-"Rock hyrax-a",0.75,12.3
-"European hedgehog",0.785,3.5
-"Tenrec",0.9,2.6
-"Artic ground squirrel",0.92,5.7
-"African giant pouched rat",1,6.6
-"Guinea pig",1.04,5.5
-"Mountain beaver",1.35,8.1
-"Slow loris",1.4,12.5
-"Genet",1.41,17.5
-"Phalanger",1.62,11.4
-"N.A. opossum",1.7,6.3
-"Tree hyrax",2,12.3
-"Rabbit",2.5,12.1
-"Echidna",3,25
-"Cat",3.3,25.6
-"Artic fox",3.385,44.5
-"Water opossum",3.5,3.9
-"Nine-banded armadillo",3.5,10.8
-"Rock hyrax-b",3.6,21
-"Yellow-bellied marmot",4.05,17
-"Verbet",4.19,58
-"Red fox",4.235,50.4
-"Raccoon",4.288,39.2
-"Rhesus monkey",6.8,179
-"Potar monkey",10,115
-"Baboon",10.55,179.5
-"Roe deer",14.83,98.2
-"Goat",27.66,115
-"Kangaroo",35,56
-"Grey wolf",36.33,119.5
-"Chimpanzee",52.16,440
-"Sheep",55.5,175
-"Giant armadillo",60,81
-"Human",62,1320
-"Grey seal",85,325
-"Jaguar",100,157
-"Brazilian tapir",160,169
-"Donkey",187.1,419
-"Pig",192,180
-"Gorilla",207,406
-"Okapi",250,490
-"Cow",465,423
-"Horse",521,655
-"Giraffe",529,680
-"Asian elephant",2547,4603
-"African elephant",6654,5712
-"Triceratops",9400,70
-"Dipliodocus",11700,50
-"Brachiosaurus",87000,154.5
+"","subject","onset","disorder","month"
+"1","1","< 20 yrs","present",0
+"45","1","< 20 yrs","present",2
+"89","1","< 20 yrs","absent",6
+"133","1","< 20 yrs","absent",8
+"177","1","< 20 yrs","absent",10
+"2","2","> 20 yrs","absent",0
+"46","2","> 20 yrs","absent",2
+"90","2","> 20 yrs","absent",6
+"134","2","> 20 yrs","absent",8
+"178","2","> 20 yrs","absent",10
+"3","3","< 20 yrs","present",0
+"47","3","< 20 yrs","present",2
+"91","3","< 20 yrs","absent",6
+"135","3","< 20 yrs","absent",8
+"179","3","< 20 yrs","absent",10
+"4","4","< 20 yrs","absent",0
+"48","4","< 20 yrs","absent",2
+"92","4","< 20 yrs","absent",6
+"136","4","< 20 yrs","absent",8
+"180","4","< 20 yrs","absent",10
+"5","5","< 20 yrs","present",0
+"49","5","< 20 yrs","present",2
+"93","5","< 20 yrs","present",6
+"137","5","< 20 yrs","present",8
+"181","5","< 20 yrs","present",10
+"6","6","< 20 yrs","present",0
+"50","6","< 20 yrs","present",2
+"94","6","< 20 yrs","absent",6
+"138","6","< 20 yrs","absent",8
+"182","6","< 20 yrs","absent",10
+"7","7","< 20 yrs","present",0
+"51","7","< 20 yrs","absent",2
+"95","7","< 20 yrs","present",6
+"139","7","< 20 yrs","absent",8
+"183","7","< 20 yrs","absent",10
+"8","8","< 20 yrs","present",0
+"52","8","< 20 yrs","present",2
+"96","8","< 20 yrs","absent",6
+"140","8","< 20 yrs","absent",8
+"184","8","< 20 yrs","absent",10
+"9","9","< 20 yrs","absent",0
+"53","9","< 20 yrs","absent",2
+"97","9","< 20 yrs","present",6
+"141","9","< 20 yrs","absent",8
+"185","9","< 20 yrs","absent",10
+"10","10","> 20 yrs","absent",0
+"54","10","> 20 yrs","absent",2
+"98","10","> 20 yrs","absent",6
+"142","10","> 20 yrs","absent",8
+"186","10","> 20 yrs","absent",10
+"11","11","> 20 yrs","present",0
+"55","11","> 20 yrs","present",2
+"99","11","> 20 yrs","present",6
+"143","11","> 20 yrs","absent",8
+"187","11","> 20 yrs","present",10
+"12","12","< 20 yrs","absent",0
+"56","12","< 20 yrs","absent",2
+"100","12","< 20 yrs",NA,6
+"144","12","< 20 yrs",NA,8
+"188","12","< 20 yrs",NA,10
+"13","13","> 20 yrs","present",0
+"57","13","> 20 yrs","present",2
+"101","13","> 20 yrs","absent",6
+"145","13","> 20 yrs","absent",8
+"189","13","> 20 yrs","absent",10
+"14","14","< 20 yrs","present",0
+"58","14","< 20 yrs","present",2
+"102","14","< 20 yrs","absent",6
+"146","14","< 20 yrs","absent",8
+"190","14","< 20 yrs","absent",10
+"15","15","> 20 yrs","present",0
+"59","15","> 20 yrs","present",2
+"103","15","> 20 yrs","absent",6
+"147","15","> 20 yrs","absent",8
+"191","15","> 20 yrs","absent",10
+"16","16","< 20 yrs","present",0
+"60","16","< 20 yrs","present",2
+"104","16","< 20 yrs","present",6
+"148","16","< 20 yrs","absent",8
+"192","16","< 20 yrs","absent",10
+"17","17","< 20 yrs","absent",0
+"61","17","< 20 yrs","present",2
+"105","17","< 20 yrs","absent",6
+"149","17","< 20 yrs","absent",8
+"193","17","< 20 yrs","absent",10
+"18","18","< 20 yrs","present",0
+"62","18","< 20 yrs","present",2
+"106","18","< 20 yrs","absent",6
+"150","18","< 20 yrs","present",8
+"194","18","< 20 yrs","absent",10
+"19","19","< 20 yrs","present",0
+"63","19","< 20 yrs","present",2
+"107","19","< 20 yrs","present",6
+"151","19","< 20 yrs","absent",8
+"195","19","< 20 yrs","absent",10
+"20","20","< 20 yrs","absent",0
+"64","20","< 20 yrs","absent",2
+"108","20","< 20 yrs","absent",6
+"152","20","< 20 yrs","absent",8
+"196","20","< 20 yrs","absent",10
+"21","21","< 20 yrs","absent",0
+"65","21","< 20 yrs","absent",2
+"109","21","< 20 yrs","present",6
+"153","21","< 20 yrs","present",8
+"197","21","< 20 yrs","present",10
+"22","22","> 20 yrs","absent",0
+"66","22","> 20 yrs","present",2
+"110","22","> 20 yrs","present",6
+"154","22","> 20 yrs","absent",8
+"198","22","> 20 yrs","absent",10
+"23","23","< 20 yrs","present",0
+"67","23","< 20 yrs","present",2
+"111","23","< 20 yrs","absent",6
+"155","23","< 20 yrs","present",8
+"199","23","< 20 yrs","absent",10
+"24","24","< 20 yrs","present",0
+"68","24","< 20 yrs","absent",2
+"112","24","< 20 yrs","absent",6
+"156","24","< 20 yrs","absent",8
+"200","24","< 20 yrs","absent",10
+"25","25","> 20 yrs","present",0
+"69","25","> 20 yrs","absent",2
+"113","25","> 20 yrs","absent",6
+"157","25","> 20 yrs","absent",8
+"201","25","> 20 yrs","absent",10
+"26","26","< 20 yrs","absent",0
+"70","26","< 20 yrs","absent",2
+"114","26","< 20 yrs","absent",6
+"158","26","< 20 yrs","absent",8
+"202","26","< 20 yrs","absent",10
+"27","27","< 20 yrs","present",0
+"71","27","< 20 yrs","present",2
+"115","27","< 20 yrs","absent",6
+"159","27","< 20 yrs","absent",8
+"203","27","< 20 yrs","absent",10
+"28","28","< 20 yrs","absent",0
+"72","28","< 20 yrs","absent",2
+"116","28","< 20 yrs","absent",6
+"160","28","< 20 yrs","absent",8
+"204","28","< 20 yrs","absent",10
+"29","29","> 20 yrs","present",0
+"73","29","> 20 yrs","present",2
+"117","29","> 20 yrs","absent",6
+"161","29","> 20 yrs","absent",8
+"205","29","> 20 yrs","absent",10
+"30","30","> 20 yrs","absent",0
+"74","30","> 20 yrs","absent",2
+"118","30","> 20 yrs","absent",6
+"162","30","> 20 yrs","absent",8
+"206","30","> 20 yrs","absent",10
+"31","31","< 20 yrs","absent",0
+"75","31","< 20 yrs","absent",2
+"119","31","< 20 yrs","absent",6
+"163","31","< 20 yrs","absent",8
+"207","31","< 20 yrs","absent",10
+"32","32","< 20 yrs","absent",0
+"76","32","< 20 yrs","present",2
+"120","32","< 20 yrs","absent",6
+"164","32","< 20 yrs","absent",8
+"208","32","< 20 yrs","absent",10
+"33","33","< 20 yrs","present",0
+"77","33","< 20 yrs","present",2
+"121","33","< 20 yrs","present",6
+"165","33","< 20 yrs","present",8
+"209","33","< 20 yrs","present",10
+"34","34","< 20 yrs","present",0
+"78","34","< 20 yrs","present",2
+"122","34","< 20 yrs","present",6
+"166","34","< 20 yrs","absent",8
+"210","34","< 20 yrs","absent",10
+"35","35","< 20 yrs","present",0
+"79","35","< 20 yrs","absent",2
+"123","35","< 20 yrs","absent",6
+"167","35","< 20 yrs","absent",8
+"211","35","< 20 yrs","absent",10
+"36","36","> 20 yrs","present",0
+"80","36","> 20 yrs","absent",2
+"124","36","> 20 yrs","absent",6
+"168","36","> 20 yrs",NA,8
+"212","36","> 20 yrs",NA,10
+"37","37","< 20 yrs","absent",0
+"81","37","< 20 yrs","present",2
+"125","37","< 20 yrs",NA,6
+"169","37","< 20 yrs",NA,8
+"213","37","< 20 yrs",NA,10
+"38","38","> 20 yrs","absent",0
+"82","38","> 20 yrs","absent",2
+"126","38","> 20 yrs","absent",6
+"170","38","> 20 yrs","absent",8
+"214","38","> 20 yrs","absent",10
+"39","39","< 20 yrs","present",0
+"83","39","< 20 yrs",NA,2
+"127","39","< 20 yrs",NA,6
+"171","39","< 20 yrs",NA,8
+"215","39","< 20 yrs",NA,10
+"40","40","< 20 yrs","present",0
+"84","40","< 20 yrs","present",2
+"128","40","< 20 yrs","absent",6
+"172","40","< 20 yrs","absent",8
+"216","40","< 20 yrs","absent",10
+"41","41","> 20 yrs","present",0
+"85","41","> 20 yrs","present",2
+"129","41","> 20 yrs","present",6
+"173","41","> 20 yrs","absent",8
+"217","41","> 20 yrs","absent",10
+"42","42","< 20 yrs","absent",0
+"86","42","< 20 yrs","present",2
+"130","42","< 20 yrs",NA,6
+"174","42","< 20 yrs",NA,8
+"218","42","< 20 yrs",NA,10
+"43","43","< 20 yrs","present",0
+"87","43","< 20 yrs","absent",2
+"131","43","< 20 yrs","absent",6
+"175","43","< 20 yrs","absent",8
+"219","43","< 20 yrs",NA,10
+"44","44","< 20 yrs","present",0
+"88","44","< 20 yrs","present",2
+"132","44","< 20 yrs","absent",6
+"176","44","< 20 yrs","absent",8
+"220","44","< 20 yrs","absent",10

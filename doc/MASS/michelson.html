@@ -1,48 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Michelson's Speed of Light Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cigarette Consumption</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for michelson"><tr><td>michelson</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Cigar"><tr><td>Cigar</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Michelson's Speed of Light Data
-</h2>
+<h2>Cigarette Consumption </h2>
 
 <h3>Description</h3>
 
-<p>Measurements of the speed of light in air, made between 5th June
-and 2nd July, 1879.  The data consists of five experiments, each
-consisting of 20 consecutive runs.  The response is the speed
-of light in km/s, less 299000.  The currently accepted value, on
-this scale of measurement, is 734.5.
+<p>a panel of 46 observations  from 1963  to 1992
+</p>
+<p><em>total number of observations</em> :  1380
+</p>
+<p><em>observation</em> :  regional
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-michelson
-</pre>
+<pre>data(Cigar)</pre>
 
 
 <h3>Format</h3>
 
-<p>The data frame contains the following components:
+<p>A data frame containing :
 </p>
 
 <dl>
-<dt><code>Expt</code></dt><dd>
-<p>The experiment number, from 1 to 5.
-</p>
+<dt>state</dt><dd><p>state abbreviation</p>
 </dd>
-<dt><code>Run</code></dt><dd>
-<p>The run number within each experiment.
-</p>
+<dt>year</dt><dd><p>the year</p>
 </dd>
-<dt><code>Speed</code></dt><dd>
-<p>Speed-of-light measurement.
-</p>
+<dt>price</dt><dd><p>price per pack of cigarettes</p>
+</dd>
+<dt>pop</dt><dd><p>population</p>
+</dd>
+<dt>pop16</dt><dd><p>population above the age of 16</p>
+</dd>
+<dt>cpi</dt><dd><p>consumer price index (1983=100)</p>
+</dd>
+<dt>ndi</dt><dd><p>per capita disposable income</p>
+</dd>
+<dt>sales</dt><dd><p>cigarette sales in packs per capita</p>
+</dd>
+<dt>pimin</dt><dd><p>minimum price in adjoining states per pack of cigarettes</p>
 </dd>
 </dl>
 
@@ -50,17 +54,25 @@ michelson
 
 <h3>Source</h3>
 
-<p>A.J. Weekes (1986) <em>A Genstat Primer.</em> Edward Arnold.
+<p>Online complements to Baltagi (2001):
 </p>
-<p>S. M. Stigler (1977) Do robust estimators work with real data?
-<em>Annals of Statistics</em> <b>5</b>, 1055&ndash;1098.
+<p><a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>
+</p>
+<p>Online complements to Baltagi (2013):
+</p>
+<p><a href="http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452">http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>Baltagi, Badi H. (2001) <em>Econometric Analysis of Panel Data</em>, 2nd ed., John Wiley and Sons.
+</p>
+<p>Baltagi, Badi H. (2013) <em>Econometric Analysis of Panel Data</em>, 5th ed., John Wiley and Sons.
+</p>
+<p>Baltagi, B.H. and  D. Levin (1992) &ldquo;Cigarette taxation: raising revenues and reducing consumption&rdquo;, <em>Structural Changes and Economic Dynamics</em>, <b>3</b>(2), pp. 321&ndash;335.
+</p>
+<p>Baltagi, B.H., J.M. Griffin and  W. Xiong (2000) &ldquo;To pool or not to pool: homogeneous versus heterogeneous estimators applied to cigarette demand&rdquo;, <em>Review of Economics and Statistics</em>, <b>82</b>(1), pp. 117&ndash;126.
 </p>
 
 

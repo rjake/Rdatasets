@@ -1,108 +1,129 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Crime in North Carolina</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Canadian Interprovincial Migration Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Crime"><tr><td>Crime</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Migration"><tr><td>Migration</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Crime in North Carolina </h2>
+<h2>Canadian Interprovincial Migration Data</h2>
 
 <h3>Description</h3>
 
-<p>a panel of 90 observations  from 1981  to 1987
-</p>
-<p><em>number of observations</em> :  630
-</p>
-<p><em>observation</em> :  regional
-</p>
-<p><em>country</em> :  United States
+<p>The <code>Migration</code> data frame has 90 rows and 8 columns.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Crime)</pre>
+<pre>
+Migration
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>county</dt><dd><p>county identifier</p>
+<dt>source</dt><dd>
+<p>Province of origin (source).
+A factor with levels:
+<code>ALTA</code>, Alberta;
+<code>BC</code>, British Columbia;
+<code>MAN</code>, Manitoba;
+<code>NB</code>, New Brunswick;
+<code>NFLD</code>, New Foundland;
+<code>NS</code>, Nova Scotia;
+<code>ONT</code>, Ontario;
+<code>PEI</code>, Prince Edward Island;
+<code>QUE</code>, Quebec;
+<code>SASK</code>, Saskatchewan.
+</p>
 </dd>
-<dt>year</dt><dd><p>year from 1981 to 1987</p>
+<dt>destination</dt><dd>
+<p>Province of destination (1971 residence).    
+A factor with levels:
+<code>ALTA</code>, Alberta;
+<code>BC</code>, British Columbia;
+<code>MAN</code>, Manitoba;
+<code>NB</code>, New Brunswick;
+<code>NFLD</code>, New Foundland;
+<code>NS</code>, Nova Scotia;
+<code>ONT</code>, Ontario;
+<code>PEI</code>, Prince Edward Island;
+<code>QUE</code>, Quebec;
+<code>SASK</code>, Saskatchewan.
+</p>
 </dd>
-<dt>crmrte</dt><dd><p>crimes committed per person</p>
+<dt>migrants</dt><dd>
+<p>Number of migrants (from source to destination) in the
+period 1966&ndash;1971.
+</p>
 </dd>
-<dt>prbarr</dt><dd><p>'probability' of arrest</p>
+<dt>distance</dt><dd>
+<p>Distance (between principal cities of provinces):
+NFLD, St. John;
+PEI, Charlottetown;
+NS, Halifax;
+NB, Fredricton;
+QUE, Montreal;
+ONT, Toronto;
+MAN, Winnipeg;
+SASK, Regina;
+ALTA, Edmonton;
+BC, Vancouver.
+</p>
 </dd>
-<dt>prbconv</dt><dd><p>'probability' of conviction</p>
+<dt>pops66</dt><dd>
+<p>1966 population of source province.
+</p>
 </dd>
-<dt>prbpris</dt><dd><p>'probability' of prison sentence</p>
+<dt>pops71</dt><dd>
+<p>1971 population of source province.
+</p>
 </dd>
-<dt>avgsen</dt><dd><p>average sentence, days    </p>
+<dt>popd66</dt><dd>
+<p>1966 population of destination province.
+</p>
 </dd>
-<dt>polpc</dt><dd><p>police per capita</p>
-</dd>
-<dt>density</dt><dd><p>people per square mile</p>
-</dd>
-<dt>taxpc</dt><dd><p>tax revenue per capita</p>
-</dd>
-<dt>region</dt><dd><p>one of 'other', 'west' or 'central'</p>
-</dd>
-<dt>smsa</dt><dd><p>'yes' or 'no' if in SMSA</p>
-</dd>
-<dt>pctmin</dt><dd><p>percentage minority in 1980</p>
-</dd>
-<dt>wcon</dt><dd><p>weekly wage in construction</p>
-</dd>
-<dt>wtuc</dt><dd><p>weekly wage in trns, util, commun</p>
-</dd>
-<dt>wtrd</dt><dd><p>weekly wage in whole sales and retail trade</p>
-</dd>
-<dt>wfir</dt><dd><p>weekly wage in  finance, insurance and real estate</p>
-</dd>
-<dt>wser</dt><dd><p>weekly wage in service industry</p>
-</dd>
-<dt>wmfg</dt><dd><p>weekly wage in manufacturing</p>
-</dd>
-<dt>wfed</dt><dd><p>weekly wage of federal employees</p>
-</dd>
-<dt>wsta</dt><dd><p>weekly wage of state employees</p>
-</dd>
-<dt>wloc</dt><dd><p>weekly wage of local governments employees      </p>
-</dd>
-<dt>mix</dt><dd><p>offence mix: face-to-face/other</p>
-</dd>
-<dt>pctymle</dt><dd><p>percentage of young males</p>
+<dt>popd71</dt><dd>
+<p>1971 population of destination province.
+</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>There is one record in the data file for each migration stream. You can average the 1966 
+and 1971 population figures for each of the source and destination 
+provinces.
+</p>
+
+
 <h3>Source</h3>
 
-<p>Cornwell, C.  and  W.N.  Trumbull (1994) &ldquo;Estimating the economic model of crime with panel data&rdquo;, <em>Review of Economics and Statistics</em>, <b>76</b>, 360&ndash;366.
+<p>Canada (1962)
+<em>Map</em>. Department of Mines and Technical Surveys.
 </p>
-<p>Baltagi, B. H. (forthcoming) &ldquo;Estimating an economic model of crime using panel data from North Carolina&rdquo;, <em>Journal of Applied Econometrics</em>, .
+<p>Canada (1971)
+<em>Census of Canada</em>.
+Statistics Canada,
+Vol. 1, Part 2 [Table 32]. 
+</p>
+<p>Canada (1972)
+<em>Canada Year Book</em>. Statistics Canada [p. 1369].
 </p>
 
 
 <h3>References</h3>
 
-<p>Baltagi, Badi H. (2003) <em>Econometric analysis of panel data</em>, John Wiley and sons, <a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>,  .
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
-</p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
-</p>
-<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

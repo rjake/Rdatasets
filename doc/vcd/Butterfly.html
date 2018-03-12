@@ -1,40 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Butterfly Species in Malaya</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Math Placement</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Butterfly"><tr><td>Butterfly</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for MathPlacement"><tr><td>MathPlacement</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Butterfly Species in Malaya</h2>
+<h2>Math Placement</h2>
 
 <h3>Description</h3>
 
-<p>Data from Fisher et al. (1943) giving the number of tokens found for
-each of 501 species of butterflies collected in Malaya.
+<p>Results from a Math Placement exam at a liberal arts college
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>
-data("Butterfly")
-</pre>
 
 
 <h3>Format</h3>
 
-<p>A 1-way table giving the number of tokens for 501 species of
-butterflies. The variable and its levels are
+<p>A dataset with 2696 observations on the following 16 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+    <code>Student</code> </td><td style="text-align: left;"> Identification number for each student</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    1 </td><td style="text-align: left;"> nTokens </td><td style="text-align: left;"> 0, 1, ..., 24 </td>
+    <code>Gender</code> </td><td style="text-align: left;"> 0=Female, 1=Male</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>PSATM</code> </td><td style="text-align: left;"> PSAT score in MAth</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>SATM</code> </td><td style="text-align: left;"> SAT score in Math</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>ACTM</code> </td><td style="text-align: left;"> ACT Score in Math</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Rank</code> </td><td style="text-align: left;"> Adjusted rank in HS class</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Size</code> </td><td style="text-align: left;"> Number of students in HS class</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>GPAadj</code> </td><td style="text-align: left;"> Adjusted GPA</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>PlcmtScore</code> </td><td style="text-align: left;"> Score on math placement exam</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Recommends</code> </td><td style="text-align: left;"> Recommended course: <code>R0</code> <code>R01</code> <code>R1</code> <code>R12</code> <code>R2</code> <code>R3</code> <code>R4</code> <code>R6</code> <code>R8</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Course</code> </td><td style="text-align: left;"> Actual course taken</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Grade</code> </td><td style="text-align: left;"> Course grade</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>RecTaken</code> </td><td style="text-align: left;"> 1=recommended course, 0=otherwise</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>TooHigh</code> </td><td style="text-align: left;"> 1=took course above recommended, 0=otherwise</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>TooLow</code> </td><td style="text-align: left;"> 1=took course below recommended, 0=otherwise</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>CourseSuccess</code> </td><td style="text-align: left;"> 1=B or better grade, 0=grade below B</td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -45,32 +92,16 @@ butterflies. The variable and its levels are
 
 
 
+<h3>Details</h3>
+
+<p>Scores and course results for students taking a math placement exam at a college. 
+</p>
+
+
 <h3>Source</h3>
 
-<p>Michael Friendly (2000),
-Visualizing Categorical Data, pages 21&ndash;22.
+<p>Personal correspondence
 </p>
-
-
-<h3>References</h3>
-
-<p>R. A. Fisher, A. S. Corbet, C. B. Williams (1943),
-The relation between the number of species and the number of
-individuals,
-<em>Journal of Animal Ecology</em>, <b>12</b>, 42&ndash;58.
-</p>
-<p>M. Friendly (2000),
-<em>Visualizing Categorical Data</em>.
-SAS Institute, Cary, NC.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data("Butterfly")
-Ord_plot(Butterfly)
-</pre>
 
 
 </body></html>

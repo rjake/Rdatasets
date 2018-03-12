@@ -1,71 +1,126 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Genetic Links to Left-handedness</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Potency of Orchard Sprays</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for claridge"><tr><td>claridge</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for OrchardSprays"><tr><td>OrchardSprays</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Genetic Links to Left-handedness
-</h2>
+<h2>Potency of Orchard Sprays</h2>
 
 <h3>Description</h3>
 
-<p>The <code>claridge</code> data frame has 37 rows and 2 columns.  
-</p>
-<p>The data are from an experiment which was designed to look for a relationship 
-between a certain genetic characteristic
-and handedness.  The 37 subjects were women who had a son with mental
-retardation due to inheriting a defective X-chromosome.  For each such mother
-a genetic measurement of their DNA was made.  Larger values of this measurement
-are known to be linked to the defective gene and it was hypothesized that 
-larger values might also be linked to a progressive shift away from 
-right-handednesss.  Each woman also filled in a 
-questionnaire regarding which hand they used for various tasks.  From these
-questionnaires a measure of hand preference was found for each mother.  The 
-scale of
-this measure goes from 1, indicating someone who always favours their right 
-hand, to 8, indicating someone who always favours their left hand. Between 
-these two extremes are people who favour one hand for some tasks and the other 
-for other tasks.
+<p>An experiment was conducted to assess the potency of various
+constituents of orchard sprays in repelling honeybees, using a
+Latin square design.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-claridge
-</pre>
+<pre>OrchardSprays</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 64 observations on 4 variables.
 </p>
 
-<dl>
-<dt><code>dnan</code></dt><dd>
-<p>The genetic measurement on each woman's DNA.
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    [,1]  </td><td style="text-align: left;"> rowpos    </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Row of the design</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,2]  </td><td style="text-align: left;"> colpos    </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Column of the design</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,3]  </td><td style="text-align: left;"> treatment </td><td style="text-align: left;"> factor  </td><td style="text-align: left;"> Treatment level</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,4]  </td><td style="text-align: left;"> decrease  </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Response
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>Individual cells of dry comb were filled with measured amounts of lime
+sulphur emulsion in sucrose solution.  Seven different concentrations
+of lime sulphur ranging from a concentration of 1/100 to 1/1,562,500
+in successive factors of 1/5 were used as well as a solution
+containing no lime sulphur.
 </p>
-</dd>
-<dt><code>hand</code></dt><dd>
-<p>The measure of left-handedness on an integer scale from 1 to 8.
+<p>The responses for the different solutions were obtained by releasing
+100 bees into the chamber for two hours, and then measuring the
+decrease in volume of the solutions in the various cells.
 </p>
-</dd></dl>
+<p>An <i>8 x 8</i> Latin square design was used and the
+treatments were coded as follows:
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    A </td><td style="text-align: left;"> highest level of lime sulphur</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    B </td><td style="text-align: left;"> next highest level of lime sulphur</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    . </td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    . </td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    . </td><td style="text-align: left;"> </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    G </td><td style="text-align: left;"> lowest level of lime sulphur</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    H </td><td style="text-align: left;"> no lime sulphur
+  </td>
+</tr>
+
+</table>
+
 
 
 <h3>Source</h3>
 
-<p>The data were kindly made available by Dr. Gordon S. Claridge from the
-Department of Experimental Psychology, University of Oxford.
+<p>Finney, D. J. (1947)
+<em>Probit Analysis</em>.
+Cambridge.
 </p>
 
 
 <h3>References</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p>McNeil, D. R. (1977)
+<em>Interactive Data Analysis</em>.
+New York: Wiley.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(graphics)
+pairs(OrchardSprays, main = "OrchardSprays data")
+</pre>
 
 
 </body></html>

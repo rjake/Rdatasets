@@ -1,46 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Accelerated Life Testing of Motorettes</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Employment and Wages in the United Kingdom</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for motors"><tr><td>motors</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for EmplUK"><tr><td>EmplUK</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Accelerated Life Testing of Motorettes
-</h2>
+<h2>Employment and Wages in the United Kingdom</h2>
 
 <h3>Description</h3>
 
-<p>The <code>motors</code> data frame has 40 rows and 3 columns.  It describes an
-accelerated life test at each of four temperatures of 10 motorettes,
-and has rather discrete times.
+<p>An unbalanced panel of 140 observations from 1976 to 1984
+</p>
+<p><em>total number of observations</em> :  1031
+</p>
+<p><em>observation</em> :  firms
+</p>
+<p><em>country</em> :  United Kingdom
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-motors
-</pre>
+<pre>data(EmplUK)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame containing :
 </p>
 
 <dl>
-<dt><code>temp</code></dt><dd>
-<p>the temperature (degrees C) of the test.
-</p>
+<dt>firm</dt><dd><p>firm index</p>
 </dd>
-<dt><code>time</code></dt><dd>
-<p>the time in hours to failure or censoring at 8064 hours (= 336 days).
-</p>
+<dt>year</dt><dd><p>year</p>
 </dd>
-<dt><code>cens</code></dt><dd>
-<p>an indicator variable for death.
-</p>
+<dt>sector</dt><dd><p>the sector of activity</p>
+</dd>
+<dt>emp</dt><dd><p>employment</p>
+</dd>
+<dt>wage</dt><dd><p>wages</p>
+</dd>
+<dt>capital</dt><dd><p>capital</p>
+</dd>
+<dt>output</dt><dd><p>output</p>
 </dd>
 </dl>
 
@@ -48,44 +50,10 @@ motors
 
 <h3>Source</h3>
 
-<p>Kalbfleisch, J. D. and Prentice, R. L. (1980)
-<em>The Statistical Analysis of Failure Time Data.</em>
-New York: Wiley.
+<p>Arellano, M. and Bond, S. (1991), Some Tests of Specification
+for Panel Data: Monte Carlo Evidence and an Application to Employment Equations, 
+<em>The Review of Economic Studies</em>, <b>58</b>(2), 1991, pp. 227&ndash;297.
 </p>
-<p>taken from
-</p>
-<p>Nelson, W. D. and Hahn, G. J. (1972)
-Linear regression of a regression relationship from censored data.
-Part 1 &ndash; simple methods and their application.
-<em>Technometrics</em>, <b>14</b>, 247&ndash;276.
-</p>
-
-
-<h3>References</h3>
-
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-library(survival)
-plot(survfit(Surv(time, cens) ~ factor(temp), motors), conf.int = FALSE)
-# fit Weibull model
-motor.wei &lt;- survreg(Surv(time, cens) ~ temp, motors)
-summary(motor.wei)
-# and predict at 130C
-unlist(predict(motor.wei, data.frame(temp=130), se.fit = TRUE))
-
-motor.cox &lt;- coxph(Surv(time, cens) ~ temp, motors)
-summary(motor.cox)
-# predict at temperature 200
-plot(survfit(motor.cox, newdata = data.frame(temp=200),
-     conf.type = "log-log"))
-summary( survfit(motor.cox, newdata = data.frame(temp=130)) )
-</pre>
 
 
 </body></html>

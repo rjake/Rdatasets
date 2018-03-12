@@ -1,62 +1,75 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Goose Permit Study</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monoclonal gammapothy data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for GoosePermits"><tr><td>GoosePermits</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for mgus2"><tr><td>mgus2</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Goose Permit Study</h2>
+<h2>Monoclonal gammapothy data</h2>
 
 <h3>Description</h3>
 
-<p>237 hunters were each offered one of 11 cash amounts (bids) ranging from 
-$1 to $200 in return for their goose permits.  Hunters returned either their 
-permit or the cash.
+<p>Natural history of 1341 sequential patients with monoclonal
+gammapothy of undetermined significance (MGUS).
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-data(GoosePermits)
-</pre>
+<pre>data("mgus2")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data.frame with 11 observations on the following 3 variables.
+<p>A data frame with 1384 observations on the following 10 variables.
 </p>
 
-<p>itemcodebid amount offered for permit (US $) [numeric]
-itemcodekeep number of hunters who kept the permit and returned the cash [numeric]
-itemcodesell number of hunters who kept the cash and returned the permit [numeric]
+<dl>
+<dt><code>id</code></dt><dd><p>subject identifier</p>
+</dd>
+<dt><code>age</code></dt><dd><p>age at diagnosis, in years</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>F</code> <code>M</code></p>
+</dd>
+<dt><code>hgb</code></dt><dd><p>hemoglobin</p>
+</dd>
+<dt><code>creat</code></dt><dd><p>creatinine</p>
+</dd>
+<dt><code>mspike</code></dt><dd><p>size of the monoclonal serum splike</p>
+</dd>
+<dt><code>ptime</code></dt><dd><p>time until progression to a plasma cell
+malignancy (PCM) or last contact, in months</p>
+</dd>
+<dt><code>pstat</code></dt><dd><p>occurrence of PCM: 0=no, 1=yes </p>
+</dd>
+<dt><code>futime</code></dt><dd><p>time until death or last contact, in months</p>
+</dd>
+<dt><code>death</code></dt><dd><p>occurrence of death: 0=no, 1=yes</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>This is a larger follow-on study of the condition also found in data
+set <code>mgus</code>.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Bishop and Heberlein. 
-&quot;Measuring values of extramarket goods: are indirect measures biased?&quot;. 
-Amer. J. Agr. Econ. 61, 1979. Available at 
-<a href="http://www1.udel.edu/johnmack/frec343/bishop_and_heberlein.pdf">http://www1.udel.edu/johnmack/frec343/bishop_and_heberlein.pdf</a>.
-See also <a href="http://www.math.umt.edu/patterson/ProfileLikelihoodCI.pdf">http://www.math.umt.edu/patterson/ProfileLikelihoodCI.pdf</a>.
+<p>Mayo Clinic data courtesy of Dr. Robert Kyle.  All patient
+identifiers have been removed, age rounded to the nearest year, and
+follow-up times rounded to the nearest month.</p>
+
+
+<h3>References</h3>
+
+<p>R. Kyle, T. Therneau, V. Rajkumar, J. Offord, D. Larson, M. Plevak,
+and L. J. Melton III, A long-terms study of prognosis in monoclonal
+gammopathy of undertermined significance. New Engl J Med, 346:564-569 (2002).
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(GoosePermits)
-
-goose.model &lt;- 
-  glm( cbind(keep, sell) ~ log(bid), data = GoosePermits, family = binomial())
-if (require(mosaic)) {
-  f &lt;- makeFun(goose.model)
-  xyplot( (keep/(keep+sell)) ~ bid, data = GoosePermits, ylim = c(0,1.05))
-  plotFun( f(b) ~ b, add = TRUE) 
-}
-
-</pre>
 
 
 </body></html>

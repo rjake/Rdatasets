@@ -1,74 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Water Voles Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Parent-Duchatelet's time-series data on the number of...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for watervoles"><tr><td>watervoles</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Prostitutes"><tr><td>Prostitutes</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2> Water Voles Data </h2>
+<h2>
+Parent-Duchatelet's time-series data on the number of prostitutes in Paris
+</h2>
 
 <h3>Description</h3>
 
-<p>Percentage incidence of the 13 characteristics of water voles in 14
-areas.
+<p>A table indicating month by month, for the years 1812-1854, the number of prostitutes on the 
+registers of the administration of the city of Paris.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("watervoles")</pre>
+<pre>data(Prostitutes)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dissimilarity matrix for the following 14 variables, i.e,
-areas:
-<code>Surrey</code>,
-<code>Shropshire</code>,
-<code>Yorkshire</code>,
-<code>Perthshire</code>,
-<code>Aberdeen</code>,
-<code>Elean Gamhna</code>,
-<code>Alps</code>,
-<code>Yugoslavia</code>,
-<code>Germany</code>,
-<code>Norway</code>,
-<code>Pyrenees I</code>,
-<code>Pyrenees II</code>,
-<code>North Spain</code>, and
-<code>South Spain</code>.
+<p>A data frame with 516 observations on the following 5 variables.
 </p>
+
+<dl>
+<dt><code>Year</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>month</code></dt><dd><p>a factor with levels <code>Apr</code> <code>Aug</code> <code>Dec</code> <code>Feb</code> <code>Jan</code> <code>Jul</code> <code>Jun</code> <code>Mar</code> <code>May</code> <code>Nov</code> <code>Oct</code> <code>Sep</code></p>
+</dd>
+<dt><code>count</code></dt><dd><p>a numeric vector: number of prostitutes</p>
+</dd>
+<dt><code>mon</code></dt><dd><p>a numeric vector: numeric month</p>
+</dd>
+<dt><code>date</code></dt><dd><p>a Date</p>
+</dd>
+</dl>
+
 
 
 <h3>Details</h3>
 
-<p>Corbet et al. (1970) report a study of water voles (genus Arvicola)
-in which the aim was to compare British populations of these
-animals with those in Europe, to investigate whether more than
-one species might be present in Britain. The original data consisted
-of observations of the presence or absence of 13 characteristics
-in about 300 water vole skulls arising from six British populations
-and eight populations from the rest of Europe.
-The data are the percentage incidence of the 13 characteristics
-in each of the 14 samples of water vole skulls.
+<p>The data table was digitally scanned with OCR, and errors were corrected by comparing the
+yearly totals recorded in the table to the row sums of the scanned data.
 </p>
 
 
 <h3>Source</h3>
 
-<p>G. B. Corbet, J. Cummins, S. R. Hedges, W. J. Krzanowski (1970),
-The taxonomic structure of British water voles, genus <em>Arvicola</em>.
-<em>Journal of Zoology</em>, <b>61</b>, 301&ndash;316.
+<p>Parent-Duchatelet, A. (1857), <em>De la prostitution dans la ville de Paris</em>, 3rd ed,  p. 32, 36
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-
-  data("watervoles", package = "HSAUR")
-  watervoles
-
+data(Prostitutes)
+## maybe str(Prostitutes) ; plot(Prostitutes) ...
 </pre>
 
 

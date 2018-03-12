@@ -1,75 +1,105 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Purchasing Power Parity and other parity relationships</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diagnosis of Multiple Sclerosis</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Parity"><tr><td>Parity</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for MSPatients"><tr><td>MSPatients</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Purchasing Power Parity and other parity relationships</h2>
+<h2>Diagnosis of Multiple Sclerosis</h2>
 
 <h3>Description</h3>
 
-<p>A panel of 104 quarterly observations from 1973Q1 to 1998Q4
-</p>
-<p><em>total number of observations</em> : 1768
-</p>
-<p><em>observation</em> :  country
-</p>
-<p><em>country</em> :  OECD
+<p>Data from Westlund \&amp; Kurland (1953) on the diagnosis of multiple
+sclerosis (MS): two samples of patients, one from Winnipeg and one
+from New Orleans, were each rated by two neurologists (one from each
+city) in four diagnostic categories.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Parity)</pre>
+<pre>
+data("MSPatients")
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing :
+<p>A 3-dimensional array resulting from cross-tabulating 218 observations
+on 3 variables.  The variables and their levels are as follows:
 </p>
 
-<dl>
-<dt>country</dt><dd><p>country codes: a factor with 17 levels</p>
-</dd>
-<dt>time</dt><dd><p>the quarter index, 1973Q1-1998Q4</p>
-</dd>
-<dt>ls</dt><dd><p>log spot exchange rate vs. USD</p>
-</dd>
-<dt>lp</dt><dd><p>log price level</p>
-</dd>
-<dt>is</dt><dd><p>short term interest rate</p>
-</dd>
-<dt>il</dt><dd><p>long term interest rate</p>
-</dd>
-<dt>ld</dt><dd><p>log price differential vs. USA</p>
-</dd>
-<dt>uis</dt><dd><p>U.S. short term interest rate</p>
-</dd>
-<dt>uil</dt><dd><p>U.S. long term interest rate</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    1 </td><td style="text-align: left;"> New Orleans Neurologist </td><td style="text-align: left;"> Certain, Probable, Possible, Doubtful </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    2 </td><td style="text-align: left;"> Winnipeg Neurologist </td><td style="text-align: left;"> Certain, Probable, Possible, Doubtful </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    3 </td><td style="text-align: left;"> Patients </td><td style="text-align: left;"> Winnipeg, New Orleans
+  </td>
+</tr>
+
+</table>
 
 
 
 <h3>Source</h3>
 
-<p>Coakley, J., Fuertes, A. M., and Smith, R. (2006) &ldquo;Unobserved
-heterogeneity in panel time series models&rdquo;, <em>Computational
-Statistics &amp; Data Analysis</em>, <b>50</b>(9), 2361&ndash;2380.
+<p>M. Friendly (2000),
+Visualizing Categorical Data:
+<a href="http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/msdiag.sas">http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/msdiag.sas</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>Coakley, J., Fuertes, A. M., and Smith, R. (2006) &ldquo;Unobserved
-heterogeneity in panel time series models&rdquo;, <em>Computational
-Statistics &amp; Data Analysis</em>, <b>50</b>(9), 2361&ndash;2380.
+<p>K. B. Westlund \&amp; L. T. Kurland (1953),
+Studies on multiple sclerosis in Winnipeg, Manitoba and New Orleans,
+Louisiana,
+<em>American Journal of Hygiene</em>, <b>57</b>, 380&ndash;396.
 </p>
-<p>Driscoll, J. C., and Kraay, A. C. (1998). &ldquo;Consistent
-covariance matrix estimation with spatially dependent panel data&rdquo;,
-<em>Review of Economics and Statistics</em>, <b>80</b>(4), 549&ndash;560.
+<p>M. Friendly (2000),
+<em>Visualizing Categorical Data</em>.
+SAS Institute, Cary, NC.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data("MSPatients")
+## Not run: 
+## best visualized using a resized device, e.g. using:
+## get(getOption("device"))(width = 12)
+pushViewport(viewport(layout = grid.layout(ncol = 2)))
+pushViewport(viewport(layout.pos.col = 1))
+popViewport()
+pushViewport(viewport(layout.pos.col = 2))
+popViewport(2)
+dev.off()
+
+## End(Not run)
+
+## alternative, more convenient way
+mplot(
+  agreementplot(t(MSPatients[,,1]), return_grob = TRUE,
+    main = "Winnipeg Patients"),
+  agreementplot(t(MSPatients[,,2]), return_grob = TRUE,
+    main = "New Orleans Patients")
+)
+
+## alternatively, use cotabplot:
+cotabplot(MSPatients, panel = cotab_agreementplot)
+</pre>
 
 
 </body></html>

@@ -1,84 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Treatment of Migraine Headaches</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yearly Sunspot Data, 1700-1988</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for KosteckiDillon"><tr><td>KosteckiDillon</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for sunspot.year"><tr><td>sunspot.year</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Treatment of Migraine Headaches</h2>
+<h2>Yearly Sunspot Data, 1700&ndash;1988</h2>
 
 <h3>Description</h3>
 
-<p>Subset of data on migraine treatments collected by Tammy Kostecki-Dillon. 
+<p>Yearly numbers of sunspots from 1700 to 1988 (rounded to one digit).
+</p>
+<p>Note that monthly numbers are available as
+<code>sunspot.month</code>, though starting slightly later.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>KosteckiDillon</pre>
+<pre>
+sunspot.year
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 4152 observations on 133 subjects for the following 9 variables.
-</p>
-
-<dl>
-<dt><code>id</code></dt><dd><p>Patient id.</p>
-</dd>
-<dt><code>time</code></dt><dd><p>time in days relative to the onset of treatment, which occurs at time 0.</p>
-</dd>
-<dt><code>dos</code></dt><dd><p>time in days from the start of the study, January 1 of the first year of the study.</p>
-</dd>
-<dt><code>hatype</code></dt><dd><p>a factor with levels <code>Aura</code> <code>Mixed</code> <code>No Aura</code>, the type of
-migraine experienced by a subject.</p>
-</dd>
-<dt><code>age</code></dt><dd><p>at onset of treatment, in years.</p>
-</dd>
-<dt><code>airq</code></dt><dd><p>a measure of air quality.</p>
-</dd>
-<dt><code>medication</code></dt><dd><p>a factor with levels <code>none</code> <code>reduced</code> <code>continuing</code>,
-representing subjects who discontinued their medication, who continued but at a reduced
-dose, or who continued at the previous dose.</p>
-</dd>
-<dt><code>headache</code></dt><dd><p>a factor with levels <code>no</code> <code>yes</code>.</p>
-</dd>
-<dt><code>sex</code></dt><dd><p>a factor with levels <code>female</code> <code>male</code>.</p>
-</dd>
-</dl>
-
-
-
-<h3>Details</h3>
-
-<p>The data consist of headache logs kept by 133 patients in a treatment program in which bio-feedback 
-was used to attempt to reduce migraine frequency and severity.
-Patients entered the program at different times over a period of about 3 years. 
-Patients were encouraged to begin their logs four weeks before the onset of treatment 
-and to continue for one month afterwards, 
-but only 55 patients have data preceding the onset of treatment.
+<p>The univariate time series <code>sunspot.year</code> contains 289
+observations, and is of class <code>"ts"</code>.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Personal communication from Georges Monette (and adapted from his description of the data).
+<p>H. Tong (1996)
+<em>Non-Linear Time Series</em>. Clarendon Press, Oxford, p. 471.
 </p>
 
 
-<h3>References</h3>
+<h3>See Also</h3>
 
-<p>Kostecki-Dillon, T.,  Monette, G., and Wong, P. (1999). 
-Pine trees, comas, and migraines.
-<em>York University Institute for Social Research Newsletter</em>,
-14:2.
+<p>For <em>monthly</em> sunspot numbers, see <code>sunspot.month</code>
+and <code>sunspots</code>.
+</p>
+<p>Regularly updated yearly sunspot numbers are available from
+WDC-SILSO, Royal Observatory of Belgium, at
+<a href="http://www.sidc.be/silso/datafiles">http://www.sidc.be/silso/datafiles</a>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-summary(KosteckiDillon)
+utils::str(sm &lt;- sunspots)# the monthly version we keep unchanged
+utils::str(sy &lt;- sunspot.year)
+## The common time interval
+(t1 &lt;- c(max(start(sm), start(sy)),     1)) # Jan 1749
+(t2 &lt;- c(min(  end(sm)[1],end(sy)[1]), 12)) # Dec 1983
+s.m &lt;- window(sm, start=t1, end=t2)
+s.y &lt;- window(sy, start=t1, end=t2[1]) # {irrelevant warning}
+stopifnot(length(s.y) * 12 == length(s.m),
+          ## The yearly series *is* close to the averages of the monthly one:
+          all.equal(s.y, aggregate(s.m, FUN = mean), tol = 0.0020))
+## NOTE: Strangely, correctly weighting the number of days per month
+##       (using 28.25 for February) is *not* closer than the simple mean:
+ndays &lt;- c(31, 28.25, rep(c(31,30, 31,30, 31), 2))
+all.equal(s.y, aggregate(s.m, FUN = mean))                     # 0.0013
+all.equal(s.y, aggregate(s.m, FUN = weighted.mean, w = ndays)) # 0.0017
 </pre>
 
 

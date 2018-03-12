@@ -1,61 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: N. L. Prater's Petrol Refinery Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Employment and Wages in Spain</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for petrol"><tr><td>petrol</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Snmesp"><tr><td>Snmesp</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-N. L. Prater's Petrol Refinery Data
-</h2>
+<h2>Employment and Wages in Spain</h2>
 
 <h3>Description</h3>
 
-<p>The yield of a petroleum refining process with four covariates.
-The crude oil appears to come from only 10 distinct samples.
+<p>A panel of 738 observations from 1983 to 1990
 </p>
-<p>These data were originally used by Prater (1956) to
-build an estimation equation for the yield of the refining
-process of crude oil to gasoline.
+<p><em>total number of observations</em>:  5904
+</p>
+<p><em>observation</em>:  firms
+</p>
+<p><em>country</em>:  Spain
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-petrol
-</pre>
+<pre>data(Snmesp)</pre>
 
 
 <h3>Format</h3>
 
-<p>The variables are as follows
+<p>A data frame containing:
 </p>
 
 <dl>
-<dt><code>No</code></dt><dd>
-<p>crude oil sample identification label. (Factor.)
-</p>
+<dt>firm</dt><dd><p>firm index</p>
 </dd>
-<dt><code>SG</code></dt><dd>
-<p>specific gravity, degrees API.  (Constant within sample.)
-</p>
+<dt>year</dt><dd><p>year</p>
 </dd>
-<dt><code>VP</code></dt><dd>
-<p>vapour pressure in pounds per square inch. (Constant within sample.)
-</p>
+<dt>n</dt><dd><p>log of employment</p>
 </dd>
-<dt><code>V10</code></dt><dd>
-<p>volatility of crude; ASTM 10% point. (Constant within sample.)
-</p>
+<dt>w</dt><dd><p>log of wages</p>
 </dd>
-<dt><code>EP</code></dt><dd>
-<p>desired volatility of gasoline. (The end point.  Varies within sample.)
-</p>
+<dt>y</dt><dd><p>log of real output</p>
 </dd>
-<dt><code>Y</code></dt><dd>
-<p>yield as a percentage of crude.
-</p>
+<dt>i</dt><dd><p>log of intermediate inputs</p>
+</dd>
+<dt>k</dt><dd><p>log of real capital stock</p>
+</dd>
+<dt>f</dt><dd><p>real cash flow</p>
 </dd>
 </dl>
 
@@ -63,34 +52,19 @@ petrol
 
 <h3>Source</h3>
 
-<p>N. H. Prater (1956) Estimate gasoline yields from
-crudes. <em>Petroleum Refiner</em> <b>35</b>, 236&ndash;238.
+<p>Journal of Business Economics and Statistics data archive:
 </p>
-<p>This dataset is also given in
-D. J. Hand, F. Daly, K. McConway, D. Lunn and E. Ostrowski (eds) (1994)
-<em>A Handbook of Small Data Sets.</em> Chapman &amp; Hall.
+<p><a href="http://amstat.tandfonline.com/loi/ubes20/">http://amstat.tandfonline.com/loi/ubes20/</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>Alonso&ndash;Borrego, C. and Arellano, M. (1999). Symmetrically
+Normalized Instrumental-Variable Estimation Using Panel Data,
+<em>Journal of Business and Economic Statistics</em>, <b>17(1)</b>,
+pp. 36&ndash;49.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-library(nlme)
-Petrol &lt;- petrol
-Petrol[, 2:5] &lt;- scale(as.matrix(Petrol[, 2:5]), scale = FALSE)
-pet3.lme &lt;- lme(Y ~ SG + VP + V10 + EP,
-                random = ~ 1 | No, data = Petrol)
-pet3.lme &lt;- update(pet3.lme, method = "ML")
-pet4.lme &lt;- update(pet3.lme, fixed = Y ~ V10 + EP)
-anova(pet4.lme, pet3.lme)
-</pre>
 
 
 </body></html>

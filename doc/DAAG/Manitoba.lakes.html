@@ -1,30 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Nine Largest Lakes in Manitoba</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Full Leaf Shape Data Set</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Manitoba.lakes"><tr><td>Manitoba.lakes</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for leafshape"><tr><td>leafshape</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>The Nine Largest Lakes in Manitoba</h2>
+<h2>Full Leaf Shape Data Set</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Manitoba.lakes</code> data frame has 9 rows and 2 columns.
-The areas and elevations of the nine largest lakes in
-Manitoba, Canada.  The geography of Manitoba (a relatively
-flat province) can be divided crudely into three main
-areas: a very flat prairie in the south which is at a 
-relatively high elevation, a middle region consisting
-of mainly of forest and Precambrian rock, and a northern
-region which drains more rapidly into Hudson
-Bay.  All water in Manitoba, which does not evaporate, eventually drains 
-into Hudson Bay.  
+<p>Leaf length, width and petiole measurements taken at various
+sites in Australia.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>Manitoba.lakes</pre>
+<pre>leafshape</pre>
 
 
 <h3>Format</h3>
@@ -33,11 +25,26 @@ into Hudson Bay.
 </p>
 
 <dl>
-<dt>elevation</dt><dd><p>a numeric vector consisting of the elevations
-of the lakes (in meters)</p>
+<dt>bladelen</dt><dd><p>leaf length (in mm)</p>
 </dd>
-<dt>area</dt><dd><p>a numeric vector consisting of the areas of
-the lakes (in square kilometers)</p>
+<dt>petiole</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>bladewid</dt><dd><p>leaf width (in mm)</p>
+</dd>
+<dt>latitude</dt><dd><p>latitude</p>
+</dd>
+<dt>logwid</dt><dd><p>natural logarithm of width</p>
+</dd>
+<dt>logpet</dt><dd><p>logarithm of petiole</p>
+</dd>
+<dt>loglen</dt><dd><p>logarithm of length</p>
+</dd>
+<dt>arch</dt><dd><p>leaf architecture (0 = plagiotropic, 1 = orthotropic</p>
+</dd>
+<dt>location</dt><dd><p>a factor with levels
+<code>Sabah</code>, <code>Panama</code>, <code>Costa Rica</code>,
+<code>N Queensland</code>, <code>S Queensland</code>, 
+<code>Tasmania</code> </p>
 </dd>
 </dl>
 
@@ -45,16 +52,10 @@ the lakes (in square kilometers)</p>
 
 <h3>Source</h3>
 
-<p>The CANSIM data base at Statistics Canada.
+<p>King, D.A. and Maindonald, J.H. 1999. Tree architecture in relation to
+leaf dimensions and tree stature in temperate and tropical rain
+forests. Journal of Ecology 87: 1012-1024.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-plot(Manitoba.lakes)
-plot(Manitoba.lakes[-1,])
-</pre>
 
 
 </body></html>

@@ -1,44 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Choice of Brand for Catsup</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on Depression</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Catsup"><tr><td>Catsup</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Ginzberg"><tr><td>Ginzberg</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Choice of Brand for Catsup </h2>
+<h2>Data on Depression</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section
-</p>
-<p><em>number of observations</em> :  2798
-</p>
-<p><em>observation</em> :  individuals
-</p>
-<p><em>country</em> :  United States
+<p>The <code>Ginzberg</code> data frame has 82 rows and 6 columns.
+The data are for psychiatric patients hospitalized for depression.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Catsup)</pre>
+<pre>
+Ginzberg
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>id</dt><dd><p>individuals identifiers</p>
+<dt>simplicity</dt><dd>
+<p>Measures subject's need to see the world in black and white.
+</p>
 </dd>
-<dt>choice</dt><dd><p>one of heinz41, heinz32, heinz28, hunts32</p>
+<dt>fatalism</dt><dd>
+<p>Fatalism scale.
+</p>
 </dd>
-<dt>disp.z</dt><dd><p>is there a display for brand z ?</p>
+<dt>depression</dt><dd>
+<p>Beck self-report depression scale.
+</p>
 </dd>
-<dt>feat.z</dt><dd><p>is there a newspaper feature advertisement for brand z ?</p>
+<dt>adjsimp</dt><dd>
+<p>Adjusted Simplicity: Simplicity adjusted (by regression) for other
+variables thought to influence depression.
+</p>
 </dd>
-<dt>price.z</dt><dd><p>price of brand z</p>
+<dt>adjfatal</dt><dd>
+<p>Adjusted Fatalism.
+</p>
+</dd>
+<dt>adjdep</dt><dd>
+<p>Adjusted Depression.
+</p>
 </dd>
 </dl>
 
@@ -46,19 +58,18 @@
 
 <h3>Source</h3>
 
-<p>Jain, Dipak C.,  Naufel J.    Vilcassim and  Pradeep K.  Chintagunta (1994) &ldquo;A random&ndash;coefficients logit brand&ndash;choice model applied to panel data&rdquo;, <em>Journal of Business and Economics Statistics</em>, <b>12(3)</b>, 317.
+<p>Personal communication from Georges Monette, Department of
+Mathematics and Statistics, York University, with the permission
+of the original investigator.
 </p>
 
 
 <h3>References</h3>
 
-<p>Journal of Business Economics and Statistics web site : <a href="http://amstat.tandfonline.com/loi/ubes20">http://amstat.tandfonline.com/loi/ubes20</a>.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

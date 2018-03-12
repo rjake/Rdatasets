@@ -1,134 +1,83 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hoops</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Births</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Hoops"><tr><td>Hoops</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Births"><tr><td>Births</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Hoops</h2>
+<h2>US Births</h2>
 
 <h3>Description</h3>
 
-<p>Hoops
+<p>Number of births each day from 1968 to 1988
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(Births)
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 147 observations on the following 22 variables.
+<p>A data.frame with 7305 observations on the following 8 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Game</code> </td><td style="text-align: left;"> An ID number assigned to each game</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Opp</code> </td><td style="text-align: left;"> Name of the opponent school for the game</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Home</code> </td><td style="text-align: left;"> Indicator variable where <code>1</code> = home game and <code>0</code> = away game</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>OppAtt</code> </td><td style="text-align: left;"> Number of field goal attempts by the opposing team</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrAtt</code> </td><td style="text-align: left;"> Number of field goal attempts by Grinnell</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Gr3Att</code> </td><td style="text-align: left;"> Number of three-point field goal attempts by Grinnell</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrFT</code> </td><td style="text-align: left;"> Number of free throw attempts by Grinnell</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>OppFT</code> </td><td style="text-align: left;"> Number of free throw attempts by the opponent</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrRB</code> </td><td style="text-align: left;"> Total number of Grinnell rebounds</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrOR</code> </td><td style="text-align: left;"> Number of Grinnell offensive rebounds</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>OppDR</code> </td><td style="text-align: left;"> Number of defensive rebounds the opposing team had</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>OppPoint</code> </td><td style="text-align: left;"> Points scored in the game by the opponent</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrPoint</code> </td><td style="text-align: left;"> Points scored in the game by Grinnell</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrAss</code> </td><td style="text-align: left;"> Number of assists Grinnell had in the game</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>OppTO</code> </td><td style="text-align: left;"> Number of turnovers the opposing team gave up</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrTO</code> </td><td style="text-align: left;"> Number of turnovers Grinnell gave up</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrBlocks</code> </td><td style="text-align: left;"> Number of blocks Grinnell had in the game</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>GrSteal</code> </td><td style="text-align: left;"> Number of steals Grinnell had in the game</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>X40Point</code> </td><td style="text-align: left;"> Indicator variable that is 1 if some Grinnell player scored 40 or more points</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>X30Point</code> </td><td style="text-align: left;"> Indicator variable that is 1 if some Grinnell player scored 30 or more points</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>WinLoss</code> </td><td style="text-align: left;"> <code>1</code>=Grinnell win or <code>0</code>=Grinnell loss</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>PtDiff</code> </td><td style="text-align: left;"> Point differential for the game (Grinnell score minus Opponent's score)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
-
+<p>itemcodedate [Date]
+itemcodebirths number of births on <code>date</code> [integer]
+itemcodewday day of week [ordered factor]
+itemcodeyear year [integer]
+itemcodemonth month [integer]
+itemcodeday day of month [integer]
+itemcodeday_of_year day of year [integer]
+itemcodeday_of_week day of week [integer]
+</p>
 
 
 <h3>Details</h3>
 
-<p>Since 1991, David Arseneault, men's basketball coach of Grinnell College,
-has developed a unique, fast-paced style of basketball that he calls &quot;the system.&quot;
-This dataset comes from the 147 games the Grinnell team
-played within its athletics conference between the 1997-98 season through the 2005-06 season.
+<p>The number of births in <code>Births78</code> is slightly lower than the number
+of births in this data set for the year 1978.  See the examples.
 </p>
 
 
 <h3>Source</h3>
 
-<p>These data were collected by Grinnell College students Eric Ohrn and Ben Johannsen.
+<p>Data source: National Vital Statistics System natality data, as provided by
+Google BigQuery and exported to csv 
+Robert Kern (<a href="http://www.mechanicalkern.com/static/birthdates-1968-1988.csv">http://www.mechanicalkern.com/static/birthdates-1968-1988.csv</a>)
 </p>
+
+
+<h3>See Also</h3>
+
+<p><code>Births2015</code>, <code>Births</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Births)
+if(require(ggplot2)) {
+  ggplot(data = Births, aes(x = date, y = births, colour = wday)) +
+    stat_smooth(se = FALSE, alpha = 0.8, geom = "line")
+  ggplot(data = Births, aes(x = day_of_year, y = births, colour = wday)) +
+    geom_point(size = 0.4, alpha = 0.5) +
+    stat_smooth(se = FALSE, geom = "line", alpha = 0.6, size = 1.5)
+  if (require(dplyr)) {
+    ggplot(
+     data =  bind_cols(Births %&gt;% filter(year == 1978), 
+                       Births78 %&gt;% rename(births78 = births)),
+     aes(x = births - births78)
+     ) +
+     geom_histogram(binwidth = 1)
+  }
+}
+
+</pre>
 
 
 </body></html>

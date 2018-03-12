@@ -1,43 +1,95 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tip Joke</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Caterpillars</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for TipJoke"><tr><td>TipJoke</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Caterpillars"><tr><td>Caterpillars</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Tip Joke</h2>
+<h2>Caterpillars</h2>
 
 <h3>Description</h3>
 
-<p>Effect of a waiter leaving a joke or an advertisement on getting a tip
+<p>Measurements on a sample of Manduca Sexta caterpillars
 </p>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 211 observations on the following 5 variables.
+<p>A dataset with 267 observations on the following 18 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>Card</code> </td><td style="text-align: left;"> Type of card used: <code>Ad</code>, <code>Joke</code>, or <code>None</code></td>
+    <code>Instar</code> </td><td style="text-align: left;"> Coded from 1 (smallest) to 5 (largest) indicating stage of the caterpillar's life</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Tip</code> </td><td style="text-align: left;"> <code>1</code>=customer left a tip or <code>0</code>=no tip</td>
+    <code>ActiveFeeding</code> </td><td style="text-align: left;"> Indicator (<code>Y</code> or <code>N</code>) of whether or not the animal is actively feeding</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Ad</code> </td><td style="text-align: left;"> Indicator for <code>Ad</code> card</td>
+    <code>Fgp</code> </td><td style="text-align: left;"> Indicator (<code>Y</code> or <code>N</code>) of whether or not the animal is in a free growth period</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Joke</code> </td><td style="text-align: left;"> Indicator for <code>Joke</code> card</td>
+    <code>Mgp</code> </td><td style="text-align: left;"> Indicator (<code>Y</code> or <code>N</code>) of whether or not the animal is in a maximum growth period</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>None</code> </td><td style="text-align: left;"> Indicator for no card</td>
+    <code>Mass</code> </td><td style="text-align: left;"> Body mass (in grams)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogMass</code> </td><td style="text-align: left;"> Log (base 10) of body mass</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Intake</code> </td><td style="text-align: left;"> Wet food intake (in grams/day)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogIntake</code> </td><td style="text-align: left;"> Log (base 10) of Intake</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WetFrass</code> </td><td style="text-align: left;"> Amount of frass (solid waste) produced (in grams/day)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogWetFrass</code> </td><td style="text-align: left;"> Log (base 10) of WetFrass</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>DryFrass</code> </td><td style="text-align: left;"> Amount of frass, after drying, produced (in grams/day)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogDryFrass</code> </td><td style="text-align: left;"> Log (base 10) of DryFrass</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Cassim</code> </td><td style="text-align: left;"> CO2 assimilation (ingestion - excretion)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogCassim</code> </td><td style="text-align: left;"> Log (base 10) of Cassim</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Nfrass</code> </td><td style="text-align: left;"> Nitrogen in frass</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogNfrass</code> </td><td style="text-align: left;"> Log (base 10) of Nfrass</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Nassim</code> </td><td style="text-align: left;"> Nitrogen assimilation (ingestion - excretion)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LogNassim</code> </td><td style="text-align: left;"> Log (base 10) of Nassim</td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -50,19 +102,15 @@
 
 <h3>Details</h3>
 
-<p>Can telling a joke affect whether or not a waiter in a coffee bar receives a tip from a customer?
-A study investigated this question at a coffee bar at a famous resort on the west coast of France.
-The waiter randomly assigned coffee-ordering customers to one of three groups: When receiving
-the bill one group also received a card telling a joke, another group received a card containing an
-advertisement for a local restaurant, and a third group received no card at all. He recorded whether or not
-each customer left a tip.
+<p>Student and faculty researchers at Kenyon College conducted
+numerous experiments with Manduca Sexta caterpillars to study biological growth.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Gueguen, Nicholas (2002), &quot;The Effects of a Joke on Tipping When it is Delivered at the Same Time as the Bill,&quot; 
-Journal of Applied Social Psychology, 32, 1955-1963.
+<p>We thank Professors Harry Itagaki, Drew Kerkhoff, Chris Gillen, and Judy Holdener and their students for
+sharing this data from research supported by NSF InSTaRs grant #0827208.
 </p>
 
 

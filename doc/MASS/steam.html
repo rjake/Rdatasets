@@ -1,57 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Saturated Steam Pressure Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: information about the American states needed for U.S....</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for steam"><tr><td>steam</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for state.info"><tr><td>state.info</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-The Saturated Steam Pressure Data
-</h2>
+<h2>information about the American states needed for U.S. Congress</h2>
 
 <h3>Description</h3>
 
-<p>Temperature and pressure in a saturated steam driven experimental device.
+<p>Numeric codes and names of 50 states and the District of Columbia,
+required to parse Keith Poole
+and Howard Rosenthal's collections of U.S. Congressional roll calls.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-steam
+<pre>data(state.info)
 </pre>
 
 
 <h3>Format</h3>
 
-<p>The data frame contains the following components:
-</p>
 
 <dl>
-<dt><code>Temp</code></dt><dd>
-<p>temperature, in degrees Celsius.
-</p>
+<dt><code>icpsr</code></dt><dd><p>integer, numeric code for state used by the
+Inter-university Consortium for Political and Social Research</p>
 </dd>
-<dt><code>Press</code></dt><dd>
-<p>pressure, in Pascals.
-</p>
+<dt><code>state</code></dt><dd><p>character, name of state or <code>Washington
+	D.C.</code></p>
+</dd>
+<dt><code>year</code></dt><dd><p>numeric or <code>NA</code>, year of statehood</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>The function <code>readKH</code> converts the integer ICPSR codes
+into strings, via a table lookup in this data frame.  Another table
+lookup in <code>state.abb</code> provides the 2-letter abbreviation
+commonly used in identifying American legislators, e.g.,
+<code>KENNEDY, E (D-MA)</code>.</p>
+
+
 <h3>Source</h3>
 
-<p>N.R. Draper  and H. Smith (1981)
-<em>Applied Regression Analysis.</em> Wiley, pp. 518&ndash;9.
-</p>
+<p>Various ICPSR codebooks. <a href="http://www.icpsr.umich.edu">http://www.icpsr.umich.edu</a></p>
 
 
-<h3>References</h3>
+<h3>See Also</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (1999)
-<em>Modern Applied Statistics with S-PLUS.</em> Third
-Edition. Springer.
+<p><code>state</code>
 </p>
 
 

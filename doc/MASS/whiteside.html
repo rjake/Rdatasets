@@ -1,99 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: House Insulation: Whiteside's Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Stage C Prostate Cancer</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for whiteside"><tr><td>whiteside</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for stagec"><tr><td>stagec</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-House Insulation: Whiteside's Data
-</h2>
+<h2>Stage C Prostate Cancer</h2>
 
 <h3>Description</h3>
 
-<p>Mr Derek Whiteside of the UK Building Research Station recorded the
-weekly gas consumption and average external temperature at his own
-house in south-east England for two heating seasons, one of 26 weeks
-before, and one of 30 weeks after cavity-wall insulation was
-installed. The object of the exercise was to assess the effect of the
-insulation on gas consumption.
-</p>
+<p>A set of 146 patients with stage C prostate cancer, from a
+study exploring the prognostic value of flow cytometry.</p>
 
 
 <h3>Usage</h3>
 
-<pre>
-whiteside
-</pre>
+<pre>data(stagec)</pre>
 
 
 <h3>Format</h3>
 
-<p>The <code>whiteside</code> data frame has 56 rows and 3 columns.:
+<p>A data frame with 146 observations on the following 8 variables.
 </p>
 
 <dl>
-<dt><code>Insul</code></dt><dd>
-<p>A factor, before or after insulation.
-</p>
+<dt><code>pgtime</code></dt><dd><p>Time to progression or last follow-up (years)</p>
 </dd>
-<dt><code>Temp</code></dt><dd>
-<p>Purportedly the average outside temperature in degrees Celsius. (These
-values is far too low for any 56-week period in the 1960s in
-South-East England. It might be the weekly average of daily minima.)
-</p>
+<dt><code>pgstat</code></dt><dd><p>1 = progression observed, 0 = censored</p>
 </dd>
-<dt><code>Gas</code></dt><dd>
-<p>The weekly gas consumption in 1000s of cubic feet.
-</p>
-</dd></dl>
+<dt><code>age</code></dt><dd><p>age in years</p>
+</dd>
+<dt><code>eet</code></dt><dd><p>early endocrine therapy, 1 = no, 2 = yes</p>
+</dd>
+<dt><code>g2</code></dt><dd><p>percent of cells in G2 phase, as found by flow cytometry</p>
+</dd>
+<dt><code>grade</code></dt><dd><p>grade of the tumor, Farrow system</p>
+</dd>
+<dt><code>gleason</code></dt><dd><p>grade of the tumor, Gleason system</p>
+</dd>
+<dt><code>ploidy</code></dt><dd><p>the ploidy status of the tumor, from flow
+cytometry. Values are <span class="samp">diploid</span>, <span class="samp">tetraploid</span>,
+and <span class="samp">aneuploid</span></p>
+</dd>
+</dl>
 
 
-<h3>Source</h3>
 
-<p>A data set collected in the 1960s by Mr Derek Whiteside of the
-UK Building Research Station. Reported by
-</p>
-<p>Hand, D. J., Daly, F., McConway, K., Lunn, D. and Ostrowski, E. eds (1993)
-<em>A Handbook of Small Data Sets.</em>
-Chapman &amp; Hall, p. 69.
-</p>
+<h3>Details</h3>
 
-
-<h3>References</h3>
-
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>A tumor is called diploid (normal complement of dividing cells) if the
+fraction of cells in G2 phase was determined to be 13% or less.
+Aneuploid cells have a measurable fraction with a chromosome count that
+is neither 24 nor 48, for these the G2 percent is difficult or
+impossible to measure.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-require(lattice)
-xyplot(Gas ~ Temp | Insul, whiteside, panel =
-  function(x, y, ...) {
-    panel.xyplot(x, y, ...)
-    panel.lmline(x, y, ...)
-  }, xlab = "Average external temperature (deg. C)",
-  ylab = "Gas consumption  (1000 cubic feet)", aspect = "xy",
-  strip = function(...) strip.default(..., style = 1))
-
-gasB &lt;- lm(Gas ~ Temp, whiteside, subset = Insul=="Before")
-gasA &lt;- update(gasB, subset = Insul=="After")
-summary(gasB)
-summary(gasA)
-gasBA &lt;- lm(Gas ~ Insul/Temp - 1, whiteside)
-summary(gasBA)
-
-gasQ &lt;- lm(Gas ~ Insul/(Temp + I(Temp^2)) - 1, whiteside)
-coef(summary(gasQ))
-
-gasPR &lt;- lm(Gas ~ Insul + Temp, whiteside)
-anova(gasPR, gasBA)
-options(contrasts = c("contr.treatment", "contr.poly"))
-gasBA1 &lt;- lm(Gas ~ Insul*Temp, whiteside)
-coef(summary(gasBA1))
+require(survival)
+rpart(Surv(pgtime, pgstat) ~ ., stagec)
 </pre>
 
 

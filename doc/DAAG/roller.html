@@ -1,23 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lawn Roller Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Scottish Hill Races Data - 2000</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for roller"><tr><td>roller</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for races2000"><tr><td>races2000</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Lawn Roller Data</h2>
+<h2>Scottish Hill Races Data - 2000</h2>
 
 <h3>Description</h3>
 
-<p>The <code>roller</code> data frame has 10 rows and 2 columns.
-Different weights of roller were rolled over different parts
-of a lawn, and the depression was recorded.
+<p>The record times in 2000 for 77 Scottish long distance
+races.  We
+believe the data are, for the most part, trustworthy.  However,
+the <code>dist</code> variable for Caerketton (record 58) seems
+to have been variously recorded as 1.5 mi and 2.5 mi.  
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>roller</pre>
+<pre>races2000</pre>
 
 
 <h3>Format</h3>
@@ -26,10 +28,16 @@ of a lawn, and the depression was recorded.
 </p>
 
 <dl>
-<dt>weight</dt><dd><p>a numeric vector consisting of the roller weights</p>
+<dt>dist</dt><dd><p>distance, in miles (on the map)</p>
 </dd>
-<dt>depression</dt><dd><p>the depth of the depression made in the grass
-under the roller</p>
+<dt>climb</dt><dd><p>total height gained during the route, in feet</p>
+</dd>
+<dt>time</dt><dd><p>record time in hours</p>
+</dd>
+<dt>timef</dt><dd><p>record time in hours for females</p>
+</dd>
+<dt>type</dt><dd><p>a factor, with levels indicating type of race, 
+i.e. hill, marathon, relay, uphill or other</p>
 </dd>
 </dl>
 
@@ -37,19 +45,14 @@ under the roller</p>
 
 <h3>Source</h3>
 
-<p>Stewart, K.M., Van Toor, R.F., Crosbie,
-S.F. 1988. Control of grass grub (Coleoptera: Scarabaeidae) with
-rollers of different design. N.Z. Journal of Experimental Agriculture
-16: 141-150.
+<p>The Scottish Running Resource, http://www.hillrunning.co.uk
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-plot(roller)
-roller.lm &lt;- lm(depression ~ weight, data = roller)
-plot(roller.lm, which = 4)
+    pairs(races2000[,-5])
 </pre>
 
 

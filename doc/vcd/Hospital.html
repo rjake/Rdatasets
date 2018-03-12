@@ -1,45 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hospital data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: NCbirths</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Hospital"><tr><td>Hospital</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for NCbirths"><tr><td>NCbirths</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Hospital data</h2>
+<h2>NCbirths</h2>
 
 <h3>Description</h3>
 
-<p>The table relates the length of stay (in years) of 132
-long-term schizophrenic patients in two London mental hospitals with
-the frequency of visits.
+<p>Data from births in North Carolina in 2001
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>
-data("Hospital")
-</pre>
 
 
 <h3>Format</h3>
 
-<p>A 2-dimensional array resulting from cross-tabulating 
-132 patients.  The variables and their levels are as follows:
+<p>A dataset with 1450 observations on the following 15 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+    <code>ID</code> </td><td style="text-align: left;"> Patient ID code</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    1 </td><td style="text-align: left;"> Visit Frequency </td><td style="text-align: left;"> Regular, Less than monthly, Never </td>
+    <code>Plural</code> </td><td style="text-align: left;"> <code>1</code>=single birth, <code>2</code>=twins, <code>3</code>=triplets</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    2 </td><td style="text-align: left;"> Length of Stay </td><td style="text-align: left;"> 2--9 years, 10--19 years, 20+ years
+    <code>Sex</code> </td><td style="text-align: left;">  Sex of the baby <code>1</code>=male <code>2</code>=female</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>MomAge</code> </td><td style="text-align: left;"> Mother's age (in years)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Weeks</code> </td><td style="text-align: left;"> Completed weeks of gestation</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Marital</code> </td><td style="text-align: left;"> Marital status: <code>1</code>=married or <code>2</code>=not married</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>RaceMom</code> </td><td style="text-align: left;"> Mother's race: <code>1</code>=white, <code>2</code>=black, <code>3</code>=American Indian, <code>4</code>=Chinese</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> <code>5</code>=Japanese, <code>6</code>=Hawaiian, <code>7</code>=Filipino, or <code>8</code>=Other Asian or Pacific Islander</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>HispMom</code> </td><td style="text-align: left;"> Hispanic origin of mother: <code>C</code>=Cuban, <code>M</code>=Mexican, <code>N</code>=not Hispanic</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> <code>O</code>=Other Hispanic, <code>P</code>=Puerto Rico, <code>S</code>=Central/South America</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Gained</code> </td><td style="text-align: left;"> Weight gained during pregnancy (in pounds)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Smoke</code> </td><td style="text-align: left;"> Smoker mom? <code>1</code>=yes or <code>0</code>=no</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>BirthWeightOz</code> </td><td style="text-align: left;"> Birth weight in ounces</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>BirthWeightGm</code> </td><td style="text-align: left;"> Birth weight in grams</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Low</code> </td><td style="text-align: left;"> Indicator for low birth weight, <code>1</code>=2500 grams or less</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Premie</code> </td><td style="text-align: left;"> Indicator for premature birth, <code>1</code>=36 weeks or sooner</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>MomRace</code> </td><td style="text-align: left;"> Mother's race: <code>black</code>, <code>hispanic</code>, <code>other</code>, or  <code>white</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
   </td>
 </tr>
 
@@ -49,39 +98,16 @@ data("Hospital")
 
 <h3>Details</h3>
 
-<p>Wing (1962) who collected this data concludes 
-that the longer the length of stay in hospital, the less frequent the
-visits.
-</p>
-<p>Haberman (1974) notes that this pattern does not increase from the &quot;Less
-than monthly&quot; to the &quot;Never&quot; group, which are homogeneous.
+<p>This dataset contains data on a sample of 1450 birth
+records that statistician John Holcomb selected from the North Carolina State Center for Health
+and Environmental Statistics.
 </p>
 
 
 <h3>Source</h3>
 
-<p>S.J Haberman (1974): Log-linear models for frequency tables with ordered
-classifications. Biometrics, 30:689&ndash;700.
+<p>Thanks to John Holcomb at Cleveland State University for sharing these data. 
 </p>
-
-
-<h3>References</h3>
-
-<p>J.K. Wing (1962): Institutionalism in mental hospitals.
-British Journal of Social Clinical Psychology, 1:38&ndash;51.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data("Hospital")
-
-mosaic(t(Hospital), shade = TRUE)
-mosaic(Hospital, shade = TRUE)
-sieve(Hospital, shade = TRUE)
-assoc(Hospital, shade = TRUE)
-</pre>
 
 
 </body></html>

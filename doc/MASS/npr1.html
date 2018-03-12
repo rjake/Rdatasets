@@ -1,49 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Naval Petroleum Reserve No. 1 data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wages and Education of Young Males</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for npr1"><tr><td>npr1</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Males"><tr><td>Males</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-US Naval Petroleum Reserve No. 1 data
-</h2>
+<h2>Wages and Education of Young Males</h2>
 
 <h3>Description</h3>
 
-<p>Data on the locations, porosity and permeability (a measure of oil flow)
-on 104 oil wells in the US Naval Petroleum Reserve No. 1 in California.
+<p>A panel of 545 observations from 1980 to 1987
+</p>
+<p><em>total number of observations</em> :  4360
+</p>
+<p><em>observation</em> :  individuals
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-npr1
-</pre>
+<pre>data(Males)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame containing :
 </p>
 
 <dl>
-<dt><code>x</code></dt><dd>
-<p>x coordinates, in miles (origin unspecified)..
-</p>
+<dt>nr</dt><dd><p>identifier</p>
 </dd>
-<dt><code>y</code></dt><dd>
-<p>y coordinates, in miles.
-</p>
+<dt>year</dt><dd><p>year</p>
 </dd>
-<dt><code>perm</code></dt><dd>
-<p>permeability in milli-Darcies.
-</p>
+<dt>school</dt><dd><p>years of schooling</p>
 </dd>
-<dt><code>por</code></dt><dd>
-<p>porosity (%).
-</p>
+<dt>exper</dt><dd><p>years of experience (computed as <code>age-6-school</code>)</p>
+</dd>
+<dt>union</dt><dd><p>wage set by collective bargaining ?</p>
+</dd>
+<dt>ethn</dt><dd><p>a factor with levels <code>black, hisp, other</code></p>
+</dd>
+<dt>married</dt><dd><p>married?</p>
+</dd>
+<dt>health</dt><dd><p>health problem ?</p>
+</dd>
+<dt>wage</dt><dd><p>log of hourly wage</p>
+</dd>
+<dt>industry</dt><dd><p>a factor with 12 levels</p>
+</dd>
+<dt>occupation</dt><dd><p>a factor with 9 levels</p>
+</dd>
+<dt>residence</dt><dd><p>a factor with levels <code>rural area, north east, northern central, south</code></p>
 </dd>
 </dl>
 
@@ -51,17 +60,16 @@ npr1
 
 <h3>Source</h3>
 
-<p>Maher, J.C., Carter, R.D. and Lantz, R.J. (1975)
-Petroleum geology of Naval Petroleum Reserve No. 1, Elk Hills,
-Kern County, California.
-<em>USGS Professional Paper</em> <b>912</b>.
+<p>Journal of Applied Econometrics data archive  
+<a href="http://qed.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/">http://qed.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>Vella, F. and  M. Verbeek (1998) &ldquo;Whose Wages Do Unions Raise? A Dynamic Model of Unionism and Wage Rate Determination for Young Men&rdquo;, <em>Journal of Applied Econometrics</em>, <b>13</b>(2), pp. 163&ndash;183.
+</p>
+<p>Verbeek, M. (2004) <em>A Guide to Modern Econometrics</em>, John Wiley and Sons, chapter 10.
 </p>
 
 

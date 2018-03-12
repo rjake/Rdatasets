@@ -1,82 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Aberrant Crypt Foci in Rat Colons</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Tuna Sighting Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for ACF1"><tr><td>ACF1</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for tuna"><tr><td>tuna</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Aberrant Crypt Foci in Rat Colons</h2>
+<h2>
+Tuna Sighting Data
+</h2>
 
 <h3>Description</h3>
 
-<p>Numbers of aberrant crypt foci (ACF) in the 
-section 1 of the colons of 22 rats subjected to a single
-dose of the carcinogen azoxymethane (AOM), sacrificed
-at 3 different times. 
+<p>The <code>tuna</code> data frame has 64 rows and 1 columns.  
+</p>
+<p>The data come from an aerial
+line transect survey of Southern Bluefin Tuna in the Great Australian Bight.
+An aircraft with two spotters on board flies randomly allocated line transects.
+Each school of tuna sighted is counted and its perpendicular distance from the
+transect measured.  The survey was conducted in summer when tuna tend to stay
+on the surface.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>ACF1</pre>
+<pre>
+tuna
+</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>This data frame contains the following column:
 </p>
 
 <dl>
-<dt>count</dt><dd><p>The number of ACF observed in section 1 of
-each rat colon</p>
-</dd>
-<dt>endtime</dt><dd><p>Time of sacrifice, in weeks following injection
-of AOM</p>
-</dd>
-</dl>
-
+<dt><code>y</code></dt><dd>
+<p>The perpendicular distance, in miles, from the transect for 64 independent 
+sightings of tuna schools.
+</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Ranjana P. Bird, Faculty of Human Ecology, University of Manitoba,
-Winnipeg, Canada.
+<p>The data were obtained from
+</p>
+<p>Chen, S.X. (1996) Empirical likelihood confidence intervals for
+nonparametric density estimation. <em>Biometrika</em>, <b>83</b>, 329&ndash;341.
 </p>
 
 
 <h3>References</h3>
 
-<p>E.A. McLellan, A. Medline and R.P. Bird.  Dose response and
-proliferative characteristics of aberrant crypt foci: putative
-preneoplastic lesions in rat colon.  Carcinogenesis, 12(11): 2093-2098, 
-1991.
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-sapply(split(ACF1$count,ACF1$endtime),var)
-plot(count ~ endtime, data=ACF1, pch=16)
-pause()
-print("Poisson Regression - Example 8.3")
-ACF.glm0 &lt;- glm(formula = count ~ endtime, family = poisson, data = ACF1)
-summary(ACF.glm0)
-
-# Is there a quadratic effect?
-pause()
-
-ACF.glm &lt;- glm(formula = count ~ endtime + I(endtime^2),
-  family = poisson, data = ACF1)
-summary(ACF.glm)
-
-# But is the data really Poisson?  If not, try quasipoisson:
-pause()
-
-ACF.glm &lt;- glm(formula = count ~ endtime + I(endtime^2),
-  family = quasipoisson, data = ACF1)
-summary(ACF.glm)
-</pre>
 
 
 </body></html>

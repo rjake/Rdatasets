@@ -1,75 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Water Salinity and River Discharge</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Chicken Weights by Feed Type</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for salinity"><tr><td>salinity</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for chickwts"><tr><td>chickwts</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Water Salinity and River Discharge
-</h2>
+<h2>Chicken Weights by Feed Type</h2>
 
 <h3>Description</h3>
 
-<p>The <code>salinity</code> data frame has 28 rows and 4 columns.
-</p>
-<p>Biweekly averages of the water salinity and river discharge in Pamlico
-Sound, North Carolina were recorded between the years 1972 and 1977.
-The data in this set consists only of those measurements in March, April
-and May.
+<p>An experiment was conducted to measure and compare the effectiveness
+of various feed supplements on the growth rate of chickens.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-salinity
-</pre>
+<pre>chickwts</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 71 observations on the following 2 variables.
 </p>
 
 <dl>
-<dt><code>sal</code></dt><dd>
-<p>The average salinity of the water over two weeks.
-</p>
+<dt><code>weight</code></dt><dd><p>a numeric variable giving the chick weight.</p>
 </dd>
-<dt><code>lag</code></dt><dd>
-<p>The average salinity of the water lagged two weeks.  Since only spring is used,
-the value of <code>lag</code> is not always equal to the previous value of <code>sal</code>.
-</p>
+<dt><code>feed</code></dt><dd><p>a factor giving the feed type.</p>
 </dd>
-<dt><code>trend</code></dt><dd>
-<p>A factor indicating in which of the 6 biweekly periods between March and May,
-the observations were taken. The levels of the factor are from 0 to 5 with
-0 being the first two weeks in March.
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Newly hatched chicks were randomly allocated into six groups, and each
+group was given a different feed supplement.  Their weights in grams
+after six weeks are given along with feed types.
 </p>
-</dd>
-<dt><code>dis</code></dt><dd>
-<p>The amount of river discharge during the two weeks for which <code>sal</code> is the
-average salinity.
-</p>
-</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>Ruppert, D. and Carroll, R.J. (1980) Trimmed least squares estimation in the 
-linear model. 
-<em>Journal of the American Statistical Association</em>, <b>75</b>, 828&ndash;838.
+<p>Anonymous (1948)
+<em>Biometrika</em>, <b>35</b>, 214.
 </p>
 
 
 <h3>References</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p>McNeil, D. R. (1977)
+<em>Interactive Data Analysis</em>.
+New York: Wiley.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(stats); require(graphics)
+boxplot(weight ~ feed, data = chickwts, col = "lightgray",
+    varwidth = TRUE, notch = TRUE, main = "chickwt data",
+    ylab = "Weight at six weeks (gm)")
+anova(fm1 &lt;- lm(weight ~ feed, data = chickwts))
+opar &lt;- par(mfrow = c(2, 2), oma = c(0, 0, 1.1, 0),
+            mar = c(4.1, 4.1, 2.1, 1.1))
+plot(fm1)
+par(opar)
+</pre>
 
 
 </body></html>

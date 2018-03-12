@@ -1,23 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dewpoint Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Labour Training Evaluation Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for dewpoint"><tr><td>dewpoint</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cps1"><tr><td>cps1</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Dewpoint Data</h2>
+<h2>Labour Training Evaluation Data</h2>
 
 <h3>Description</h3>
 
-<p>The <code>dewpoint</code> data frame has 72 rows and 3 columns.
-Monthly data were obtained for a number of sites (in Australia)
-and a number of months. 
+<p>A non-experimental &quot;control&quot; group, used in various studies of
+the effect of a labor training program, alternative to the
+experimental control group in <code>nswdemo</code>.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>dewpoint</pre>
+<pre>cps1
+cps2
+cps3
+</pre>
 
 
 <h3>Format</h3>
@@ -26,49 +29,69 @@ and a number of months.
 </p>
 
 <dl>
-<dt>maxtemp</dt><dd><p>monthly minimum temperatures</p>
+<dt>trt</dt><dd><p>a numeric vector 
+identifying the study in which the subjects were enrolled
+(0 = Control, 1 = treated).</p>
 </dd>
-<dt>mintemp</dt><dd><p>monthly maximum temperatures</p>
+<dt>age</dt><dd><p> age (in years).</p>
 </dd>
-<dt>dewpt</dt><dd><p>monthly average dewpoint for each combination of
-minimum and maximum temperature readings (formerly dewpoint)</p>
+<dt>educ</dt><dd><p> years of education.</p>
 </dd>
+<dt>black</dt><dd><p> (0 = not black, 1 = black).</p>
+</dd>
+<dt>hisp</dt><dd><p> (0 = not hispanic, 1 = hispanic).</p>
+</dd>
+<dt>marr</dt><dd><p> (0 = not married, 1 = married).</p>
+</dd>
+<dt>nodeg</dt><dd><p> (0 = completed high school, 1 = dropout).</p>
+</dd>
+<dt>re74</dt><dd><p> real earnings in 1974.</p>
+</dd>
+<dt>re75</dt><dd><p> real earnings in 1975.</p>
+</dd>
+<dt>re78</dt><dd><p> real earnings in 1978.</p>
+</dd> 
 </dl>
 
 
 
-<h3>Source</h3>
+<h3>Details</h3>
 
-<p>Dr Edward Linacre,
-visiting fellow in the Australian National University Department
-of Geography. 
+ 
+<p>The <code>cps1</code> and <code>psid1</code> data sets are two non-experimental
+&quot;control&quot; groups, alternative to that in <code>nswdemo</code>, used in
+investigating whether use of such a non-experimental control group can
+be satisfactory. <code>cps2</code> and <code>cps3</code> are subsets of <code>cps1</code>,
+designed to be better matched to the experimental data than <code>cps1</code>.
+Similary <code>psid2</code> and <code>psid3</code> are subsets of <code>psid1</code>,
+designed to be better matched to the experimental data than
+<code>psid1</code>.
 </p>
 
 
-<h3>Examples</h3>
+<h3>Source</h3>
 
-<pre>
-print("Additive Model - Example 7.5")
-require(splines)
-attach(dewpoint)   
-ds.lm &lt;- lm(dewpt ~ bs(maxtemp,5) + bs(mintemp,5), data=dewpoint)
-ds.fit &lt;-predict(ds.lm, type="terms", se=TRUE)
-oldpar &lt;- par(mfrow=c(1,2))
-plot(maxtemp, ds.fit$fit[,1], xlab="Maximum temperature",
-     ylab="Change from dewpoint mean",type="n")
-lines(maxtemp,ds.fit$fit[,1])
-lines(maxtemp,ds.fit$fit[,1]-2*ds.fit$se[,1],lty=2)
-lines(maxtemp,ds.fit$fit[,1]+2*ds.fit$se[,1],lty=2)
-plot(mintemp,ds.fit$fit[,2],xlab="Minimum temperature",
-     ylab="Change from dewpoint mean",type="n")
-ord&lt;-order(mintemp)
-lines(mintemp[ord],ds.fit$fit[ord,2])
-lines(mintemp[ord],ds.fit$fit[ord,2]-2*ds.fit$se[ord,2],lty=2)
-lines(mintemp[ord],ds.fit$fit[ord,2]+2*ds.fit$se[ord,2],lty=2)
-detach(dewpoint)
-par(oldpar)
+<p>http://www.nber.org/~rdehejia/nswdata.html
+</p>
 
-</pre>
+
+<h3>References</h3>
+
+<p>Dehejia, R.H. and Wahba, S. 1999. Causal effects in
+non-experimental studies: re-evaluating the evaluation of training
+programs. Journal of the American Statistical Association 94:
+1053-1062.
+</p>
+<p>Lalonde, R. 1986. Evaluating the economic evaluations of
+training programs. American Economic Review 76: 604-620.
+</p>
+<p>Smith, J. A. and Todd,  P.E. 2005,&quot;Does Matching overcome LaLonde's
+critique of nonexperimental estimators&quot;, <em>Journal of
+Econometrics</em> 125: 305-353.
+</p>
+<p>Dehejia, R.H. 2005. Practical propensity score matching: a reply to
+Smith and Todd. <em>Journal of Econometrics</em> 125: 355-364.
+</p>
 
 
 </body></html>

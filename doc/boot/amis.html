@@ -1,81 +1,97 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Car Speeding and Warning Signs</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Weight versus age of chicks on different diets</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for amis"><tr><td>amis</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for ChickWeight"><tr><td>ChickWeight</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Car Speeding and Warning Signs
-</h2>
+<h2>Weight versus age of chicks on different diets</h2>
 
 <h3>Description</h3>
 
-<p>The <code>amis</code> data frame has 8437 rows and 4 columns.
-</p>
-<p>In a study into the effect that warning signs have on speeding patterns, 
-Cambridgeshire County Council considered 14 pairs of locations.
-The locations were paired to account for factors such as traffic volume
-and type of road.  One site in each pair had a sign erected warning of the
-dangers of speeding and asking drivers to slow down.  No action was taken at
-the second site.  Three sets of measurements were taken at each site.  Each set
-of measurements was nominally of the speeds of 100 cars but not all sites have
-exactly 100 measurements. These speed measurements were taken before the 
-erection of the sign, shortly after the erection of the sign, and again after 
-the sign had been in place for some time.  
+<p>The <code>ChickWeight</code> data frame has 578 rows and 4 columns from an
+experiment on the effect of diet on early growth of chicks.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-amis
-</pre>
+<pre>ChickWeight</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>An object of class
+<code>c("nfnGroupedData", "nfGroupedData", "groupedData", "data.frame")</code>
+containing the following columns:
 </p>
 
 <dl>
-<dt><code>speed</code></dt><dd>
-<p>Speeds of cars (in miles per hour).
+<dt>weight</dt><dd>
+<p>a numeric vector giving the body weight of the chick (gm).
 </p>
 </dd>
-<dt><code>period</code></dt><dd>
-<p>A numeric column indicating the time that the reading was taken.
-A value of 1 indicates a reading taken before the sign was erected, 
-a 2 indicates a reading
-taken shortly after erection of the sign and a 3 indicates a reading taken 
-after the sign had been in place for some time.
+<dt>Time</dt><dd>
+<p>a numeric vector giving the number of days since birth when
+the measurement was made.
 </p>
 </dd>
-<dt><code>warning</code></dt><dd>
-<p>A numeric column indicating whether the location of the reading was chosen to
-have a warning sign erected. A value of 1 indicates presence of a sign and a
-value of 2 indicates that no sign was erected.
+<dt>Chick</dt><dd>
+<p>an ordered factor with levels
+<code>18</code> &lt; ... &lt; <code>48</code>
+giving a unique identifier for the chick.  The ordering of
+the levels groups chicks on the same diet together and
+orders them according to their final weight (lightest to
+heaviest) within diet.
 </p>
 </dd>
-<dt><code>pair</code></dt><dd>
-<p>A numeric column giving the pair number at which the reading was taken. Pairs
-were numbered from 1 to 14.
+<dt>Diet</dt><dd>
+<p>a factor with levels 1, ..., 4 indicating which
+experimental diet the chick received.
 </p>
-</dd></dl>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The body weights of the chicks were measured at birth and every
+second day thereafter until day 20.  They were also measured on day
+21.  There were four groups on chicks on different protein diets.
+</p>
+<p>This dataset was originally part of package <code>nlme</code>, and that has
+methods (including for <code>[</code>, <code>as.data.frame</code>, <code>plot</code> and
+<code>print</code>) for its grouped-data classes.
+</p>
 
 
 <h3>Source</h3>
 
-<p>The data were kindly made available by Mr. Graham Amis, Cambridgeshire County
-Council, U.K.
+<p>Crowder, M. and Hand, D. (1990), <em>Analysis of Repeated Measures</em>,
+Chapman and Hall (example 5.3)
+</p>
+<p>Hand, D. and Crowder, M. (1996), <em>Practical Longitudinal Data
+Analysis</em>, Chapman and Hall (table A.2)
+</p>
+<p>Pinheiro, J. C. and Bates, D. M. (2000) <em>Mixed-effects Models in
+S and S-PLUS</em>, Springer.
 </p>
 
 
-<h3>References</h3>
+<h3>See Also</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p><code>SSlogis</code> for models fitted to this dataset.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(graphics)
+coplot(weight ~ Time | Chick, data = ChickWeight,
+       type = "b", show.given = FALSE)
+</pre>
 
 
 </body></html>

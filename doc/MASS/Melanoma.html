@@ -1,73 +1,100 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival from Malignant Melanoma</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: House Insulation: Whiteside's Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Melanoma"><tr><td>Melanoma</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for whiteside"><tr><td>whiteside</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Survival from Malignant Melanoma
+House Insulation: Whiteside's Data
 </h2>
 
 <h3>Description</h3>
 
-<p>The <code>Melanoma</code> data frame has data on 205 patients in Denmark
-with malignant melanoma.
+<p>Mr Derek Whiteside of the UK Building Research Station recorded the
+weekly gas consumption and average external temperature at his own
+house in south-east England for two heating seasons, one of 26 weeks
+before, and one of 30 weeks after cavity-wall insulation was
+installed. The object of the exercise was to assess the effect of the
+insulation on gas consumption.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-Melanoma
+whiteside
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>The <code>whiteside</code> data frame has 56 rows and 3 columns.:
 </p>
 
 <dl>
-<dt><code>time</code></dt><dd>
-<p>survival time in days, possibly censored.
+<dt><code>Insul</code></dt><dd>
+<p>A factor, before or after insulation.
 </p>
 </dd>
-<dt><code>status</code></dt><dd>
-<p><code>1</code> died from melanoma, <code>2</code> alive, <code>3</code> dead from
-other causes.
+<dt><code>Temp</code></dt><dd>
+<p>Purportedly the average outside temperature in degrees Celsius. (These
+values is far too low for any 56-week period in the 1960s in
+South-East England. It might be the weekly average of daily minima.)
 </p>
 </dd>
-<dt><code>sex</code></dt><dd>
-<p><code>1</code> = male, <code>0</code> = female.
+<dt><code>Gas</code></dt><dd>
+<p>The weekly gas consumption in 1000s of cubic feet.
 </p>
-</dd>
-<dt><code>age</code></dt><dd>
-<p>age in years.
-</p>
-</dd>
-<dt><code>year</code></dt><dd>
-<p>of operation.
-</p>
-</dd>
-<dt><code>thickness</code></dt><dd>
-<p>tumour thickness in mm.
-</p>
-</dd>
-<dt><code>ulcer</code></dt><dd>
-<p><code>1</code> = presence, <code>0</code> = absence.
-</p>
-</dd>
-</dl>
-
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>P. K. Andersen, O. Borgan, R. D. Gill and N. Keiding (1993)
-<em>Statistical Models based on Counting Processes.</em>
-Springer.
+<p>A data set collected in the 1960s by Mr Derek Whiteside of the
+UK Building Research Station. Reported by
 </p>
+<p>Hand, D. J., Daly, F., McConway, K., Lunn, D. and Ostrowski, E. eds (1993)
+<em>A Handbook of Small Data Sets.</em>
+Chapman &amp; Hall, p. 69.
+</p>
+
+
+<h3>References</h3>
+
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(lattice)
+xyplot(Gas ~ Temp | Insul, whiteside, panel =
+  function(x, y, ...) {
+    panel.xyplot(x, y, ...)
+    panel.lmline(x, y, ...)
+  }, xlab = "Average external temperature (deg. C)",
+  ylab = "Gas consumption  (1000 cubic feet)", aspect = "xy",
+  strip = function(...) strip.default(..., style = 1))
+
+gasB &lt;- lm(Gas ~ Temp, whiteside, subset = Insul=="Before")
+gasA &lt;- update(gasB, subset = Insul=="After")
+summary(gasB)
+summary(gasA)
+gasBA &lt;- lm(Gas ~ Insul/Temp - 1, whiteside)
+summary(gasBA)
+
+gasQ &lt;- lm(Gas ~ Insul/(Temp + I(Temp^2)) - 1, whiteside)
+coef(summary(gasQ))
+
+gasPR &lt;- lm(Gas ~ Insul + Temp, whiteside)
+anova(gasPR, gasBA)
+options(contrasts = c("contr.treatment", "contr.poly"))
+gasBA1 &lt;- lm(Gas ~ Insul*Temp, whiteside)
+coef(summary(gasBA1))
+</pre>
 
 
 </body></html>

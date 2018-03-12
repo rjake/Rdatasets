@@ -1,85 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Isotopic Composition Plutonium Batches</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dates of Coal Mining Disasters</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for pluton"><tr><td>pluton</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for coal"><tr><td>coal</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Isotopic Composition Plutonium Batches</h2>
+<h2>
+Dates of Coal Mining Disasters 
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>pluton</code> data frame has 45 rows and 4 columns,
-containing percentages of isotopic composition of 45 Plutonium
-batches.
+<p>The <code>coal</code> data frame has 191 rows and 1 columns.
+</p>
+<p>This data frame gives the dates of 191 explosions in coal mines which
+resulted in 10 or more fatalities.  The time span of the data is from March 15,
+1851 until March 22 1962.  
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(pluton)</pre>
+<pre>
+coal
+</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>This data frame contains the following column:
 </p>
 
 <dl>
-<dt>Pu238</dt><dd><p>the percentages of <i>(238)Pu</i>,
-always less than 2 percent.</p>
-</dd>
-<dt>Pu239</dt><dd><p>the percentages of <i>(239)Pu</i>,
-typically between 60 and 80 percent (from neutron capture of Uranium,
-<i>(238)U</i>).</p>
-</dd>
-<dt>Pu240</dt><dd><p>percentage of the plutonium 240 isotope.</p>
-</dd>
-<dt>Pu241</dt><dd><p>percentage of the plutonium 241 isotope.</p>
-</dd>
-</dl>
-
-
-
-<h3>Details</h3>
-
-<p>Note that the percentage of plutonium~242 can be computed from the
-other four percentages, see the examples.
+<dt><code>date</code></dt><dd>
+<p>The date of the disaster.  The integer part of <code>date</code> gives the year.  The day
+is represented as the fraction of the year that had elapsed on that day.
 </p>
-<p>In the reference below it is explained why it is very desirable to
-combine these plutonium patches in three groups of similar size.
-</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Available as &lsquo;<span class="file">pluton.dat</span>&rsquo; from the archive of the University of Antwerpen,
-
-
-
-
-&lsquo;<span class="file">..../datasets/clusplot-examples.tar.gz</span>&rsquo;, no longer available.
+<p>The data were obtained from
+</p>
+<p>Hand, D.J., Daly, F., Lunn, A.D., McConway, K.J. and Ostrowski, E. (1994)
+<em>A Handbook of Small Data Sets</em>, Chapman and Hall.
 </p>
 
 
 <h3>References</h3>
 
-<p>Rousseeuw, P.J. and Kaufman, L and Trauwaert, E. (1996)
-Fuzzy clustering using scatter matrices,
-<em>Computational Statistics and Data Analysis</em> <b>23</b>(1), 135&ndash;151.
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(pluton)
-
-hist(apply(pluton,1,sum), col = "gray") # between 94% and 100%
-pu5 &lt;- pluton
-pu5$Pu242 &lt;- 100 - apply(pluton,1,sum) # the remaining isotope.
-pairs(pu5)
-</pre>
+<p>Jarrett, R.G. (1979) A note on the intervals between coal-mining disasters.
+<em>Biometrika</em>, <b>66</b>, 191-193.
+</p>
 
 
 </body></html>

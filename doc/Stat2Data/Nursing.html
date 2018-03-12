@@ -1,82 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nursing</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Utility bills</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Nursing"><tr><td>Nursing</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Utilities"><tr><td>Utilities</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Nursing</h2>
+<h2>Utility bills</h2>
 
 <h3>Description</h3>
 
-<p>Characteristics of nursing homes in New Mexico.
+<p>Data from utility bills at a residence.
+<code>Utilities2</code>  is a similar data set with some additional variables.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(Utilities)
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 52 observations on the following 7 variables.
+<p>A data frame containing 117 observations for the following variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Beds</code> </td><td style="text-align: left;"> Number of beds in the nursing home</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>InPatientDays</code> </td><td style="text-align: left;"> Annual medical in-patient days (in hundreds)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>AllPatientDays</code> </td><td style="text-align: left;"> Annual total patient days (in hundreds)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>PatientRevenue</code> </td><td style="text-align: left;"> Annual patinet care revenue (in hundreds of dollars)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>NurseSalaries</code> </td><td style="text-align: left;"> Annual nursing salaries (in hundreds of dollars)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>FacilitiesExpend</code> </td><td style="text-align: left;"> Annual facilities expenditure (in hundreds of dollars)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Rural</code> </td><td style="text-align: left;"> 1=<code>rural</code> or 0=<code>non-rural</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>The data were collected by the Department of Health and Social Services of the
-State of New Mexico and cover 52 of the 60 licensed nursing facilities in New Mexico
-in 1988.
+<ul>
+<li><p><code>month</code> month (coded as a number)
 </p>
+</li>
+<li><p><code>day</code> day of month on which bill was calculated
+</p>
+</li>
+<li><p><code>year</code> year of bill
+</p>
+</li>
+<li><p><code>temp</code> average temperature (F) for billing period
+</p>
+</li>
+<li><p><code>kwh</code> electricity usage (kwh)
+</p>
+</li>
+<li><p><code>ccf</code> gas usage (ccf)
+</p>
+</li>
+<li><p><code>thermsPerDay</code> a numeric vector
+</p>
+</li>
+<li><p><code>billingDays</code> number of billing days in billing period
+</p>
+</li>
+<li><p><code>totalbill</code> total bill (in dollars)
+</p>
+</li>
+<li><p><code>gasbill</code> gas bill (in dollars)
+</p>
+</li>
+<li><p><code>elecbill</code> electric bill (in dollars)
+</p>
+</li>
+<li><p><code>notes</code> notes about the billing period
+</p>
+</li></ul>
 
 
 <h3>Source</h3>
 
-<p>Downloaded from DASL at http://lib.stat.cmu.edu/DASL/Datafiles/Nursingdat.html
+<p>Daniel T. Kaplan, <em>Statistical modeling: A fresh approach</em>, 2009.
 </p>
 
 
-<h3>References</h3>
+<h3>See Also</h3>
 
-<p>Howard L. Smith, Niell F. Piland, and Nancy Fisher, 
-&quot;A Comparison of Financial Performance, Organizational Characteristics, 
-and Management Strategy Among Rural and Urban Nursing Facilities,&quot; 
-Journal of Rural Health, Winter 1992, pp 27-40.
+<p><code>Utilities2</code>.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Utilities)
+if (require(lattice)) {
+  xyplot(gasbill ~ temp, Utilities)
+}
+
+</pre>
 
 
 </body></html>

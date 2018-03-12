@@ -1,95 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Day1Survey</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rain, wavesurge, portpirie and nidd datasets.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Day1Survey"><tr><td>Day1Survey</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for rain, wavesurge and portpirie"><tr><td>rain, wavesurge and portpirie</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Day1Survey</h2>
+<h2>Rain, wavesurge, portpirie and nidd datasets.</h2>
 
 <h3>Description</h3>
 
-<p>Data from a first day class survey
+<p>Rainfall, wave-surge, Port Pirie and River Nidd data sets.
 </p>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 43 observations on the following 13 variables.
+<p>The format of the rain data is: num [1:17531] 0 2.3 1.3 6.9 4.6 0 1
+1.5 1.8 1.8 ...
 </p>
-
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Section</code> </td><td style="text-align: left;"> Section: <code>1</code> or <code>2</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Class</code> </td><td style="text-align: left;"> Year in school: <code>Freshman</code>,  <code>Sophomore</code>, <code>Junior</code>, or <code>Senior</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Sex</code> </td><td style="text-align: left;"> <code>F</code>=female or  <code>M</code>=male</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Distance</code> </td><td style="text-align: left;"> Distance (in miles) to get to campus</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Height</code> </td><td style="text-align: left;"> Height (in inches)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Handedness</code> </td><td style="text-align: left;">  <code>Left</code>, <code>Right</code>, or <code>Ambidextrous</code> </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Coins</code> </td><td style="text-align: left;"> Value of coins student has (in class)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>WhiteString</code> </td><td style="text-align: left;"> Estimated length of a white string (in inches)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>BlackString</code> </td><td style="text-align: left;"> Estimated length of a black string (in inches)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Reading</code> </td><td style="text-align: left;"> Expected amount of reading during the semester (pages/week)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>TV</code> </td><td style="text-align: left;"> Hours of TV watched per week</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Pulse</code> </td><td style="text-align: left;"> Resting pulse rate (beats per minute)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Texting</code> </td><td style="text-align: left;"> Number of text messages in past 24 hours</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
-
+<p>The wave-surge data is bivariate and is used for testing functions in
+<code>texmex</code>.
+</p>
+<p>The Port Pirie data has two columns: 'Year' and 'SeaLevel'.
+</p>
+<p>The River Nidd data represents 154 measurements of the level of the River
+Nidd at Hunsingore Weir (Yorkshire, UK) between 1934 and 1969. Each
+measurement breaches the threshold of $65 m^3/2$. Various authors have
+analysed this dataset, as described by Papastathopoulos and Tawn~<cite>egp</cite>,
+there being some apparent difficulty in identifying a threshold above which
+GPD models are suitable.</p>
 
 
 <h3>Details</h3>
 
-<p>An instructor at a small liberal arts college distributed the a data survey on the first day of class. The data for two
-different sections of the course are given in this dataset.
+<p>The rain, wave-surge and Port Pirie datasets are used by Coles and appear in
+the <code>ismev</code> package. The River Nidd data appear in the <code>evir</code>
+package.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Student survey in an introductory statistics class. 
+<p>Copied from the <code>ismev</code> package and the <code>evir</code> package
+</p>
+
+
+<h3>References</h3>
+
+<p>S. Coles, An Introduction to Statistical Modeling of Extreme
+Values, Springer, 2001
+</p>
+<p>I. Papastathopoulos and J. A. Tawn, Extended Generalised Pareto Models for
+Tail Estimation, Journal of Statistical Planning and Inference, 143, 134 &ndash;
+143, 2011
 </p>
 
 

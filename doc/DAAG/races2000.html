@@ -1,25 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Scottish Hill Races Data - 2000</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Primate Body and Brain Weights</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for races2000"><tr><td>races2000</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for primates"><tr><td>primates</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Scottish Hill Races Data - 2000</h2>
+<h2>Primate Body and Brain Weights</h2>
 
 <h3>Description</h3>
 
-<p>The record times in 2000 for 77 Scottish long distance
-races.  We
-believe the data are, for the most part, trustworthy.  However,
-the <code>dist</code> variable for Caerketton (record 58) seems
-to have been variously recorded as 1.5 mi and 2.5 mi.  
+<p>A subset of <code>Animals</code> data frame from the MASS library.
+It contains the average body and brain measurements of five
+primates.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>races2000</pre>
+<pre>primates</pre>
 
 
 <h3>Format</h3>
@@ -28,16 +26,11 @@ to have been variously recorded as 1.5 mi and 2.5 mi.
 </p>
 
 <dl>
-<dt>dist</dt><dd><p>distance, in miles (on the map)</p>
+<dt>Bodywt</dt><dd><p>a numeric vector consisting of the body weights (in kg) 
+of five
+different primates</p>
 </dd>
-<dt>climb</dt><dd><p>total height gained during the route, in feet</p>
-</dd>
-<dt>time</dt><dd><p>record time in hours</p>
-</dd>
-<dt>timef</dt><dd><p>record time in hours for females</p>
-</dd>
-<dt>type</dt><dd><p>a factor, with levels indicating type of race, 
-i.e. hill, marathon, relay, uphill or other</p>
+<dt>Brainwt</dt><dd><p>a numeric vector consisting of the corresponding brain weights (in g) </p>
 </dd>
 </dl>
 
@@ -45,14 +38,23 @@ i.e. hill, marathon, relay, uphill or other</p>
 
 <h3>Source</h3>
 
-<p>The Scottish Running Resource, http://www.hillrunning.co.uk
+<p>P. J. Rousseeuw  and A. M. Leroy (1987) Robust Regression and
+Outlier Detection. Wiley, p. 57.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-    pairs(races2000[,-5])
+attach(primates)
+plot(x=Bodywt, y=Brainwt, pch=16,
+       xlab="Body weight (kg)", ylab="Brain weight (g)",
+       xlim=c(5,300), ylim=c(0,1500))
+chw &lt;- par()$cxy[1]
+chh &lt;- par()$cxy[2]
+text(x=Bodywt+chw, y=Brainwt+c(-.1,0,0,.1,0)*chh,
+       labels=row.names(primates), adj=0)
+detach(primates)
 </pre>
 
 

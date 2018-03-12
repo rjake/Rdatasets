@@ -1,72 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Heat Evolved by Setting Cements</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Michelson's Speed of Light Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for cement"><tr><td>cement</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for michelson"><tr><td>michelson</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Heat Evolved by Setting Cements
+Michelson's Speed of Light Data
 </h2>
 
 <h3>Description</h3>
 
-<p>Experiment on the heat evolved in the setting of each of 13 cements.
+<p>Measurements of the speed of light in air, made between 5th June
+and 2nd July, 1879.  The data consists of five experiments, each
+consisting of 20 consecutive runs.  The response is the speed
+of light in km/s, less 299000.  The currently accepted value, on
+this scale of measurement, is 734.5.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-cement
+michelson
 </pre>
 
 
 <h3>Format</h3>
 
+<p>The data frame contains the following components:
+</p>
 
 <dl>
-<dt><code>x1, x2, x3, x4</code></dt><dd>
-<p>Proportions (%) of active ingredients.
+<dt><code>Expt</code></dt><dd>
+<p>The experiment number, from 1 to 5.
 </p>
 </dd>
-<dt><code>y</code></dt><dd>
-<p>heat evolved in cals/gm.
+<dt><code>Run</code></dt><dd>
+<p>The run number within each experiment.
+</p>
+</dd>
+<dt><code>Speed</code></dt><dd>
+<p>Speed-of-light measurement.
 </p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>Thirteen samples of Portland cement were set. For each sample, the
-percentages of the four main chemical ingredients was accurately
-measured.  While the cement was setting the amount of heat evolved was
-also measured.
-</p>
-
-
 <h3>Source</h3>
 
-<p>Woods, H., Steinour, H.H. and Starke, H.R. (1932) Effect of composition of 
-Portland cement on heat evolved during hardening. 
-<em>Industrial Engineering and Chemistry</em>, <b>24</b>, 1207&ndash;1214.
+<p>A.J. Weekes (1986) <em>A Genstat Primer.</em> Edward Arnold.
+</p>
+<p>S. M. Stigler (1977) Do robust estimators work with real data?
+<em>Annals of Statistics</em> <b>5</b>, 1055&ndash;1098.
 </p>
 
 
 <h3>References</h3>
 
-<p>Hald, A. (1957) <em>Statistical Theory with Engineering
-Applications.</em> Wiley, New York.
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-lm(y ~ x1 + x2 + x3 + x4, cement)
-</pre>
 
 
 </body></html>

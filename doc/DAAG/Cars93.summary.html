@@ -1,24 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A Summary of the Cars93 Data set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Biomass Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Cars93.summary"><tr><td>Cars93.summary</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for biomass"><tr><td>biomass</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>A Summary of the Cars93 Data set</h2>
+<h2>Biomass Data</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Cars93.summary</code> data frame has 6 rows and 4 columns
-created from information in the <code>Cars93</code> data set in the Venables 
-and Ripley MASS package. Each row corresponds to a different
-class of car (e.g. Compact, Large, etc.).
+<p>The <code>biomass</code> data frame has 135 rows and 8 columns.  The
+<code>rainforest</code> data frame is a subset of this one.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>Cars93.summary</pre>
+<pre>biomass</pre>
 
 
 <h3>Format</h3>
@@ -27,19 +25,25 @@ class of car (e.g. Compact, Large, etc.).
 </p>
 
 <dl>
-<dt>Min.passengers</dt><dd><p>minimum
-passenger capacity for each class of car</p>
+<dt>dbh</dt><dd><p>a numeric vector</p>
 </dd>
-<dt>Max.passengers</dt><dd><p>maximum
-passenger capacity for each class of car</p>
+<dt>wood</dt><dd><p>a numeric vector</p>
 </dd>
-<dt>No.of.cars</dt><dd><p>number of
-cars in each class</p>
+<dt>bark</dt><dd><p>a numeric vector</p>
 </dd>
-<dt>abbrev</dt><dd><p>a factor with levels
-<code>C</code> Compact, <code>L</code> Large, 
-<code>M</code> Mid-Size, <code>Sm</code> Small, 
-<code>Sp</code> Sporty, <code>V</code> Van</p>
+<dt>fac26</dt><dd><p>a factor with 3 levels</p>
+</dd>
+<dt>root</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>rootsk</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>branch</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>species</dt><dd><p>a factor with levels
+<code>Acacia mabellae</code>,
+<code>C. fraseri</code>,
+<code>Acmena smithii</code>,
+<code>B. myrtifolia</code> </p>
 </dd>
 </dl>
 
@@ -47,42 +51,16 @@ cars in each class</p>
 
 <h3>Source</h3>
 
-<p>Lock, R. H. (1993) 1993 New Car Data. Journal of Statistics
-Education 1(1)
+<p>J. Ash, Australian National University
 </p>
 
 
 <h3>References</h3>
 
-<p>MASS library
+<p>Ash, J. and Helman, C. (1990) Floristics and vegetation
+biomass of a forest catchment, Kioloa, south coastal N.S.W.
+Cunninghamia, 2: 167-182.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-type &lt;- Cars93.summary$abbrev
-type &lt;- Cars93.summary[,4]
-type &lt;- Cars93.summary[,"abbrev"]
-type &lt;- Cars93.summary[[4]] # Take the object that is stored
-                            # in the fourth list element.
-type
-pause()
-
-attach(Cars93.summary)
-  # R can now access the columns of Cars93.summary directly
-abbrev
-detach("Cars93.summary")
-pause()
-
-#  To change the name of the \verb!abbrev! variable (the fourth column)
-names(Cars93.summary)[4] &lt;- "code"
-pause()
-
-#  To change all of the names, try
-names(Cars93.summary) &lt;- c("minpass","maxpass","number","code")
-
-</pre>
 
 
 </body></html>

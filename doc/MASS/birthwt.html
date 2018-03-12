@@ -1,55 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Risk Factors Associated with Low Infant Birth Weight</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Frequency Table from a Copenhagen Housing Conditions Survey</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for birthwt"><tr><td>birthwt</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for housing"><tr><td>housing</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Risk Factors Associated with Low Infant Birth Weight
+Frequency Table from a Copenhagen Housing Conditions Survey
 </h2>
 
 <h3>Description</h3>
 
-<p>The <code>birthwt</code> data frame has 189 rows and 10 columns.
-The data were collected at Baystate Medical Center, Springfield, Mass
-during 1986.
+<p>The <code>housing</code> data frame has 72 rows and 5 variables.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-birthwt
+housing
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
-</p>
 
 <dl>
-<dt><code>low</code></dt><dd><p>indicator of birth weight less than 2.5 kg.</p>
+<dt><code>Sat</code></dt><dd>
+<p>Satisfaction of householders with their present housing
+circumstances, (High, Medium or Low, ordered factor).
+</p>
 </dd>
-<dt><code>age</code></dt><dd><p>mother's age in years.</p>
+<dt><code>Infl</code></dt><dd>
+<p>Perceived degree of influence householders have on the
+management of the property (High, Medium, Low).
+</p>
 </dd>
-<dt><code>lwt</code></dt><dd><p>mother's weight in pounds at last menstrual period.</p>
+<dt><code>Type</code></dt><dd>
+<p>Type of rental accommodation, (Tower, Atrium, Apartment, Terrace).
+</p>
 </dd>
-<dt><code>race</code></dt><dd><p>mother's race (<code>1</code> = white, <code>2</code> = black,
-<code>3</code> = other).</p>
+<dt><code>Cont</code></dt><dd>
+<p>Contact residents are afforded with other residents, (Low, High).
+</p>
 </dd>
-<dt><code>smoke</code></dt><dd><p>smoking status during pregnancy.</p>
-</dd>
-<dt><code>ptl</code></dt><dd><p>number of previous premature labours.</p>
-</dd>
-<dt><code>ht</code></dt><dd><p>history of hypertension.</p>
-</dd>
-<dt><code>ui</code></dt><dd><p>presence of uterine irritability.</p>
-</dd>
-<dt><code>ftv</code></dt><dd><p>number of physician visits during the first trimester.</p>
-</dd>
-<dt><code>bwt</code></dt><dd><p>birth weight in grams.</p>
+<dt><code>Freq</code></dt><dd>
+<p>Frequencies: the numbers of residents in each class.
+</p>
 </dd>
 </dl>
 
@@ -57,8 +54,13 @@ birthwt
 
 <h3>Source</h3>
 
-<p>Hosmer, D.W. and Lemeshow, S. (1989)
-<em>Applied Logistic Regression.</em> New York: Wiley
+<p>Madsen, M. (1976)
+Statistical analysis of multiple contingency tables. Two examples.
+<em>Scand. J. Statist.</em> <b>3</b>, 97&ndash;106.
+</p>
+<p>Cox, D. R. and Snell, E. J. (1984)
+<em>Applied Statistics, Principles and Examples</em>.
+Chapman &amp; Hall.
 </p>
 
 
@@ -72,16 +74,67 @@ birthwt
 <h3>Examples</h3>
 
 <pre>
-bwt &lt;- with(birthwt, {
-race &lt;- factor(race, labels = c("white", "black", "other"))
-ptd &lt;- factor(ptl &gt; 0)
-ftv &lt;- factor(ftv)
-levels(ftv)[-(1:2)] &lt;- "2+"
-data.frame(low = factor(low), age, lwt, race, smoke = (smoke &gt; 0),
-           ptd, ht = (ht &gt; 0), ui = (ui &gt; 0), ftv)
-})
 options(contrasts = c("contr.treatment", "contr.poly"))
-glm(low ~ ., binomial, bwt)
+
+# Surrogate Poisson models
+house.glm0 &lt;- glm(Freq ~ Infl*Type*Cont + Sat, family = poisson,
+                  data = housing)
+summary(house.glm0, cor = FALSE)
+
+addterm(house.glm0, ~. + Sat:(Infl+Type+Cont), test = "Chisq")
+
+house.glm1 &lt;- update(house.glm0, . ~ . + Sat*(Infl+Type+Cont))
+summary(house.glm1, cor = FALSE)
+
+1 - pchisq(deviance(house.glm1), house.glm1$df.residual)
+
+dropterm(house.glm1, test = "Chisq")
+
+addterm(house.glm1, ~. + Sat:(Infl+Type+Cont)^2, test  =  "Chisq")
+
+hnames &lt;- lapply(housing[, -5], levels) # omit Freq
+newData &lt;- expand.grid(hnames)
+newData$Sat &lt;- ordered(newData$Sat)
+house.pm &lt;- predict(house.glm1, newData,
+                    type = "response")  # poisson means
+house.pm &lt;- matrix(house.pm, ncol = 3, byrow = TRUE,
+                   dimnames = list(NULL, hnames[[1]]))
+house.pr &lt;- house.pm/drop(house.pm %*% rep(1, 3))
+cbind(expand.grid(hnames[-1]), round(house.pr, 2))
+
+# Iterative proportional scaling
+loglm(Freq ~ Infl*Type*Cont + Sat*(Infl+Type+Cont), data = housing)
+
+
+# multinomial model
+library(nnet)
+(house.mult&lt;- multinom(Sat ~ Infl + Type + Cont, weights = Freq,
+                       data = housing))
+house.mult2 &lt;- multinom(Sat ~ Infl*Type*Cont, weights = Freq,
+                        data = housing)
+anova(house.mult, house.mult2)
+
+house.pm &lt;- predict(house.mult, expand.grid(hnames[-1]), type = "probs")
+cbind(expand.grid(hnames[-1]), round(house.pm, 2))
+
+# proportional odds model
+house.cpr &lt;- apply(house.pr, 1, cumsum)
+logit &lt;- function(x) log(x/(1-x))
+house.ld &lt;- logit(house.cpr[2, ]) - logit(house.cpr[1, ])
+(ratio &lt;- sort(drop(house.ld)))
+mean(ratio)
+
+(house.plr &lt;- polr(Sat ~ Infl + Type + Cont,
+                   data = housing, weights = Freq))
+
+house.pr1 &lt;- predict(house.plr, expand.grid(hnames[-1]), type = "probs")
+cbind(expand.grid(hnames[-1]), round(house.pr1, 2))
+
+Fr &lt;- matrix(housing$Freq, ncol  =  3, byrow = TRUE)
+2*sum(Fr*log(house.pr/house.pr1))
+
+house.plr2 &lt;- stepAIC(house.plr, ~.^2)
+house.plr2$anova
 </pre>
 
 

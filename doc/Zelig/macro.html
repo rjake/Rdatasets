@@ -1,47 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Macroeconomic Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: WeightLossIncentive</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for macro"><tr><td>macro</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for WeightLossIncentive"><tr><td>WeightLossIncentive</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Macroeconomic Data</h2>
+<h2>WeightLossIncentive</h2>
 
 <h3>Description</h3>
 
-<p>Selected macroeconomic indicators for Austria, Belgium, Canada,
-Denmark, Finland, France, Italy, Japan, the Netherlands, Norway,
-Sweden, the United Kingdom, the United States, and West Germany for
-the period 1966-1990.  
+<p>An experiment to see if financial incentives improve weight loss
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>data(macro)</pre>
 
 
 <h3>Format</h3>
 
-<p>A table containing 6 variables (&quot;country&quot;, &quot;year&quot;, &quot;gdp&quot;, 
-&quot;unem&quot;, &quot;capmob&quot;, and &quot;trade&quot;) and 350 observations.
+<p>A dataset with 38 observations on the following 3 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>WeightLoss</code></td><td style="text-align: left;"> Weight loss (in pounds) after four months</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Group</code></td><td style="text-align: left;"> Treatment group: <code>Control</code> or <code>Incentive</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Month7Loss</code></td><td style="text-align: left;"> Weight loss (in pounds) after seven months</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>Researchers investigated
+whether financial incentives would help people lose weight more successfully. Some participants in
+the study were randomly assigned to a treatment group that was offered financial incentives for
+achieving weight loss goals, while others were assigned to a control group that did not use financial
+incentives. All participants were monitored over a four month period and the net weight change
+(Before - After in pounds) at the end of this period was recorded for each individual. Then the
+individuals were left alone for three months with a followup weight check at the seven-month mark
+to see whether weight losses persisted after the original four months of treatment.<br />
+The 4-month data alone (with missing values omitted) is stored in WeightLossIncentive4. <br />
+The 7-month data alone (with missing values omitted) is stored in WeightLossIncentive7.
 </p>
 
 
 <h3>Source</h3>
 
-<p>ICPSR</p>
-
-
-<h3>References</h3>
-
-<p>King, Gary, Michael Tomz and Jason Wittenberg. ICPSR Publication
-Related Archive, 1225.
-</p>
-<p>King, Gary, Michael Tomz and Jason Wittenberg (2000).
-&ldquo;Making the Most of Statistical Analyses: Improving Interpretation and 
-Presentation,&rdquo; <em>American Journal of Political Science</em>, vol. 44,
-pp. 341-355.
+<p>&ldquo;Financial incentive-based approaches for weight loss,&quot; Journal of the American Medical Association by Volpp,
+John, Troxel, et. al., Vol. 200, no. 22, pp 2631-2637, (Dec. 2008)
 </p>
 
 

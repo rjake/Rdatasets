@@ -1,36 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Possum Sites</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Measurements on 12 books</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for possumsites"><tr><td>possumsites</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for oddbooks"><tr><td>oddbooks</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Possum Sites</h2>
+<h2>Measurements on 12 books</h2>
 
 <h3>Description</h3>
 
-<p>The <code>possumsites</code> data frame consists of Longitudes, Latitudes,
-and altitudes for the seven sites from Southern Victoria to central Queensland
-where the <code>possum</code> observations were made.
+<p>Data giving thickness (mm), height (cm), width (cm)
+and weight (g), of 12 books.  Books were selected so that thickness
+decreased as page area increased
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>possumsites</pre>
+<pre>data(oddbooks)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 12 observations on the following 4 variables.
 </p>
 
 <dl>
-<dt>Longitude</dt><dd><p>a numeric vector</p>
+<dt>thick</dt><dd><p>a numeric vector</p>
 </dd>
-<dt>Latitude</dt><dd><p>a numeric vector</p>
+<dt>height</dt><dd><p>a numeric vector</p>
 </dd>
-<dt>altitude</dt><dd><p>in meters</p>
+<dt>breadth</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>weight</dt><dd><p>a numeric vector</p>
 </dd>
 </dl>
 
@@ -38,25 +40,16 @@ where the <code>possum</code> observations were made.
 
 <h3>Source</h3>
 
-<p>Lindenmayer, D. B., Viggers, K. L., Cunningham, R. B., and
-Donnelly, C. F. 1995. Morphological variation among columns of the
-mountain brushtail possum, Trichosurus caninus Ogilby
-(Phalangeridae: Marsupiala). Australian Journal of Zoology 43:
-449-458. 
+<p>JM took books from his library.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-require(oz)
-oz(sections=c(3:5, 11:16))
-attach(possumsites)
-points(Longitude, Latitude, pch=16, col=2)
-chw &lt;- par()$cxy[1]
-chh &lt;- par()$cxy[2]
-posval &lt;- c(2,4,2,2,4,2,2)
-text(Longitude+(3-posval)*chw/4, Latitude, row.names(possumsites), pos=posval)
+data(oddbooks)
+str(oddbooks)
+plot(oddbooks) 
 </pre>
 
 

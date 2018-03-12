@@ -1,45 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: UK Soccer Scores</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pulse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for UKSoccer"><tr><td>UKSoccer</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Pulse"><tr><td>Pulse</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>UK Soccer Scores</h2>
+<h2>Pulse</h2>
 
 <h3>Description</h3>
 
-<p>Data from Lee (1997), on the goals scored by Home and Away teams in
-the Premier Football League, 1995/6 season.
+<p>Pulse rates before and after exercise for a sample of statistics students
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>
-data("UKSoccer")
-</pre>
 
 
 <h3>Format</h3>
 
-<p>A 2-dimensional array resulting from cross-tabulating the number of
-goals scored in 380 games.  The variables and their levels are as
-follows:
+<p>A dataset with 232 observations on the following 7 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+    <code>Active</code> </td><td style="text-align: left;"> Pulse rate (beats per minute) after exercise</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    1 </td><td style="text-align: left;"> Home </td><td style="text-align: left;"> 0, 1, ..., 4 </td>
+    <code>Rest</code> </td><td style="text-align: left;"> Resting pulse rate (beats per minute)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    2 </td><td style="text-align: left;"> Away </td><td style="text-align: left;"> 0, 1, ..., 4
+    <code>Smoke</code> </td><td style="text-align: left;"> <code>1</code>=smoker or <code>0</code>=nonsmoker</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Gender</code> </td><td style="text-align: left;"> <code>1</code>=female or <code>0</code>=male</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Exercise</code> </td><td style="text-align: left;"> Typical hours of exercise (per week)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Hgt</code> </td><td style="text-align: left;"> Height (in inches)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Wgt</code> </td><td style="text-align: left;"> Weight (in pounds)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
   </td>
 </tr>
 
@@ -47,38 +56,19 @@ follows:
 
 
 
+<h3>Details</h3>
+
+<p>Students in a Stat2 class recorded resting pulse rates (in class), 
+did three &quot;laps&quot; walking up/down a nearby set of stairs, and then 
+measured their pulse rate after the exercise.  They provided additional information about
+height, weight, exercise, and smoking habits via a survey. 
+</p>
+
+
 <h3>Source</h3>
 
-<p>M. Friendly (2000),
-Visualizing Categorical Data, page 27.
+<p>Data compiled over several semesters from students taking a Stat2 course. 
 </p>
-
-
-<h3>References</h3>
-
-<p>A. J. Lee (1997),
-Modelling scores in the Premier League: Is Manchester United really
-the best?,
-<em>Chance</em>, <b>10</b>(1), 15&ndash;19.
-</p>
-<p>M. Friendly (2000),
-<em>Visualizing Categorical Data</em>.
-SAS Institute, Cary, NC.
-</p>
-
-
-<h3>See Also</h3>
-
-<p><code>Bundesliga</code>
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data("UKSoccer")
-mosaic(UKSoccer, gp = shading_max, main = "UK Soccer Scores")
-</pre>
 
 
 </body></html>

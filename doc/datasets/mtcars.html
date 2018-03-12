@@ -1,97 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Motor Trend Car Road Tests</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: NOx Air Pollution Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for mtcars"><tr><td>mtcars</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for NOxEmissions"><tr><td>NOxEmissions</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Motor Trend Car Road Tests</h2>
+<h2>NOx Air Pollution Data</h2>
 
 <h3>Description</h3>
 
-<p>The data was extracted from the 1974 <em>Motor Trend</em> US magazine,
-and comprises fuel consumption and 10 aspects of
-automobile design and performance for 32 automobiles (1973&ndash;74
-models).
+<p>A typical medium sized environmental data set with hourly measurements
+of <i>NOx</i> pollution content in the ambient air.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>mtcars</pre>
+<pre>data(NOxEmissions)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 32 observations on 11 variables.
+<p>A data frame with 8088 observations on the following 4 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    [, 1] </td><td style="text-align: left;"> mpg  </td><td style="text-align: left;"> Miles/(US) gallon </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 2] </td><td style="text-align: left;"> cyl  </td><td style="text-align: left;"> Number of cylinders </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 3] </td><td style="text-align: left;"> disp </td><td style="text-align: left;"> Displacement (cu.in.) </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 4] </td><td style="text-align: left;"> hp   </td><td style="text-align: left;"> Gross horsepower </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 5] </td><td style="text-align: left;"> drat </td><td style="text-align: left;"> Rear axle ratio </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 6] </td><td style="text-align: left;"> wt   </td><td style="text-align: left;"> Weight (1000 lbs) </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 7] </td><td style="text-align: left;"> qsec </td><td style="text-align: left;"> 1/4 mile time </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 8] </td><td style="text-align: left;"> vs   </td><td style="text-align: left;"> V/S </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 9] </td><td style="text-align: left;"> am   </td><td style="text-align: left;"> Transmission (0 = automatic, 1 = manual) </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,10] </td><td style="text-align: left;"> gear </td><td style="text-align: left;"> Number of forward gears </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,11] </td><td style="text-align: left;"> carb </td><td style="text-align: left;"> Number of carburetors
-  </td>
-</tr>
+<dl>
+<dt><code>julday</code></dt><dd><p>day number, a factor with levels <code>373</code>
+... <code>730</code>, typically with 24 hourly measurements.</p>
+</dd>
+<dt><code>LNOx</code></dt><dd><p><i>\log</i> of hourly mean of NOx concentration in
+ambient air [ppb] next to a highly frequented motorway.</p>
+</dd>
+<dt><code>LNOxEm</code></dt><dd><p><i>\log</i> of hourly sum of NOx emission of
+cars on this motorway in arbitrary units.</p>
+</dd>
+<dt><code>sqrtWS</code></dt><dd><p>Square root of wind speed [m/s].</p>
+</dd>
+</dl>
 
-</table>
 
+
+<h3>Details</h3>
+
+<p>The original data set had more observations, but with missing values.
+Here, all cases with missing values were omitted
+(<code>na.omit(.)</code>), and then only those were retained that
+belonged to days with at least 20 (fully) observed hourly
+measurements.
+</p>
 
 
 <h3>Source</h3>
 
-<p>Henderson and Velleman (1981),
-Building multiple regression models interactively.
-<em>Biometrics</em>, <b>37</b>, 391&ndash;411.
+<p>René Locher (at ZHAW, Switzerland).
+
+</p>
+
+
+<h3>See Also</h3>
+
+<p>another NOx dataset, <code>ambientNOxCH</code>.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-require(graphics)
-pairs(mtcars, main = "mtcars data")
-coplot(mpg ~ disp | as.factor(cyl), data = mtcars,
-       panel = panel.smooth, rows = 1)
+data(NOxEmissions)
+plot(LNOx ~ LNOxEm, data = NOxEmissions, cex = 0.25, col = "gray30")
+
+## Not run: ## these take too much time --
+ ## p = 340  ==&gt; already Least Squares is not fast
+ (lmNOx &lt;- lm(LNOx ~ . ,data = NOxEmissions))
+ plot(lmNOx) #-&gt;  indication of 1 outlier
+
+ M.NOx &lt;- MASS::rlm(LNOx ~ . , data = NOxEmissions)
+ ## M-estimation works
+ ## whereas  MM-estimation fails:
+ try(MM.NOx &lt;- MASS::rlm(LNOx ~ . , data = NOxEmissions, method = "MM"))
+ ## namely because S-estimation fails:
+ try(lts.NOx &lt;- ltsReg(LNOx ~ . , data = NOxEmissions))
+ try(lmR.NOx &lt;- lmrob (LNOx ~ . , data = NOxEmissions))
+
+## End(Not run)
 </pre>
 
 

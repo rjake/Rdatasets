@@ -1,118 +1,78 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Expenditures for Public Schools</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Galton's Mid parent child height data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for PublicSchools"><tr><td>PublicSchools</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for galton"><tr><td>galton</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>US Expenditures for Public Schools</h2>
+<h2>Galton's Mid parent child height data</h2>
 
 <h3>Description</h3>
 
-<p>Per capita expenditure on public schools and per capita income
-by state in 1979.
+<p>Two of the earliest examples of the correlation coefficient were Francis Galton's data sets on the relationship between mid parent and child height and the similarity of parent generation peas with child peas.  This is the data set for the Galton height.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(PublicSchools)</pre>
+<pre>data(galton)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing 51 observations of 2 variables.
+<p>A data frame with 928 observations on the following 2 variables.
 </p>
 
 <dl>
-<dt>Expenditure</dt><dd><p>per capita expenditure on public schools,</p>
+<dt><code>parent</code></dt><dd><p>Mid Parent heights (in inches) </p>
 </dd>
-<dt>Income</dt><dd><p>per capita income.</p>
+<dt><code>child</code></dt><dd><p>Child Height</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>Female heights were adjusted by 1.08 to compensate for sex differences. (This was done in the original data set)
+</p>
+
+
 <h3>Source</h3>
 
-<p>Table 14.1 in Greene (1993)</p>
+<p>This is just the galton data set from UsingR, slightly rearranged.
+</p>
 
 
 <h3>References</h3>
 
-<p>Cribari-Neto F. (2004), Asymptotic Inference Under Heteroskedasticity
-of Unknown Form, <em>Computational Statistics \&amp; Data Analysis</em>,
-<b>45</b>, 215-233.
+<p>Stigler, S. M. (1999). Statistics on the Table: The History of Statistical 
+Concepts and Methods. Harvard University Press. 
+Galton, F. (1886). Regression towards mediocrity in hereditary stature. Journal of the Anthropological Institute of Great Britain and Ireland, 15:246-263. 
+Galton, F. (1869). Hereditary Genius: An Inquiry into its Laws and Consequences. London: Macmillan. 
 </p>
-<p>Greene W.H. (1993), <em>Econometric Analysis</em>, 2nd edition.
-Macmillan Publishing Company, New York.
+<p>Wachsmuth, A.W., Wilkinson L., Dallal G.E. (2003). Galton's bend: A 
+previously undiscovered nonlinearity in Galton's family stature regression 
+data. The American Statistician, 57, 190-192.
 </p>
-<p>US Department of Commerce (1979), <em>Statistical Abstract of the
-United States</em>. US Government Printing Office, Washington, DC.
-</p>
+
+
+<h3>See Also</h3>
+
+<p>The other Galton data sets:   <code>heights</code>, <code>peas</code>,<code>cubits</code></p>
 
 
 <h3>Examples</h3>
 
 <pre>
-## Willam H. Greene, Econometric Analysis, 2nd Ed.
-## Chapter 14
-## load data set, p. 385, Table 14.1
-data(PublicSchools)
-
-## omit NA in Wisconsin and scale income
-ps &lt;- na.omit(PublicSchools)
-ps$Income &lt;- ps$Income * 0.0001
-
-## fit quadratic regression, p. 385, Table 14.2
-fmq &lt;- lm(Expenditure ~ Income + I(Income^2), data = ps)
-summary(fmq)
-
-## compare standard and HC0 standard errors
-## p. 391, Table 14.3
-library(sandwich)
-coef(fmq)
-sqrt(diag(vcovHC(fmq, type = "const")))
-sqrt(diag(vcovHC(fmq, type = "HC0")))
-
-
-if(require(lmtest)) {
-## compare t ratio
-coeftest(fmq, vcov = vcovHC(fmq, type = "HC0"))
-
-## White test, p. 393, Example 14.5
-wt &lt;- lm(residuals(fmq)^2 ~ poly(Income, 4), data = ps)
-wt.stat &lt;- summary(wt)$r.squared * nrow(ps)
-c(wt.stat, pchisq(wt.stat, df = 3, lower = FALSE))
-
-## Bresch-Pagan test, p. 395, Example 14.7
-bptest(fmq, studentize = FALSE)
-bptest(fmq)
-
-## Francisco Cribari-Neto, Asymptotic Inference, CSDA 45
-## quasi z-tests, p. 229, Table 8
-## with Alaska
-coeftest(fmq, df = Inf)[3,4]
-coeftest(fmq, df = Inf, vcov = vcovHC(fmq, type = "HC0"))[3,4]
-coeftest(fmq, df = Inf, vcov = vcovHC(fmq, type = "HC3"))[3,4]
-coeftest(fmq, df = Inf, vcov = vcovHC(fmq, type = "HC4"))[3,4]
-## without Alaska (observation 2)
-fmq1 &lt;- lm(Expenditure ~ Income + I(Income^2), data = ps[-2,])
-coeftest(fmq1, df = Inf)[3,4]
-coeftest(fmq1, df = Inf, vcov = vcovHC(fmq1, type = "HC0"))[3,4]
-coeftest(fmq1, df = Inf, vcov = vcovHC(fmq1, type = "HC3"))[3,4]
-coeftest(fmq1, df = Inf, vcov = vcovHC(fmq1, type = "HC4"))[3,4]
-}
-
-## visualization, p. 230, Figure 1
-plot(Expenditure ~ Income, data = ps,
-  xlab = "per capita income",
-  ylab = "per capita spending on public schools")
-inc &lt;- seq(0.5, 1.2, by = 0.001)
-lines(inc, predict(fmq, data.frame(Income = inc)), col = 4)
-fml &lt;- lm(Expenditure ~ Income, data = ps)
-abline(fml)
-text(ps[2,2], ps[2,1], rownames(ps)[2], pos = 2)
+data(galton)
+describe(galton)
+ #show the scatter plot and the lowess fit 
+pairs.panels(galton,main="Galton's Parent child heights")  
+#but this makes the regression lines look the same
+pairs.panels(galton,lm=TRUE,main="Galton's Parent child heights") 
+ #better is to scale them 
+pairs.panels(galton,lm=TRUE,xlim=c(62,74),ylim=c(62,74),main="Galton's Parent child heights") 
 </pre>
 
 

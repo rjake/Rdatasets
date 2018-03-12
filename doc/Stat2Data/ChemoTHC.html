@@ -1,69 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: ChemoTHC</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Clustered Ordinal Respiratory Disorder</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for ChemoTHC"><tr><td>ChemoTHC</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for respdis"><tr><td>respdis</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>ChemoTHC</h2>
+<h2>Clustered Ordinal Respiratory Disorder</h2>
 
 <h3>Description</h3>
 
-<p>Comparison of two treatments for nausea in chemotherapy
+<p>The <code>respdis</code> data frame has 111 rows and 3 columns. The study
+described in Miller et. al. (1993) is a randomized clinical trial of a
+new treatment of respiratory disorder. The study was conducted in 111
+patients who were randomly assigned to one of two treatments (active,
+placebo). At each of four visits during the follow-up period, the
+response status of each patients was classified on an ordinal scale.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>data(respdis)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 2 observations on the following 4 variables.
+<p>This data frame contains the following columns:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Drug</code> </td><td style="text-align: left;"> <code>Prochlorperazine</code>  or <code>THC</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Effective</code> </td><td style="text-align: left;"> Count of effectrive cases</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>NotEffective</code> </td><td style="text-align: left;"> Count of noneffective cases</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Patients</code> </td><td style="text-align: left;"> Number of patients in the treatment</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
+<dl>
+<dt>y1, y2, y3, y4</dt><dd><p>ordered factor measured at 4 visits for
+the response with levels, <code>1</code> &lt; <code>2</code> &lt; <code>3</code>,
+1 = poor, 2 = good, and 3 = excellent</p>
+</dd>
+<dt>trt</dt><dd><p>a factor for treatment with levels, 1 = active, 0 =
+placebo.</p>
+</dd>
+</dl>
 
 
 
-<h3>Details</h3>
+<h3>References</h3>
 
-<p>An article in the New England Journal of Medicine described
-a study on the effectiveness of medications for combatting nausea in patients undergoing chemotherapy
-treatments for cancer. In the experiment, 157 patients were divided at random into two groups.
-One group of 78 patients were given a standard antinausea drug called prochlorperazine, while the
-other group of 79 patients received THC (the active ingredient in marijuana). Both medications
-were delivered orally and no patients were told which of the two drugs they were taking. The
-response measured was whether or not the patient experienced relief from nausea when undergoing
-chemotherapy.  Dataset is a 2x2 table of counts. 
+<p>Miller, M.E., David, C.S., and Landis, R.J. (1993) The analysis of
+longitudinal polytomous data: Generalized estimating equation and
+connections with weighted least squares, <em>Biometrics</em> <b>49</b>: 1033-1048.
 </p>
 
 
-<h3>Source</h3>
+<h3>Examples</h3>
 
-<p>Sallan SE, Cronin C, Zelen M, Zinberg NE (1980),
-&quot;Antiemetics in patients receiving chemotherapy for cancer: 
-a randomized comparison of delta-9-tetrahydrocannabinol and prochlorperazine,&quot;
-New England Journal of Medicine, 302(3) p.135-138
-</p>
+<pre>
+data(respdis)
+resp.l &lt;- reshape(respdis, varying = list(c("y1", "y2", "y3", "y4")),
+                  v.names = "resp", direction = "long")
+resp.l &lt;- resp.l[order(resp.l$id, resp.l$time),]
+fit &lt;- ordgee(ordered(resp) ~ trt, id = id, data = resp.l, int.const = FALSE)
+summary(fit)
+
+z &lt;- model.matrix( ~ trt - 1, data = respdis)
+ind &lt;- rep(1:111, 4*3/2 * 2^2)
+zmat &lt;- z[ind,,drop=FALSE]
+fit &lt;- ordgee(ordered(resp) ~ trt, id = id, data = resp.l, int.const = FALSE,
+              z = zmat, corstr = "exchangeable")
+summary(fit)
+</pre>
 
 
 </body></html>

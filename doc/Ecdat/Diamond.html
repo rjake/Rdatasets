@@ -1,44 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pricing the C's of Diamond Stones</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: O'Brien and Kaiser's Repeated-Measures Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Diamond"><tr><td>Diamond</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for OBrienKaiser"><tr><td>OBrienKaiser</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Pricing the C's of Diamond Stones </h2>
+<h2>O'Brien and Kaiser's Repeated-Measures Data</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 2000
+<p>These contrived repeated-measures data are taken from 
+O'Brien and Kaiser (1985). The data are from an imaginary study in which
+16 female and male subjects, who are divided into three treatments, are measured
+at a pretest, postest, and a follow-up session; during each session, they are
+measured at five occasions at intervals of one hour. The design, therefore, has
+two between-subject and two within-subject factors.
 </p>
-<p><em>number of observations</em> :  308
-</p>
-<p><em>observation</em> :  goods
-</p>
-<p><em>country</em> :  Singapore
+<p>The contrasts for the <code>treatment</code> factor are set to <i>-2, 1, 1</i> and
+<i>0, -1, 1</i>. The contrasts for the <code>gender</code> factor are set to
+<code>contr.sum</code>.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Diamond)</pre>
+<pre>OBrienKaiser</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A data frame with 16 observations on the following 17 variables.
 </p>
 
 <dl>
-<dt>carat</dt><dd><p>weight of diamond stones in carat unit</p>
+<dt><code>treatment</code></dt><dd><p>a factor with levels <code>control</code> <code>A</code> <code>B</code></p>
 </dd>
-<dt>colour</dt><dd><p>a factor with levels (D,E,F,G,H,I)</p>
+<dt><code>gender</code></dt><dd><p>a factor with levels <code>F</code> <code>M</code></p>
 </dd>
-<dt>clarity</dt><dd><p>a factor with levels (IF,VVS1,VVS2,VS1,VS2)</p>
+<dt><code>pre.1</code></dt><dd><p>pretest, hour 1</p>
 </dd>
-<dt>certification</dt><dd><p>certification body, a factor with levels (GIA,IGI,HRD)</p>
+<dt><code>pre.2</code></dt><dd><p>pretest, hour 2</p>
 </dd>
-<dt>price</dt><dd><p>price in Singapore \$</p>
+<dt><code>pre.3</code></dt><dd><p>pretest, hour 3</p>
+</dd>
+<dt><code>pre.4</code></dt><dd><p>pretest, hour 4</p>
+</dd>
+<dt><code>pre.5</code></dt><dd><p>pretest, hour 5</p>
+</dd>
+<dt><code>post.1</code></dt><dd><p>posttest, hour 1</p>
+</dd>
+<dt><code>post.2</code></dt><dd><p>posttest, hour 2</p>
+</dd>
+<dt><code>post.3</code></dt><dd><p>posttest, hour 3</p>
+</dd>
+<dt><code>post.4</code></dt><dd><p>posttest, hour 4</p>
+</dd>
+<dt><code>post.5</code></dt><dd><p>posttest, hour 5</p>
+</dd>
+<dt><code>fup.1</code></dt><dd><p>follow-up, hour 1</p>
+</dd>
+<dt><code>fup.2</code></dt><dd><p>follow-up, hour 2</p>
+</dd>
+<dt><code>fup.3</code></dt><dd><p>follow-up, hour 3</p>
+</dd>
+<dt><code>fup.4</code></dt><dd><p>follow-up, hour 4</p>
+</dd>
+<dt><code>fup.5</code></dt><dd><p>follow-up, hour 5</p>
 </dd>
 </dl>
 
@@ -46,20 +73,19 @@
 
 <h3>Source</h3>
 
-<p>Chu, Singfat (2001) &ldquo;Pricing the C's of Diamond Stones&rdquo;, <em>Journal of Statistics Education</em>, <b>9(2)</b>.
+<p>O'Brien, R. G., and Kaiser, M. K. (1985)
+MANOVA method for analyzing repeated measures designs: An extensive primer.
+<em>Psychological Bulletin</em> <b>97</b>, 316&ndash;333, Table 7.
 </p>
 
 
-<h3>References</h3>
+<h3>Examples</h3>
 
-<p>Journal of Statistics Education's data archive : 
-<a href="http://www.amstat.org/publications/jse/jse_data_archive.htm">http://www.amstat.org/publications/jse/jse_data_archive.htm</a>.
-</p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<pre>
+OBrienKaiser
+contrasts(OBrienKaiser$treatment)
+contrasts(OBrienKaiser$gender)
+</pre>
 
 
 </body></html>

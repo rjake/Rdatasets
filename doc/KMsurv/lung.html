@@ -1,16 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: data from Exercise 4.4, p120</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth Curves for Sitka Spruce Trees in 1988</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for lung"><tr><td>lung</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Sitka"><tr><td>Sitka</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>data from Exercise 4.4, p120</h2>
+<h2>
+Growth Curves for Sitka Spruce Trees in 1988
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>lung</code> data frame has 25 rows and 4 columns.
+<p>The <code>Sitka</code> data frame has 395 rows and 4 columns.  It gives repeated
+measurements on the log-size of 79 Sitka spruce trees, 54 of which
+were grown in ozone-enriched chambers and 25 were controls.  The size
+was measured five times in 1988, at roughly monthly intervals.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+Sitka
+</pre>
 
 
 <h3>Format</h3>
@@ -19,21 +31,15 @@
 </p>
 
 <dl>
-<dt>time</dt><dd>
-<p>Days to death
-</p>
+<dt><code>size</code></dt><dd><p>measured size (height times diameter squared) of
+tree, on log scale.</p>
 </dd>
-<dt>death</dt><dd>
-<p>Death indicator (1=dead), complete follow-up on all patients
-</p>
+<dt><code>Time</code></dt><dd><p>time of measurement in  days since 1 January 1988.</p>
 </dd>
-<dt>time2</dt><dd>
-<p>Days to 3/31/80 or death (interim analysis)
-</p>
+<dt><code>tree</code></dt><dd><p>number of tree.</p>
 </dd>
-<dt>death2</dt><dd>
-<p>Death indicator as of 3/31/80 (1=dead, 0=alive)
-</p>
+<dt><code>treat</code></dt><dd><p>either <code>"ozone"</code> for an ozone-enriched
+chamber or <code>"control"</code>.</p>
 </dd>
 </dl>
 
@@ -41,16 +47,23 @@
 
 <h3>Source</h3>
 
-<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
-and truncated data</em>, Springer.
+<p>P. J. Diggle, K.-Y. Liang and S. L. Zeger (1994)
+<em>Analysis of Longitudinal Data.</em>
+Clarendon Press, Oxford
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-data(lung)
-</pre>
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>Sitka89</code>.
+</p>
 
 
 </body></html>

@@ -1,69 +1,81 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hertzsprung-Russell Diagram Data of Star Cluster CYG OB1</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 9 Cognitive variables discussed by Tucker and Lewis (1973)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for starsCYG"><tr><td>starsCYG</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Tucker"><tr><td>Tucker</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Hertzsprung-Russell Diagram Data of Star Cluster CYG OB1</h2>
+<h2>
+9 Cognitive variables discussed by Tucker and Lewis (1973)
+</h2>
 
 <h3>Description</h3>
 
-<p>Data for the Hertzsprung-Russell Diagram of the Star Cluster CYG OB1,
-which contains 47 stars in the direction of Cygnus, from C.Doom.  The
-first variable is the logarithm of the effective temperature at the
-surface of the star (Te) and the second one is the logarithm of its
-light intencity (<i>L/L_0</i>).
-</p>
-<p>In the Hertzsprung-Russell diagram, which is the scatterplot of these
-data points, where the log temperature is plotted from left to right,
-two groups of points are seen:<br />
-the majority which tend to follow a steep band and four stars in the
-upper corner.  In the astronomy the 43 stars are said to lie on the
-main sequence and the four remaining stars are called &ldquo;giants&rdquo; (the
-points 11, 20, 30, 34).
+<p>Tucker and Lewis (1973) introduced a reliability coefficient for ML factor analysis.  Their example data set was previously reported by Tucker (1958) and taken from Thurstone and Thurstone (1941).  The correlation matrix is a 9 x 9 for 710 subjects and has two correlated factors of ability: Word Fluency and Verbal.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(starsCYG)</pre>
+<pre>data(Tucker)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 47 observations on the following 2 variables
+<p>A data frame with 9 observations on the following 9 variables.
 </p>
 
 <dl>
-<dt><code>log.Te</code></dt><dd><p>Logarithm of the effective temperature at the
-surface of the star (Te).</p>
+<dt><code>t42</code></dt><dd><p>Prefixes</p>
 </dd>
-<dt><code>log.light</code></dt><dd><p>Logarithm of its light intencity (<i>L/L_0</i>)</p>
+<dt><code>t54</code></dt><dd><p>Suffixes</p>
+</dd>
+<dt><code>t45</code></dt><dd><p>Chicago Reading Test: Vocabulary</p>
+</dd>
+<dt><code>t46</code></dt><dd><p>Chicago Reading Test: Sentences</p>
+</dd>
+<dt><code>t23</code></dt><dd><p>First and last letters</p>
+</dd>
+<dt><code>t24</code></dt><dd><p>First letters</p>
+</dd>
+<dt><code>t27</code></dt><dd><p>Four letter words</p>
+</dd>
+<dt><code>t10</code></dt><dd><p>Completion</p>
+</dd>
+<dt><code>t51</code></dt><dd><p>Same or Opposite</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>The correlation matrix from Tucker (1958) was used in Tucker and Lewis (1973) for the Tucker-Lewis Index of factoring reliability.
+</p>
+
+
 <h3>Source</h3>
 
-<p>P. J. Rousseeuw and A. M. Leroy (1987)
-<em>Robust Regression and Outlier Detection</em>;
-Wiley, p.27, table 3.
+<p>Tucker, Ledyard (1958) An inter-battery method of factor analysis, Psychometrika, 23, 111-136.
+</p>
+
+
+<h3>References</h3>
+
+<p>L.~Tucker and C.~Lewis. (1973) A reliability coefficient for maximum likelihood factor analysis.
+Psychometrika, 38(1):1&ndash;10.
+</p>
+<p>F.~J. Floyd and K.~F. Widaman. (1995)  Factor analysis in the development and refinement of clinical
+assessment instruments., Psychological Assessment, 7(3):286 &ndash; 299.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(starsCYG)
-plot(starsCYG)
-cst &lt;- covMcd(starsCYG)
-lm.stars &lt;- lm(log.light ~ log.Te, data = starsCYG)
-summary(lm.stars)
-plot(lm.stars)
-lts.stars &lt;- ltsReg(log.light ~ log.Te, data = starsCYG)
-plot(lts.stars)
+data(Tucker)
+fa(Tucker,2,n.obs=710)
+omega(Tucker,2)
 </pre>
 
 

@@ -1,102 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: BirdNest</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cobar Ore data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for BirdNest"><tr><td>BirdNest</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for CobarOre"><tr><td>CobarOre</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-BirdNest
-</h2>
+<h2> Cobar Ore data </h2>
 
 <h3>Description</h3>
 
-<p>Data on bird nests
+<p>Cobar Ore data from Green and Silverman (1994). 
+The data consists of measurements on the &quot;true width&quot;
+of an ore-bearing rock layer from a mine in Cobar, Australia.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>data(CobarOre)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 84 observations on the following 12 variables.
+<p>A data frame with 38 observations on the following 3 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Species</code> </td><td style="text-align: left;"> Latin species name</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Common</code> </td><td style="text-align: left;"> Common species name</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Page</code> </td><td style="text-align: left;"> Page in a bird manual describing the species</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Length</code> </td><td style="text-align: left;"> Mean body length for the species (in cm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Nesttype</code> </td><td style="text-align: left;"> Type of nest</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Location</code> </td><td style="text-align: left;"> Location of nest</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>No.eggs</code> </td><td style="text-align: left;"> Number of eggs</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Color</code> </td><td style="text-align: left;"> a numeric vector</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Incubate</code> </td><td style="text-align: left;"> Mean length of time (in days) the species incubates eggs in the nest</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Nestling</code> </td><td style="text-align: left;"> Mean length of time (in days) the species cares for babies in the nest until fledged</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Totcare</code> </td><td style="text-align: left;"> Total care time = Incubate+Nestling</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Closed</code> </td><td style="text-align: left;"> 1=closed nest (pendant, spherical, cavity, crevice, burrow), 0=open nest (saucer, cup)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
+<dl>
+<dt>x</dt><dd><p>x-coordinate of location of mine site</p>
+</dd>
+<dt>y</dt><dd><p>y-coordinate of location of mine site</p>
+</dd>
+<dt>z</dt><dd><p>ore thickness</p>
+</dd>
+</dl>
 
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>Amy R. Moore, as a student at Grinnell College in 1999, wanted to study the relationship between
-species characteristics and the type of nest a bird builds, using data collected from available
-sources. For the study, she collected data by species for 83 separate species of North American
-passerines.
-</p>
 
 
 <h3>Source</h3>
 
-<p>Project by Amy Moore at Grinnell College
+<p>Green, P.J. and B.W. Silverman (1994) Nonparametric Regression Generalized Linear Models:
+A roughness penalty approach, Chapman Hall.
 </p>
 
 
-<h3>References</h3>
+<h3>Examples</h3>
 
-<p>The Birders Handbook, by Ehrlich, et al. (1988)
-</p>
+<pre>
+data(CobarOre)
+plot(CobarOre)
+</pre>
 
 
 </body></html>

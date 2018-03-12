@@ -1,80 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: University Lecture/Instructor Evaluations by Students at ETH</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Performance of Computer CPUs</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for InstEval"><tr><td>InstEval</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cpus"><tr><td>cpus</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>University Lecture/Instructor Evaluations by Students at ETH</h2>
+<h2>
+Performance of Computer CPUs
+</h2>
 
 <h3>Description</h3>
 
-<p>University lecture evaluations by students at ETH Zurich,
-anonymized for privacy protection.  This is an
-interesting &ldquo;medium&rdquo; sized example of a
-<em>partially</em> nested mixed effect model.
+<p>A relative performance measure and characteristics of 209 CPUs.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+cpus
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 73421 observations on the following 7 variables.
+<p>The components are:
 </p>
 
 <dl>
-<dt><code>s</code></dt><dd><p>a factor with levels <code>1:2972</code> denoting
-individual students.</p>
+<dt><code>name</code></dt><dd>
+<p>manufacturer and model.
+</p>
 </dd>
-<dt><code>d</code></dt><dd><p>a factor with 1128 levels from <code>1:2160</code>, denoting
-individual professors or lecturers.</p>
-</dd></dl>
-
-<dl>
-<dt><code>studage</code></dt><dd><p>an ordered factor with levels <code>2</code> &lt;
-<code>4</code> &lt; <code>6</code> &lt; <code>8</code>, denoting student's &ldquo;age&rdquo;
-measured in the <em>semester</em> number the student has been enrolled.</p>
+<dt><code>syct</code></dt><dd>
+<p>cycle time in nanoseconds.
+</p>
 </dd>
-<dt><code>lectage</code></dt><dd><p>an ordered factor with 6 levels, <code>1</code> &lt;
-<code>2</code> &lt; ... &lt; <code>6</code>, measuring how many semesters back the
-lecture rated had taken place.</p>
+<dt><code>mmin</code></dt><dd>
+<p>minimum main memory in kilobytes.
+</p>
 </dd>
-<dt><code>service</code></dt><dd><p>a binary factor with levels <code>0</code> and
-<code>1</code>; a lecture is a &ldquo;service&rdquo;, if held for a
-different department than the lecturer's main one.</p>
+<dt><code>mmax</code></dt><dd>
+<p>maximum main memory in kilobytes.
+</p>
 </dd>
-<dt><code>dept</code></dt><dd><p>a factor with 14 levels from <code>1:15</code>, using a
-random code for the department of the lecture.</p>
+<dt><code>cach</code></dt><dd>
+<p>cache size in kilobytes.
+</p>
 </dd>
-<dt><code>y</code></dt><dd><p>a numeric vector of <em>ratings</em> of lectures by
-the students, using the discrete scale <code>1:5</code>, with meanings
-of &lsquo;poor&rsquo; to &lsquo;very good&rsquo;.</p>
+<dt><code>chmin</code></dt><dd>
+<p>minimum number of channels.
+</p>
+</dd>
+<dt><code>chmax</code></dt><dd>
+<p>maximum number of channels.
+</p>
+</dd>
+<dt><code>perf</code></dt><dd>
+<p>published performance on a benchmark mix relative to an IBM 370/158-3.
+</p>
+</dd>
+<dt><code>estperf</code></dt><dd>
+<p>estimated performance (by Ein-Dor &amp; Feldmesser).
+</p>
 </dd>
 </dl>
 
-<p>Each observation is one student's rating for a specific lecture
-(of one lecturer, during one semester in the past).</p>
 
 
-<h3>Details</h3>
+<h3>Source</h3>
 
-<p>The main goal of the survey is to find &ldquo;the best
-liked prof&rdquo;, according to the lectures given.
-Statistical analysis of such data has been the basis for
-a (student) jury selecting the final winners.
-</p>
-<p>The present data set has been anonymized and slightly
-simplified on purpose.
+<p>P. Ein-Dor and J. Feldmesser (1987)
+Attributes of the performance of central processing units: a relative
+performance prediction model.
+<em>Comm. ACM.</em> <b>30</b>, 308&ndash;317.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-str(InstEval)
-
-head(InstEval, 16)
-xtabs(~ service + dept, InstEval)
-</pre>
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
 
 
 </body></html>

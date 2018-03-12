@@ -1,25 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Co-operative Trial in Analytical Chemistry</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Accelerated Life Testing of Motorettes</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for coop"><tr><td>coop</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for motors"><tr><td>motors</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Co-operative Trial in Analytical Chemistry
+Accelerated Life Testing of Motorettes
 </h2>
 
 <h3>Description</h3>
 
-<p>Seven specimens were sent to 6 laboratories in 3 separate batches and
-each analysed for Analyte.  Each analysis was duplicated.
+<p>The <code>motors</code> data frame has 40 rows and 3 columns.  It describes an
+accelerated life test at each of four temperatures of 10 motorettes,
+and has rather discrete times.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-coop
+motors
 </pre>
 
 
@@ -29,20 +30,16 @@ coop
 </p>
 
 <dl>
-<dt><code>Lab</code></dt><dd>
-<p>Laboratory, <code>L1</code>, <code>L2</code>, ..., <code>L6</code>.
+<dt><code>temp</code></dt><dd>
+<p>the temperature (degrees C) of the test.
 </p>
 </dd>
-<dt><code>Spc</code></dt><dd>
-<p>Specimen, <code>S1</code>, <code>S2</code>, ..., <code>S7</code>.
+<dt><code>time</code></dt><dd>
+<p>the time in hours to failure or censoring at 8064 hours (= 336 days).
 </p>
 </dd>
-<dt><code>Bat</code></dt><dd>
-<p>Batch, <code>B1</code>, <code>B2</code>, <code>B3</code> (nested within <code>Spc/Lab</code>),
-</p>
-</dd>
-<dt><code>Conc</code></dt><dd>
-<p>Concentration of Analyte in <i>g/kg</i>.
+<dt><code>cens</code></dt><dd>
+<p>an indicator variable for death.
 </p>
 </dd>
 </dl>
@@ -51,10 +48,16 @@ coop
 
 <h3>Source</h3>
 
-<p>Analytical Methods Committee (1987)
-Recommendations for the conduct and
-interpretation of co-operative trials,
-<em>The Analyst</em> <b>112</b>, 679&ndash;686.
+<p>Kalbfleisch, J. D. and Prentice, R. L. (1980)
+<em>The Statistical Analysis of Failure Time Data.</em>
+New York: Wiley.
+</p>
+<p>taken from
+</p>
+<p>Nelson, W. D. and Hahn, G. J. (1972)
+Linear regression of a regression relationship from censored data.
+Part 1 &ndash; simple methods and their application.
+<em>Technometrics</em>, <b>14</b>, 247&ndash;276.
 </p>
 
 
@@ -65,10 +68,24 @@ interpretation of co-operative trials,
 </p>
 
 
-<h3>See Also</h3>
+<h3>Examples</h3>
 
-<p><code>chem</code>, <code>abbey</code>.
-</p>
+<pre>
+library(survival)
+plot(survfit(Surv(time, cens) ~ factor(temp), motors), conf.int = FALSE)
+# fit Weibull model
+motor.wei &lt;- survreg(Surv(time, cens) ~ temp, motors)
+summary(motor.wei)
+# and predict at 130C
+unlist(predict(motor.wei, data.frame(temp=130), se.fit = TRUE))
+
+motor.cox &lt;- coxph(Surv(time, cens) ~ temp, motors)
+summary(motor.cox)
+# predict at temperature 200
+plot(survfit(motor.cox, newdata = data.frame(temp=200),
+     conf.type = "log-log"))
+summary( survfit(motor.cox, newdata = data.frame(temp=130)) )
+</pre>
 
 
 </body></html>

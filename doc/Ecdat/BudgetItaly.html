@@ -1,76 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Budget Shares for Italian Households</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Minnesota Wolf Depredation Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for BudgetItaly"><tr><td>BudgetItaly</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Depredations"><tr><td>Depredations</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Budget Shares for Italian Households </h2>
+<h2>
+Minnesota Wolf Depredation Data
+</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1973 to 1992
-</p>
-<p><em>number of observations</em> :  1729
-</p>
-<p><em>observation</em> :  households
-</p>
-<p><em>country</em> :  Italy
+<p>Wolf depredations of livestock on Minnesota farms, 1976-1998.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(BudgetItaly)</pre>
+<pre>Depredations</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A data frame with 434 observations on the following 5 variables.
 </p>
 
 <dl>
-<dt>wfood</dt><dd><p>food share</p>
+<dt><code>longitude</code></dt><dd><p>longitude of the farm</p>
 </dd>
-<dt>whouse</dt><dd><p>housing and fuels share</p>
+<dt><code>latitude</code></dt><dd><p>latitude of the farm</p>
 </dd>
-<dt>wmisc</dt><dd><p>miscellaneous share</p>
+<dt><code>number</code></dt><dd><p>number of depredations 1976-1998</p>
 </dd>
-<dt>pfood</dt><dd><p>food price</p>
+<dt><code>early</code></dt><dd><p>number of depredations 1991 or before</p>
 </dd>
-<dt>phouse</dt><dd><p>housing and fuels price</p>
-</dd>
-<dt>pmisc</dt><dd><p>miscellaneous price</p>
-</dd>
-<dt>totexp</dt><dd><p>total expenditure</p>
-</dd>
-<dt>year</dt><dd><p>year </p>
-</dd>
-<dt>income</dt><dd><p>income</p>
-</dd>
-<dt>size</dt><dd><p>household size</p>
-</dd>
-<dt>pct</dt><dd><p>cellule weight</p>
+<dt><code>late</code></dt><dd><p>number of depredations 1992 or later</p>
 </dd>
 </dl>
 
 
 
-<h3>Source</h3>
-
-<p>Bollino, Carlo Andrea,  Frederico   Perali and  Nicola  Rossi (2000) &ldquo;Linear household technologies&rdquo;, <em>Journal of Applied Econometrics</em>, <b>15(3)</b>, 253&ndash;274.
-</p>
-
-
 <h3>References</h3>
 
-<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
 </p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p>Harper, Elizabeth K. and Paul, William J. and Mech, L. David and Weisberg, Sanford (2008),
+Effectiveness of Lethal, Directed Wolf-Depredation Control in Minnesota,
+<em>Journal of Wildlife Management</em>, 72, 3, 778-784.
+<a href="http://dx.doi.org/10.2193/2007-273">http://dx.doi.org/10.2193/2007-273</a>
+</p>
 
 
 </body></html>

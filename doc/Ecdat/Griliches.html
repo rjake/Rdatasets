@@ -1,74 +1,43 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wage Datas</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Vocabulary and Education</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Griliches"><tr><td>Griliches</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Vocab"><tr><td>Vocab</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Wage Datas </h2>
+<h2>Vocabulary and Education</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1980
-</p>
-<p><em>number of observations</em> :  758
-</p>
-<p><em>observation</em> :  individuals
-</p>
-<p><em>country</em> :  United States
+<p>The <code>Vocab</code> data frame has 21,638 rows and 5 columns.
+The observations are respondents to U.S. General Social Surveys, 1972-2004.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Griliches)</pre>
+<pre>
+Vocab
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>rns</dt><dd><p>residency in the southern states (first observation) ?</p>
+<dt>year</dt><dd><p>Year of the survey.</p>
 </dd>
-<dt>rns80</dt><dd><p>same variable for 1980</p>
+<dt>sex</dt><dd><p>Sex of the respondent, <code>Female</code> or <code>Male</code>.</p>
 </dd>
-<dt>mrt</dt><dd><p>married  (first observation) ?</p>
+<dt>education</dt><dd>
+<p>Education, in years.
+</p>
 </dd>
-<dt>mrt80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>smsa</dt><dd><p>residency in metropolitan areas (first observation) ?</p>
-</dd>
-<dt>smsa80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>med</dt><dd><p>mother's education in years</p>
-</dd>
-<dt>iq</dt><dd><p>IQ score</p>
-</dd>
-<dt>kww</dt><dd><p>score on the &ldquo;knowledge of the world of work&rdquo; test</p>
-</dd>
-<dt>year</dt><dd><p>year of the observation</p>
-</dd>
-<dt>age</dt><dd><p>age (first observation)</p>
-</dd>
-<dt>age80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>school</dt><dd><p>completed years of schooling (first observation)</p>
-</dd>
-<dt>school80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>expr</dt><dd><p>experience in years (first observation)</p>
-</dd>
-<dt>expr80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>tenure</dt><dd><p>tenure in years (first observation)</p>
-</dd>
-<dt>tenure80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>lw</dt><dd><p>log wage (first observation)</p>
-</dd>
-<dt>lw80</dt><dd><p>same variable for 1980</p>
+<dt>vocabulary</dt><dd>
+<p>Vocabulary test score: number correct on a 10-word test.
+</p>
 </dd>
 </dl>
 
@@ -76,19 +45,21 @@
 
 <h3>Source</h3>
 
-<p>Blackburn, M.  and   Neumark D. (1992) &ldquo;Unobserved ability, efficiency wages, and interindustry wage differentials&rdquo;, <em>Quarterly Journal of Economics</em>, <b>107</b>, 1421-1436.
+<p>National Opinion Research Center
+<em>General Social Survey.</em> 
+GSS Cumulative Datafile 1972-2004, downloaded from <a href="http://sda.berkeley.edu/archive.htm">http://sda.berkeley.edu/archive.htm</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>Hayashi, F. (2000) <em>Econometrics</em>, Princeton University Press, <a href="http://fhayashi.fc2web.com/hayashi_econometrics.htm">http://fhayashi.fc2web.com/hayashi_econometrics.htm</a>, chapter 3, 250-256.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+</p>
 
 
 </body></html>

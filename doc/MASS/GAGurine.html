@@ -1,42 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Level of GAG in Urine of Children</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Numbers of Rotifers by Fluid Density</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for GAGurine"><tr><td>GAGurine</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for rotifer"><tr><td>rotifer</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Level of GAG in Urine of Children
+Numbers of Rotifers by Fluid Density
 </h2>
 
 <h3>Description</h3>
 
-<p>Data were collected on the concentration of a chemical GAG in the
-urine of 314 children aged from zero to seventeen years.  The aim of
-the study was to produce a chart to help a paediatrican to assess if a
-child's GAG concentration is &lsquo;normal&rsquo;.
+<p>The data give the numbers of rotifers falling out of suspension for
+different fluid densities. There are two species, <code>pm</code>
+<em>Polyartha major</em> and <code>kc</code>, <em>Keratella cochlearis</em> and
+for each species the number falling out and the total number are
+given.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-GAGurine
+rotifer
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
-</p>
 
 <dl>
-<dt><code>Age</code></dt><dd>
-<p>age of child in years.
+<dt><code>density</code></dt><dd>
+<p>specific density of fluid.
 </p>
 </dd>
-<dt><code>GAG</code></dt><dd>
-<p>concentration of GAG (the units have been lost).
+<dt><code>pm.y</code></dt><dd>
+<p>number falling out for <em>P. major</em>.
+</p>
+</dd>
+<dt><code>pm.total</code></dt><dd>
+<p>total number of <em>P. major</em>.
+</p>
+</dd>
+<dt><code>kc.y</code></dt><dd>
+<p>number falling out for <em>K. cochlearis</em>.
+</p>
+</dd>
+<dt><code>kc.tot</code></dt><dd>
+<p>total number of <em>K. cochlearis</em>.
 </p>
 </dd>
 </dl>
@@ -45,15 +56,7 @@ GAGurine
 
 <h3>Source</h3>
 
-<p>Mrs Susan Prosser, Paediatrics Department, University of Oxford,
-via Department of Statistics Consulting Service.
-</p>
-
-
-<h3>References</h3>
-
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>D. Collett (1991) <em>Modelling Binary Data.</em> Chapman &amp; Hall. p. 217
 </p>
 
 

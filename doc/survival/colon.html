@@ -1,137 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Chemotherapy for Stage B/C colon cancer</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Film</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for colon"><tr><td>colon</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Film"><tr><td>Film</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Chemotherapy for Stage B/C colon cancer</h2>
+<h2>Film</h2>
 
 <h3>Description</h3>
 
-<p>These are data from one of the first successful trials of
-adjuvant chemotherapy for colon cancer. Levamisole is a low-toxicity
-compound previously used to treat worm infestations in animals; 5-FU
-is a moderately toxic (as these things go) chemotherapy agent. There
-are two records per person, one for recurrence and one for death</p>
-
-
-<h3>Usage</h3>
-
-<pre>colon</pre>
+<p>Film data from Maltin's Movie and Video Guide
+</p>
 
 
 <h3>Format</h3>
 
+<p>A dataset with 100 observations on the following 9 variables.
+</p>
 
 <table summary="Rd table">
 <tr>
- <td style="text-align: left;">
-id:</td><td style="text-align: left;"> id</td>
+ <td style="text-align: right;">
+    <code>Title</code> </td><td style="text-align: left;"> Movie title</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-study:</td><td style="text-align: left;"> 1 for all patients</td>
+ <td style="text-align: right;">
+    <code>Year</code> </td><td style="text-align: left;"> Year the movie was released</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-rx:</td><td style="text-align: left;"> Treatment - Obs(ervation), Lev(amisole), Lev(amisole)+5-FU</td>
+ <td style="text-align: right;">
+    <code>Time</code> </td><td style="text-align: left;"> Running time (in minutes)</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-sex:</td><td style="text-align: left;">  1=male</td>
+ <td style="text-align: right;">
+    <code>Cast</code> </td><td style="text-align: left;"> Number of cast members listed in the guide</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-age:</td><td style="text-align: left;"> in years</td>
+ <td style="text-align: right;">
+    <code>Rating</code> </td><td style="text-align: left;"> Maltin rating (range is 1 to 4, in steps of 0.5)</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-obstruct:</td><td style="text-align: left;"> obstruction of colon by tumour</td>
+ <td style="text-align: right;">
+    <code>Description</code> </td><td style="text-align: left;"> Number of lines of text Maltin uses to describe the movie</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-perfor:</td><td style="text-align: left;"> perforation of colon</td>
+ <td style="text-align: right;">
+    <code>Origin</code> </td><td style="text-align: left;"> Country: 0 = USA, 1 = Great Britain, 2 = France, 3 = Italy, 4 = Canada</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-adhere:</td><td style="text-align: left;"> adherence to nearby organs</td>
+ <td style="text-align: right;">
+    <code>Time_code</code> </td><td style="text-align: left;"> <code>long</code>=90 minues or longer <code>short</code>=under 90 minutes</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-nodes:</td><td style="text-align: left;"> number of lymph nodes with detectable cancer</td>
+ <td style="text-align: right;">
+    <code>Good</code> </td><td style="text-align: left;"> <code>1</code>=rating or 3 stars or better <code>0</code>=any lower rating</td>
 </tr>
 <tr>
- <td style="text-align: left;">
-time:</td><td style="text-align: left;"> days until event or censoring</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-status:</td><td style="text-align: left;"> censoring status</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-differ:</td><td style="text-align: left;"> differentiation of tumour (1=well, 2=moderate, 3=poor)</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-extent:</td><td style="text-align: left;"> Extent of local spread (1=submucosa, 2=muscle, 3=serosa,
-4=contiguous structures)</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-surg:</td><td style="text-align: left;"> time from surgery to registration (0=short, 1=long)</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-node4:</td><td style="text-align: left;"> more than 4 positive lymph nodes</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-etype:</td><td style="text-align: left;"> event type: 1=recurrence,2=death</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-</td>
+ <td style="text-align: right;">
+  </td>
 </tr>
 
 </table>
 
 
-<h3>Note</h3>
 
-<p>The study is originally described in Laurie (1989). 
-The main report is found in Moertel (1990).  This data set is closest
-to that of the final report in Moertel (1991).
-A version of the data with less follow-up time was used in the
-paper by Lin (1994).
+<h3>Details</h3>
+
+<p>One statistician movie fan decided to use statistics to study the movie ratings in his favorite movie guide, Movie and
+Video Guide (1996), by Leonard Maltin. Maltin rates movies on a one-star to four-star
+system, in increments of half-stars, with higher numbers being better. The guide also includes additional information on each film.
+The statistican used a random number generator to select a simple random sample
+of 100 movies rated by the Guide.
 </p>
 
 
-<h3>References</h3>
+<h3>Source</h3>
 
-<p>JA Laurie, CG Moertel, TR Fleming, HS Wieand, JE Leigh, J Rubin,
-GW McCormack, JB Gerstner, JE Krook and J Malliard.  Surgical
-adjuvant therapy of large-bowel carcinoma: An evaluation of
-levamisole and the combination of levamisole and fluorouracil:
-The North Central Cancer Treatment Group and the Mayo Clinic.
-J Clinical Oncology, 7:1447-1456, 1989.
-</p>
-<p>DY Lin.  Cox regression analysis of multivariate failure time data:
-the marginal approach.  Statistics in Medicine, 13:2233-2247, 1994.
-</p>
-<p>CG Moertel, TR Fleming, JS MacDonald, 
-DG Haller, JA Laurie, PJ Goodman, JS Ungerleider, 
-WA Emerson, DC Tormey, JH Glick, MH Veeder and JA Maillard. 
-Levamisole and fluorouracil for adjuvant therapy of 
-resected colon carcinoma. New England J of Medicine, 332:352-358,
-1990.
-</p>
-<p>CG Moertel,  TR Fleming,  JS MacDonald, DG Haller, JA Laurie, CM Tangen,
-JS Ungerleider, WA Emerson, DC Tormey, JH Glick, MH Veeder and JA
-Maillard, Fluorouracil plus Levamisole as an effective adjuvant
-therapy after resection of stage II colon carcinoma: a final report.
-Annals of Internal Med, 122:321-326, 1991.
+<p>Data from Leonard Maltin's Movie and Video Guide (1996)
 </p>
 
 

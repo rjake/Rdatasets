@@ -1,38 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Homeless Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Danish Welfare Study Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for housing"><tr><td>housing</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for DanishWelfare"><tr><td>DanishWelfare</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Homeless Data
-</h2>
+<h2>Danish Welfare Study Data</h2>
 
 <h3>Description</h3>
 
-<p>Housing status for 362 severely mentally ill homeless subjects measured at baseline and at three follow-up times.
+<p>Data from the Danish Welfare Study.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(housing)</pre>
+<pre>data("DanishWelfare")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 1448 observations on the following 4 variables:
+<p>A data frame with 180 observations and 5 variables.
 </p>
 
 <dl>
-<dt><code>id</code></dt><dd><p>Subject identifier variable.</p>
+<dt>Freq</dt><dd><p>frequency.</p>
 </dd>
-<dt><code>y</code></dt><dd><p>Housing status response, coded as (1) for street living, (2) for community living and (3) for independent housing.</p>
+<dt>Alcohol</dt><dd><p>factor indicating daily alcohol consumption: less
+than 1 unit (&lt;1), 1-2 units (1-2) or more than 2 units (&gt;2).
+1 unit is approximately 1 bottle of beer or 4cl 40% alcohol.</p>
 </dd>
-<dt><code>time</code></dt><dd><p>Time recorded in months.</p>
+<dt>Income</dt><dd><p>factor indicating income group in 1000 DKK (0-50,
+50-100, 100-150, &gt;150).</p>
+</dd> 
+<dt>Status</dt><dd><p>factor indicating marriage status (Widow, Married,
+Unmarried).</p>
 </dd>
-<dt><code>sec</code></dt><dd><p>Section 8 rent certificate indicator.</p>
+<dt>Urban</dt><dd><p>factor indicating urbanization: Copenhagen
+(Copenhagen), Suburbian Copenhagen (SubCopenhagen), three largest
+cities (LargeCity), other cities (City), countryside (Country).</p>
 </dd>
 </dl>
 
@@ -40,15 +46,25 @@ Homeless Data
 
 <h3>Source</h3>
 
-<p>Hulrburt M.S., Wood, P.A. and Hough, R.L. (1996). Providing independent housing for the homeless mentally ill: a novel approach to evaluating longitudinal housing patterns. <em>Journal of Community Psychology</em>, <b>24</b>, 291&ndash;310.
+<p>E. B. Andersen (1991),
+The Statistical Analysis of Categorical Data, page 205.
+</p>
+
+
+<h3>References</h3>
+
+<p>E. B. Andersen (1991),
+<em>The Statistical Analysis of Categorical Data</em>.
+2nd edition.
+Springer-Verlag, Berlin.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(housing)
-str(housing)
+data("DanishWelfare")
+ftable(xtabs(Freq ~ ., data = DanishWelfare))
 </pre>
 
 

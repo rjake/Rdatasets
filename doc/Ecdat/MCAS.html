@@ -1,88 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Massachusetts Test Score Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: rwm</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for MCAS"><tr><td>MCAS</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for rwm"><tr><td>rwm</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>The Massachusetts Test Score Data Set </h2>
+<h2>rwm</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1997-1998
-</p>
-<p><em>number of observations</em> :  220
-</p>
-<p><em>observation</em> :  schools
-</p>
-<p><em>country</em> :  United States
+<p>German health registry for the years 1984-1988. Health information for 
+years prior to health reform. 
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(MCAS)</pre>
+<pre>data(rwm)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A data frame with 27,326 observations on the following 4 variables.
 </p>
 
 <dl>
-<dt>code</dt><dd><p>district code (numerical)</p>
+<dt><code>docvis</code></dt><dd><p>number of visits to doctor during year (0-121)</p>
 </dd>
-<dt>municipa</dt><dd><p>municipality (name)</p>
+<dt><code>age</code></dt><dd><p>age: 25-64</p>
 </dd>
-<dt>district</dt><dd><p>district name</p>
+<dt><code>educ</code></dt><dd><p>years of formal education (7-18)</p>
 </dd>
-<dt>regday</dt><dd><p>spending per pupil, regular</p>
-</dd>
-<dt>specneed</dt><dd><p>spending per pupil, special needs</p>
-</dd>
-<dt>bilingua</dt><dd><p>spending per pupil, bilingual</p>
-</dd>
-<dt>occupday</dt><dd><p>spending per pupil, occupational</p>
-</dd>
-<dt>totday</dt><dd><p>spending per pupil, total</p>
-</dd>
-<dt>spc</dt><dd><p>students per computer</p>
-</dd>
-<dt>speced</dt><dd><p>special education students</p>
-</dd>
-<dt>lnchpct</dt><dd><p>eligible for free or reduced price lunch</p>
-</dd>
-<dt>tchratio</dt><dd><p>students per teacher</p>
-</dd>
-<dt>percap</dt><dd><p>per capita income</p>
-</dd>
-<dt>totsc4</dt><dd><p>4th grade score (math+english+science)</p>
-</dd>
-<dt>totsc8</dt><dd><p>8th grade score (math+english+science)</p>
-</dd>
-<dt>avgsalary</dt><dd><p>average teacher salary</p>
-</dd>
-<dt>pctel</dt><dd><p>percent english learnersh</p>
+<dt><code>hhninc</code></dt><dd><p>household yearly income in DM/1000)</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>rwm is saved as a data frame.
+Count models typically use docvis as response variable. 0 counts are included
+</p>
+
+
 <h3>Source</h3>
 
-<p>Massachusetts Comprehensive Assessment System (MCAS), Massachusetts Department of Education, 1990 U.S. Census.
+<p>German Health Reform Registry, years pre-reform 1984-1988, 
+From Hilbe and Greene (2008)
 </p>
 
 
 <h3>References</h3>
 
-<p>Stock, James H.  and  Mark W.  Watson (2003) <em>Introduction to Econometrics</em>, Addison-Wesley Educational Publishers, chapter 7.
+<p>Hilbe, Joseph M (2011), Negative Binomial Regression, Cambridge University Press
+Hilbe, J.M. and W.H. Greene (2008), &quot;Count Response Regression Models&quot;, in Rao, CR, 
+JP Miller and DC Rao (eds), Handbook of Statistics 27: Epidemiology and Medical 
+Statistics, Amsterdam: Elsevier.  pp. 210-252.
 </p>
 
 
-<h3>See Also</h3>
+<h3>Examples</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<pre>
+data(rwm)
+glmrwp &lt;- glm(docvis ~ age + educ + hhninc, family=poisson, data=rwm)
+summary(glmrwp)
+exp(coef(glmrwp))
+library(MASS)
+glmrwnb &lt;- glm.nb(docvis ~ age + educ + hhninc, data=rwm)
+summary(glmrwnb)
+exp(coef(glmrwnb))
+</pre>
 
 
 </body></html>

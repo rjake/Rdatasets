@@ -1,64 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Results from an Experiment on Plant Growth</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Insect Damages on Carrots</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for PlantGrowth"><tr><td>PlantGrowth</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for carrots"><tr><td>carrots</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Results from an Experiment on Plant Growth</h2>
+<h2>Insect Damages on Carrots</h2>
 
 <h3>Description</h3>
 
-<p>Results from an experiment to compare yields (as measured by dried
-weight of plants) obtained under a control and two different treatment
-conditions.
+<p>The damage carrots data set from Phelps (1982) was used by McCullagh
+and Nelder (1989) in order to illustrate diagnostic techniques because
+of the presence of an outlier. In a soil experiment trial with three
+blocks, eight levels of insecticide were applied and the carrots were
+tested for insect damage.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>PlantGrowth</pre>
+<pre>data(carrots)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame of 30 cases on 2 variables.
+<p>A data frame with 24 observations on the following 4 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    [, 1] </td><td style="text-align: left;"> weight </td><td style="text-align: left;"> numeric </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 2] </td><td style="text-align: left;"> group  </td><td style="text-align: left;"> factor
-  </td>
-</tr>
+<dl>
+<dt>success</dt><dd><p> integer giving the number of carrots with insect damage.</p>
+</dd>
+<dt>total</dt><dd><p> integer giving the total number of carrots per
+experimental unit.</p>
+</dd>
+<dt>logdose</dt><dd><p>a numeric vector giving log(dose) values (eight
+different levels only).</p>
+</dd>
+<dt>block</dt><dd><p>factor with levels <code>B1</code> to <code>B3</code></p>
+</dd>
+</dl>
 
-</table>
-
-<p>The levels of <code>group</code> are &lsquo;ctrl&rsquo;, &lsquo;trt1&rsquo;, and &lsquo;trt2&rsquo;.
-</p>
 
 
 <h3>Source</h3>
 
-<p>Dobson, A. J. (1983)
-<em>An Introduction to Statistical Modelling</em>.
+<p>Phelps, K. (1982).
+Use of the complementary log-log function to describe doseresponse
+relationships in insecticide evaluation field trials.
+<br />
+In R. Gilchrist (Ed.), <em>Lecture Notes in Statistics, No. 14.
+GLIM.82: Proceedings of the International Conference on Generalized
+Linear Models</em>; Springer-Verlag.
+</p>
+
+
+<h3>References</h3>
+
+<p>McCullagh P. and Nelder, J. A. (1989)
+<em>Generalized Linear Models.</em>
 London: Chapman and Hall.
+</p>
+<p>Eva Cantoni and Elvezio Ronchetti (2001); JASA,  and <br />
+Eva Cantoni (2004); JSS, see <code>glmrob</code>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-## One factor ANOVA example from Dobson's book, cf. Table 7.4:
-require(stats); require(graphics)
-boxplot(weight ~ group, data = PlantGrowth, main = "PlantGrowth data",
-        ylab = "Dried weight of plants", col = "lightgray",
-        notch = TRUE, varwidth = TRUE)
-anova(lm(weight ~ group, data = PlantGrowth))
+data(carrots)
+str(carrots)
+plot(success/total ~ logdose, data = carrots, col = as.integer(block))
+coplot(success/total ~ logdose | block, data = carrots)
+
+## Classical glm
+Cfit0 &lt;- glm(cbind(success, total-success) ~ logdose + block,
+             data=carrots, family=binomial)
+summary(Cfit0)
+
+## Robust Fit (see help(glmrob)) ....
 </pre>
 
 

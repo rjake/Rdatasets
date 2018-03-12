@@ -1,52 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: article production by graduate students in biochemistry Ph.D....</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: UK Soccer Scores</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for bioChemists"><tr><td>bioChemists</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for UKSoccer"><tr><td>UKSoccer</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>article production by graduate students in biochemistry Ph.D. programs</h2>
+<h2>UK Soccer Scores</h2>
 
 <h3>Description</h3>
 
-<p>A sample of 915 biochemistry graduate students.
+<p>Data from Lee (1997), on the goals scored by Home and Away teams in
+the Premier Football League, 1995/6 season.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(bioChemists)</pre>
+<pre>
+data("UKSoccer")
+</pre>
 
 
 <h3>Format</h3>
 
+<p>A 2-dimensional array resulting from cross-tabulating the number of
+goals scored in 380 games.  The variables and their levels are as
+follows:
+</p>
 
-<dl>
-<dt><code>art</code></dt><dd><p>count of articles produced during last 3 years of Ph.D.</p>
-</dd>
-<dt><code>fem</code></dt><dd><p>factor indicating gender of student, with levels Men and Women</p>
-</dd>
-<dt><code>mar</code></dt><dd><p>factor indicating marital status of student, with levels
-Single and Married</p>
-</dd>
-<dt><code>kid5</code></dt><dd><p>number of children aged 5 or younger</p>
-</dd>
-<dt><code>phd</code></dt><dd><p>prestige of Ph.D. department</p>
-</dd>
-<dt><code>ment</code></dt><dd><p>count of articles produced by Ph.D. mentor during last 3 years</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    1 </td><td style="text-align: left;"> Home </td><td style="text-align: left;"> 0, 1, ..., 4 </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    2 </td><td style="text-align: left;"> Away </td><td style="text-align: left;"> 0, 1, ..., 4
+  </td>
+</tr>
 
+</table>
+
+
+
+<h3>Source</h3>
+
+<p>M. Friendly (2000),
+Visualizing Categorical Data, page 27.
+</p>
 
 
 <h3>References</h3>
 
-<p>Long, J. Scott. 1990.  The origins of sex differences in
-science. <em>Social Forces</em>. 68(3):1297-1316.
+<p>A. J. Lee (1997),
+Modelling scores in the Premier League: Is Manchester United really
+the best?,
+<em>Chance</em>, <b>10</b>(1), 15&ndash;19.
 </p>
-<p>Long, J. Scott. 1997.  <em>Regression Models for Categorical and
-Limited Dependent Variables</em>. Thousand Oaks, California: Sage.
+<p>M. Friendly (2000),
+<em>Visualizing Categorical Data</em>.
+SAS Institute, Cary, NC.
 </p>
+
+
+<h3>See Also</h3>
+
+<p><code>Bundesliga</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data("UKSoccer")
+mosaic(UKSoccer, gp = shading_max, main = "UK Soccer Scores")
+</pre>
 
 
 </body></html>

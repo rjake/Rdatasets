@@ -1,6 +1,6 @@
 gh:
-	git rm -r csv
-	git rm -r doc
+	#git rm -r csv
+	#git rm -r doc
 	mkdir csv
 	mkdir doc
 	R CMD BATCH Rdatasets.R

@@ -1,80 +1,112 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Olives</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Utility bills</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Olives"><tr><td>Olives</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Utilities2"><tr><td>Utilities2</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Olives
-</h2>
+<h2>Utility bills</h2>
 
 <h3>Description</h3>
 
-<p>Measurements of the pesticide fenthion in olive oil over time
+<p>Data from utility bills at a private residence.  This is an augmented version 
+of <code>Utilities</code>.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(Utilities2)
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 18 observations on the following 7 variables.
+<p>A data frame containing 117 observations for the following variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>SampleNumber</code> </td><td style="text-align: left;"> Code (1-6) for sample of olive oil</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Group</code> </td><td style="text-align: left;"> Code for group: <code>1</code> or <code>2</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Day</code> </td><td style="text-align: left;"> Time (in days) when sample was measured: <code>0</code>, <code>281</code>, or <code>365</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Fenthion</code> </td><td style="text-align: left;"> Amount of fenthion (pesticide)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>FenthionSulphoxide</code> </td><td style="text-align: left;"> Amount of fenthion sulfide</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>FenthionSulphone</code> </td><td style="text-align: left;"> Amount of fenthion sulphone</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Time</code> </td><td style="text-align: left;"> Code (0, 3, or 4) for the number of days</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>Fenthion is a pesticide used against the olive fruit fly in olive groves. It is toxic
-to humans so it is important that there be no residue left on the fruit or in olive oil that will be
-consumed. One theory was that if there is residue of the pesticide left in the olive oil, it would
-dissipate over time. Chemists set out to test that theory by taking a random sample of small
-amounts of olive oil with fenthion residue and measuring the amount of fenthion in the oil at three
-different times over the year - day 0, day 281 and day 365.
+<ul>
+<li><p><code>month</code> month (coded as a number)
 </p>
+</li>
+<li><p><code>day</code> day of month on which bill was calculated
+</p>
+</li>
+<li><p><code>year</code> year of bill
+</p>
+</li>
+<li><p><code>temp</code> average temperature (F) for billing period
+</p>
+</li>
+<li><p><code>kwh</code> electricity usage (kwh)
+</p>
+</li>
+<li><p><code>ccf</code> gas usage (ccf)
+</p>
+</li>
+<li><p><code>thermsPerDay</code> a numeric vector
+</p>
+</li>
+<li><p><code>billingDays</code> number of billing days in billing period
+</p>
+</li>
+<li><p><code>totalbill</code> total bill (in dollars)
+</p>
+</li>
+<li><p><code>gasbill</code> gas bill (in dollars)
+</p>
+</li>
+<li><p><code>elecbill</code> electric bill (in dollars)
+</p>
+</li>
+<li><p><code>notes</code> notes about the billing period
+</p>
+</li>
+<li><p><code>ccfpday</code> average gas usage per day [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>kwhpday</code> average electric usage per day [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>gasbillpday</code> gas bill divided by billing days [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>elecbillpday</code> electric bill divided by billing days a numeric vector [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>totalbillpday</code> total bill divided by billing days a numeric vector [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>therms</code> <code>thermsPerDay * billingDays</code> [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>monthsSinceY2K</code> months since 2000 [<code>Utilities2</code> only]
+</p>
+</li></ul>
 
 
 <h3>Source</h3>
 
-<p>Data provided by Rosemary Roberts and discussed in &quot;Persistence of fenthion residues in olive oil&quot; by Chaido
-Lentza-Rizos, Elizabeth J. Avramides, and Rosemary A. Roberts in Pest Management Science, Vol. 40, Issue 1, Jan.
-1994, pp. 63-69.
+<p>Daniel T. Kaplan, <em>Statistical modeling: A fresh approach</em>, 2009.
 </p>
+
+
+<h3>See Also</h3>
+
+<p><code>Utilities</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Utilities2)
+if (require(lattice)) {
+  xyplot(gasbillpday ~ temp, Utilities2)
+}
+
+</pre>
 
 
 </body></html>

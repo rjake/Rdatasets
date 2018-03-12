@@ -1,16 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: data from Section 1.6</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Numbers of Car Insurance claims</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for burn"><tr><td>burn</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Insurance"><tr><td>Insurance</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>data from Section 1.6</h2>
+<h2>
+Numbers of Car Insurance claims
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>burn</code> data frame has 154 rows and 17 columns.
+<p>The data given in data frame <code>Insurance</code> consist of the
+numbers of policyholders of an insurance company who were
+exposed to risk, and the numbers of car insurance claims made by
+those policyholders in the third quarter of 1973.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+Insurance
+</pre>
 
 
 <h3>Format</h3>
@@ -19,76 +31,26 @@
 </p>
 
 <dl>
-<dt>Obs</dt><dd>
-<p>Observation number
+<dt><code>District</code></dt><dd>
+<p>factor: district of residence of policyholder (1 to 4): 4 is major cities.
 </p>
 </dd>
-<dt>Z1</dt><dd>
-<p>Treatment: 0-routine bathing 1-Body cleansing
+<dt><code>Group</code></dt><dd>
+<p>an ordered factor: group of car with levels  &lt;1 litre, 1&ndash;1.5 litre,
+1.5&ndash;2 litre, &gt;2 litre.
 </p>
 </dd>
-<dt>Z2</dt><dd>
-<p>Gender (0=male 1=female)
+<dt><code>Age</code></dt><dd>
+<p>an ordered factor: the age of the insured in 4 groups labelled
+&lt;25, 25&ndash;29, 30&ndash;35, &gt;35.
 </p>
 </dd>
-<dt>Z3</dt><dd>
-<p>Race: 0=nonwhite 1=white
+<dt><code>Holders</code></dt><dd>
+<p>numbers of policyholders.
 </p>
 </dd>
-<dt>Z4</dt><dd>
-<p>Percentage of total surface area burned
-</p>
-</dd>
-<dt>Z5</dt><dd>
-<p>Burn site indicator: head 1=yes, 0=no
-</p>
-</dd>
-<dt>Z6</dt><dd>
-<p>Burn site indicator: buttock 1=yes, 0=no
-</p>
-</dd>
-<dt>Z7</dt><dd>
-<p>Burn site indicator: trunk 1=yes, 0=no
-</p>
-</dd>
-<dt>Z8</dt><dd>
-<p>Burn site indicator: upper leg 1=yes, 0=no
-</p>
-</dd>
-<dt>Z9</dt><dd>
-<p>Burn site indicator: lower leg 1=yes, 0=no
-</p>
-</dd>
-<dt>Z10</dt><dd>
-<p>Burn site indicator: respiratory tract 1=yes, 0=no
-</p>
-</dd>
-<dt>Z11</dt><dd>
-<p>Type of burn: 1=chemical, 2=scald, 3=electric, 4=flame
-</p>
-</dd>
-<dt>T1</dt><dd>
-<p>Time to excision or on study time
-</p>
-</dd>
-<dt>D1</dt><dd>
-<p>Excision indicator: 1=yes 0=no
-</p>
-</dd>
-<dt>T2</dt><dd>
-<p>Time to prophylactic antibiotic treatment or on study time
-</p>
-</dd>
-<dt>D2</dt><dd>
-<p>Prophylactic antibiotic treatment: 1=yes 0=no
-</p>
-</dd>
-<dt>T3</dt><dd>
-<p>Time to straphylocous aureaus infection or on study time
-</p>
-</dd>
-<dt>D3</dt><dd>
-<p>Straphylocous aureaus infection: 1=yes 0=no
+<dt><code>Claims</code></dt><dd>
+<p>numbers of claims
 </p>
 </dd>
 </dl>
@@ -97,16 +59,35 @@
 
 <h3>Source</h3>
 
-<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
-and truncated data</em>, Springer.
-Ichida et al. Stat. Med. 12 (1993): 301-310.
+<p>L. A. Baxter, S. M. Coutts and G. A. F. Ross (1980) Applications of
+linear models in motor insurance.
+<em>Proceedings of the 21st International Congress of Actuaries, Zurich</em>
+pp. 11&ndash;29.
+</p>
+<p>M. Aitkin, D. Anderson, B. Francis and J. Hinde (1989)
+<em>Statistical Modelling in GLIM.</em>
+Oxford University Press.
+</p>
+
+
+<h3>References</h3>
+
+<p>Venables, W. N. and Ripley, B. D. (1999)
+<em>Modern Applied Statistics with S-PLUS.</em> Third
+Edition. Springer.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(burn)
+## main-effects fit as Poisson GLM with offset
+glm(Claims ~ District + Group + Age + offset(log(Holders)),
+    data = Insurance, family = poisson)
+
+# same via loglm
+loglm(Claims ~ District + Group + Age + offset(log(Holders)),
+      data = Insurance)
 </pre>
 
 

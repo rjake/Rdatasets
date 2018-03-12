@@ -1,34 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: CD4 Counts for HIV-Positive Patients</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Post-Coma Recovery of IQ</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for cd4"><tr><td>cd4</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Wong"><tr><td>Wong</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-CD4 Counts for HIV-Positive Patients
+Post-Coma Recovery of IQ
 </h2>
 
 <h3>Description</h3>
 
-<p>The <code>cd4</code> data frame has 20 rows and 2 columns.
-</p>
-<p>CD4 cells are carried in the blood as part of the human immune system.  One of
-the effects of the HIV virus is that these cells die.  The count of CD4 cells is
-used in determining the onset of full-blown AIDS in a patient.  In this study of
-the effectiveness of a new anti-viral drug on HIV, 20 HIV-positive patients had
-their CD4 counts recorded and then were put on a course of treatment with this
-drug.  After using the drug for one year, their CD4 counts were again recorded.
-The aim of the experiment was to show that patients taking the drug had
-increased CD4 counts which is not generally seen in HIV-positive patients.
+<p>The <code>Wong</code> data frame has 331 row and 7 columns. The observations are longitudinal
+data on recovery of IQ after comas of varying duration for 200 subjects.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-cd4
-</pre>
+<pre>Wong</pre>
 
 
 <h3>Format</h3>
@@ -37,30 +27,50 @@ cd4
 </p>
 
 <dl>
-<dt><code>baseline</code></dt><dd>
-<p>The CD4 counts (in 100's) on admission to the trial.
-</p>
+<dt><code>id</code></dt><dd><p>patient ID number.</p>
 </dd>
-<dt><code>oneyear </code></dt><dd>
-<p>The CD4 counts (in 100's) after one year of treatment with the new drug.
+<dt><code>days</code></dt><dd><p>number of days post coma at which IQs were measured.</p>
+</dd>
+<dt><code>duration</code></dt><dd><p>duration of the coma in days.</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>Female</code> and <code>Male</code>.</p>
+</dd>
+<dt><code>age</code></dt><dd><p>in years at the time of injury.</p>
+</dd>
+<dt><code>piq</code></dt><dd><p>performance (i.e., mathematical) IQ.</p>
+</dd>
+<dt><code>viq</code></dt><dd><p>verbal IQ.</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The data are from Wong, Monette, and Weiner (2001) and are for 200 patients who sustained traumatic brain
+injuries resulting in comas of varying duration. After
+awakening from their comas, patients were periodically administered a standard IQ test, but the average
+number of measurements per patient is small (331/200 = 1.7).
 </p>
-</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>DiCiccio, T.J. and Efron  B. (1996) Bootstrap confidence intervals (with 
-Discussion). <em>Statistical Science</em>, <b>11</b>, 189&ndash;228.
+<p>Wong, P. P., Monette, G., and Weiner, N. I. (2001) Mathematical models of cognitive recovery. <em>Brain Injury</em>, <b>15</b>, 519&ndash;530.
 </p>
 
 
 <h3>References</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p>Fox, J. (2016) <em>Applied Regression Analysis and Generalized Linear Models</em>, Third Edition. Sage.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+summary(Wong)
+</pre>
 
 
 </body></html>

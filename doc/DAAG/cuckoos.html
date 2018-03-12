@@ -1,70 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Dose-mortality data, for fumigation of codling moth with...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cuckoo Eggs Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for codling"><tr><td>codling</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cuckoos"><tr><td>cuckoos</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Dose-mortality data, for fumigation of codling moth with methyl bromide</h2>
+<h2>Cuckoo Eggs Data</h2>
 
 <h3>Description</h3>
 
-<p>Data are from trials that studied the mortality response of codling moth
-to fumigation with methyl bromide.
+<p>Length and breadth measurements of 120 eggs lain in the nests of six 
+different species of host bird.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(codling)</pre>
+<pre>cuckoos</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 99 observations on the following 10 variables.
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>dose</dt><dd><p>Injected dose of methyl bromide, in gm per cubic meter</p>
+<dt>length</dt><dd><p>the egg lengths in millimeters</p>
 </dd>
-<dt>tot</dt><dd><p>Number of insects in chamber</p>
+<dt>breadth</dt><dd><p>the egg breadths in millimeters</p>
 </dd>
-<dt>dead</dt><dd><p>Number of insects dying</p>
-</dd>
-<dt>pobs</dt><dd><p>Proportion dying</p>
-</dd>
-<dt>cm</dt><dd><p>Control mortality, i.e., at dose 0</p>
-</dd>
-<dt>ct</dt><dd><p>Concentration-time sum</p>
-</dd>
-<dt>Cultivar</dt><dd><p>a factor with levels <code>BRAEBURN</code> <code>FUJI</code> <code>GRANNY</code> <code>Gala</code> <code>ROYAL</code> <code>Red Delicious</code> <code>Splendour</code></p>
-</dd>
-<dt>gp</dt><dd><p>a factor which has a different level for each different
-combination of <code>Cultivar</code>, <code>year</code> and <code>rep</code> (replicate).</p>
-</dd>
-<dt>year</dt><dd><p>a factor with levels <code>1988</code> <code>1989</code></p>
-</dd>
-<dt>numcm</dt><dd><p>a numeric vector: total number of control insects</p>
+<dt>species</dt><dd><p>a factor with levels
+<code>hedge.sparrow</code>, 
+<code>meadow.pipit</code>, 
+<code>pied.wagtail</code>, 
+<code>robin</code>, 
+<code>tree.pipit</code>, 
+<code>wren</code> 
+</p>
+</dd> 
+<dt>id</dt><dd><p>a numeric vector</p>
 </dd>
 </dl>
-
-
-
-<h3>Details</h3>
-
-<p>The research that generated these data was in part funded by New Zealand
-pipfruit growers.  The published analysis was funded by New Zealand
-pipfruit growers. See also <code>sorption</code>.
-</p>
+ 
 
 
 <h3>Source</h3>
 
-<p>Maindonald, J.H.; Waddell, B.C.; Petry, R.J. 2001.
-Apple cultivar effects on codling moth (Lepidoptera: Tortricidae)
-egg mortality following fumigation with methyl bromide.
-Postharvest Biology and Technology 22: 99-110.
+<p> Latter, O.H. (1902). The eggs of Cuculus canorus. An
+Inquiry into the dimensions of the cuckoo's egg and the relation of the
+variations to the size of the eggs of the foster-parent, with notes on
+coloration, &amp;c. Biometrika i, 164.  
 </p>
+
+
+<h3>References</h3>
+
+<p>Tippett, L.H.C. 1931: &quot;The Methods of Statistics&quot;. Williams &amp; Norgate, 
+London.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre> 
+print("Strip and Boxplots - Example 2.1.2")
+
+attach(cuckoos)
+oldpar &lt;- par(las = 2) # labels at right angle to axis.
+stripchart(length ~ species) 
+boxplot(split(cuckoos$length, cuckoos$species),
+         xlab="Length of egg", horizontal=TRUE)
+detach(cuckoos)
+par(oldpar)
+pause()
+
+print("Summaries - Example 2.2.2")
+sapply(split(cuckoos$length, cuckoos$species), sd)
+pause()
+
+print("Example 4.1.4")
+wren &lt;- split(cuckoos$length, cuckoos$species)$wren
+median(wren)
+n &lt;- length(wren)
+sqrt(pi/2)*sd(wren)/sqrt(n)  # this s.e. computation assumes normality
+</pre>
 
 
 </body></html>

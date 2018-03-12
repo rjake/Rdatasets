@@ -1,22 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ozone Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Primate Body and Brain Weights</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for ozone"><tr><td>ozone</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for primates"><tr><td>primates</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Ozone Data</h2>
+<h2>Primate Body and Brain Weights</h2>
 
 <h3>Description</h3>
 
-<p>Monthly provisional mean total ozone (in Dobson units) at Halley Bay 
-(approximately corrected to Bass-Paur).
+<p>A subset of <code>Animals</code> data frame from the MASS library.
+It contains the average body and brain measurements of five
+primates.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>ozone</pre>
+<pre>primates</pre>
 
 
 <h3>Format</h3>
@@ -25,27 +26,11 @@
 </p>
 
 <dl>
-<dt>Year</dt><dd><p>the year</p>
+<dt>Bodywt</dt><dd><p>a numeric vector consisting of the body weights (in kg) 
+of five
+different primates</p>
 </dd>
-<dt>Aug</dt><dd><p>August mean total ozone</p>
-</dd>
-<dt>Sep</dt><dd><p>September mean total ozone</p>
-</dd>
-<dt>Oct</dt><dd><p>October mean total ozone</p>
-</dd>
-<dt>Nov</dt><dd><p>November mean total ozone</p>
-</dd>
-<dt>Dec</dt><dd><p>December mean total ozone</p>
-</dd>
-<dt>Jan</dt><dd><p>January mean total ozone</p>
-</dd>
-<dt>Feb</dt><dd><p>February mean total ozone</p>
-</dd>
-<dt>Mar</dt><dd><p>March mean total ozone</p>
-</dd>
-<dt>Apr</dt><dd><p>April mean total ozone</p>
-</dd>
-<dt>Annual</dt><dd><p>Yearly mean total ozone</p>
+<dt>Brainwt</dt><dd><p>a numeric vector consisting of the corresponding brain weights (in g) </p>
 </dd>
 </dl>
 
@@ -53,24 +38,23 @@
 
 <h3>Source</h3>
 
-<p>Shanklin, J. (2001) Ozone at Halley, Rothera and Vernadsky/Faraday.  
-</p>
-<p>http://www.antarctica.ac.uk/met/jds/ozone/data/zoz5699.dat
-</p>
-
-
-<h3>References</h3>
-
-<p>Christie, M. (2000) The Ozone Layer: a Philosophy of Science Perspective.
-Cambridge University Press.
+<p>P. J. Rousseeuw  and A. M. Leroy (1987) Robust Regression and
+Outlier Detection. Wiley, p. 57.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-AnnualOzone &lt;- ts(ozone$Annual, start=1956)
-plot(AnnualOzone)
+attach(primates)
+plot(x=Bodywt, y=Brainwt, pch=16,
+       xlab="Body weight (kg)", ylab="Brain weight (g)",
+       xlim=c(5,300), ylim=c(0,1500))
+chw &lt;- par()$cxy[1]
+chh &lt;- par()$cxy[2]
+text(x=Bodywt+chw, y=Brainwt+c(-.1,0,0,.1,0)*chh,
+       labels=row.names(primates), adj=0)
+detach(primates)
 </pre>
 
 

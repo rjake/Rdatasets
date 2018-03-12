@@ -1,64 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Number of Strikes in Us Manufacturing</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: An updated and expanded version of the mammals sleep dataset</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for StrikeNb"><tr><td>StrikeNb</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for msleep"><tr><td>msleep</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Number of Strikes in Us Manufacturing </h2>
+<h2>An updated and expanded version of the mammals sleep dataset</h2>
 
 <h3>Description</h3>
 
-<p>monthly observations from 1968(1) to 1976 (12)
-</p>
-<p><em>number of observations</em> :  108
-</p>
-<p><em>observation</em> :  country
-</p>
-<p><em>country</em> :  United States
+<p>This is an updated and expanded version of the mammals sleep dataset.
+Updated sleep times and weights were taken from V. M. Savage and G. B.
+West. A quantitative, theoretical framework for understanding mammalian
+sleep. Proceedings of the National Academy of Sciences, 104 (3):1051-1056,
+2007.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(StrikeNb)</pre>
+<pre>
+msleep
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A time serie containing :
+<p>A data frame with 83 rows and 11 variables
 </p>
 
 <dl>
-<dt>strikes</dt><dd><p>number of strikes (number of contract strikes in U.S. manufacturing beginning each month)</p>
+<dt>name</dt><dd><p>common name</p>
 </dd>
-<dt>output</dt><dd><p> level of economic activity (measured as cyclical departure of aggregate production from its trend level)</p>
+<dt>genus</dt><dd></dd>
+<dt>vore</dt><dd><p>carnivore, omnivore or herbivore?</p>
 </dd>
-<dt>time</dt><dd><p> a time trend from 1 to 108</p>
+<dt>order</dt><dd></dd>
+<dt>conservation</dt><dd><p>the conservation status of the animal</p>
+</dd>
+<dt>sleep_total</dt><dd><p>total amount of sleep, in hours</p>
+</dd>
+<dt>sleep_rem</dt><dd><p>rem sleep, in hours</p>
+</dd>
+<dt>sleep_cycle</dt><dd><p>length of sleep cycle, in hours</p>
+</dd>
+<dt>awake</dt><dd><p>amount of time spent awake, in hours</p>
+</dd>
+<dt>brainwt</dt><dd><p>brain weight in kilograms</p>
+</dd>
+<dt>bodywt</dt><dd><p>body weight in kilograms</p>
 </dd>
 </dl>
 
 
+<h3>Details</h3>
 
-<h3>Source</h3>
-
-<p>Kennan, J. (1985) &ldquo;The Duration of Contract strikes in U.S. Manufacturing&rdquo;, <em>Journal of Econometrics</em>, <b>28</b>, 5-28.
+<p>Additional variables order, conservation status and vore were added from
+wikipedia.
 </p>
-<p>Cameron, A.C.  and    Trivedi P.K. (1990) &ldquo;Regression Based Tests for Overdispersion in the Poisson  Model&rdquo;, <em>Journal of Econometrics</em>, december, 347-364.
-</p>
-
-
-<h3>References</h3>
-
-<p>Cameron, A.C.  and   Trivedi P.K. (1998) <em>Regression analysis of count data</em>, Cambridge University Press, <a href="http://cameron.econ.ucdavis.edu/racd/racddata.html">http://cameron.econ.ucdavis.edu/racd/racddata.html</a>, chapter 7.
-</p>
-
-
-<h3>See Also</h3>
-
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
-</p>
-<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

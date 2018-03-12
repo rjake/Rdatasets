@@ -1,66 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Interlocking Directorates Among Major Canadian Firms</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: DM Dollar Exchange Rate</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Ornstein"><tr><td>Ornstein</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for DM"><tr><td>DM</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Interlocking Directorates Among Major Canadian Firms</h2>
+<h2>DM Dollar Exchange Rate </h2>
 
 <h3>Description</h3>
 
-<p>The <code>Ornstein</code> data frame has 248 rows and 4 columns.
-The observations are the 248 largest Canadian firms with
-publicly available information in the mid-1970s. The names
-of the firms were not available.
+<p>weekly observations from 1975 to 1989
+</p>
+<p><em>number of observations</em> :  778
+</p>
+<p><em>observation</em> :  country
+</p>
+<p><em>country</em> :  Germany
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-Ornstein
-</pre>
+<pre>data(DM)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>assets</dt><dd>
-<p>Assets in millions of dollars.
-</p>
+<dt>date</dt><dd><p>the date of the observation (19850104 is January, 4, 1985)</p>
 </dd>
-<dt>sector</dt><dd>
-<p>Industrial sector.
-A factor with levels:
-<code>AGR</code>, agriculture, food, light industry;
-<code>BNK</code>, banking; 
-<code>CON</code>, construction; 
-<code>FIN</code>, other financial;
-<code>HLD</code>, holding companies; 
-<code>MAN</code>, heavy manufacturing; 
-<code>MER</code>, merchandizing;
-<code>MIN</code>, mining, metals, etc.;
-<code>TRN</code>, transport;
-<code>WOD</code>, wood and paper.
-</p>
+<dt>s</dt><dd><p>the ask price of the dollar in units of DM in the spot market on friday of the current week</p>
 </dd>
-<dt>nation</dt><dd>
-<p>Nation of control.
-A factor with levels:
-<code>CAN</code>, Canada;
-<code>OTH</code>, other foreign;
-<code>UK</code>, Britain;
-<code>US</code>, United States.
-</p>
+<dt>f</dt><dd><p>the ask price of the dollar in units of DM in the 30-day forward market on friday of the current week</p>
 </dd>
-<dt>interlocks</dt><dd>
-<p>Number of interlocking director and executive positions shared with
-other major firms.
-</p>
+<dt>s30</dt><dd><p>the bid price of the dollar in units of DM in the spot market on the delivery date on a current forward contract</p>
 </dd>
 </dl>
 
@@ -68,24 +44,21 @@ other major firms.
 
 <h3>Source</h3>
 
-<p>Ornstein, M. (1976) 
-The boards and executives of the largest Canadian corporations. 
-<em>Canadian Journal of Sociology</em> <b>1</b>, 411&ndash;437.
-</p>
-<p>Personal communication from M. Ornstein, Department of Sociology,
-York University.
+<p>Bekaert, G.  and  R.  Hodrick (1993) &ldquo;On biases in the measurement of foreign exchange risk premiums&rdquo;, <em>Journal of International Money and Finance</em>, <b>12</b>, 115-138.
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. (2008)
-<em>Applied Regression Analysis and Generalized Linear Models</em>,
-Second Edition. Sage.  
+<p>Hayashi, F. (2000) <em>Econometrics</em>, Princeton University Press, <a href="http://fhayashi.fc2web.com/hayashi_econometrics.htm">http://fhayashi.fc2web.com/hayashi_econometrics.htm</a>, chapter 6, 438-443.
 </p>
-<p>Fox, J. and Weisberg, S. (2011) 
-<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
 </p>
+<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

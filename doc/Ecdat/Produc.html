@@ -1,46 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Quarterly Data on Consumption and Expenditure</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Us States Production</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Consumption"><tr><td>Consumption</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Produc"><tr><td>Produc</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Quarterly Data on Consumption and Expenditure </h2>
+<h2>Us States Production </h2>
 
 <h3>Description</h3>
 
-<p>quarterly observations from 1947-1 to 1996-4
+<p>a panel of 48 observations  from 1970   to 1986
 </p>
-<p><em>number of observations</em> :  200
+<p><em>number of observations</em> :  816
 </p>
-<p><em>observation</em> :  country
+<p><em>observation</em> :  regional
 </p>
-<p><em>country</em> :  Canada
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Consumption)</pre>
+<pre>data(Produc)</pre>
 
 
 <h3>Format</h3>
 
-<p>A time serie containing :
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>yd</dt><dd><p> personal disposable income, 1986 dollars</p>
+<dt>state</dt><dd><p>the state</p>
 </dd>
-<dt>ce</dt><dd><p>personal consumption expenditure, 1986 dollars</p>
+<dt>year</dt><dd><p>the year</p>
+</dd>
+<dt>pcap</dt><dd><p>private capital stock</p>
+</dd>
+<dt>hwy</dt><dd><p>highway and streets</p>
+</dd>
+<dt>water</dt><dd><p>water and sewer facilities</p>
+</dd>
+<dt>util</dt><dd><p>other public buildings and structures</p>
+</dd>
+<dt>pc</dt><dd><p>public capital</p>
+</dd>
+<dt>gsp</dt><dd><p>gross state products</p>
+</dd>
+<dt>emp</dt><dd><p>labor input measured by the employment in non&ndash;agricultural payrolls</p>
+</dd>
+<dt>unemp</dt><dd><p>state unemployment rate</p>
 </dd>
 </dl>
 
 
 
+<h3>Source</h3>
+
+<p>Munnell, A. (1990) &ldquo;Why has productivity growth declined? Productivity and public investment&rdquo;, <em>New England Economic Review</em>, 3&ndash;22.
+</p>
+<p>Baltagi, B. H.  and  N.  Pinnoi (1995) &ldquo;Public capital stock and state productivity growth: further evidence&rdquo;, <em>Empirical Economics</em>, <b>20</b>, 351&ndash;359.
+</p>
+
+
 <h3>References</h3>
 
-<p>Davidson, R.  and  James G.  MacKinnon (2004) <em>Econometric Theory and Methods</em>, New York, Oxford University Press, <a href="http://www.econ.queensu.ca/ETM/">http://www.econ.queensu.ca/ETM/</a>, chapter 1, 3, 4, 6, 9, 10, 14 and 15.
+<p>Baltagi, Badi H. (2003) <em>Econometric analysis of panel data</em>, John Wiley and sons, <a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>.
 </p>
 
 

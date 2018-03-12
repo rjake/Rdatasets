@@ -1,77 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data on Children who have had Corrective Spinal Surgery</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Veteran's Administration Lung Cancer Trial</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for kyphosis"><tr><td>kyphosis</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for VA"><tr><td>VA</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Data on Children who have had Corrective Spinal Surgery</h2>
+<h2>
+Veteran's Administration Lung Cancer Trial
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>kyphosis</code> data frame has 81 rows and 4 columns.
-representing data on children who have had corrective spinal surgery
+<p>Veteran's Administration lung cancer trial from Kalbfleisch &amp; Prentice.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-kyphosis
+VA
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with columns:
 </p>
 
 <dl>
-<dt><code>Kyphosis</code></dt><dd>
-<p>a factor with levels
-<code>absent</code> 
-<code>present</code>
-indicating if a kyphosis (a type of deformation)
-was present after the operation.
+<dt><code>stime</code></dt><dd>
+<p>survival or follow-up time in days.
 </p>
 </dd>
-<dt><code>Age</code></dt><dd>
-<p>in months
+<dt><code>status</code></dt><dd>
+<p>dead or censored.
 </p>
 </dd>
-<dt><code>Number</code></dt><dd>
-<p>the number of vertebrae involved 
+<dt><code>treat</code></dt><dd>
+<p>treatment: standard or test.
 </p>
 </dd>
-<dt><code>Start</code></dt><dd>
-<p>the number of the first (topmost) vertebra operated on.
+<dt><code>age</code></dt><dd>
+<p>patient's age in years.
+</p>
+</dd>
+<dt><code>Karn</code></dt><dd>
+<p>Karnofsky score of patient's performance on a scale of 0 to 100.
+</p>
+</dd>
+<dt><code>diag.time</code></dt><dd>
+<p>times since diagnosis in months at entry to trial.
+</p>
+</dd>
+<dt><code>cell</code></dt><dd>
+<p>one of four cell types.
+</p>
+</dd>
+<dt><code>prior</code></dt><dd>
+<p>prior therapy?
 </p>
 </dd>
 </dl>
 
 
+
 <h3>Source</h3>
 
-<p>John M. Chambers and Trevor J. Hastie eds. (1992)
-<em>Statistical Models in S</em>, Wadsworth and Brooks/Cole,
-Pacific Grove, CA.
+<p>Kalbfleisch, J.D. and Prentice R.L. (1980)
+<em>The Statistical Analysis of Failure Time Data.</em>
+Wiley.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-fit &lt;- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
-fit2 &lt;- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis,
-              parms = list(prior = c(0.65, 0.35), split = "information"))
-fit3 &lt;- rpart(Kyphosis ~ Age + Number + Start, data=kyphosis,
-              control = rpart.control(cp = 0.05))
-par(mfrow = c(1,2), xpd = TRUE)
-plot(fit)
-text(fit, use.n = TRUE)
-plot(fit2)
-text(fit2, use.n = TRUE)
-</pre>
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
 
 
 </body></html>

@@ -1,82 +1,84 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nicotine Gum and Smoking Cessation</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Insect Damages on Carrots</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for smoking"><tr><td>smoking</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for carrots"><tr><td>carrots</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2> Nicotine Gum and Smoking Cessation </h2>
+<h2>Insect Damages on Carrots</h2>
 
 <h3>Description</h3>
 
-<p>Data from a meta-analysis on nicotine gum and smoking cessation
+<p>The damage carrots data set from Phelps (1982) was used by McCullagh
+and Nelder (1989) in order to illustrate diagnostic techniques because
+of the presence of an outlier. In a soil experiment trial with three
+blocks, eight levels of insecticide were applied and the carrots were
+tested for insect damage.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("smoking")</pre>
+<pre>data(carrots)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 26 observations (studies) on the following 4 variables.
+<p>A data frame with 24 observations on the following 4 variables.
 </p>
 
 <dl>
-<dt><code>qt</code></dt><dd><p>the number of treated subjetcs who stopped
-smoking.</p>
-</dd> 
-<dt><code>tt</code></dt><dd><p>the totla number of treated subjects.</p>
+<dt>success</dt><dd><p> integer giving the number of carrots with insect damage.</p>
 </dd>
-<dt><code>qc</code></dt><dd><p>the number of  subjetcs who stopped
-smoking without being treated.</p>
-</dd> 
-<dt><code>tc</code></dt><dd><p>the total number of subject not being treated.</p>
+<dt>total</dt><dd><p> integer giving the total number of carrots per
+experimental unit.</p>
+</dd>
+<dt>logdose</dt><dd><p>a numeric vector giving log(dose) values (eight
+different levels only).</p>
+</dd>
+<dt>block</dt><dd><p>factor with levels <code>B1</code> to <code>B3</code></p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
+<h3>Source</h3>
 
-<p>Cigarette smoking is the leading cause of preventable death in
-the United States and kills more Americans than AIDS, alcohol,
-illegal drug use, car accidents, fires, murders and suicides
-combined. It has been estimated that 430,000 Americans die from
-smoking every year. Fighting tobacco use is, consequently, one
-of the major public health goals of our time and there are now
-many programs available designed to help smokers quit. One of
-the major aids used in these programs is nicotine chewing gum,
-which acts as a substitute oral activity and provides a source
-of nicotine that reduces the withdrawal symptoms experienced
-when smoking is stopped. But separate randomized clinical trials
-of nicotine gum have been largely inconclusive, leading
-Silagy (2003) to consider combining the results studies
-found from an extensive literature search. The results of these
-trials in terms of numbers of people in the treatment arm and
-the control arm who stopped smoking for at least 6 months after
-treatment are given here. 
+<p>Phelps, K. (1982).
+Use of the complementary log-log function to describe doseresponse
+relationships in insecticide evaluation field trials.
+<br />
+In R. Gilchrist (Ed.), <em>Lecture Notes in Statistics, No. 14.
+GLIM.82: Proceedings of the International Conference on Generalized
+Linear Models</em>; Springer-Verlag.
 </p>
 
 
-<h3>Source</h3>
+<h3>References</h3>
 
-<p>C. Silagy (2003), Nicotine replacement therapy for smoking
-cessation (Cochrane Review). <em>The Cochrane Library</em>,
-<b>4</b>, John Wiley \&amp; Sons, Chichester.
+<p>McCullagh P. and Nelder, J. A. (1989)
+<em>Generalized Linear Models.</em>
+London: Chapman and Hall.
+</p>
+<p>Eva Cantoni and Elvezio Ronchetti (2001); JASA,  and <br />
+Eva Cantoni (2004); JSS, see <code>glmrob</code>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
+data(carrots)
+str(carrots)
+plot(success/total ~ logdose, data = carrots, col = as.integer(block))
+coplot(success/total ~ logdose | block, data = carrots)
 
-  data("smoking", package = "HSAUR")
-  boxplot(smoking$qt/smoking$tt,
-          smoking$qc/smoking$tc,
-          names = c("Treated", "Control"), ylab = "Percent Quitters")
+## Classical glm
+Cfit0 &lt;- glm(cbind(success, total-success) ~ logdose + block,
+             data=carrots, family=binomial)
+summary(Cfit0)
 
+## Robust Fit (see help(glmrob)) ....
 </pre>
 
 

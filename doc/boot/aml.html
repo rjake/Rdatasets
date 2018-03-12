@@ -1,91 +1,85 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Elisa assay of DNase</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Remission Times for Acute Myelogenous Leukaemia</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for DNase"><tr><td>DNase</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for aml"><tr><td>aml</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Elisa assay of DNase</h2>
+<h2>
+Remission Times for Acute Myelogenous Leukaemia
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>DNase</code> data frame has 176 rows and 3 columns of data
-obtained during development of an ELISA assay for the recombinant
-protein DNase in rat serum.
+<p>The <code>aml</code> data frame has 23 rows and 3 columns.
+</p>
+<p>A clinical trial to evaluate the efficacy of maintenance chemotherapy for
+acute myelogenous leukaemia was 
+conducted by Embury et al. (1977) at Stanford University.  After reaching a
+stage of remission through treatment by chemotherapy, patients were randomized
+into two groups. The first group received maintenance chemotherapy and the 
+second group did not.  The aim of the study was to see if maintenance 
+chemotherapy increased the length of the remission.  The data here formed a
+preliminary analysis which was conducted in October 1974.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>DNase</pre>
+<pre>
+aml
+</pre>
 
 
 <h3>Format</h3>
 
-<p>An object of class
-<code>c("nfnGroupedData", "nfGroupedData", "groupedData", "data.frame")</code>
-containing the following columns:
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>Run</dt><dd>
-<p>an ordered factor with levels <code>10</code> &lt; ... &lt; <code>3</code>
-indicating the assay run.
+<dt><code>time</code></dt><dd>
+<p>The length of the complete remission (in weeks).
 </p>
 </dd>
-<dt>conc</dt><dd>
-<p>a numeric vector giving the known concentration of the
-protein.
+<dt><code>cens</code></dt><dd>
+<p>An indicator of right censoring.  1 indicates that the patient had a relapse
+and so <code>time</code> is the length of the remission. 0 indicates that the patient
+had left the study or was still in remission in October 1974, that is the
+length of remission is right-censored.
 </p>
 </dd>
-<dt>density</dt><dd>
-<p>a numeric vector giving the measured optical density
-(dimensionless) in the assay.  Duplicate optical density
-measurements were obtained.
+<dt><code>group</code></dt><dd>
+<p>The group into which the patient was randomized.  Group 1 received
+maintenance chemotherapy, group 2 did not.
 </p>
-</dd>
-</dl>
+</dd></dl>
 
 
+<h3>Note</h3>
 
-<h3>Details</h3>
-
-<p>This dataset was originally part of package <code>nlme</code>, and that has
-methods (including for <code>[</code>, <code>as.data.frame</code>, <code>plot</code> and
-<code>print</code>) for its grouped-data classes.
+<p>Package <span class="pkg">survival</span> also has a dataset <code>aml</code>. It is the same
+data with different names and with <code>group</code> replaced by a factor
+<code>x</code>.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Davidian, M. and Giltinan, D. M. (1995)
-<em>Nonlinear Models for Repeated Measurement Data</em>,
-Chapman &amp; Hall
-(section 5.2.4, p. 134)
+<p>The data were obtained from
 </p>
-<p>Pinheiro, J. C. and Bates, D. M. (2000) <em>Mixed-effects Models in
-S and S-PLUS</em>, Springer.
+<p>Miller, R.G. (1981) <em>Survival Analysis</em>. John Wiley.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-require(stats); require(graphics)
-
-coplot(density ~ conc | Run, data = DNase,
-       show.given = FALSE, type = "b")
-coplot(density ~ log(conc) | Run, data = DNase,
-       show.given = FALSE, type = "b")
-## fit a representative run
-fm1 &lt;- nls(density ~ SSlogis( log(conc), Asym, xmid, scal ),
-    data = DNase, subset = Run == 1)
-## compare with a four-parameter logistic
-fm2 &lt;- nls(density ~ SSfpl( log(conc), A, B, xmid, scal ),
-    data = DNase, subset = Run == 1)
-summary(fm2)
-anova(fm1, fm2)
-</pre>
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+</p>
+<p>Embury, S.H, Elias, L., Heller, P.H., Hood, C.E., Greenberg, P.L. and
+Schrier, S.L. (1977) Remission maintenance therapy in  acute myelogenous
+leukaemia. <em>Western Journal of Medicine</em>, <b>126</b>, 267-272.
+</p>
 
 
 </body></html>

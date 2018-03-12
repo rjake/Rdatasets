@@ -1,39 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Determinations of Nickel Content</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: data from Exercise 7.14, p225</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for abbey"><tr><td>abbey</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for twins"><tr><td>twins</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Determinations of Nickel Content
-</h2>
+<h2>data from Exercise 7.14, p225</h2>
 
 <h3>Description</h3>
 
-<p>A numeric vector of 31 determinations of nickel content (ppm) in
-a Canadian syenite rock.
+<p>The <code>twins</code> data frame has 24 rows and 3 columns.
 </p>
 
 
-<h3>Usage</h3>
+<h3>Format</h3>
 
-<pre>
-abbey
-</pre>
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt>id</dt><dd>
+<p>Twin number
+</p>
+</dd>
+<dt>age</dt><dd>
+<p>Age of twin's death from CHD, months
+</p>
+</dd>
+<dt>death</dt><dd>
+<p>Death (male twin) from CHD indicator (1=dead from CHD, 0=alive or other
+cause of death)
+</p>
+</dd>
+<dt>gender</dt><dd>
+<p>1=male, 2=female
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>S. Abbey (1988) <em>Geostandards Newsletter</em> <b>12</b>, 241.
+<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
+and truncated data</em>, Springer.
 </p>
 
 
-<h3>References</h3>
+<h3>Examples</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
-</p>
+<pre>
+data(twins)
+</pre>
 
 
 </body></html>

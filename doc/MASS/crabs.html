@@ -1,40 +1,85 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Newcomb's Measurements of the Passage Time of Light</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Morphological Measurements on Leptograpsus Crabs</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for newcomb"><tr><td>newcomb</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for crabs"><tr><td>crabs</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Newcomb's Measurements of the Passage Time of Light
+Morphological Measurements on Leptograpsus Crabs
 </h2>
 
 <h3>Description</h3>
 
-<p>A numeric vector giving the &lsquo;Third Series&rsquo; of measurements of the
-passage time of light recorded by Newcomb in 1882.  The given values
-divided by 1000 plus 24 give the time in millionths of a second for
-light to traverse a known distance. The &lsquo;true&rsquo; value is now
-considered to be 33.02.
+<p>The <code>crabs</code> data frame has 200 rows and 8 columns, describing 5
+morphological measurements on 50 crabs each of two colour forms and
+both sexes, of the species <em>Leptograpsus variegatus</em> collected at
+Fremantle, W. Australia.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-newcomb
+crabs
 </pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>sp</code></dt><dd>
+<p><code>species</code> - <code>"B"</code> or <code>"O"</code> for blue or orange.
+</p>
+</dd>
+<dt><code>sex</code></dt><dd>
+<p>as it says.
+</p>
+</dd>
+<dt><code>index</code></dt><dd>
+<p>index <code>1:50</code> within each of the four groups.
+</p>
+</dd>
+<dt><code>FL</code></dt><dd>
+<p>frontal lobe size (mm).
+</p>
+</dd>
+<dt><code>RW</code></dt><dd>
+<p>rear width (mm).
+</p>
+</dd>
+<dt><code>CL</code></dt><dd>
+<p>carapace length (mm).
+</p>
+</dd>
+<dt><code>CW</code></dt><dd>
+<p>carapace width (mm).
+</p>
+</dd>
+<dt><code>BD</code></dt><dd>
+<p>body depth (mm).
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>S. M. Stigler (1973)
-Simon Newcomb, Percy Daniell, and the history of robust estimation
-1885&ndash;1920.
-<em>Journal of the American Statistical Association</em> <b>68</b>, 872&ndash;879.
+<p>Campbell, N.A. and Mahon, R.J. (1974) A multivariate
+study of variation in two species of rock crab of genus
+<em>Leptograpsus.</em>
+<em>Australian Journal of  Zoology</em> <b>22</b>, 417&ndash;425.
 </p>
-<p>R. G. Staudte and S. J. Sheather (1990)
-<em>Robust Estimation and Testing.</em> Wiley.
+
+
+<h3>References</h3>
+
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
 </p>
 
 

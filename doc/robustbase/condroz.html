@@ -1,44 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Toothpaste Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Condroz Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for toothpaste"><tr><td>toothpaste</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for condroz"><tr><td>condroz</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2> Toothpaste Data </h2>
+<h2> Condroz Data </h2>
 
 <h3>Description</h3>
 
-<p>Meta-analysis of studies comparing two different toothpastes.
+<p>Dataset with pH-value and Calcium content in soil samples, collected in different
+communities of the Condroz region in Belgium. The data pertain to a
+subset of 428 samples with a pH-value between 7.0 and 7.5.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("toothpaste")</pre>
+<pre>data(condroz)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 9 observations on the following 7 variables.
+<p>A data frame with 428 observations on the following 2 variables.
 </p>
 
 <dl>
-<dt><code>Study</code></dt><dd><p>the identifier of the study.</p>
+<dt><code>Ca</code></dt><dd><p>Calcium content of the soil sample</p>
 </dd>
-<dt><code>nA</code></dt><dd><p>number of subjects using toothpaste A.</p>
-</dd>
-<dt><code>meanA</code></dt><dd><p>mean DMFS index of subjects using toothpaste A.</p>
-</dd>
-<dt><code>sdA</code></dt><dd><p>standard deviation of DMFS index of subjects 
-using toothpaste A.</p>
-</dd>
-<dt><code>nB</code></dt><dd><p>number of subjects using toothpaste B.</p>
-</dd>
-<dt><code>meanB</code></dt><dd><p>mean DMFS index of subjects using toothpaste B.</p>
-</dd>
-<dt><code>sdB</code></dt><dd><p>standard deviation of DMFS index of subjects 
-using toothpaste B.</p>
+<dt><code>pH</code></dt><dd><p>pH value of the soil sample</p>
 </dd>
 </dl>
 
@@ -46,29 +36,36 @@ using toothpaste B.</p>
 
 <h3>Details</h3>
 
-<p>The data are the results of nine randomised trials comparing
-two different toothpastes for the prevention of caries development.
-The outcomes in each trial was the change, from baseline, in
-the decayed, missing (due to caries) and filled surface dental
-index (DMFS).
+<p>For more information on the dataset, cf. Goegebeur et al. (2005).
 </p>
 
 
 <h3>Source</h3>
 
-<p>B. S. Everitt and A. Pickles (2000), 
-<em>Statistical Aspects of the Design and Analysis of Clinical
-Trials</em>, Imperial College Press, London.
+<p>Hubert and Vandervieren (2006), p. 10.
+This dataset is also studied in Vandewalle et al. (2004).
+</p>
+
+
+<h3>References</h3>
+
+<p>See also those for <code>adjbox</code>.
+</p>
+<p>Goegebeur, Y., Planchon, V., Beirlant, J., Oger, R. (2005). Quality
+Assesment of Pedochemical Data Using Extreme Value Methodology,
+Journal of Applied Science, 5, p. 1092-1102.
+</p>
+<p>Vandewalle, B., Beirlant, J., Hubert, M. (2004). A robust estimator of
+the tail index based on an exponential regression model, in Hubert,
+M., Pison G., Struyf, A. and S. Van Aelst, ed., Theory and
+Applications of Recent Robust Methods, Birkhäuser, Basel, p. 367-376.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-
-  data("toothpaste", package = "HSAUR")
-  toothpaste
-
+  adjbox(condroz$Ca)
 </pre>
 
 

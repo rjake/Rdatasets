@@ -1,95 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Death by Horse Kicks</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gasoline Consumption</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for HorseKicks"><tr><td>HorseKicks</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Gasoline"><tr><td>Gasoline</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Death by Horse Kicks</h2>
+<h2>Gasoline Consumption</h2>
 
 <h3>Description</h3>
 
-<p>Data from von Bortkiewicz (1898), given by Andrews \&amp; Herzberg (1985),
-on number of deaths by horse or mule kicks in 10 (of 14 reported)
-corps of the Prussian army.  4 corps were not considered by Fisher
-(1925) as they had a different organization. This data set is a
-popular subset of the <code>VonBort</code> data.
+<p>A panel of 18 observations from 1960 to 1978
+</p>
+<p><em>total number of observations</em> :  342
+</p>
+<p><em>observation</em> :  country
+</p>
+<p><em>country</em> :  OECD
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-data("HorseKicks")
-</pre>
+<pre>data(Gasoline)</pre>
 
 
 <h3>Format</h3>
 
-<p>A 1-way table giving the number of deaths in 200 corps-years.  The
-variable and its levels are
+<p>A data frame containing :
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    1 </td><td style="text-align: left;"> nDeaths </td><td style="text-align: left;"> 0, 1, ..., 4 </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
+<dl>
+<dt>country</dt><dd><p>a factor with 18 levels</p>
+</dd>
+<dt>year</dt><dd><p>the year</p>
+</dd>
+<dt>lgaspcar</dt><dd><p>logarithm of motor gasoline consumption per car</p>
+</dd>
+<dt>lincomep</dt><dd><p>logarithm of real per-capita income</p>
+</dd>
+<dt>lrpmg</dt><dd><p>logarithm of real motor gasoline price</p>
+</dd>
+<dt>lcarpcap</dt><dd><p>logarithm of the stock of cars per capita</p>
+</dd>
+</dl>
 
 
 
 <h3>Source</h3>
 
-<p>Michael Friendly (2000),
-Visualizing Categorical Data, page 18.
+<p>Online complements to Baltagi (2001):
+</p>
+<p><a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>
+</p>
+<p>Online complements to Baltagi (2013):
+</p>
+<p><a href="http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452">http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>D. F. Andrews &amp; A. M. Herzberg (1985),
-<em>Data: A Collection of Problems from Many Fields for the Student
-and Research Worker</em>.
-Springer-Verlag, New York, NY.
+<p>Baltagi, Badi H. (2001) <em>Econometric Analysis of Panel Data</em>, 2nd ed., John Wiley and Sons.
 </p>
-<p>R. A. Fisher (1925),
-<em>Statistical Methods for Research Workers</em>.
-Oliver \&amp; Boyd, London.
+<p>Baltagi, Badi H. (2013) <em>Econometric Analysis of Panel Data</em>, 5th ed., John Wiley and Sons.
 </p>
-<p>L. von Bortkiewicz (1898),
-<em>Das Gesetz der kleinen Zahlen</em>.
-Teubner, Leipzig.
+<p>Baltagi, B.H.  and  J.M. Griffin (1983) &ldquo;Gasoline demand in the OECD: 
+An application of pooling and testing procedures&rdquo;, <em>European Economic Review</em>, 
+<b>22</b>(2), pp. 117&ndash;137.
 </p>
-<p>M. Friendly (2000),
-<em>Visualizing Categorical Data</em>.
-SAS Institute, Cary, NC.
-</p>
-
-
-<h3>See Also</h3>
-
-<p><code>VonBort</code>
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data("HorseKicks")
-gf &lt;- goodfit(HorseKicks)
-summary(gf)
-plot(gf)
-</pre>
 
 
 </body></html>

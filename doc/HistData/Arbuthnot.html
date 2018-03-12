@@ -1,72 +1,105 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Stated Preferences for Train Traveling</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Arbuthnot's data on male and female birth ratios in London...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Train"><tr><td>Train</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Arbuthnot"><tr><td>Arbuthnot</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Stated Preferences for Train Traveling </h2>
+<h2>
+Arbuthnot's data on male and female birth ratios in London from 1629-1710.
+</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1987
+<p>John Arbuthnot (1710) used these time series data on the ratios of
+male to female births in London from 1629-1710 to carry out the first known
+significance test, comparing observed data to a null hypothesis.
+The data for these 81 years showed that in every year there were
+more male than female christenings.
 </p>
-<p><em>number of observations</em> :  2929
-</p>
-<p><em>observation</em> :  individuals
-</p>
-<p><em>country</em> :  Netherland
+<p>On the assumption that male and female births were equally likely,
+he showed that the probability of observing 82 years with more
+males than females was vanishingly small (<i>~ 4.14 x 10^{-25}</i>).
+He used this to argue that a nearly constant birth ratio &gt; 1
+could be interpreted to show the guiding hand of a devine being.
+The data set adds variables of deaths from the plague and total
+mortality obtained by Campbell and from Creighton (1965).
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Train)</pre>
+<pre>data(Arbuthnot)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A data frame with 82 observations on the following 7 variables.
 </p>
 
 <dl>
-<dt>id</dt><dd><p>individual identifier</p>
+<dt><code>Year</code></dt><dd><p>a numeric vector, 1629-1710</p>
 </dd>
-<dt>choiceid</dt><dd><p>choice identifier</p>
+<dt><code>Males</code></dt><dd><p>a numeric vector, number of male christenings</p>
 </dd>
-<dt>choice</dt><dd><p>one of choice1, choice2</p>
+<dt><code>Females</code></dt><dd><p>a numeric vector, number of female christenings</p>
 </dd>
-<dt>pricez</dt><dd><p>price of proposition z (z=1,2) in cents of guilders</p>
+<dt><code>Plague</code></dt><dd><p>a numeric vector, number of deaths from plague</p>
 </dd>
-<dt>timez</dt><dd><p>travel time  of proposition z (z=1,2) in minutes</p>
+<dt><code>Mortality</code></dt><dd><p>a numeric vector, total mortality</p>
 </dd>
-<dt>comfortz</dt><dd><p>comfort  of proposition z (z=1,2), 0, 1 or 2 in decreasing comfort order</p>
+<dt><code>Ratio</code></dt><dd><p>a numeric vector, ratio of Males/Females</p>
 </dd>
-<dt>changez</dt><dd><p>number of changes for proposition z (z=1,2)</p>
+<dt><code>Total</code></dt><dd><p>a numeric vector, total christenings in London (000s)</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>Sandy Zabell (1976) pointed out several errors and inconsistencies in the
+Arbuthnot data.  In particular, the values for 1674 and 1704 are identical,
+suggesting that the latter were copied erroneously from the former.
+</p>
+
+
 <h3>Source</h3>
 
-<p>Meijer, Erik  and  Jan  Rouwendal (2005) &ldquo;Measuring welfare effects in models with random coefficients&rdquo;, <em>Journal of Applied Econometrics</em>, <b>forthcoming</b>.
-</p>
-<p>Ben&ndash;Akiva, M.,  D.   Bolduc and  M.  Bradley (1993) &ldquo;Estimation of travel choice models with randomly distributed values of time&rdquo;, <em>Transportation Research Record</em>, <b>1413</b>, 88&ndash;97.
-</p>
-<p>Carson, R.T.,  L.   Wilks and  D.  Imber (1994) &ldquo;Valuing the preservation of Australia's Kakadu conservation zone&rdquo;, <em>Oxford Economic Papers</em>, <b>46</b>, 727&ndash;749.
+<p>Arbuthnot, John (1710). &quot;An argument for Devine Providence, taken from the constant Regularity
+observ'd in the Births of both Sexes,&quot; <em>Philosophical transactions</em>, 27, 186-190.
+Published in 1711.
 </p>
 
 
 <h3>References</h3>
 
-<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
+<p>Campbell, R. B., Arbuthnot and the Human Sex Ratio (2001).
+<em>Human Biology</em>, 73:4, 605-610.
+
+</p>
+<p>Creighton, C. (1965). A History of Epidemics in Britain, 2nd edition, vol. 1 and 2. 
+NY: Barnes and Noble.
+</p>
+<p>S. Zabell (1976). Arbuthnot, Heberden, and the <em>Bills of Mortality</em>.
+Technical Report No. 40, Department of Statistics, University of Chicago.
 </p>
 
 
-<h3>See Also</h3>
+<h3>Examples</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<pre>
+data(Arbuthnot)
+# plot the sex ratios
+with(Arbuthnot, plot(Year,Ratio, type='b', ylim=c(1, 1.20), ylab="Sex Ratio (M/F)"))
+abline(h=1, col="red")
+#  add loess smooth
+Arb.smooth &lt;- with(Arbuthnot, loess.smooth(Year,Ratio))
+lines(Arb.smooth$x, Arb.smooth$y, col="blue", lwd=2)
+
+# plot the total christenings to observe the anomalie in 1704
+with(Arbuthnot, plot(Year,Total, type='b', ylab="Total Christenings"))
+</pre>
 
 
 </body></html>

@@ -1,99 +1,123 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Biopsy Data on Breast Cancer Patients</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mortality Rates in US by Cause and Gender</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for biopsy"><tr><td>biopsy</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for H_USMortality"><tr><td>H_USMortality</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Biopsy Data on Breast Cancer Patients
-</h2>
+<h2> Mortality Rates in US by Cause and Gender </h2>
 
 <h3>Description</h3>
 
-<p>This breast cancer database was obtained from the University of Wisconsin
-Hospitals, Madison from Dr. William H. Wolberg. He assessed biopsies
-of breast tumours for 699 patients up to 15 July 1992; each of nine
-attributes has been scored on a scale of 1 to 10, and the outcome is
-also known. There are 699 rows and 11 columns.
+<p>These datasets record mortality rates across all ages in the USA by
+cause of death, sex, and rural/urban status, 2011&ndash;2013. The two
+datasets represent the national aggregate rates and the region-wise
+rates for each administrative region under the Department of Health
+and Human Services (HHS).
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-biopsy
+USMortality
+USRegionalMortality
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p><code>USRegionalMortality</code> is a data frame with 400 observations on
+the following 6 variables.
 </p>
 
 <dl>
-<dt><code>ID</code></dt><dd><p>sample code number (not unique).</p>
+<dt><code>Region</code></dt><dd><p>A factor specifying HHS Region. See details.</p>
 </dd>
-<dt><code>V1</code></dt><dd><p>clump thickness.</p>
+<dt><code>Status</code></dt><dd><p>A factor with levels <code>Rural</code> and <code>Urban</code></p>
 </dd>
-<dt><code>V2</code></dt><dd><p>uniformity of cell size.</p>
+<dt><code>Sex</code></dt><dd><p>A factor with levels <code>Female</code> and <code>Male</code></p>
 </dd>
-<dt><code>V3</code></dt><dd><p>uniformity of cell shape.</p>
+<dt><code>Cause</code></dt><dd><p>Cause of death. A factor with levels
+<code>Alzheimers</code>, <code>Cancer</code>, <code>Cerebrovascular diseases</code>,
+<code>Diabetes</code>, <code>Flu and pneumonia</code>, <code>Heart disease</code>,
+<code>Lower respiratory</code>, <code>Nephritis</code>, <code>Suicide</code>, and
+<code>Unintentional injuries</code></p>
 </dd>
-<dt><code>V4</code></dt><dd><p>marginal adhesion.</p>
+<dt><code>Rate</code></dt><dd><p>Age-adjusted death rate per 100,000 population</p>
 </dd>
-<dt><code>V5</code></dt><dd><p>single epithelial cell size.</p>
-</dd>
-<dt><code>V6</code></dt><dd><p>bare nuclei (16 values are missing).</p>
-</dd>
-<dt><code>V7</code></dt><dd><p>bland chromatin.</p>
-</dd>
-<dt><code>V8</code></dt><dd><p>normal nucleoli.</p>
-</dd>
-<dt><code>V9</code></dt><dd><p>mitoses.</p>
-</dd>
-<dt><code>class</code></dt><dd><p><code>"benign"</code> or <code>"malignant"</code>.</p>
+<dt><code>SE</code></dt><dd><p>Standard error for the rate</p>
 </dd>
 </dl>
 
-
-
-<h3>Source</h3>
-
-<p>P. M. Murphy and D. W. Aha  (1992). UCI Repository of machine
-learning databases. [Machine-readable data repository]. Irvine, CA:
-University of California, Department of Information and Computer Science.
-</p>
-<p>O. L. Mangasarian and W. H. Wolberg (1990)
-Cancer diagnosis via linear programming.
-<em>SIAM News</em> <b>23</b>, pp 1 &amp; 18.
-</p>
-<p>William H. Wolberg and O.L. Mangasarian (1990)
-Multisurface method of pattern separation for medical diagnosis
-applied to breast cytology.
-<em>Proceedings of the National Academy of Sciences, U.S.A.</em>
-<b>87</b>, pp. 9193&ndash;9196.
-</p>
-<p>O. L. Mangasarian, R. Setiono and W.H. Wolberg (1990)
-Pattern recognition via linear programming: Theory and application
-to medical diagnosis. In
-<em>Large-scale Numerical Optimization</em>
-eds Thomas F. Coleman and Yuying Li, SIAM Publications, Philadelphia,
-pp 22&ndash;30.
-</p>
-<p>K. P. Bennett and O. L. Mangasarian (1992)
-Robust linear programming discrimination of two linearly inseparable sets.
-<em>Optimization Methods and Software</em>
-<b>1</b>, pp. 23&ndash;34 (Gordon &amp; Breach Science Publishers).
+<p><code>USMortality</code> is a data frame with 40 observations, containing
+the same variables with the exception of <code>Region</code>.
 </p>
 
+
+<h3>Details</h3>
+
+<p> The region-wise data give estimated rates separately for each
+of 10 HHS regions. The location of the regional offices and their
+coverage area, available from
+<a href="https://www.hhs.gov/about/agencies/iea/regional-offices/index.html">https://www.hhs.gov/about/agencies/iea/regional-offices/index.html</a>,
+is given below.
+</p>
+
+<dl>
+<dt>HHS Region 01 - Boston: </dt><dd><p> Connecticut, Maine, Massachusetts,
+New Hampshire, Rhode Island, and Vermont </p>
+</dd>
+<dt> HHS Region 02 - New York: </dt><dd><p> New Jersey, New York, Puerto
+Rico, and the Virgin Islands </p>
+</dd>
+<dt>HHS Region 03 - Philadelphia: </dt><dd><p> Delaware, District of
+Columbia, Maryland, Pennsylvania, Virginia, and West Virginia</p>
+</dd>
+<dt>HHS Region 04 - Atlanta: </dt><dd><p> Alabama, Florida, Georgia, Kentucky,
+Mississippi, North Carolina, South Carolina, and Tennessee</p>
+</dd>
+<dt>HHS Region 05 - Chicago: </dt><dd><p> Illinois, Indiana, Michigan,
+Minnesota, Ohio, and Wisconsin</p>
+</dd>
+<dt>HHS Region 06 - Dallas: </dt><dd><p> Arkansas, Louisiana, New Mexico,
+Oklahoma, and Texas </p>
+</dd>
+<dt>HHS Region 07 - Kansas City: </dt><dd><p> Iowa, Kansas, Missouri, and
+Nebraska</p>
+</dd>
+<dt>HHS Region 08 - Denver: </dt><dd><p> Colorado, Montana, North Dakota,
+South Dakota, Utah, and Wyoming</p>
+</dd>
+<dt>HHS Region 09 - San Francisco: </dt><dd><p> Arizona, California, Hawaii,
+Nevada, American Samoa, Commonwealth of the Northern Mariana
+Islands, Federated States of Micronesia, Guam, Marshall Islands,
+and Republic of Palau</p>
+</dd>
+<dt>HHS Region 10 - Seattle: </dt><dd><p> Alaska, Idaho, Oregon, and
+Washington</p>
+</dd> </dl>
+ 
 
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (1999)
-<em>Modern Applied Statistics with S-PLUS.</em> Third
-Edition. Springer.
+<p>Rural Health Reform Policy Research Center. _Exploring Rural and Urban
+Mortality Differences_, August 2015 Bethesda, MD. 
+<a href="https://ruralhealth.und.edu/projects/health-reform-policy-research-center/rural-urban-mortality">https://ruralhealth.und.edu/projects/health-reform-policy-research-center/rural-urban-mortality</a>
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+dotplot(reorder(Cause, Rate) ~ Rate | Status,
+        data = USMortality, groups = Sex,
+        par.settings = simpleTheme(pch = 16), auto.key = list(columns = 2),
+        scales = list(x = list(log = TRUE, equispaced.log = FALSE)))
+dotplot(reorder(Cause, Rate):Sex ~ Rate | Status,
+        data = USRegionalMortality, groups = Sex,
+        scales = list(x = list(log = TRUE, equispaced.log = FALSE)))
+</pre>
 
 
 </body></html>

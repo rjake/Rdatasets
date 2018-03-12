@@ -1,44 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Chemical Composition of Pottery</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Number of Doctor Visits</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Pottery"><tr><td>Pottery</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Doctor"><tr><td>Doctor</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Chemical Composition of Pottery</h2>
+<h2>Number of Doctor Visits </h2>
 
 <h3>Description</h3>
 
-<p>The data give the chemical composition of ancient pottery found at four sites in Great Britain. They 
-appear in Hand, et al. (1994), and are used to illustrate MANOVA in the SAS Manual. (Suggested by Michael
-Friendly.)
+<p>a cross-section from 1986
+</p>
+<p><em>number of observations</em> :  485
+</p>
+<p><em>observation</em> :  individuals
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-Pottery
-</pre>
+<pre>data(Doctor)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 26 observations on the following 6 variables.
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt><code>Site</code></dt><dd><p>a factor with levels <code>AshleyRails</code> <code>Caldicot</code> <code>IsleThorns</code> <code>Llanedyrn</code></p>
+<dt>doctor</dt><dd><p>the number of doctor visits</p>
 </dd>
-<dt><code>Al</code></dt><dd><p>Aluminum</p>
+<dt>children</dt><dd><p>the number of children in the household</p>
 </dd>
-<dt><code>Fe</code></dt><dd><p>Iron</p>
+<dt>access</dt><dd><p>is a measure of access to health care</p>
 </dd>
-<dt><code>Mg</code></dt><dd><p>Magnesium</p>
-</dd>
-<dt><code>Ca</code></dt><dd><p>Calcium</p>
-</dd>
-<dt><code>Na</code></dt><dd><p>Sodium</p>
+<dt>health</dt><dd><p>a measure of health status (larger positive numbers are  associated with poorer health)</p>
 </dd>
 </dl>
 
@@ -46,16 +44,21 @@ Pottery
 
 <h3>Source</h3>
 
-<p>Hand, D. J., Daly, F., Lunn, A. D., McConway, K. J., and E., O. (1994)
-<em>A Handbook of Small Data Sets</em>. Chapman and Hall.
+<p>Gurmu, Shiferaw (1997) &ldquo;Semiparametric estimation of hurdle regression models with an application to medicaid utilization&rdquo;, <em>Journal of Applied Econometrics</em>, <b>12(3)</b>, 225-242.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-Pottery
-</pre>
+<p>Davidson, R.  and  James G.  MacKinnon (2004) <em>Econometric Theory and Methods</em>, New York, Oxford University Press, <a href="http://www.econ.queensu.ca/ETM/">http://www.econ.queensu.ca/ETM/</a>, chapter 11.
+</p>
+<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

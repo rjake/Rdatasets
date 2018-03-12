@@ -1,83 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pines</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rochdale Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Pines"><tr><td>Pines</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Rochdale"><tr><td>Rochdale</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Pines</h2>
+<h2>Rochdale Data</h2>
 
 <h3>Description</h3>
 
-<p>Data from pine seedlings planted in 1990
+<p>Information on 665 households of Rochdale, Lancashire, UK.
+The study was conducted to identify influence factors on economical
+activity of wives. 
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data("Rochdale")
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 1000 observations on the following 15 variables.
+<p>A 8-dimensional array resulting from cross-tabulating 665 observations
+on 8 variables.  The variables and their levels are as follows:
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>Row</code> </td><td style="text-align: left;"> Row number in pine plantation</td>
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Col</code> </td><td style="text-align: left;"> Column number in pine plantation</td>
+    1 </td><td style="text-align: left;"> EconActive </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Hgt90</code> </td><td style="text-align: left;"> Tree height at time of planting (cm)</td>
+    2 </td><td style="text-align: left;"> Age </td><td style="text-align: left;"> &lt;38, &gt;38 </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Hgt96</code> </td><td style="text-align: left;"> Tree height in September 1996 (cm)</td>
+    3 </td><td style="text-align: left;"> HusbandEmployed </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Diam96</code> </td><td style="text-align: left;"> Tree trunk diameter in September 1996 (cm)</td>
+    4 </td><td style="text-align: left;"> Child </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Grow96</code> </td><td style="text-align: left;"> Leader growth during 1996 (cm)</td>
+    5 </td><td style="text-align: left;"> Education </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Hgt97</code> </td><td style="text-align: left;"> Tree height in September 1997 (cm)</td>
+    6 </td><td style="text-align: left;"> HusbandEducation </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Diam97</code> </td><td style="text-align: left;"> Tree trunk diameter in September 1997 (cm)</td>
+    7 </td><td style="text-align: left;"> Asian </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Spread97</code> </td><td style="text-align: left;"> Widest lateral spread in September 1997 (cm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Needles97</code> </td><td style="text-align: left;"> Needle length in September 1997 (mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Deer95</code> </td><td style="text-align: left;"> Type of deer damage in September 1995: 0 = none, 1 = browsed</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Deer97</code> </td><td style="text-align: left;"> Type of deer damage in September 1997: 0 = none, 1 = browsed</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Cover95</code> </td><td style="text-align: left;"> Thorny cover in September 1995: 0 = none; 1 = some; 2 = moderate; 3 = lots</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Fert</code> </td><td style="text-align: left;"> Indicator for fertilizer: 0 = no, 1 = yes</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Spacing</code> </td><td style="text-align: left;"> Distance (in feet) between trees (10 or 15)</td>
+    8 </td><td style="text-align: left;"> HouseholdWorking </td><td style="text-align: left;"> yes, no </td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -88,21 +74,38 @@
 
 
 
-<h3>Details</h3>
+<h3>Note</h3>
 
-<p>This dataset contains information data from an experiment conducted by the Department
-of Biology at Kenyon College at a site near the campus in Gambier, Ohio. In April 1990, student
-and faculty volunteers planted 1000 white pine (Pinus strobes) seedlings at the Brown Family Environmental
-Center. These seedlings were planted in two grids, distinguished by 10- and 15-foot
-spacings between the seedlings. Several variables were measured and recorded
-for each seedling over time (in 1990, 1996, and 1997).
+<p>Many observations are missing: only 91 out of all 256 combinations
+contain information.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Thanks to the Kenyon College Department of Biology for sharing these data.
+<p>Whittaker (1990).
 </p>
+
+
+<h3>References</h3>
+
+<p>H. Hofmann (2003).
+Constructing and reading mosaicplots.
+<em>Computational Statistics &amp; Data Analysis</em>,
+<b>43</b>, 4, 565&ndash;580.
+</p>
+<p>J. Whittaker (1990),
+<em>Graphical Models on Applied Multivariate Statistics</em>,
+Wiley, New York.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data("Rochdale")
+mosaic(Rochdale)
+</pre>
 
 
 </body></html>

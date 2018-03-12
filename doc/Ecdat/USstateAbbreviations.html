@@ -1,82 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Boston HMDA Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Standard abbreviations for states of the United States</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Hmda"><tr><td>Hmda</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for USstateAbbreviations"><tr><td>USstateAbbreviations</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>The Boston HMDA Data Set </h2>
+<h2>
+Standard abbreviations for states of the United States </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1997-1998
-</p>
-<p><em>number of observations</em> : 2381
-<em>observation</em> : individuals
-<em>country</em> : United States
-</p>
-<p>In package version 0.2-9 and earlier this dataset was called Hdma.
+<p>The object returned by <code>readUSstateAbbreviations()</code> on May 20,
+2013.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Hmda)</pre>
+<pre>
+data(USstateAbbreviations)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A <code>data.frame</code> containing 10 different character vectors of names
+or codes for 76 different political entities including the United
+States, the 50 states within the US, plus the District of Columbia, US
+territories and other political designation, some of which are
+obsolete but are included for historical reference.
 </p>
 
 <dl>
-<dt>dir</dt><dd><p>debt payments to total income ratio</p>
+<dt>Name</dt><dd><p> The standard name of the entity. </p>
 </dd>
-<dt>hir</dt><dd><p>housing expenses to income ratio</p>
+<dt>Status</dt><dd>
+<p>description of status, e.g., state / commonwealth vs. island,
+territory, military mail code, etc.
+</p>
 </dd>
-<dt>lvr</dt><dd><p>ratio of size of loan to assessed value of property</p>
-</dd>
-<dt>ccs</dt><dd><p>consumer credit score from 1 to 6 (a low value being a good score) </p>
-</dd>
-<dt>mcs</dt><dd><p>mortgage credit score from 1 to 4 (a low value being a good score) </p>
-</dd>
-<dt>pbcr</dt><dd><p>public bad credit record ?</p>
-</dd>
-<dt>dmi</dt><dd><p>denied mortgage insurance ?</p>
-</dd>
-<dt>self</dt><dd><p>self employed ?</p>
-</dd>
-<dt>single</dt><dd><p>is the applicant  single ?</p>
-</dd>
-<dt>uria</dt><dd><p>1989 Massachusetts unemployment rate in the applicant's industry</p>
-</dd>
-<dt>condominium</dt><dd><p>is unit a condominium ? (was called comdominiom in version 0.2-9 and earlier versions of the package)</p>
-</dd>
-<dt>black</dt><dd><p>is the applicant black ?</p>
-</dd>
-<dt>deny</dt><dd><p>mortgage application denied ?</p>
+<dt>ISO, ANSI.letters, ANSI.digits, USPS, USCG, Old.GPO, AP,
+Other</dt><dd>
+<p>Alternative abbreviations used per different standards.  The most
+commonly used among these may be the 2-letter codes officially
+used by the US Postal Service (<code>USPS</code>).
+</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>This was read from
+<a href="http://en.wikipedia.org/wiki/List_of_U.S._state_abbreviations">the
+Wikipedia article on &quot;List of U.S. state abbreviations&quot;</a>
+</p>
+
+
 <h3>Source</h3>
 
-<p>Federal Reserve Bank of Boston.
-</p>
-<p>Munnell, Alicia H.,  Geoffrey M.B.   Tootell,  Lynne E.   Browne and  James  McEneaney (1996) &ldquo;Mortgage lending in Boston: Interpreting HMDA data&rdquo;, <em>American Economic Review</em>, 25-53.
-</p>
-
-
-<h3>References</h3>
-
-<p>Stock, James H.  and  Mark W.  Watson (2003) <em>Introduction to Econometrics</em>, Addison-Wesley Educational Publishers, chapter 9.
+<p><a href="http://en.wikipedia.org/wiki/List_of_U.S._state_abbreviations">the
+Wikipedia article on &quot;List of U.S. state abbreviations&quot;</a>
 </p>
 
 
 <h3>See Also</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p><code>readUSstateAbbreviations</code>
+<code>showNonASCII</code>
+<code>grepNonStandardCharacters</code>
+<code>subNonStandardCharacters</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+##
+## to use
+##
+data(USstateAbbreviations)
+
+##
+## to update
+##
+## Not run: 
+USstateAbb2 &lt;- readUSstateAbbreviations()
+
+## End(Not run)
+</pre>
 
 
 </body></html>

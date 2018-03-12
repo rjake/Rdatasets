@@ -1,67 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Progression of Record times for track races, 1912 - 2008</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rainforest Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for progression"><tr><td>progression</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for rainforest"><tr><td>rainforest</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Progression of Record times for track races, 1912 - 2008</h2>
+<h2>Rainforest Data</h2>
 
 <h3>Description</h3>
 
-<p>Progression in world record times for track and road races.</p>
+<p>The <code>rainforest</code> data frame has 65 rows and 7 columns.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>data(progression)</pre>
+<pre>rainforest</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 227 observations on the following 4 columns.
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>year</code></dt><dd><p>Year that time was first recorded</p>
+<dt>dbh</dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>Distance</code></dt><dd><p>distance in kilometers</p>
+<dt>wood</dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>Time</code></dt><dd><p>time in minutes</p>
+<dt>bark</dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>race</code></dt><dd><p>character; descriptor for event (100m, mile, ...)</p>
+<dt>root</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>rootsk</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>branch</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>species</dt><dd><p>a factor with levels
+<code>Acacia mabellae</code>,
+<code>C. fraseri</code>,
+<code>Acmena smithii</code>,
+<code>B. myrtifolia</code> </p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>Record times for men's track events, from 1912 onwards.  The
-series starts with times that were recognized as record times in 1912,
-where available.
-</p>
-
-
 <h3>Source</h3>
 
-<p>Links to sources for the data are at
+<p>J. Ash, Australian National University
 </p>
-<p><a href="http://en.wikipedia.org/wiki/Athletics_world_record">http://en.wikipedia.org/wiki/Athletics_world_record</a>
+
+
+<h3>References</h3>
+
+<p>Ash, J. and Helman, C. (1990) Floristics and vegetation
+biomass of a forest catchment, Kioloa, south coastal N.S.W.
+Cunninghamia, 2: 167-182.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(progression)
-plot(log(Time) ~ log(Distance), data=progression)
-xyplot(log(Time) ~ log(Distance), data=progression, type=c("p","r"))
-xyplot(log(Time) ~ log(Distance), data=progression,
-       type=c("p","smooth"))
-res &lt;- resid(lm(log(Time) ~ log(Distance), data=progression))
-plot(res ~ log(Distance), data=progression,
-     ylab="Residuals from regression line on log scales")
+table(rainforest$species)
 </pre>
 
 

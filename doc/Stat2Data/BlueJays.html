@@ -1,98 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Barro Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Blue Jays</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for barro"><tr><td>barro</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for BlueJays"><tr><td>BlueJays</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Barro Data</h2>
+<h2>Blue Jays</h2>
 
 <h3>Description</h3>
 
-<p>Version of the Barro Growth Data used in Koenker and Machado(1999).
-This is a regression data set consisting of 161 observations on determinants
-of cross country GDP growth rates. There are 13 covariates with dimnames
-corresponding to the original Barro and Lee source.  See
-http://www.nber.org/pub/barro.lee/.  The first 71 observations are on
-the period 1965-75, remainder on 1987-85.  
+<p>Body measurements for a sample of blue jays
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>data(barro)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing 161 observations on 14 variables:
+<p>A dataset with 123 observations on the following 9 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-        [,1] </td><td style="text-align: left;"> "Annual Change Per Capita GDP"</td>
+    <code>BirdID</code> </td><td style="text-align: left;"> ID tag for bird</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,2] </td><td style="text-align: left;"> "Initial Per Capita GDP"</td>
+    <code>KnownSex</code> </td><td style="text-align: left;"> Sex coded as <code>F</code> or <code>M</code></td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,3] </td><td style="text-align: left;"> "Male Secondary Education"</td>
+    <code>BillDepth</code> </td><td style="text-align: left;"> Thickness of the bill measured at the nostril (in mm)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,4] </td><td style="text-align: left;"> "Female Secondary Education"</td>
+    <code>BillWidth</code> </td><td style="text-align: left;"> Width of the bill (in mm)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,5] </td><td style="text-align: left;"> "Female Higher Education"</td>
+    <code>BillLength</code> </td><td style="text-align: left;"> Length of the bill (in mm)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,6] </td><td style="text-align: left;"> "Male Higher Education"</td>
+    <code>Head</code> </td><td style="text-align: left;"> Distance from tip of bill to back of head (in mm)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,7] </td><td style="text-align: left;"> "Life Expectancy"</td>
+    <code>Mass</code> </td><td style="text-align: left;"> Body mass (in grams)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,8] </td><td style="text-align: left;"> "Human Capital"</td>
+    <code>Skull</code> </td><td style="text-align: left;"> Distance from base of bill to hack of skull (in mm)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,9] </td><td style="text-align: left;"> "Education/GDP"</td>
+    <code>Sex</code> </td><td style="text-align: left;"> Sex coded as 0=female or 1=male</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-        [,10] </td><td style="text-align: left;"> "Investment/GDP"</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,11] </td><td style="text-align: left;"> "Public Consumption/GDP"</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,12] </td><td style="text-align: left;"> "Black Market Premium"</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,13] </td><td style="text-align: left;"> "Political Instability"</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,14] </td><td style="text-align: left;"> "Growth Rate Terms Trade"</td>
+  </td>
 </tr>
 
 </table>
 
 
 
-<h3>References</h3>
+<h3>Details</h3>
 
-<p>Koenker, R. and J.A.F. Machado (1999) Goodness of Fit and Related Inference Processes for Quantile Regression, JASA, 1296-1310.</p>
+<p>Body measurements for captured blue jays.  Values are averaged for birds captured more than once.
+</p>
+
+
+<h3>Source</h3>
+
+<p>Data from Keith Tarvin, Department of Biology, Oberlin College
+</p>
 
 
 </body></html>

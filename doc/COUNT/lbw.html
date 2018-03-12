@@ -1,98 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival from Malignant Melanoma</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: lbw</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for melanoma"><tr><td>melanoma</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for lbw"><tr><td>lbw</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Survival from Malignant Melanoma
-</h2>
+<h2>lbw</h2>
 
 <h3>Description</h3>
 
-<p>The <code>melanoma</code> data frame has 205 rows and 7 columns.
-</p>
-<p>The data consist of measurements made on patients with malignant melanoma.
-Each patient had their tumour removed by surgery at the Department of Plastic
-Surgery, University Hospital of Odense, Denmark during the period 1962 to 1977.
-The surgery consisted of complete removal of the tumour together with about
-2.5cm of the surrounding skin.  Among the measurements taken were the thickness
-of the tumour and whether it was ulcerated or not.  These are thought to be
-important prognostic variables in that patients with a thick and/or ulcerated
-tumour have an increased chance of death from melanoma.
-Patients were followed until the end of 1977.  
+<p>The data come to us from Hosmer and Lemeshow (2000). Called the low 
+birth weight (lbw) data, the response is a binary variable, low, 
+which indicates whether the birth weight of a baby is under 2500g 
+(low=1), or over (low=0). 
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-melanoma
-</pre>
+<pre>data(lbw)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 189 observations on the following 10 variables.
 </p>
 
 <dl>
-<dt><code>time</code></dt><dd>
-<p>Survival time in days since the operation, possibly censored.
-</p>
+<dt><code>low</code></dt><dd><p>1=low birthweight baby; 0=norml weight</p>
 </dd>
-<dt><code>status</code></dt><dd>
-<p>The patients status at the end of the study. 1 indicates that they had died
-from melanoma, 2 indicates that they were still alive and 3 indicates that they
-had died from causes unrelated to their melanoma.
-</p>
+<dt><code>smoke</code></dt><dd><p>1=history of mother smoking; 0=mother nonsmoker</p>
 </dd>
-<dt><code>sex</code></dt><dd>
-<p>The patients sex; 1=male, 0=female.
-</p>
+<dt><code>race</code></dt><dd><p>categorical 1-3: 1=white; 2-=black; 3=other</p>
 </dd>
-<dt><code>age</code></dt><dd>
-<p>Age in years at the time of the operation.
-</p>
+<dt><code>age</code></dt><dd><p>age of mother: 14-45</p>
 </dd>
-<dt><code>year</code></dt><dd>
-<p>Year of operation.
-</p>
+<dt><code>lwt</code></dt><dd><p>weight (lbs) at last menstrual period: 80-250 lbs</p>
 </dd>
-<dt><code>thickness</code></dt><dd>
-<p>Tumour thickness in mm.
-</p>
+<dt><code>ptl</code></dt><dd><p>number of false of premature labors: 0-3</p>
 </dd>
-<dt><code>ulcer</code></dt><dd>
-<p>Indicator of ulceration; 1=present, 0=absent.
-</p>
-</dd></dl>
+<dt><code>ht</code></dt><dd><p>1=history of hypertension; 0 =no hypertension</p>
+</dd>
+<dt><code>ui</code></dt><dd><p>1=uterine irritability; 0 no irritability</p>
+</dd>
+<dt><code>ftv</code></dt><dd><p>number of physician visits in 1st trimester: 0-6</p>
+</dd>
+<dt><code>bwt</code></dt><dd><p>birth weight in grams: 709 - 4990 gr</p>
+</dd>
+</dl>
 
 
-<h3>Note</h3>
 
-<p>This dataset is not related to the dataset in the <span class="pkg">lattice</span> package
-with the same name.
+<h3>Details</h3>
+
+<p>lbw is saved as a data frame.
+Count models can use ftv as a response variable, or convert it to grouped format
 </p>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>Andersen, P.K., Borgan, O., Gill, R.D. and Keiding, N. (1993)
-<em>Statistical Models Based on Counting Processes</em>. Springer-Verlag.
+<p>Hosmer, D and S. Lemeshow (2000), Applied Logistic Regression, Wiley 
 </p>
 
 
 <h3>References</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) <em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p>Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
+Hilbe, Joseph M (2009), Logistic Regression Models, Chapman &amp; Hall/CRC
 </p>
-<p>Venables, W.N. and Ripley, B.D. (1994) 
-<em>Modern Applied Statistics with S-Plus</em>. Springer-Verlag.
-</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(lbw)
+glmbwp &lt;- glm(ftv ~ low + smoke + factor(race), family=poisson, data=lbw)
+summary(glmbwp)
+exp(coef(glmbwp))
+library(MASS)
+glmbwnb &lt;- glm.nb(ftv ~ low + smoke + factor(race), data=lbw)
+summary(glmbwnb)
+exp(coef(glmbwnb))
+</pre>
 
 
 </body></html>

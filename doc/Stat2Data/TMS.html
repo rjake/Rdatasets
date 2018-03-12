@@ -1,15 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: ChemoTHC</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: TMS</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for ChemoTHC"><tr><td>ChemoTHC</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for TMS"><tr><td>TMS</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>ChemoTHC</h2>
+<h2>TMS</h2>
 
 <h3>Description</h3>
 
-<p>Comparison of two treatments for nausea in chemotherapy
+<p>Effects of transcranial magnetic stimulation (TMS) on migraine headaches
 </p>
 
 
@@ -21,19 +21,19 @@
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>Drug</code> </td><td style="text-align: left;"> <code>Prochlorperazine</code>  or <code>THC</code></td>
+    <code>Group</code></td><td style="text-align: left;"> Treatment group: <code>Placebo</code> or <code>TMS</code></td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Effective</code> </td><td style="text-align: left;"> Count of effectrive cases</td>
+    <code>Yes</code></td><td style="text-align: left;"> Count of number of patients that were pain-free</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>NotEffective</code> </td><td style="text-align: left;"> Count of noneffective cases</td>
+    <code>No</code></td><td style="text-align: left;"> Count of number of patients that had pain</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Patients</code> </td><td style="text-align: left;"> Number of patients in the treatment</td>
+    <code>Trials</code></td><td style="text-align: left;"> Number of patients in the group</td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -46,23 +46,20 @@
 
 <h3>Details</h3>
 
-<p>An article in the New England Journal of Medicine described
-a study on the effectiveness of medications for combatting nausea in patients undergoing chemotherapy
-treatments for cancer. In the experiment, 157 patients were divided at random into two groups.
-One group of 78 patients were given a standard antinausea drug called prochlorperazine, while the
-other group of 79 patients received THC (the active ingredient in marijuana). Both medications
-were delivered orally and no patients were told which of the two drugs they were taking. The
-response measured was whether or not the patient experienced relief from nausea when undergoing
-chemotherapy.  Dataset is a 2x2 table of counts. 
+<p>A study investigated whether a handheld device that sends a magnetic pulse into a person's head
+might be an effective treatment for migraine headaches. Researchers recruited 200 subjects who
+suffered from migraines and randomly assigned them to receive either the TMS (transcranial magnetic
+stimulation) treatment or a sham (placebo) treatment from a device that did not deliver any
+stimulation. Subjects were instructed to apply the device at the onset of migraine symptoms and
+then assess how they felt two hours later.  This dataset is a two-way table of the results.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Sallan SE, Cronin C, Zelen M, Zinberg NE (1980),
-&quot;Antiemetics in patients receiving chemotherapy for cancer: 
-a randomized comparison of delta-9-tetrahydrocannabinol and prochlorperazine,&quot;
-New England Journal of Medicine, 302(3) p.135-138
+<p>Based on results in R. B. Lipton, et. al. (2010) &ldquo;Single-pulse Transcranial Magnetic Stimulation 
+for Acute Treatment of Migraine with Aura: A Randomised, Double-blind, Parallel-group, 
+Sham-controlled Trial,&quot; 9(4):373-380.
 </p>
 
 

@@ -1,38 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: PigFeed</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Repeat Victimization Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for PigFeed"><tr><td>PigFeed</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for RepVict"><tr><td>RepVict</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>PigFeed</h2>
+<h2>Repeat Victimization Data</h2>
 
 <h3>Description</h3>
 
-<p>Effects of additives to pig feed on weight gain
+<p>Data from Reiss (1980) given by Fienberg (1980) about instances of
+repeat victimization for households in the U.S. National Crime
+Survey.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data("RepVict")
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 12 observations on the following 3 variables.
+<p>A 2-dimensional array resulting from cross-tabulating victimization.
+The variables and their levels are as follows:
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>WgtGain</code> </td><td style="text-align: left;"> Daily wight gain (hundredths of a pound over 1.00)</td>
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Antibiotic</code> </td><td style="text-align: left;"> Antibiotic in the feed? <code>No</code> or <code>Yes</code></td>
+    1 </td><td style="text-align: left;"> First Victimization </td><td style="text-align: left;"> Rape, Assault, Robbery, Pickpocket,
+    Personal Larceny, </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>B12</code> </td><td style="text-align: left;"> Vitamin B12 in the feed? <code>No</code> or <code>Yes</code></td>
+    </td><td style="text-align: left;"> </td><td style="text-align: left;"> Burglary, Household Larceny, Auto Theft </td>
 </tr>
 <tr>
  <td style="text-align: right;">
+    2 </td><td style="text-align: left;"> Second Victimization </td><td style="text-align: left;"> Rape, Assault, Robbery, Pickpocket,
+    Personal Larceny,</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> </td><td style="text-align: left;"> Burglary, Household Larceny, Auto Theft
   </td>
 </tr>
 
@@ -40,27 +57,39 @@
 
 
 
-<h3>Details</h3>
-
-<p>A scientist in Iowa was interested in additives to standard pig chow that might increase the rate at
-which the pigs gained weight.  Two factors of interest were vitamin B12 and antibiotics. 
-To perform the experiment, the scientist randomly assigned 12 pigs, three
-to each of the diet combinations (Antibiotic only, B12 only, both, and neither).
-</p>
-
-
 <h3>Source</h3>
 
-<p>Data are found in Statistical Methods by George W. Snedecor and William G. Cochran (1967). Ames, IA:
-The Iowa State University Press.
+<p>Michael Friendly (2000),
+Visualizing Categorical Data, page 113.
 </p>
 
 
 <h3>References</h3>
 
-<p>Original source is Iowa Agricultural Experiment Station (1952). Animal Husbandry Swine Nutrition Experiment
-No. 577.
+<p>S. E. Fienberg (1980),
+<em>The Analysis of Cross-Classified Categorical Data</em>,
+MIT Press, Cambridge, 2nd edition.
 </p>
+<p>A. J. J. Reiss (1980),
+Victim proneness by type of crime in repeat victimization.
+In S. E. Fienberg &amp; A. J. J. Reiss (eds.),
+<em>Indicators of Crime and Criminal Justice</em>.
+U.S. Government Printing Office, Washington, DC.
+</p>
+<p>M. Friendly (2000),
+<em>Visualizing Categorical Data</em>.
+SAS Institute, Cary, NC.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data("RepVict")
+
+mosaic(RepVict[-c(4,7),-c(4,7)], gp = shading_max,
+       main = "Repeat Victimization Data")
+</pre>
 
 
 </body></html>

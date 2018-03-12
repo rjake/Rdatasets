@@ -1,174 +1,220 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Political knowledge in the US and Europe</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Florence Nightingale's data on deaths from various causes in...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for politicalKnowledge"><tr><td>politicalKnowledge</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Nightingale"><tr><td>Nightingale</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2> 
-Political knowledge in the US and Europe 
+<h2>
+Florence Nightingale's data on deaths from various causes in the Crimean War
 </h2>
 
 <h3>Description</h3>
 
-<p>Data from McChesney and Nichols (2010) on domestic and international 
-knowledge in Denmark, Finland, the UK and the US among college 
-graduates, people with some college, and roughly 12th grade only.  
+<p>In the history of data visualization, Florence Nightingale is best remembered 
+for her role as a social activist and her view that statistical data,  presented in
+charts and diagrams, could be used as powerful arguments for medical reform. 
+</p>
+<p>After witnessing deplorable sanitary conditions  in the Crimea, she wrote  
+several influential texts (Nightingale, 1858, 1859), including polar-area
+graphs (sometimes called &quot;Coxcombs&quot; or rose diagrams), showing the number of deaths in the
+Crimean from battle compared to disease or preventable causes that could be reduced by
+better battlefield nursing care.  
+</p>
+<p>Her <em>Diagram of the Causes of Mortality in the Army in the East</em>
+showed that  most of the  British soldiers who  died  during the  Crimean War
+died of sickness rather than of wounds  or other causes.
+It also  showed that  the death  rate was  higher in  the first  year of the war,
+before a Sanitary Commissioners arrived in March 1855 to improve hygiene in the camps and hospitals.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-data(politicalKnowledge)
-</pre>
+<pre>data(Nightingale)</pre>
 
 
 <h3>Format</h3>
 
-<p>A <code>data.frame</code> containing 12 columns and 4 rows.
+<p>A data frame with 24 observations on the following 10 variables.
 </p>
 
 <dl>
-<dt>country</dt><dd>
-<p>a character vector of Denmark, Finland, UK, and 
-US, being the four countries comparied in this data set.  
-</p>
+<dt><code>Date</code></dt><dd><p>a Date, composed as <code>as.Date(paste(Year, Month, 1, sep='-'), "%Y-%b-%d")</code></p>
 </dd>
-<dt>DomesticKnowledge.hs, DomesticKnowledge.sc, 
-DomesticKnowledge.c</dt><dd>
-<p>percent correct answers to calibrated questions regarding 
-knowledge of prominent items in domestic news in a 
-survey of residents of the four countries among college 
-graduates (ending &quot;.c&quot;), some college (&quot;.sc&quot;) and 
-high school (&quot;hs&quot;).  Source:  McChesney and Nichols
-(2010, chapter 1, chart 8).  
-</p>
+<dt><code>Month</code></dt><dd><p>Month of the Crimean War, an ordered factor</p>
 </dd>
-<dt>InternationalKnowledge.hs, InternationalKnowledge.sc, 
-InternationalKnowledge.c</dt><dd>
-<p>percent correct answers to calibrated questions regarding
-knowledge of prominent items in international news in a 
-survey of residents of the four countries by education 
-level as for DomesticKnowledge.  Source:  McChesney and 
-Nichols (2010, chapter 1, chart 7).  
-</p>
+<dt><code>Year</code></dt><dd><p>Year of the Crimean War</p>
 </dd>
-<dt>PoliticalKnowledge.hs, PoliticalKnowledge.sc, 
-PoliticalKnowledge.c</dt><dd>
-<p>average of domestic and international knowledge
-</p>
+<dt><code>Army</code></dt><dd><p>Estimated average monthly strength of the British army</p>
 </dd>
-<dt>PublicMediaPerCapita</dt><dd>
-<p>Per capital spending on public media in 2007 
-in US dollars from McChesney and Nichols (2010, 
-chapter 4, chart 1)
-</p>
+<dt><code>Disease</code></dt><dd><p>Number of deaths from preventable or mitagable zymotic diseases</p>
 </dd>
-<dt>PublicMediaRel2US</dt><dd>
-<p>Spending on public media relative to the US, being 
-<code>PublicMediaPerCapita / PublicMediaPerCapita[4]</code>.  
-</p>
+<dt><code>Wounds</code></dt><dd><p>Number of deaths directly from battle wounds</p>
+</dd>
+<dt><code>Other</code></dt><dd><p>Number of deaths from other causes</p>
+</dd>
+<dt><code>Disease.rate</code></dt><dd><p>Annual rate of deaths from preventable or mitagable zymotic diseases, per 1000</p>
+</dd>
+<dt><code>Wounds.rate</code></dt><dd><p>Annual rate of deaths directly from battle wounds, per 1000</p>
+</dd>
+<dt><code>Other.rate</code></dt><dd><p>Annual rate of deaths from other causes, per 1000</p>
 </dd>
 </dl>
 
 
 
-<h3>Author(s)</h3>
+<h3>Details</h3>
 
-<p>Spencer Graves</p>
+<p>For a given cause of death, <code>D</code>, annual rates per 1000 are calculated as <code>12 * 1000 * D / Army</code>,
+rounded to 1 decimal.
+</p>
+<p>The two panels of Nightingale's Coxcomb correspond to dates before and after March 1855
+</p>
 
 
 <h3>Source</h3>
 
-<p>Robert W. McChesney and John Nichols (2010) <em>The Death and 
-Life of American Journalism</em> (Nation Books)
+<p>The data were obtained from:
+</p>
+<p>Pearson, M. and Short, I. (2007).
+Understanding Uncertainty: Mathematics of the Coxcomb.
+<a href="http://understandinguncertainty.org/node/214">http://understandinguncertainty.org/node/214</a>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Nightingale, F. (1858)
+<em>Notes on Matters Affecting the Health, Efficiency, and Hospital Administration of the British Army</em>
+Harrison and Sons, 1858
+</p>
+<p>Nightingale, F. (1859)
+<em>A Contribution to the Sanitary History of the British Army during the Late War with Russia</em>
+London: John W. Parker and Son.
+</p>
+<p>Small, H. (1998)
+Florence Nightingale's statistical diagrams
+<a href="http://www.florence-nightingale-avenging-angel.co.uk/GraphicsPaper/Graphics.htm">http://www.florence-nightingale-avenging-angel.co.uk/GraphicsPaper/Graphics.htm</a>
+</p>
+<p>Pearson, M. and Short, I. (2008)
+Nightingale's Rose (flash animation).
+<a href="http://understandinguncertainty.org/files/animations/Nightingale11/Nightingale1.html">http://understandinguncertainty.org/files/animations/Nightingale11/Nightingale1.html</a>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-##
-## 1. Combine first 2 rows 
-##
-data(politicalKnowledge)
-pk &lt;- politicalKnowledge[-1,]
-pk[1, -1] &lt;- ((politicalKnowledge[1, -1] + 
-                 politicalKnowledge[2, -1])/2)
-pk[1, 'country'] &lt;- 'DK-FI'
+data(Nightingale)
 
-##
-## 2.  plot
-##
-xlim &lt;- range(pk[, 'PublicMediaPerCapita'])
-ylim &lt;- 100*range(pk[2:7])
-text.cex &lt;- 2
+# For some graphs, it is more convenient to reshape death rates to long format
+#  keep only Date and death rates
+require(reshape)
+Night&lt;- Nightingale[,c(1,8:10)]
+melted &lt;- melt(Night, "Date")
+names(melted) &lt;- c("Date", "Cause", "Deaths")
+melted$Cause &lt;- sub("\\.rate", "", melted$Cause)
+melted$Regime &lt;- ordered( rep(c(rep('Before', 12), rep('After', 12)), 3), 
+                          levels=c('Before', 'After'))
+Night &lt;- melted
 
-# to label the lines 
-(US.UK &lt;- (pk[2, -1]+pk[3, -1])/2)
+# subsets, to facilitate separate plotting
+Night1 &lt;- subset(Night, Date &lt; as.Date("1855-04-01"))
+Night2 &lt;- subset(Night, Date &gt;= as.Date("1855-04-01"))
 
-#png('Knowledge v. public media.png')
-op &lt;- par(mar=c(5, 7, 4, 2)+.1)
-plot(c(0, 110), 100*ylim, type='n', axes=FALSE,
-     xlab='public media $ per capita',
-     ylab='Political Knowledge\n(% of standard questions)',
-     cex.lab=2)
-axis(1, cex.axis=2)
-axis(2, las=2, cex.axis=2)
-with(pk, text(PublicMediaPerCapita, 100*PoliticalKnowledge.hs,
-              country, cex=text.cex, xpd=NA, 
-              col=c('forestgreen', 'orange', 'red')))
-with(pk, text(PublicMediaPerCapita, 100*PoliticalKnowledge.sc,
-              country, cex=text.cex, xpd=NA, 
-              col=c('forestgreen', 'orange', 'red')))
-with(pk, text(PublicMediaPerCapita, 100*PoliticalKnowledge.c,
-              country, cex=text.cex, xpd=NA, 
-              col=c('forestgreen', 'orange', 'red')))
-with(pk, lines(PublicMediaPerCapita, 100*PoliticalKnowledge.hs,
-               type='b', pch=' '))
-with(pk, lines(PublicMediaPerCapita, 100*PoliticalKnowledge.sc,
-               type='b', pch=' '))
-with(pk, lines(PublicMediaPerCapita, 100*PoliticalKnowledge.c,
-               type='b', pch=' '))
-with(US.UK, text(PublicMediaPerCapita, 100*PoliticalKnowledge.hs,
-                 'High School\nor less', srt=37, cex=1.5))
-with(US.UK, text(PublicMediaPerCapita, 100*PoliticalKnowledge.sc,
-                 'some\ncollege', srt=10.5, cex=1.5))
-with(US.UK, text(PublicMediaPerCapita, 100*PoliticalKnowledge.c,
-                 "Bachelor's\nor more", srt=-1, cex=1.5))
+# sort according to Deaths in decreasing order, so counts are not obscured [thx: Monique Graf]
+Night1 &lt;- Night1[order(Night1$Deaths, decreasing=TRUE),]
+Night2 &lt;- Night2[order(Night2$Deaths, decreasing=TRUE),]
 
-par(op)
-#dev.off()
+# merge the two sorted files
+Night &lt;- rbind(Night1, Night2)
 
-##
-## redo for Wikimedia commons
-## without English axis labels 
-## to facilitate multilingual use 
-##
-#svg('Knowledge v. public media.svg')
-op &lt;- par(mar=c(3,3,2,2)+.1)
-plot(c(0, 110), 100*ylim, type='n', axes=FALSE,
-     xlab='', ylab='', cex.lab=2)
-axis(1, cex.axis=2)
-axis(2, las=2, cex.axis=2)
-with(pk, text(PublicMediaPerCapita, 100*PoliticalKnowledge.hs,
-              country, cex=text.cex, xpd=NA, 
-              col=c('forestgreen', 'orange', 'red')))
-with(pk, text(PublicMediaPerCapita, 100*PoliticalKnowledge.sc,
-              country, cex=text.cex, xpd=NA, 
-              col=c('forestgreen', 'orange', 'red')))
-with(pk, text(PublicMediaPerCapita, 100*PoliticalKnowledge.c,
-              country, cex=text.cex, xpd=NA, 
-              col=c('forestgreen', 'orange', 'red')))
-with(pk, lines(PublicMediaPerCapita, 100*PoliticalKnowledge.hs,
-               type='b', pch=' '))
-with(pk, lines(PublicMediaPerCapita, 100*PoliticalKnowledge.sc,
-               type='b', pch=' '))
-with(pk, lines(PublicMediaPerCapita, 100*PoliticalKnowledge.c,
-               type='b', pch=' '))
-par(op)
-#dev.off()
+
+require(ggplot2)
+# Before plot
+cxc1 &lt;- ggplot(Night1, aes(x = factor(Date), y=Deaths, fill = Cause)) +
+		# do it as a stacked bar chart first
+   geom_bar(width = 1, position="identity", stat="identity", color="black") +
+		# set scale so area ~ Deaths	
+   scale_y_sqrt() 
+		# A coxcomb plot = bar chart + polar coordinates
+cxc1 + coord_polar(start=3*pi/2) + 
+	ggtitle("Causes of Mortality in the Army in the East") + 
+	xlab("")
+
+# After plot
+cxc2 &lt;- ggplot(Night2, aes(x = factor(Date), y=Deaths, fill = Cause)) +
+   geom_bar(width = 1, position="identity", stat="identity", color="black") +
+   scale_y_sqrt()
+cxc2 + coord_polar(start=3*pi/2) +
+	ggtitle("Causes of Mortality in the Army in the East") + 
+	xlab("")
+
+## Not run: 
+# do both together, with faceting
+cxc &lt;- ggplot(Night, aes(x = factor(Date), y=Deaths, fill = Cause)) +
+ geom_bar(width = 1, position="identity", stat="identity", color="black") + 
+ scale_y_sqrt() +
+ facet_grid(. ~ Regime, scales="free", labeller=label_both)
+cxc + coord_polar(start=3*pi/2) +
+	ggtitle("Causes of Mortality in the Army in the East") + 
+	xlab("")
+
+## End(Not run)
+
+## What if she had made a set of line graphs?
+
+# these plots are best viewed with width ~ 2 * height 
+colors &lt;- c("blue", "red", "black")
+with(Nightingale, {
+	plot(Date, Disease.rate, type="n", cex.lab=1.25, 
+		ylab="Annual Death Rate", xlab="Date", xaxt="n",
+		main="Causes of Mortality of the British Army in the East");
+	# background, to separate before, after
+	rect(as.Date("1854/4/1"), -10, as.Date("1855/3/1"), 
+		1.02*max(Disease.rate), col=gray(.90), border="transparent");
+	text( as.Date("1854/4/1"), .98*max(Disease.rate), "Before Sanitary\nCommission", pos=4);
+	text( as.Date("1855/4/1"), .98*max(Disease.rate), "After Sanitary\nCommission", pos=4);
+	# plot the data
+	points(Date, Disease.rate, type="b", col=colors[1], lwd=3);
+	points(Date, Wounds.rate, type="b", col=colors[2], lwd=2);
+	points(Date, Other.rate, type="b", col=colors[3], lwd=2)
+	}
+)
+# add custom Date axis and legend
+axis.Date(1, at=seq(as.Date("1854/4/1"), as.Date("1856/3/1"), "3 months"), format="%b %Y")
+legend(as.Date("1855/10/20"), 700, c("Preventable disease", "Wounds and injuries", "Other"),
+	col=colors, fill=colors, title="Cause", cex=1.25)
+
+# Alternatively, show each cause of death as percent of total
+Nightingale &lt;- within(Nightingale, {
+	Total &lt;- Disease + Wounds + Other
+	Disease.pct &lt;- 100*Disease/Total
+	Wounds.pct &lt;- 100*Wounds/Total
+	Other.pct &lt;- 100*Other/Total
+	})
+
+colors &lt;- c("blue", "red", "black")
+with(Nightingale, {
+	plot(Date, Disease.pct, type="n",  ylim=c(0,100), cex.lab=1.25,
+		ylab="Percent deaths", xlab="Date", xaxt="n",
+		main="Percentage of Deaths by Cause");
+	# background, to separate before, after
+	rect(as.Date("1854/4/1"), -10, as.Date("1855/3/1"), 
+		1.02*max(Disease.rate), col=gray(.90), border="transparent");
+	text( as.Date("1854/4/1"), .98*max(Disease.pct), "Before Sanitary\nCommission", pos=4);
+	text( as.Date("1855/4/1"), .98*max(Disease.pct), "After Sanitary\nCommission", pos=4);
+	# plot the data
+	points(Date, Disease.pct, type="b", col=colors[1], lwd=3);
+	points(Date, Wounds.pct, type="b", col=colors[2], lwd=2);
+	points(Date, Other.pct, type="b", col=colors[3], lwd=2)
+	}
+)
+# add custom Date axis and legend
+axis.Date(1, at=seq(as.Date("1854/4/1"), as.Date("1856/3/1"), "3 months"), format="%b %Y")
+legend(as.Date("1854/8/20"), 60, c("Preventable disease", "Wounds and injuries", "Other"),
+	col=colors, fill=colors, title="Cause", cex=1.25)
 
 </pre>
 

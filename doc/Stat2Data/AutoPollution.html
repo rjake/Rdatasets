@@ -1,54 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A sample from the SAPA Personality Inventory including an...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: AutoPollution</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for spi"><tr><td>spi</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for AutoPollution"><tr><td>AutoPollution</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>A sample from the SAPA Personality Inventory including an item dictionary and scoring keys.</h2>
+<h2>
+AutoPollution
+</h2>
 
 <h3>Description</h3>
 
-<p>The SPI (SAPA Personality Inventory) is a set of 135 items primarily selected from International Personality Item Pool (ipip.ori.org). This is an example data set collected using SAPA procedures the sapa-project.org web site.  This data set includes 10 demographic variables as well.  The data set with 4000 observations on 145 variables may be used for examples in scale construction and validation, as well as empirical scale construction to predict multiple criteria.  
+<p>AutoPollution
 </p>
 
 
-<h3>Usage</h3>
+<h3>Format</h3>
 
-<pre>data("spi")
-data(spi.dictionary)
-data(spi.keys)
-</pre>
+<p>A dataset with 36 observations on the following 4 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>Noise</code> </td><td style="text-align: left;"> Noise level (decibels)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Size</code> </td><td style="text-align: left;"> Vehicle size: <code>1</code>=small, <code>2</code>=medium, or <code>3</code>=large</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Type</code> </td><td style="text-align: left;"> <code>1</code>=standard filer or <code>2</code>=new filter</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Side</code> </td><td style="text-align: left;"> Side of vehicle: code1=right or <code>2</code>=left</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
 
 
 <h3>Details</h3>
 
-<p>Using the data contributed by about 125,000 visitors to the SAPA-project.org website, David Condon has developed a hierarchical framework for assessing personality at two levels. The higher level has the familiar five factors that have been studied extensively in personality research since the 1980s &ndash; Conscientiousness, Agreeableness, Neuroticism, Openness, and Extraversion. The lower level has 27 factors that are considerably more narrow. These were derived based on administrations of about 700 public-domain IPIP items to 3 large samples. Condon describes these scales as being &quot;empirically-derived&quot; because relatively little theory was used to select the number of factors in the hierarchy and the items in the scale for each factor (to be clear, he means relatively little personality theory though he relied on quite a lot of sampling and statistical theory). You can read all about the procedures used to develop this framework in  his book/manual. If you would like to reproduce these analyses, you can download the data files from Dataverse (links are also provided in the manual) and compile this script in R (he used knitR). Instructions are provided in the Preface to the manual.
+<p>In a 1973 testimony before the Air and Water Pollution Subcommittee
+of the Senate Public Works Committee, John McKinley, President of Texaco discussed a new filter
+that had been developed to reduce pollution. Questions were raised about the effects of this filter
+on other measures of vehicle performance. The data set AutoPollution gives the results of an
+experiment on 36 different cars. The cars were randomly assigned to get either this new filter or a
+standard filter and the noise level for each car was measured.
 </p>
 
 
 <h3>Source</h3>
 
-<p>https://sapa-project.org/research/SPI/SPIdevelopment.pdf.
+<p>Data explanation and link can be found at http://lib.stat.cmu.edu/DASL/Stories/airpollutionfilters.html.
 </p>
 
 
 <h3>References</h3>
 
-<p>Condon, D. (2017) The SAPA Personality Inventory:An empirically-derived, hierarchically-organized self-report personality assessment model 
+<p>A.Y. Lewin and M.F. Shakun, Policy Sciences: Methodology and Cases, Pergammon Press, 1976, p 313. 
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(spi)
-data(sapa.dictionary)
-bestScales(spi, criteria="health",dictionary=spi.dictionary)
-
-sc &lt;- scoreItems(spi.keys,spi)
-corPlot(sc$corrected,numbers=TRUE,cex=.8,xlas=2)
-</pre>
 
 
 </body></html>

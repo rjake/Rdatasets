@@ -1,48 +1,37 @@
-"","treatment","outcome"
-"1","mites","wilt"
-"2","mites","wilt"
-"3","mites","wilt"
-"4","mites","wilt"
-"5","mites","wilt"
-"6","mites","wilt"
-"7","mites","wilt"
-"8","mites","wilt"
-"9","mites","wilt"
-"10","mites","wilt"
-"11","mites","wilt"
-"12","no mites","wilt"
-"13","no mites","wilt"
-"14","no mites","wilt"
-"15","no mites","wilt"
-"16","no mites","wilt"
-"17","no mites","wilt"
-"18","no mites","wilt"
-"19","no mites","wilt"
-"20","no mites","wilt"
-"21","no mites","wilt"
-"22","no mites","wilt"
-"23","no mites","wilt"
-"24","no mites","wilt"
-"25","no mites","wilt"
-"26","no mites","wilt"
-"27","no mites","wilt"
-"28","no mites","wilt"
-"29","mites","no wilt"
-"30","mites","no wilt"
-"31","mites","no wilt"
-"32","mites","no wilt"
-"33","mites","no wilt"
-"34","mites","no wilt"
-"35","mites","no wilt"
-"36","mites","no wilt"
-"37","mites","no wilt"
-"38","mites","no wilt"
-"39","mites","no wilt"
-"40","mites","no wilt"
-"41","mites","no wilt"
-"42","mites","no wilt"
-"43","mites","no wilt"
-"44","no mites","no wilt"
-"45","no mites","no wilt"
-"46","no mites","no wilt"
-"47","no mites","no wilt"
+"","Month","Moon","Admission"
+"1","Aug","Before",6.4
+"2","Sep","Before",7.1
+"3","Oct","Before",6.5
+"4","Nov","Before",8.6
+"5","Dec","Before",8.1
+"6","Jan","Before",10.4
+"7","Feb","Before",11.5
+"8","Mar","Before",13.8
+"9","Apr","Before",15.4
+"10","May","Before",15.7
+"11","Jun","Before",11.7
+"12","Jul","Before",15.8
+"13","Aug","During",5
+"14","Sep","During",13
+"15","Oct","During",14
+"16","Nov","During",12
+"17","Dec","During",6
+"18","Jan","During",9
+"19","Feb","During",13
+"20","Mar","During",16
+"21","Apr","During",25
+"22","May","During",14
+"23","Jun","During",14
+"24","Jul","During",20
+"25","Aug","After",5.8
+"26","Sep","After",9.2
+"27","Oct","After",7.9
+"28","Nov","After",7.7
+"29","Dec","After",11
+"30","Jan","After",12.9
+"31","Feb","After",13.5
+"32","Mar","After",13.1
+"33","Apr","After",15.8
+"34","May","After",13.3
+"35","Jun","After",12.8
+"36","Jul","After",14.5

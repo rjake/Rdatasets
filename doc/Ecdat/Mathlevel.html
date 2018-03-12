@@ -1,89 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: nuts</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Level of Calculus Attained for Students Taking Advanced...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for nuts"><tr><td>nuts</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Mathlevel"><tr><td>Mathlevel</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>nuts</h2>
+<h2>Level of Calculus Attained for Students Taking Advanced Micro&ndash;economics </h2>
 
 <h3>Description</h3>
 
-<p>Squirrel data set (nuts) from Zuur, Hilbe, and Ieno (2013).  As originally 
-reported by Flaherty et al (2012), researchers recorded information about 
-squirrel behavior and forest attributes across various plots in 
-Scotland's Abernathy Forest. The study focused on the following variables.
-response      cones	 number of cones stripped by red squirrels per plot
-predictor  	sntrees  standardized number of trees per plot
-sheight standardized mean tree height per plot
-scover   standardized percentage of canopy cover per plot
-The stripped cone count was only taken when the mean diameter of trees was under 0.6m (dbh). 
+<p>a cross-section from 1983 to 1986
+</p>
+<p><em>number of observations</em> :  609
+</p>
+<p><em>observation</em> :  individuals
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(nuts)</pre>
+<pre>data(Mathlevel)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 52 observations on the following 8 variables.
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt><code>cones</code></dt><dd><p>number cones stripped by squirrels</p>
+<dt>mathlevel</dt><dd><p>highest level of math attained , an ordered factor with levels 170, 171a, 172, 171b, 172b, 221a, 221b</p>
 </dd>
-<dt><code>ntrees</code></dt><dd><p>number of trees per plot</p>
+<dt>sat</dt><dd><p>sat Math score</p>
 </dd>
-<dt><code>dbh</code></dt><dd><p>number DBH per plot</p>
+<dt>language</dt><dd><p>foreign language proficiency ?</p>
 </dd>
-<dt><code>height</code></dt><dd><p>mean tree height per plot</p>
+<dt>sex</dt><dd><p>male, female</p>
 </dd>
-<dt><code>cover</code></dt><dd><p>canopy closure (as a percentage)</p>
+<dt>major</dt><dd><p>one of  other, eco, oss (other social sciences), ns (natural sciences), hum (humanities)</p>
 </dd>
-<dt><code>sntrees</code></dt><dd><p>standardized number of trees per plot</p>
+<dt>mathcourse</dt><dd><p>number of courses in advanced math (0 to 3)</p>
 </dd>
-<dt><code>sheight</code></dt><dd><p>standardized mean tree height per plot</p>
+<dt>physiccourse</dt><dd><p>number of courses in physics (0 to 2)</p>
 </dd>
-<dt><code>scover</code></dt><dd><p>standardized canopy closure (as a percentage)</p>
+<dt>chemistcourse</dt><dd><p>number of courses in chemistry (0 to 2)</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>nuts is saved as a data frame.
-Count models use ntrees as response variable. Counts start at 3  
-</p>
-
-
 <h3>Source</h3>
 
-<p>Zuur, Hilbe, Ieno (2013), A Beginner's Guide to GLM and GLMM using R, Highlands
+<p>Butler, J.S.,  T. Aldrich   Finegan and  John J.  Siegfried (1998) &ldquo;Does more calculus improve student learning in intermediate micro and macroeconomic theory ?&rdquo;, <em>Journal of Applied Econometrics</em>, <b>13(2)</b>, april, 185&ndash;202.
 </p>
 
 
 <h3>References</h3>
 
-<p>Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
-Zuur, Hilbe, Ieno (2013), A Beginner's Guide to GLM and GLMM using R, Highlands.
-Flaherty, S et al (2012), &quot;The impact of forest stand structure on red 
-squirrels habitat use&quot;, Forestry 85:437-444.
+<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
 </p>
 
 
-<h3>Examples</h3>
+<h3>See Also</h3>
 
-<pre>
-data(nuts)
-nut &lt;- subset(nuts, dbh &lt; 0.6)
-# sntrees &lt;- scale(nuts$ntrees)
-# sheigtht &lt;- scale(nuts$height)
-# scover &lt;- scale(nuts$cover)
-summary(PO &lt;- glm(cones ~ sntrees + sheight + scover, family=quasipoisson, data=nut))
-</pre>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

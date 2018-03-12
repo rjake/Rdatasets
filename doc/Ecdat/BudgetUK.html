@@ -1,50 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Duncan's Occupational Prestige Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Budget Shares of British Households</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Duncan"><tr><td>Duncan</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for BudgetUK"><tr><td>BudgetUK</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Duncan's Occupational Prestige Data</h2>
+<h2>Budget Shares of British Households </h2>
 
 <h3>Description</h3>
 
-<p>The <code>Duncan</code> data frame has 45 rows and 4 columns.
-Data on the prestige and other characteristics of 45 U. S. occupations in 1950.
+<p>a cross-section from 1980 to 1982
+</p>
+<p><em>number of observations</em> :  1519
+</p>
+<p><em>observation</em> :  households
+</p>
+<p><em>country</em> :  United Kingdown
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-Duncan
-</pre>
+<pre>data(BudgetUK)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>type</dt><dd><p> Type of occupation.
-A factor with the following levels:
-<code>prof</code>, professional and managerial;
-<code>wc</code>, white-collar;
-<code>bc</code>, blue-collar.
-</p>
+<dt>wfood</dt><dd><p>budget share for food expenditure</p>
 </dd>
-<dt>income</dt><dd>
-<p>Percent of males in occupation earning $3500 or more in 1950.
-</p>
+<dt>wfuel</dt><dd><p>budget share for fuel expenditure</p>
 </dd>
-<dt>education</dt><dd>
-<p>Percent of males in occupation in 1950 who were high-school graduates.
-</p>
+<dt>wcloth</dt><dd><p>budget share for clothing expenditure</p>
 </dd>
-<dt>prestige</dt><dd>
-<p>Percent of raters in NORC study rating occupation as excellent or good in prestige.
-</p>
+<dt>walc</dt><dd><p>budget share for alcohol expenditure</p>
+</dd>
+<dt>wtrans</dt><dd><p>budget share for transport expenditure</p>
+</dd>
+<dt>wother</dt><dd><p>budget share for other good expenditure</p>
+</dd>
+<dt>totexp</dt><dd><p>total household expenditure (rounded to the nearest 10 UK pounds sterling)</p>
+</dd>
+<dt>income</dt><dd><p>total net household income (rounded to the nearest 10 UK pounds sterling)</p>
+</dd>
+<dt>age</dt><dd><p>age of household head</p>
+</dd>
+<dt>children</dt><dd><p>number of children</p>
 </dd>
 </dl>
 
@@ -52,23 +56,19 @@ A factor with the following levels:
 
 <h3>Source</h3>
 
-<p>Duncan, O. D. (1961) 
-A socioeconomic index for all occupations.
-In Reiss, A. J., Jr. (Ed.)
-<em>Occupations and Social Status.</em> Free Press 
-[Table VI-1].
+<p>Blundell, Richard,  Alan   Duncan and  Krishna  Pendakur (1998) &ldquo;Semiparametric estimation and consumer demand&rdquo;, <em>Journal of Applied Econometrics</em>, <b>13(5)</b>, 435&ndash;462.
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. (2008)
-<em>Applied Regression Analysis and Generalized Linear Models</em>,
-Second Edition. Sage.  
+<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
 </p>
-<p>Fox, J. and Weisberg, S. (2011) 
-<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
-</p>
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

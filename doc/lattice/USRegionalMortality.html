@@ -1,87 +1,122 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Risk Factors Associated with Low Infant Birth Weight</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mortality Rates in US by Cause and Gender</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for birthwt"><tr><td>birthwt</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for H_USMortality"><tr><td>H_USMortality</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Risk Factors Associated with Low Infant Birth Weight
-</h2>
+<h2> Mortality Rates in US by Cause and Gender </h2>
 
 <h3>Description</h3>
 
-<p>The <code>birthwt</code> data frame has 189 rows and 10 columns.
-The data were collected at Baystate Medical Center, Springfield, Mass
-during 1986.
+<p>These datasets record mortality rates across all ages in the USA by
+cause of death, sex, and rural/urban status, 2011&ndash;2013. The two
+datasets represent the national aggregate rates and the region-wise
+rates for each administrative region under the Department of Health
+and Human Services (HHS).
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-birthwt
+USMortality
+USRegionalMortality
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p><code>USRegionalMortality</code> is a data frame with 400 observations on
+the following 6 variables.
 </p>
 
 <dl>
-<dt><code>low</code></dt><dd><p>indicator of birth weight less than 2.5 kg.</p>
+<dt><code>Region</code></dt><dd><p>A factor specifying HHS Region. See details.</p>
 </dd>
-<dt><code>age</code></dt><dd><p>mother's age in years.</p>
+<dt><code>Status</code></dt><dd><p>A factor with levels <code>Rural</code> and <code>Urban</code></p>
 </dd>
-<dt><code>lwt</code></dt><dd><p>mother's weight in pounds at last menstrual period.</p>
+<dt><code>Sex</code></dt><dd><p>A factor with levels <code>Female</code> and <code>Male</code></p>
 </dd>
-<dt><code>race</code></dt><dd><p>mother's race (<code>1</code> = white, <code>2</code> = black,
-<code>3</code> = other).</p>
+<dt><code>Cause</code></dt><dd><p>Cause of death. A factor with levels
+<code>Alzheimers</code>, <code>Cancer</code>, <code>Cerebrovascular diseases</code>,
+<code>Diabetes</code>, <code>Flu and pneumonia</code>, <code>Heart disease</code>,
+<code>Lower respiratory</code>, <code>Nephritis</code>, <code>Suicide</code>, and
+<code>Unintentional injuries</code></p>
 </dd>
-<dt><code>smoke</code></dt><dd><p>smoking status during pregnancy.</p>
+<dt><code>Rate</code></dt><dd><p>Age-adjusted death rate per 100,000 population</p>
 </dd>
-<dt><code>ptl</code></dt><dd><p>number of previous premature labours.</p>
-</dd>
-<dt><code>ht</code></dt><dd><p>history of hypertension.</p>
-</dd>
-<dt><code>ui</code></dt><dd><p>presence of uterine irritability.</p>
-</dd>
-<dt><code>ftv</code></dt><dd><p>number of physician visits during the first trimester.</p>
-</dd>
-<dt><code>bwt</code></dt><dd><p>birth weight in grams.</p>
+<dt><code>SE</code></dt><dd><p>Standard error for the rate</p>
 </dd>
 </dl>
 
-
-
-<h3>Source</h3>
-
-<p>Hosmer, D.W. and Lemeshow, S. (1989)
-<em>Applied Logistic Regression.</em> New York: Wiley
+<p><code>USMortality</code> is a data frame with 40 observations, containing
+the same variables with the exception of <code>Region</code>.
 </p>
 
 
+<h3>Details</h3>
+
+<p> The region-wise data give estimated rates separately for each
+of 10 HHS regions. The location of the regional offices and their
+coverage area, available from
+<a href="https://www.hhs.gov/about/agencies/iea/regional-offices/index.html">https://www.hhs.gov/about/agencies/iea/regional-offices/index.html</a>,
+is given below.
+</p>
+
+<dl>
+<dt>HHS Region 01 - Boston: </dt><dd><p> Connecticut, Maine, Massachusetts,
+New Hampshire, Rhode Island, and Vermont </p>
+</dd>
+<dt> HHS Region 02 - New York: </dt><dd><p> New Jersey, New York, Puerto
+Rico, and the Virgin Islands </p>
+</dd>
+<dt>HHS Region 03 - Philadelphia: </dt><dd><p> Delaware, District of
+Columbia, Maryland, Pennsylvania, Virginia, and West Virginia</p>
+</dd>
+<dt>HHS Region 04 - Atlanta: </dt><dd><p> Alabama, Florida, Georgia, Kentucky,
+Mississippi, North Carolina, South Carolina, and Tennessee</p>
+</dd>
+<dt>HHS Region 05 - Chicago: </dt><dd><p> Illinois, Indiana, Michigan,
+Minnesota, Ohio, and Wisconsin</p>
+</dd>
+<dt>HHS Region 06 - Dallas: </dt><dd><p> Arkansas, Louisiana, New Mexico,
+Oklahoma, and Texas </p>
+</dd>
+<dt>HHS Region 07 - Kansas City: </dt><dd><p> Iowa, Kansas, Missouri, and
+Nebraska</p>
+</dd>
+<dt>HHS Region 08 - Denver: </dt><dd><p> Colorado, Montana, North Dakota,
+South Dakota, Utah, and Wyoming</p>
+</dd>
+<dt>HHS Region 09 - San Francisco: </dt><dd><p> Arizona, California, Hawaii,
+Nevada, American Samoa, Commonwealth of the Northern Mariana
+Islands, Federated States of Micronesia, Guam, Marshall Islands,
+and Republic of Palau</p>
+</dd>
+<dt>HHS Region 10 - Seattle: </dt><dd><p> Alaska, Idaho, Oregon, and
+Washington</p>
+</dd> </dl>
+ 
+
 <h3>References</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+<p>Rural Health Reform Policy Research Center. _Exploring Rural and Urban
+Mortality Differences_, August 2015 Bethesda, MD. 
+<a href="https://ruralhealth.und.edu/projects/health-reform-policy-research-center/rural-urban-mortality">https://ruralhealth.und.edu/projects/health-reform-policy-research-center/rural-urban-mortality</a>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-bwt &lt;- with(birthwt, {
-race &lt;- factor(race, labels = c("white", "black", "other"))
-ptd &lt;- factor(ptl &gt; 0)
-ftv &lt;- factor(ftv)
-levels(ftv)[-(1:2)] &lt;- "2+"
-data.frame(low = factor(low), age, lwt, race, smoke = (smoke &gt; 0),
-           ptd, ht = (ht &gt; 0), ui = (ui &gt; 0), ftv)
-})
-options(contrasts = c("contr.treatment", "contr.poly"))
-glm(low ~ ., binomial, bwt)
+dotplot(reorder(Cause, Rate) ~ Rate | Status,
+        data = USMortality, groups = Sex,
+        par.settings = simpleTheme(pch = 16), auto.key = list(columns = 2),
+        scales = list(x = list(log = TRUE, equispaced.log = FALSE)))
+dotplot(reorder(Cause, Rate):Sex ~ Rate | Status,
+        data = USRegionalMortality, groups = Sex,
+        scales = list(x = list(log = TRUE, equispaced.log = FALSE)))
 </pre>
 
 

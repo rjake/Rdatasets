@@ -1,54 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 8 cognitive variables used by Dwyer for an example.</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Waterflow Measurements of Kootenay River in Libby and Newgate</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Dwyer"><tr><td>Dwyer</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for kootenay"><tr><td>kootenay</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>8 cognitive variables used by Dwyer for an example.
-</h2>
+<h2>Waterflow Measurements of Kootenay River in Libby and Newgate</h2>
 
 <h3>Description</h3>
 
-<p>Dwyer (1937) introduced a technique for factor extension and used 8 cognitive variables from Thurstone.  This is the example data set used in his paper.
+<p>The original data set is the waterflow in January of the Kootenay
+river, measured at two locations, namely, Libby (Montana) and Newgate
+(British Columbia) for 13 consecutive years, 1931&ndash;1943.
+</p>
+<p>The data set is of mostly interest because it has been used as example
+in innumerous didactical situations about robust regression.
+To this end, one number (in observation 4) has been modified from the
+original data from originally 44.9 to 15.7 (here).
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Dwyer)</pre>
+<pre>data(kootenay)</pre>
 
 
 <h3>Format</h3>
 
-<p>The format is:
-num [1:8, 1:8] 1 0.58 -0.28 0.01 0.36 0.38 0.61 0.15 0.58 1 ...
-- attr(*, &quot;dimnames&quot;)=List of 2
-..$ : chr [1:8] &quot;V1&quot; &quot;V2&quot; &quot;V3&quot; &quot;V4&quot; ...
-..$ : chr [1:8] &quot;V1&quot; &quot;V2&quot; &quot;V3&quot; &quot;V4&quot; ...
+<p>A data frame with 13 observations on the following 2 variables.
+</p>
+
+<dl>
+<dt><code>Libby</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>Newgate</code></dt><dd><p>a numeric vector</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>The original (unmodified) version of the data is easily obtainable
+as <code>kootenay0</code> from the examples; other modified versions of the
+data sets are also used in different places, see the examples below.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Data matrix retyped from the original publication. 
+<p>Original Data, p.58f of
+Ezekiel and Fox (1959),
+<em>Methods of Correlation and Regression Analysis</em>. Wiley, N.Y.
 </p>
 
 
 <h3>References</h3>
 
-<p>Dwyer, Paul S. (1937), The determination of the factor loadings of a given test from the known factor loadings of other tests. Psychometrika, 3, 173-178
+<p>Hampel, F., Ronchetti, E., Rousseeuw, P. and Stahel, W.  (1986)
+<em>Robust Statistics: The Approach Based on Influence Functions</em>;
+Wiley, N.Y.
+</p>
+<p>Rousseeuw, P. J. and Leroy, A. M. (1987)
+<em>Robust Regression &amp; Outlier Detection</em>, Wiley, N. Y.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(Dwyer)
-Ro &lt;- Dwyer[1:7,1:7]
-Roe &lt;- Dwyer[1:7,8]
-fo &lt;- fa(Ro,2,rotate="none")
-fa.extension(Roe,fo)
+data(kootenay)
+plot(kootenay, main = "'kootenay' data")
+points(kootenay[4,], col = 2, cex =2, pch = 3)
+
+abline(lm   (Newgate ~ Libby, data = kootenay), col = "pink")
+abline(lmrob(Newgate ~ Libby, data = kootenay), col = "blue")
+
+## The original version of Ezekiel &amp; Fox:
+kootenay0 &lt;- kootenay
+kootenay0[4, "Newgate"] &lt;- 44.9
+plot(kootenay0, main = "'kootenay0': the original data")
+abline(lm   (Newgate ~ Libby, data = kootenay0), col = "pink")
+abline(lmrob(Newgate ~ Libby, data = kootenay0), col = "blue")
+
+## The version with "milder" outlier -- Hampel et al., p.310
+kootenay2 &lt;- kootenay0
+kootenay2[4, "Libby"] &lt;- 20.0 # instead of 77.6
+plot(kootenay2, main = "The 'kootenay2' data",
+     xlim = range(kootenay[,"Libby"]))
+points(kootenay2[4,], col = 2, cex =2, pch = 3)
+abline(lm   (Newgate ~ Libby, data = kootenay2), col = "pink")
+abline(lmrob(Newgate ~ Libby, data = kootenay2), col = "blue")
 </pre>
 
 

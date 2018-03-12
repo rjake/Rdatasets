@@ -1,90 +1,81 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yield of dyestuff by batch</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: FlightResponse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Dyestuff"><tr><td>Dyestuff</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for FlightResponse"><tr><td>FlightResponse</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Yield of dyestuff by batch</h2>
+<h2>FlightResponse</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Dyestuff</code> data frame provides the yield of
-dyestuff (Naphthalene Black 12B) from 5 different
-preparations from each of 6 different batchs of an
-intermediate product (H-acid).  The <code>Dyestuff2</code> data
-were generated data in the same structure but with a
-large residual variance relative to the batch variance.
+<p>Flight Response of Pacific Brant
 </p>
 
 
 <h3>Format</h3>
 
-<p>Data frames, each with 30 observations on the following 2 variables.
+<p>A dataset with 464 observations on the following 7 variables.
 </p>
 
-<dl>
-<dt><code>Batch</code></dt><dd><p>a factor indicating the batch of the
-intermediate product from which the preparation was created.</p>
-</dd>
-<dt><code>Yield</code></dt><dd><p>the yield of dyestuff from the preparation
-(grams of standard color).</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>FlockID</code> </td><td style="text-align: left;"> Flock ID</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Altitude</code> </td><td style="text-align: left;"> Altitude of the overflight by the helicopter (in 100m)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Lateral</code> </td><td style="text-align: left;"> Lateral distance (in 100m) between the aircraft and flock</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Flight</code> </td><td style="text-align: left;"> <code>1</code>=more than 10% of flock flies away or <code>0</code>=otherwise</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AltLat</code> </td><td style="text-align: left;"> Product of Altitude x Lateral</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>AltCat</code> </td><td style="text-align: left;"> Altitude categories: <code>low</code>=under 3, <code>mid</code>=3 to 6, <code>high</code>=over 6</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>LatCat</code> </td><td style="text-align: left;"> Lateral categories: <code>1</code>under 10 to <code>4</code>=over 30</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
 
 
 <h3>Details</h3>
 
-<p>The <code>Dyestuff</code> data are described in Davies and
-Goldsmith (1972) as coming from &ldquo;an investigation
-to find out how much the variation from batch to batch in
-the quality of an intermediate product (H-acid)
-contributes to the variation in the yield of the dyestuff
-(Naphthalene Black 12B) made from it.  In the experiment
-six samples of the intermediate, representing different
-batches of works manufacture, were obtained, and five
-preparations of the dyestuff were made in the laboratory
-from each sample. The equivalent yield of each
-preparation as grams of standard colour was determined by
-dye-trial.&rdquo;
-</p>
-<p>The <code>Dyestuff2</code> data are described in Box and Tiao
-(1973) as illustrating &ldquo; the case where
-between-batches mean square is less than the
-within-batches mean square.  These data had to be
-constructed for although examples of this sort
-undoubtably occur in practice, they seem to be rarely
-published.&rdquo;
+<p>A 1994 study collected data on the effects of air
+traffic on the behavior of the Pacific Brant (a small migratory goose).
+The data represent the flight
+response to helicopter &quot;overflights&quot; to see what the relationship between the proximity of a flight,
+both lateral and altitudinal, would be to the propensity of the Brant to flee the area. For this
+experiment, air traffic was restricted to helicopters because previous study had ascertained that
+helicopters created more radical flight response than other aircraft.
+The data are in FlightResponse. Each case represents a flock of Brant that has been observed
+during one overflight in the study. Flocks were determined observationally as contiguous collections
+of Brants, flock sizes varying from 10 to 30,000 birds.
 </p>
 
 
 <h3>Source</h3>
 
-<p>O.L. Davies and P.L. Goldsmith (eds), <em>Statistical
-Methods in Research and Production, 4th ed.</em>, Oliver and
-Boyd, (1972), section 6.4
+<p>Data come from the book Statistical Case Studies: A Collaboration Between Academe and Industry, Roxy Peck,
+Larry D. Haugh, and Arnold Goodman, editors; SIAM and ASA, 1998.
 </p>
-<p>G.E.P. Box and G.C. Tiao, <em>Bayesian Inference in
-Statistical Analysis</em>, Addison-Wesley, (1973), section
-5.1.2
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-
-require(lattice)
-str(Dyestuff)
-dotplot(reorder(Batch, Yield) ~ Yield, Dyestuff,
-        ylab = "Batch", jitter.y = TRUE, aspect = 0.3,
-        type = c("p", "a"))
-dotplot(reorder(Batch, Yield) ~ Yield, Dyestuff2,
-        ylab = "Batch", jitter.y = TRUE, aspect = 0.3,
-        type = c("p", "a"))
-(fm1 &lt;- lmer(Yield ~ 1|Batch, Dyestuff))
-(fm2 &lt;- lmer(Yield ~ 1|Batch, Dyestuff2))
-</pre>
 
 
 </body></html>

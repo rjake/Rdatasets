@@ -1,22 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Population figures for Australian States and Territories</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Car Price Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for austpop"><tr><td>austpop</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for carprice"><tr><td>carprice</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Population figures for Australian States and Territories</h2>
+<h2>US Car Price Data</h2>
 
 <h3>Description</h3>
 
-<p>Population figures for Australian states and territories for 1917, 1927,
-..., 1997.
+<p>U.S. data extracted from <code>Cars93</code>, a data frame in the 
+MASS package.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>austpop</pre>
+<pre>carprice</pre>
 
 
 <h3>Format</h3>
@@ -25,73 +25,84 @@
 </p>
 
 <dl>
-<dt>year</dt><dd><p>a numeric vector</p>
+<dt>Type</dt><dd><p>Type of car, e.g. Sporty, Van, Compact</p>
 </dd>
-<dt>NSW</dt><dd><p>New South Wales population counts </p>
+<dt>Min.Price</dt><dd><p>Price for a basic model</p>
 </dd>
-<dt>Vic</dt><dd><p>Victoria population counts</p>
+<dt>Price</dt><dd><p>Price for a mid-range model</p>
 </dd>
-<dt>Qld</dt><dd><p>Queensland population counts</p>
+<dt>Max.Price</dt><dd><p>Price for a &lsquo;premium&rsquo; model</p>
 </dd>
-<dt>SA</dt><dd><p>South Australia population counts</p>
+<dt>Range.Price</dt><dd><p>Difference between Max.Price and Min.Price</p>
 </dd>
-<dt>WA</dt><dd><p>Western Australia population counts</p>
+<dt>RoughRange</dt><dd><p>Rough.Range plus some N(0,.0001) noise</p>
 </dd>
-<dt>Tas</dt><dd><p>Tasmania population counts</p>
+<dt>gpm100</dt><dd><p>The number of gallons required to travel 100 miles</p>
 </dd>
-<dt>NT</dt><dd><p>Northern Territory population 
-counts</p>
+<dt>MPG.city</dt><dd><p>Average number of miles per gallon for city driving</p>
 </dd>
-<dt>ACT</dt><dd><p>Australian Capital Territory 
-population counts</p>
-</dd>
-<dt>Aust</dt><dd><p>Population counts for
-the whole country</p>
+<dt>MPG.highway</dt><dd><p>Average number of miles per gallon for highway 
+driving</p>
 </dd>
 </dl>
-
+ 
 
 
 <h3>Source</h3>
 
-<p>Australian Bureau of Statistics
+<p>MASS package
+</p>
+
+
+<h3>References</h3>
+
+<p>Venables, W.N.\ and Ripley, B.D., 4th edn 2002. Modern
+Applied Statistics with S. Springer, New York.
+</p>
+<p>See also
+&lsquo;R&rsquo; Complements to Modern Applied Statistics with S-Plus,
+available from <a href="http://www.stats.ox.ac.uk/pub/MASS3/">http://www.stats.ox.ac.uk/pub/MASS3/</a>
 </p>
 
 
 <h3>Examples</h3>
 
-<pre>
-print("Looping - Example 1.7")
+<pre> 
+print("Multicollinearity - Example 6.8")
+pairs(carprice[,-c(1,8,9)])
 
-growth.rates &lt;- numeric(8)
-for (j in seq(2,9)) {
-    growth.rates[j-1] &lt;- (austpop[9, j]-austpop[1, j])/austpop[1, j] }
-growth.rates &lt;- data.frame(growth.rates)
-row.names(growth.rates) &lt;- names(austpop[c(-1,-10)])
-  # Note the use of row.names() to name the rows of the data frame
-growth.rates
-
+carprice1.lm &lt;- lm(gpm100 ~ Type+Min.Price+Price+Max.Price+Range.Price,
+    data=carprice)
+round(summary(carprice1.lm)$coef,3)
 pause()
-print("Avoiding Loops - Example 1.7b")
 
-sapply(austpop[,-c(1,10)], function(x){(x[9]-x[1])/x[1]})
-
+alias(carprice1.lm)
 pause()
-print("Plot - Example 1.8a")
-attach(austpop)
-plot(year, ACT, type="l") # Join the points ("l" = "line")
-detach(austpop)
 
+carprice2.lm &lt;- lm(gpm100 ~ Type+Min.Price+Price+Max.Price+RoughRange, data=carprice)
+round(summary(carprice2.lm)$coef, 2)
 pause()
-print("Exerice 1.12.9")
-attach(austpop)
-oldpar &lt;- par(mfrow=c(2,4))  
-for (i in 2:9){
-plot(austpop[,1], log(austpop[, i]), xlab="Year",
-    ylab=names(austpop)[i], pch=16, ylim=c(0,10))}
-par(oldpar) 
-detach(austpop)
 
+carprice.lm &lt;- lm(gpm100 ~ Type + Price, data = carprice)
+round(summary(carprice.lm)$coef,4)  
+pause()
+
+summary(carprice1.lm)$sigma   # residual standard error when fitting all 3 price variables
+pause()
+
+summary(carprice.lm)$sigma    # residual standard error when only price is used
+pause()
+
+vif(lm(gpm100 ~ Price, data=carprice)) # Baseline Price
+pause()
+
+vif(carprice1.lm)    # includes Min.Price, Price &amp; Max.Price
+pause()
+
+vif(carprice2.lm)    # includes Min.Price, Price, Max.Price &amp; RoughRange
+pause()
+
+vif(carprice.lm)     # Price alone
 </pre>
 
 

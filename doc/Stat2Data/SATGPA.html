@@ -1,73 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: BirdNest</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: SAT scores and GPA</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for BirdNest"><tr><td>BirdNest</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for SATGPA"><tr><td>SATGPA</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-BirdNest
-</h2>
+<h2>SAT scores and GPA</h2>
 
 <h3>Description</h3>
 
-<p>Data on bird nests
+<p>A sample of SAT scores and grade point averages for statistics students
 </p>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 84 observations on the following 12 variables.
+<p>A dataset with 24 observations on the following 3 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>Species</code> </td><td style="text-align: left;"> Latin species name</td>
+    <code>MathSAT</code> </td><td style="text-align: left;"> Score (out of 800) on the mathematics portion of the SAT exam</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Common</code> </td><td style="text-align: left;"> Common species name</td>
+    <code>VerbalSAT</code> </td><td style="text-align: left;"> Score (out of 800) on the verbal portion of the SAT exam</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Page</code> </td><td style="text-align: left;"> Page in a bird manual describing the species</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Length</code> </td><td style="text-align: left;"> Mean body length for the species (in cm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Nesttype</code> </td><td style="text-align: left;"> Type of nest</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Location</code> </td><td style="text-align: left;"> Location of nest</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>No.eggs</code> </td><td style="text-align: left;"> Number of eggs</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Color</code> </td><td style="text-align: left;"> a numeric vector</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Incubate</code> </td><td style="text-align: left;"> Mean length of time (in days) the species incubates eggs in the nest</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Nestling</code> </td><td style="text-align: left;"> Mean length of time (in days) the species cares for babies in the nest until fledged</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Totcare</code> </td><td style="text-align: left;"> Total care time = Incubate+Nestling</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Closed</code> </td><td style="text-align: left;"> 1=closed nest (pendant, spherical, cavity, crevice, burrow), 0=open nest (saucer, cup)</td>
+    <code>GPA</code> </td><td style="text-align: left;"> Grade point average (0.0-4.0 scale)</td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -80,22 +42,17 @@ BirdNest
 
 <h3>Details</h3>
 
-<p>Amy R. Moore, as a student at Grinnell College in 1999, wanted to study the relationship between
-species characteristics and the type of nest a bird builds, using data collected from available
-sources. For the study, she collected data by species for 83 separate species of North American
-passerines.
+<p>In recent years many colleges have re-examined the traditional role the scores on the Scholastic
+Aptitude Tests (SAT's) play in making decisions on which students to admit. Do SAT scores really
+help predict success in college? To investigate this question a group of 24 introductory statistics
+students supplied the data in this dataset showing their score on the Verbal portion of the SAT
+as well as their current grade point average (GPA) on a 0.0-4.0 scale.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Project by Amy Moore at Grinnell College
-</p>
-
-
-<h3>References</h3>
-
-<p>The Birders Handbook, by Ehrlich, et al. (1988)
+<p>Student survey in an introductory statistics course.
 </p>
 
 

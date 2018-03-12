@@ -1,117 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pharmacokinetics of Theophylline</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Darwin's Plant Height Differences</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Theoph"><tr><td>Theoph</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for darwin"><tr><td>darwin</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Pharmacokinetics of Theophylline</h2>
+<h2>
+Darwin's Plant Height Differences
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Theoph</code> data frame has 132 rows and 5 columns of data from
-an experiment on the pharmacokinetics of theophylline.</p>
+<p>The <code>darwin</code> data frame has 15 rows and 1 columns.
+</p>
+<p>Charles Darwin conducted an experiment to examine the superiority of
+cross-fertilized plants over self-fertilized plants.  15 pairs of plants
+were used. Each pair consisted of one cross-fertilized plant and one
+self-fertilized plant which germinated at the same time and grew in the
+same pot. The plants were measured at a fixed time after planting and
+the difference in heights between the cross- and self-fertilized plants are
+recorded in eighths of an inch.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>Theoph</pre>
+<pre>
+darwin
+</pre>
 
 
 <h3>Format</h3>
 
-<p>An object of class
-<code>c("nfnGroupedData", "nfGroupedData", "groupedData", "data.frame")</code>
-containing the following columns:
+<p>This data frame contains the following column:
 </p>
 
 <dl>
-<dt>Subject</dt><dd>
-<p>an ordered factor with levels <code>1</code>, ..., <code>12</code>
-identifying the subject on whom the observation was made.  The
-ordering is by increasing maximum concentration of theophylline
-observed.
+<dt><code>y</code></dt><dd>
+<p>The difference in heights for the pairs of plants (in units of 0.125 inches).
 </p>
-</dd>
-<dt>Wt</dt><dd>
-<p>weight of the subject (kg).
-</p>
-</dd>
-<dt>Dose</dt><dd>
-<p>dose of theophylline administered orally to the subject (mg/kg).
-</p>
-</dd>
-<dt>Time</dt><dd>
-<p>time since drug administration when the sample was drawn (hr).
-</p>
-</dd>
-<dt>conc</dt><dd>
-<p>theophylline concentration in the sample (mg/L).
-</p>
-</dd>
-</dl>
-
-
-
-<h3>Details</h3>
-
-<p>Boeckmann, Sheiner and Beal (1994) report data from a study by
-Dr. Robert Upton of the kinetics of the anti-asthmatic drug
-theophylline.  Twelve subjects were given oral doses of theophylline
-then serum concentrations were measured at 11 time points over the
-next 25 hours.
-</p>
-<p>These data are analyzed in Davidian and Giltinan (1995) and Pinheiro
-and Bates (2000) using a two-compartment open pharmacokinetic model,
-for which a self-starting model function, <code>SSfol</code>, is available.
-</p>
-<p>This dataset was originally part of package <code>nlme</code>, and that has
-methods (including for <code>[</code>, <code>as.data.frame</code>, <code>plot</code> and
-<code>print</code>) for its grouped-data classes.
-</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Boeckmann, A. J., Sheiner, L. B. and Beal, S. L. (1994), <em>NONMEM
-Users Guide: Part V</em>, NONMEM Project Group, University of
-California, San Francisco.
+<p>The data were obtained from
 </p>
-<p>Davidian, M. and Giltinan, D. M. (1995)
-<em>Nonlinear Models for Repeated Measurement Data</em>,
-Chapman &amp; Hall
-(section 5.5, p. 145 and section 6.6, p. 176)
-</p>
-<p>Pinheiro, J. C. and Bates, D. M. (2000) <em>Mixed-effects Models in
-S and S-PLUS</em>, Springer (Appendix A.29)
+<p>Fisher, R.A. (1935) <em>Design of Experiments</em>. Oliver and Boyd.
 </p>
 
 
-<h3>See Also</h3>
+<h3>References</h3>
 
-<p><code>SSfol</code></p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(stats); require(graphics)
-
-coplot(conc ~ Time | Subject, data = Theoph, show.given = FALSE)
-Theoph.4 &lt;- subset(Theoph, Subject == 4)
-fm1 &lt;- nls(conc ~ SSfol(Dose, Time, lKe, lKa, lCl),
-           data = Theoph.4)
-summary(fm1)
-plot(conc ~ Time, data = Theoph.4,
-     xlab = "Time since drug administration (hr)",
-     ylab = "Theophylline concentration (mg/L)",
-     main = "Observed concentrations and fitted model",
-     sub  = "Theophylline data - Subject 4 only",
-     las = 1, col = 4)
-xvals &lt;- seq(0, par("usr")[2], length.out = 55)
-lines(xvals, predict(fm1, newdata = list(Time = xvals)),
-      col = 4)
-</pre>
+<p>Darwin, C. (1876) 
+<em>The Effects of Cross- and Self-fertilisation in the Vegetable Kingdom</em>. 
+John Murray.
+</p>
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+</p>
 
 
 </body></html>

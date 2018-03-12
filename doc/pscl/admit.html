@@ -1,92 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Space Shuttle O-ring Failures</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Applications to a Political Science PhD Program</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for SpaceShuttle"><tr><td>SpaceShuttle</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for admit"><tr><td>admit</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Space Shuttle O-ring Failures</h2>
+<h2>Applications to a Political Science PhD Program</h2>
 
 <h3>Description</h3>
 
-<p>Data from Dalal et al. (1989) about O-ring failures in the NASA space
-shuttle program.  The damage index comes from a discussion of the data
-by Tufte (1997).
-</p>
+<p>Ordinal ratings (faculty evaluations) of applicants to a Political Science PhD
+Program.</p>
 
 
 <h3>Usage</h3>
 
-<pre>
-data("SpaceShuttle")
-</pre>
+<pre>data(admit)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 24 observations and 6 variables.
+<p>A data frame with 106 observations on the following 6 variables.
 </p>
 
 <dl>
-<dt>FlightNumber</dt><dd><p>Number of space shuttle flight.</p>
+<dt><code>score</code></dt><dd><p>an ordered factor with levels <code>1</code> &lt; <code>2</code> &lt; <code>3</code> &lt; <code>4</code> &lt; <code>5</code></p>
 </dd>
-<dt>Temperature</dt><dd><p>temperature during start (in degrees F).</p>
+<dt><code>gre.quant</code></dt><dd><p>applicant's score on the quantitative
+section of the GRE; the maximum score is 800</p>
 </dd>
-<dt>Pressure</dt><dd><p>pressure.</p>
+<dt><code>gre.verbal</code></dt><dd><p>applicant's score on the verbal section of
+the GRE; the maximum score is 800</p>
 </dd>
-<dt>Fail</dt><dd><p>did any O-ring failures occur? (no, yes).</p>
+<dt><code>ap</code></dt><dd><p>1 if the applicant indicated an interest in
+American politics; 0 otherwise</p>
 </dd>
-<dt>nFailures</dt><dd><p>how many (of six) 0-rings failed?.</p>
+<dt><code>pt</code></dt><dd><p>1 if the applicant indicated an interest in
+Political Theory; 0 otherwise</p>
 </dd>
-<dt>Damage</dt><dd><p>damage index.</p>
+<dt><code>female</code></dt><dd><p>1 for female applicants; 0 otherwise</p>
 </dd>
 </dl>
 
 
 
-<h3>Source</h3>
-
-<p>Michael Friendly (2000),
-Visualizing Categorical Data:
-<a href="http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/orings.sas">http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/orings.sas</a>
-</p>
-
-
 <h3>References</h3>
 
-<p>S. Dalal, E. B. Fowlkes, B. Hoadly (1989),
-Risk analysis of the space shuttle: Pre-Challenger prediction of
-failure,
-<em>Journal of the American Statistical Association</em>,
-<b>84</b>, 945&ndash;957.
-</p>
-<p>E. R. Tufte (1997),
-<em>Visual Explanations: Images and Quantities, Evidence and
-Narrative</em>.
-Graphics Press, Cheshire, CT. 
-</p>
-<p>M. Friendly (2000),
-<em>Visualizing Categorical Data</em>.
-SAS Institute, Cary, NC.
-</p>
+<p>Jackman, Simon.  2004.  &quot;What Do We Learn From Graduate
+Admissions Committees?: A Multiple-Rater, Latent Variable Model, with
+Incomplete Discrete and Continuous Indicators.&quot;  <em>Political
+Analysis</em>.  12(4):400-424.  </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data("SpaceShuttle")
-plot(nFailures/6 ~ Temperature, data = SpaceShuttle,
-     xlim = c(30, 81), ylim = c(0,1),
-     main = "NASA Space Shuttle O-Ring Failures",
-     ylab = "Estimated failure probability",
-     pch = 19, col = 4)
-fm &lt;- glm(cbind(nFailures, 6 - nFailures) ~ Temperature,
-          data = SpaceShuttle,
-          family = binomial)
-lines(30 : 81,
-      predict(fm, data.frame(Temperature = 30 : 81), type = "re"),
-      lwd = 2)
-abline(v = 31, lty = 3)
+data(admit)
+summary(admit)
+## ordered probit model
+op1 &lt;- MASS::polr(score ~ gre.quant + gre.verbal + ap + pt + female,
+            Hess=TRUE,
+            data=admit,
+            method="probit")
+summary(op1)
+hitmiss(op1)
+logLik(op1)
+pR2(op1)   
 </pre>
 
 

@@ -1,82 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nursing</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Opinions About Joint Sports</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Nursing"><tr><td>Nursing</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for JointSports"><tr><td>JointSports</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Nursing</h2>
+<h2>Opinions About Joint Sports</h2>
 
 <h3>Description</h3>
 
-<p>Characteristics of nursing homes in New Mexico.
+<p>Data from a Danish study in 1983 and 1985 about sports activities and
+the opinion about joint sports with the other gender among 16&ndash;19 year
+old high school students.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data("JointSports")
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 52 observations on the following 7 variables.
+<p>A data frame with 40 observations and 5 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Beds</code> </td><td style="text-align: left;"> Number of beds in the nursing home</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>InPatientDays</code> </td><td style="text-align: left;"> Annual medical in-patient days (in hundreds)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>AllPatientDays</code> </td><td style="text-align: left;"> Annual total patient days (in hundreds)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>PatientRevenue</code> </td><td style="text-align: left;"> Annual patinet care revenue (in hundreds of dollars)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>NurseSalaries</code> </td><td style="text-align: left;"> Annual nursing salaries (in hundreds of dollars)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>FacilitiesExpend</code> </td><td style="text-align: left;"> Annual facilities expenditure (in hundreds of dollars)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Rural</code> </td><td style="text-align: left;"> 1=<code>rural</code> or 0=<code>non-rural</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
+<dl>
+<dt>Freq</dt><dd><p>frequency.</p>
+</dd>
+<dt>opinion</dt><dd><p>factor indicating opinion about sports joint with the
+other gender (very good, good, indifferent, bad, very bad).</p>
+</dd>
+<dt>year</dt><dd><p>factor indicating year of study (1983, 1985).</p>
+</dd>
+<dt>grade</dt><dd><p>factor indicating school grade (1st, 3rd).</p>
+</dd>
+<dt>gender</dt><dd><p>factor indicating gender (Boy, Girl).</p>
+</dd>
+</dl>
 
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>The data were collected by the Department of Health and Social Services of the
-State of New Mexico and cover 52 of the 60 licensed nursing facilities in New Mexico
-in 1988.
-</p>
 
 
 <h3>Source</h3>
 
-<p>Downloaded from DASL at http://lib.stat.cmu.edu/DASL/Datafiles/Nursingdat.html
+<p>E. B. Andersen (1991),
+The Statistical Analysis of Categorical Data, page 210.
 </p>
 
 
 <h3>References</h3>
 
-<p>Howard L. Smith, Niell F. Piland, and Nancy Fisher, 
-&quot;A Comparison of Financial Performance, Organizational Characteristics, 
-and Management Strategy Among Rural and Urban Nursing Facilities,&quot; 
-Journal of Rural Health, Winter 1992, pp 27-40.
+<p>E. B. Andersen (1991),
+<em>The Statistical Analysis of Categorical Data</em>.
+2nd edition.
+Springer-Verlag, Berlin.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(MASS)
+data("JointSports")
+tab &lt;- xtabs(Freq ~ gender + opinion + grade + year, data = JointSports)
+doubledecker(opinion ~ gender + year + grade, data = tab)
+loglm(~ opinion* (gender + grade+ year) + gender*year*grade, data = tab)
+</pre>
 
 
 </body></html>

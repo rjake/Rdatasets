@@ -1,109 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ergebnisse der Fussball-Bundesliga</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Utility bills</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Bundesliga"><tr><td>Bundesliga</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Utilities2"><tr><td>Utilities2</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Ergebnisse der Fussball-Bundesliga</h2>
+<h2>Utility bills</h2>
 
 <h3>Description</h3>
 
-<p>Results from the first German soccer league (1963-2008).
+<p>Data from utility bills at a private residence.  This is an augmented version 
+of <code>Utilities</code>.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-data("Bundesliga")
+data(Utilities2)
 </pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 14018 observations and 7 variables.
+<p>A data frame containing 117 observations for the following variables.
 </p>
 
-<dl>
-<dt>HomeTeam</dt><dd><p>factor. Name of the home team.</p>
-</dd>
-<dt>AwayTeam</dt><dd><p>factor. Name of the away team.</p>
-</dd>
-<dt>HomeGoals</dt><dd><p>number of goals scored by the home team.</p>
-</dd>
-<dt>AwayGoals</dt><dd><p>number of goals scored by the away team.</p>
-</dd>
-<dt>Round</dt><dd><p>round of the game.</p>
-</dd>
-<dt>Year</dt><dd><p>year in which the season started.</p>
-</dd>
-<dt>Date</dt><dd><p>starting time of the game (in <code>"POSIXct"</code> format).</p>
-</dd>
-</dl>
-
-
-
-<h3>Details</h3>
-
-<p>The data comprises all games in the first German soccer league since
-its foundation in 1963. The data have been queried online from the 
-official Web page of the DFB and prepared as a data frame in R by
-Daniel Dekic, Torsten Hothorn, and Achim Zeileis (replacing earlier versions of the
-data in the package containing only subsets of years).
+<ul>
+<li><p><code>month</code> month (coded as a number)
 </p>
-<p>Each year/season comprises 34 rounds (except 1963, 1964, 1991) so that
-all 18 teams play twice against each other (switching home court advantage).
-In 1963/64, there were only 16 teams, hence only 30 rounds.
-In 1991, after the German unification, there was one season with 20 teams
-and 38 rounds.
+</li>
+<li><p><code>day</code> day of month on which bill was calculated
 </p>
+</li>
+<li><p><code>year</code> year of bill
+</p>
+</li>
+<li><p><code>temp</code> average temperature (F) for billing period
+</p>
+</li>
+<li><p><code>kwh</code> electricity usage (kwh)
+</p>
+</li>
+<li><p><code>ccf</code> gas usage (ccf)
+</p>
+</li>
+<li><p><code>thermsPerDay</code> a numeric vector
+</p>
+</li>
+<li><p><code>billingDays</code> number of billing days in billing period
+</p>
+</li>
+<li><p><code>totalbill</code> total bill (in dollars)
+</p>
+</li>
+<li><p><code>gasbill</code> gas bill (in dollars)
+</p>
+</li>
+<li><p><code>elecbill</code> electric bill (in dollars)
+</p>
+</li>
+<li><p><code>notes</code> notes about the billing period
+</p>
+</li>
+<li><p><code>ccfpday</code> average gas usage per day [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>kwhpday</code> average electric usage per day [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>gasbillpday</code> gas bill divided by billing days [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>elecbillpday</code> electric bill divided by billing days a numeric vector [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>totalbillpday</code> total bill divided by billing days a numeric vector [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>therms</code> <code>thermsPerDay * billingDays</code> [<code>Utilities2</code> only]
+</p>
+</li>
+<li><p><code>monthsSinceY2K</code> months since 2000 [<code>Utilities2</code> only]
+</p>
+</li></ul>
 
 
 <h3>Source</h3>
 
-<p>Homepage of the Deutscher Fussball-Bund (DFB, German Football Association):
-<a href="http://www.dfb.de/">http://www.dfb.de/</a>
-</p>
-
-
-<h3>References</h3>
-
-<p>Leonhard Knorr-Held (1999), Dynamic rating of sports teams.
-SFB 386 &ldquo;Statistical Analysis of Discrete Structures&rdquo;,
-Discussion paper <b>98</b>.
+<p>Daniel T. Kaplan, <em>Statistical modeling: A fresh approach</em>, 2009.
 </p>
 
 
 <h3>See Also</h3>
 
-<p><code>UKSoccer</code>
+<p><code>Utilities</code>.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data("Bundesliga")
+data(Utilities2)
+if (require(lattice)) {
+  xyplot(gasbillpday ~ temp, Utilities2)
+}
 
-## number of goals per game poisson distributed?
-ngoals1 &lt;- xtabs(~ HomeGoals, data = Bundesliga, subset = Year == 1995)
-ngoals2 &lt;- xtabs(~ AwayGoals, data = Bundesliga, subset = Year == 1995)
-ngoals3 &lt;- table(apply(subset(Bundesliga, Year == 1995)[,3:4], 1, sum))
-
-gf1 &lt;- goodfit(ngoals1)
-gf2 &lt;- goodfit(ngoals2)
-gf3 &lt;- goodfit(ngoals3)
-
-summary(gf1)
-summary(gf2)
-summary(gf3)
-plot(gf1)
-plot(gf2)
-plot(gf3)
-
-Ord_plot(ngoals1)
-distplot(ngoals1)
 </pre>
 
 

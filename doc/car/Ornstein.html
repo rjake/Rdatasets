@@ -1,75 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Average Heights and Weights for American Women</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Interlocking Directorates Among Major Canadian Firms</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for women"><tr><td>women</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Ornstein"><tr><td>Ornstein</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Average Heights and Weights for American Women</h2>
+<h2>Interlocking Directorates Among Major Canadian Firms</h2>
 
 <h3>Description</h3>
 
-<p>This data set gives the average heights and weights for American women
-aged 30&ndash;39.
+<p>The <code>Ornstein</code> data frame has 248 rows and 4 columns.
+The observations are the 248 largest Canadian firms with
+publicly available information in the mid-1970s. The names
+of the firms were not available.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>women</pre>
+<pre>
+Ornstein
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 15 observations on 2 variables.
+<p>This data frame contains the following columns:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>[,1]</code>  </td><td style="text-align: left;"> <code>height</code>  </td><td style="text-align: left;"> numeric  </td><td style="text-align: left;"> Height (in)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>[,2]</code>  </td><td style="text-align: left;"> <code>weight</code>  </td><td style="text-align: left;"> numeric  </td><td style="text-align: left;"> Weight (lbs)
-  </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>The data set appears to have been taken from the American Society of
-Actuaries <em>Build and Blood Pressure Study</em> for some (unknown to
-us) earlier year.
+<dl>
+<dt>assets</dt><dd>
+<p>Assets in millions of dollars.
 </p>
-<p>The World Almanac notes: &ldquo;The figures represent weights in
-ordinary indoor clothing and shoes, and heights with shoes&rdquo;.
+</dd>
+<dt>sector</dt><dd>
+<p>Industrial sector.
+A factor with levels:
+<code>AGR</code>, agriculture, food, light industry;
+<code>BNK</code>, banking; 
+<code>CON</code>, construction; 
+<code>FIN</code>, other financial;
+<code>HLD</code>, holding companies; 
+<code>MAN</code>, heavy manufacturing; 
+<code>MER</code>, merchandizing;
+<code>MIN</code>, mining, metals, etc.;
+<code>TRN</code>, transport;
+<code>WOD</code>, wood and paper.
 </p>
+</dd>
+<dt>nation</dt><dd>
+<p>Nation of control.
+A factor with levels:
+<code>CAN</code>, Canada;
+<code>OTH</code>, other foreign;
+<code>UK</code>, Britain;
+<code>US</code>, United States.
+</p>
+</dd>
+<dt>interlocks</dt><dd>
+<p>Number of interlocking director and executive positions shared with
+other major firms.
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>The World Almanac and Book of Facts, 1975.</p>
+<p>Ornstein, M. (1976) 
+The boards and executives of the largest Canadian corporations. 
+<em>Canadian Journal of Sociology</em> <b>1</b>, 411&ndash;437.
+</p>
+<p>Personal communication from M. Ornstein, Department of Sociology,
+York University.
+</p>
 
 
 <h3>References</h3>
 
-<p>McNeil, D. R. (1977)
-<em>Interactive Data Analysis</em>.
-Wiley.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(graphics)
-plot(women, xlab = "Height (in)", ylab = "Weight (lb)",
-     main = "women data: American women aged 30-39")
-</pre>
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+</p>
 
 
 </body></html>

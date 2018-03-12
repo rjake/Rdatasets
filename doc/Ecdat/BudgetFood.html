@@ -1,45 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Davis's Data on Drive for Thinness</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Budget Share of Food for Spanish Households</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for DavisThin"><tr><td>DavisThin</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for BudgetFood"><tr><td>BudgetFood</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Davis's Data on Drive for Thinness</h2>
+<h2>Budget Share of Food for Spanish Households </h2>
 
 <h3>Description</h3>
 
-<p>The <code>DavisThin</code> data frame has 191 rows and 7 columns.
-This is part of a larger dataset for a study of eating disorders.
-The seven variables in the data frame comprise a &quot;drive for thinness&quot;
-scale, to be formed by summing the items.
+<p>a cross-section from 1980
+</p>
+<p><em>number of observations</em> :  23972
+</p>
+<p><em>observation</em> :  households
+</p>
+<p><em>country</em> :  Spain
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>DavisThin</pre>
+<pre>data(BudgetFood)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>DT1</dt><dd><p>a numeric vector</p>
+<dt>wfood</dt><dd><p>percentage of total expenditure which the household has spent on food</p>
 </dd>
-<dt>DT2</dt><dd><p>a numeric vector</p>
+<dt>totexp</dt><dd><p>total expenditure of the household</p>
 </dd>
-<dt>DT3</dt><dd><p>a numeric vector</p>
+<dt>age</dt><dd><p>age of reference person in the household</p>
 </dd>
-<dt>DT4</dt><dd><p>a numeric vector</p>
+<dt>size</dt><dd><p>size of the household</p>
 </dd>
-<dt>DT5</dt><dd><p>a numeric vector</p>
+<dt>town</dt><dd><p>size of the town where the household is placed  categorised into 5 groups: 1 for small towns, 5 for big ones</p>
 </dd>
-<dt>DT6</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>DT7</dt><dd><p>a numeric vector</p>
+<dt>sex</dt><dd><p>sex of reference person (man,woman)</p>
 </dd>
 </dl>
 
@@ -47,19 +48,19 @@ scale, to be formed by summing the items.
 
 <h3>Source</h3>
 
-<p>Davis, C., G. Claridge, and D. Cerullo (1997) 
-Personality factors 
-predisposing to weight preoccupation: A continuum approach to the 
-association between eating disorders and personality disorders. 
-<em>Journal of Psychiatric Research</em> <b>31</b>, 467&ndash;480. [personal communication from the authors.]
+<p>Delgado, A.  and  Juan  Mora (1998) &ldquo;Testing non&ndash;nested semiparametric models : an application to Engel curves specification&rdquo;, <em>Journal of Applied Econometrics</em>, <b>13(2)</b>, 145&ndash;162.
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. and Weisberg, S. (2011) 
-<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
 </p>
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

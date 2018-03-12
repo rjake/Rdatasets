@@ -1,69 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth curves of pigs in a 3x3 factorial experiment</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: CancerSurvival</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for dietox"><tr><td>dietox</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for CancerSurvival"><tr><td>CancerSurvival</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Growth curves of pigs in a 3x3 factorial experiment</h2>
+<h2>CancerSurvival</h2>
 
 <h3>Description</h3>
 
-<p>The <code>dietox</code> data frame has 861 rows and 7 columns.
+<p>Cancer survival with ascorbate supplement
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>data(dietox)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A dataset with 64 observations on the following 2 variables.
 </p>
 
-<dl>
-<dt>Weight</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>Feed</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>Time</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>Pig</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>Evit</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>Cu</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>Litter</dt><dd><p>a numeric vector</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>Survival</code> </td><td style="text-align: left;"> Survival time (in days)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Organ</code> </td><td style="text-align: left;"> <code>Breast</code>, <code>Bronchus</code>, <code>Colon</code>, <code>Ovary</code>, or <code>Stomach</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
 
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>In the 1970's doctors wondered if giving terminal cancer patients a supplement of ascorbate would
+prolong their lives. They designed an experiment to compare cancer patients who received ascorbate
+to cancer patients who did not receive the supplement. The result of that experiment was that, in
+fact, ascorbate did seem to prolong the lives of these patients. But then a second question arose.
+Was the effect of the ascorbate different when different organs were affected by the cancer? The
+researchers took a second look at the data. This time they concentrated only on those patients who
+received the ascorbate and divided the data up by which organ was affected by the cancer. They
+had 5 different organs represented among the patients (all of whom only had one organ affected):
+Stomach, bronchus, colon, ovary, and breast.
+</p>
 
 
 <h3>Source</h3>
 
-<p>Lauridsen, C., Højsgaard, S.,Sørensen, M.T. C. (1999) Influence of
-Dietary Rapeseed Oli, Vitamin E, and Copper on Performance and
-Antioxidant and Oxidative Status of Pigs. J. Anim. Sci.77:906-916
+<p>From the article &quot;Supplemental Ascorbate in the Supportive Treatment of Cancer: Reevaluation of Prolongation
+of Survival Times in Terminal Human Cancer&quot; by Ewan Cameron and Linus Pauling, Proceedings of the National
+Academy of Sciences of the United States of America, Vol. 75, No. 9 (Sep., 1978), pp. 4538-4542.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(dietox)
-dietox$Cu     &lt;- as.factor(dietox$Cu)
-gee01 &lt;- geeglm (Weight ~ Time + Cu + Cu * Time, id =Pig, data = dietox,
-         family=gaussian,corstr="ex")
-
-mf &lt;- formula(Weight~Cu*(Time+I(Time^2)+I(Time^3)))
-gee1 &lt;- geeglm(mf, data=dietox, id=Pig, family=poisson("identity"),corstr="ar1")
-summary(gee1)
-anova(gee1)
-
-</pre>
 
 
 </body></html>

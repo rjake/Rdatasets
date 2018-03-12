@@ -1,46 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gasoline Consumption</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Effect of Calcium Chloride on Muscle Contraction in Rat...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Gasoline"><tr><td>Gasoline</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for muscle"><tr><td>muscle</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Gasoline Consumption</h2>
+<h2>
+Effect of Calcium Chloride on Muscle Contraction in Rat Hearts
+</h2>
 
 <h3>Description</h3>
 
-<p>A panel of 18 observations from 1960 to 1978
-</p>
-<p><em>total number of observations</em> :  342
-</p>
-<p><em>observation</em> :  country
-</p>
-<p><em>country</em> :  OECD
+<p>The purpose of this experiment was to assess the influence of
+calcium in solution on the contraction of heart muscle in rats.
+The left auricle of 21 rat hearts was isolated and on several
+occasions a constant-length strip of tissue was electrically
+stimulated and dipped into various concentrations of calcium
+chloride solution, after which the shortening of the strip was
+accurately measured as the response.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Gasoline)</pre>
+<pre>
+muscle
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing :
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt>country</dt><dd><p>a factor with 18 levels</p>
+<dt><code>Strip</code></dt><dd>
+<p>which heart muscle strip was used?
+</p>
 </dd>
-<dt>year</dt><dd><p>the year</p>
+<dt><code>Conc</code></dt><dd>
+<p>concentration of calcium chloride solution, in multiples of 2.2 mM.
+</p>
 </dd>
-<dt>lgaspcar</dt><dd><p>logarithm of motor gasoline consumption per car</p>
-</dd>
-<dt>lincomep</dt><dd><p>logarithm of real per-capita income</p>
-</dd>
-<dt>lrpmg</dt><dd><p>logarithm of real motor gasoline price</p>
-</dd>
-<dt>lcarpcap</dt><dd><p>logarithm of the stock of cars per capita</p>
+<dt><code>Length</code></dt><dd>
+<p>the change in length (shortening) of the strip, (allegedly) in mm.
+</p>
 </dd>
 </dl>
 
@@ -48,26 +52,51 @@
 
 <h3>Source</h3>
 
-<p>Online complements to Baltagi (2001):
-</p>
-<p><a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>
-</p>
-<p>Online complements to Baltagi (2013):
-</p>
-<p><a href="http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452">http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452</a>
+<p>Linder, A., Chakravarti, I. M. and Vuagnat, P. (1964)
+Fitting asymptotic regression curves with different asymptotes.  In
+<em>Contributions to Statistics. Presented to Professor P. C. Mahalanobis
+on the occasion of his 70th birthday</em>,
+ed. C. R. Rao, pp. 221&ndash;228. Oxford: Pergamon Press.
 </p>
 
 
 <h3>References</h3>
 
-<p>Baltagi, Badi H. (2001) <em>Econometric Analysis of Panel Data</em>, 2nd ed., John Wiley and Sons.
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth Edition. Springer.
 </p>
-<p>Baltagi, Badi H. (2013) <em>Econometric Analysis of Panel Data</em>, 5th ed., John Wiley and Sons.
-</p>
-<p>Baltagi, B.H.  and  J.M. Griffin (1983) &ldquo;Gasoline demand in the OECD: 
-An application of pooling and testing procedures&rdquo;, <em>European Economic Review</em>, 
-<b>22</b>(2), pp. 117&ndash;137.
-</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+A &lt;- model.matrix(~ Strip - 1, data=muscle)
+rats.nls1 &lt;- nls(log(Length) ~ cbind(A, rho^Conc),
+   data = muscle, start = c(rho=0.1), algorithm="plinear")
+(B &lt;- coef(rats.nls1))
+
+st &lt;- list(alpha = B[2:22], beta = B[23], rho = B[1])
+(rats.nls2 &lt;- nls(log(Length) ~ alpha[Strip] + beta*rho^Conc,
+                  data = muscle, start = st))
+
+Muscle &lt;- with(muscle, {
+Muscle &lt;- expand.grid(Conc = sort(unique(Conc)), Strip = levels(Strip))
+Muscle$Yhat &lt;- predict(rats.nls2, Muscle)
+Muscle &lt;- cbind(Muscle, logLength = rep(as.numeric(NA), 126))
+ind &lt;- match(paste(Strip, Conc),
+            paste(Muscle$Strip, Muscle$Conc))
+Muscle$logLength[ind] &lt;- log(Length)
+Muscle})
+
+lattice::xyplot(Yhat ~ Conc | Strip, Muscle, as.table = TRUE,
+   ylim = range(c(Muscle$Yhat, Muscle$logLength), na.rm = TRUE),
+   subscripts = TRUE, xlab = "Calcium Chloride concentration (mM)",
+   ylab = "log(Length in mm)", panel =
+   function(x, y, subscripts, ...) {
+      panel.xyplot(x, Muscle$logLength[subscripts], ...)
+      llines(spline(x, y))
+   })
+</pre>
 
 
 </body></html>

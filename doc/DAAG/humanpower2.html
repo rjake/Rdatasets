@@ -1,73 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Minor Head Injury (Simulated) Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Oxygen uptake versus mechanical power, for humans</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for headInjury"><tr><td>headInjury</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for humanpower"><tr><td>humanpower</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Minor Head Injury (Simulated) Data</h2>
+<h2>Oxygen uptake versus mechanical power, for humans</h2>
 
 <h3>Description</h3>
 
-<p>The <code>headInjury</code> data frame has 3121 rows and 11 columns.
-The data were simulated according to a simple logistic
-regression model to match roughly the clinical characteristics
-of a sample of individuals who suffered minor head injuries.
+<p>The data set from Daedalus project.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>headInjury</pre>
+<pre>data(humanpower1)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 28 observations on the following 3 variables.
 </p>
 
 <dl>
-<dt>age.65</dt><dd><p>age factor (0 = under 65, 1 = over 65).</p>
+<dt>wattsPerKg</dt><dd><p>a numeric vector: watts per kilogram of body weight</p>
 </dd>
-<dt>amnesia.before</dt><dd><p>amnesia before impact (less than 30 minutes = 0, 
-more 
-than 30 minutes =1).</p>
+<dt>o2</dt><dd><p>a numeric vector: ml/min/kg</p>
 </dd>
-<dt>basal.skull.fracture</dt><dd><p>(0 = no fracture, 1 = fracture).</p>
-</dd>
-<dt>GCS.decrease</dt><dd><p>Glasgow Coma Scale decrease (0 = no 
-deterioration, 1 = deterioration).</p>
-</dd>
-<dt>GCS.13</dt><dd><p>initial Glasgow Coma Scale (0 = not &lsquo;13&rsquo;, 1 = &lsquo;13&rsquo;). </p>
-</dd>
-<dt>GCS.15.2hours</dt><dd><p>Glasgow Coma Scale after 2 hours
-(0 = not &lsquo;15&rsquo;, 1 = '15').</p>
-</dd>
-<dt>high.risk</dt><dd><p>assessed by clinician as high risk for neurological
-intervention (0 = not high risk, 1 = high risk).</p>
-</dd>
-<dt>loss.of.consciousness</dt><dd><p>(0 = conscious, 1 = loss of 
-consciousness).</p>
-</dd>
-<dt>open.skull.fracture</dt><dd><p>(0 = no fracture, 1 = fracture) </p>
-</dd>
-<dt>vomiting</dt><dd><p>(0 = no vomiting, 1 = vomiting)</p>
-</dd>
-<dt>clinically.important.brain.injury</dt><dd><p>any acute brain finding
-revealed on CT (0 = not present, 1 = present).</p>
+<dt>id</dt><dd><p>a factor with levels 1 - 5 (<code>humanpower1</code>)
+or 1 - 4 (<code>humanpower2</code>), identifying the different athletes</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>Data in <code>humanpower1</code> are from investigations (Bussolari 1987)
+designed to assess the feasibility of a proposed 119 kilometer human
+powered flight from the island of Crete &ndash; in the initial phase of the
+Daedalus project.  Data are for five athletes
+&ndash; a female hockey player, a male amateur tri-athlete, a female
+amateur triathlete, a male wrestler and a male cyclist &ndash; who were
+selected from volunteers who were recruited through the news media,
+Data in <code>humanpower2) are for four out of the 25 applicants who
+    were selected for further testing, in the lead-up to the eventual
+    selection of a pilot for the Daedalus project (Nadel and Bussolari 1988).
+</code>
+</p>
+
+
+<h3>Source</h3>
+
+<p>Bussolari, S.R.(1987). Human factors of long-distance human-powered
+aircraft flights.  Human Power 5: 8-12.
+</p>
+<p>Nadel and Bussolari, S.R.(1988). The Daedalus project: physiological
+problems and solutions.  American Scientist 76: 351-360.
+</p>
+
+
 <h3>References</h3>
 
-<p>Stiell, I.G., Wells, G.A., Vandemheen, K., Clement, C., Lesiuk, H.,
-Laupacis, A., McKnight, R.D., Verbee, R., Brison, R., Cass, D., 
-Eisenhauer, M., Greenberg, G.H., and Worthington, J. (2001) 
-The Canadian CT Head Rule for Patients with Minor Head Injury,
-The Lancet. 357: 1391-1396. 
+<p>Nadel and Bussolari, S.R.(1989). The physiological limits of
+long-duration human-power production &ndash; lessons learned from
+the Daedalus project.  Human Power 7: 7-10.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+str(humanpower1)
+plot(humanpower1)
+lm(o2 ~ id + wattsPerKg:id, data=humanpower1)
+lm(o2 ~ id + wattsPerKg:id, data=humanpower2)
+</pre>
 
 
 </body></html>

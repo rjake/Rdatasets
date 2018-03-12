@@ -1,46 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Alcohol Solubility in Water Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Classical N, P, K Factorial Experiment</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for alcohol"><tr><td>alcohol</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for npk"><tr><td>npk</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Alcohol Solubility in Water Data</h2>
+<h2>
+Classical N, P, K Factorial Experiment
+</h2>
 
 <h3>Description</h3>
 
-<p>The solubility of alcohols in water is important in understanding
-alcohol transport in living organisms.  This dataset from (Romanelli
-et al., 2001) contains physicochemical characteristics of 44 aliphatic
-alcohols.  The aim of the experiment was the prediction of the
-solubility on the basis of molecular descriptors.
+<p>A classical N, P, K (nitrogen, phosphate, potassium) factorial
+experiment on the growth of peas conducted on 6 blocks. Each half of a
+fractional factorial design confounding the NPK interaction was used
+on 3 of the plots.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(alcohol)</pre>
+<pre>
+npk
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 44 observations on the following 7 numeric variables.
+<p>The <code>npk</code> data frame has 24 rows and 5 columns:
 </p>
 
 <dl>
-<dt><code>SAG</code></dt><dd><p>solvent accessible surface-bounded molecular volume.</p>
+<dt><code>block</code></dt><dd>
+<p>which block (label 1 to 6).
+</p>
 </dd>
-<dt><code>V</code></dt><dd><p>volume</p>
+<dt><code>N</code></dt><dd>
+<p>indicator (0/1) for the application of nitrogen.
+</p>
 </dd>
-<dt><code>logPC</code></dt><dd><p>Log(PC); PC = octanol-water partitions coefficient</p>
+<dt><code>P</code></dt><dd>
+<p>indicator (0/1) for the application of phosphate.
+</p>
 </dd>
-<dt><code>P</code></dt><dd><p>polarizability</p>
+<dt><code>K</code></dt><dd>
+<p>indicator (0/1) for the application of potassium.
+</p>
 </dd>
-<dt><code>RM</code></dt><dd><p>molar refractivity</p>
-</dd>
-<dt><code>Mass</code></dt><dd><p>the mass</p>
-</dd>
-<dt><code>logSolubility</code></dt><dd><p>ln(Solubility), the response.</p>
+<dt><code>yield</code></dt><dd>
+<p>Yield of peas, in pounds/plot (the plots were (1/70) acre).
+</p>
 </dd>
 </dl>
 
@@ -48,29 +57,30 @@ solubility on the basis of molecular descriptors.
 
 <h3>Source</h3>
 
-<p>The website accompanying the MMY-book:
-<a href="http://www.wiley.com/legacy/wileychi/robust_statistics">http://www.wiley.com/legacy/wileychi/robust_statistics</a>
+<p>Imperial College, London, M.Sc. exercise sheet.
 </p>
 
 
 <h3>References</h3>
 
-
-
-
-
-<p>Maronna, R.A., Martin, R.D. and Yohai, V.J. (2006)
-<em>Robust Statistics, Theory and Methods</em>, Wiley.
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(alcohol)
-## version of data set with trivial names, as
-s.alcohol &lt;- alcohol
-names(s.alcohol) &lt;- paste("Col", 1:7, sep='')
+options(contrasts = c("contr.sum", "contr.poly"))
+npk.aov &lt;- aov(yield ~ block + N*P*K, npk)
+npk.aov
+summary(npk.aov)
+coef(npk.aov)
+options(contrasts = c("contr.treatment", "contr.poly"))
+npk.aov1 &lt;- aov(yield ~ block + N + K, data = npk)
+summary.lm(npk.aov1)
+se.contrast(npk.aov1, list(N=="0", N=="1"), data = npk)
+model.tables(npk.aov1, type = "means", se = TRUE)
 </pre>
 
 

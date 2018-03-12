@@ -1,97 +1,85 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Paste strength by batch and cask</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: FruitFlies</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Pastes"><tr><td>Pastes</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for FruitFlies"><tr><td>FruitFlies</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Paste strength by batch and cask</h2>
+<h2>FruitFlies</h2>
 
 <h3>Description</h3>
 
-<p>Strength of a chemical paste product; its quality
-depending on the delivery batch, and the cask within the
-delivery.
+<p>Sexual activity and lifetimes of fruit flies
 </p>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 60 observations on the following 4 variables.
+<p>A dataset with 125 observations on the following 7 variables.
 </p>
 
-<dl>
-<dt><code>strength</code></dt><dd><p>paste strength.</p>
-</dd>
-<dt><code>batch</code></dt><dd><p>delivery batch from which the sample was
-sample.  A factor with 10 levels: &lsquo;A&rsquo; to &lsquo;J&rsquo;.</p>
-</dd>
-<dt><code>cask</code></dt><dd><p>cask within the delivery batch from which the
-sample was chosen.  A factor with 3 levels: &lsquo;a&rsquo; to
-&lsquo;c&rsquo;.</p>
-</dd>
-<dt><code>sample</code></dt><dd><p>the sample of paste whose strength was assayed,
-two assays per sample. A factor with 30 levels: &lsquo;A:a&rsquo; to
-&lsquo;J:c&rsquo;.</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>ID</code> </td><td style="text-align: left;"> a numeric vector</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Partners</code> </td><td style="text-align: left;"> Number of female partners: 0, 1, or 8</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Type</code> </td><td style="text-align: left;"> <code>0</code>=pregnant, <code>1</code>=virgin, <code>9</code>=none</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Longevity</code> </td><td style="text-align: left;"> Lifespan (in days)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Thorax</code> </td><td style="text-align: left;"> Length of thorax (in mm)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Sleep</code> </td><td style="text-align: left;"> Percent of day sleeping</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+   <code>Treatment</code> </td><td style="text-align: left;"> <code>1 pregnant</code>, <code>1 virgin</code>, <code>8 pregnant</code>, <code>8 virgin</code>, or <code>none</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
 
 
 <h3>Details</h3>
 
-<p>The data are described in Davies and Goldsmith (1972) as
-coming from &ldquo; deliveries of a chemical paste
-product contained in casks where, in addition to sampling
-and testing errors, there are variations in quality
-between deliveries ... As a routine, three casks
-selected at random from each delivery were sampled and
-the samples were kept for reference. ... Ten of the
-delivery batches were sampled at random and two
-analytical tests carried out on each of the 30 samples&rdquo;.
+<p>Hanley and Shapiro (1994) report on a
+study conducted by Partridge and Farquhar (1981) about the sexual behavior of fruit flies. It was
+already known that increased reproduction leads to shorter life spans for female fruit flies. But the
+question remained whether an increase in sexual activity would also reduce the life spans of male
+fruit flies. The researchers designed an experiment to answer this question. They had a total of
+125 male fruit flies to use and they randomly assigned each of the 125 to one of the following five
+groups.
 </p>
 
 
 <h3>Source</h3>
 
-<p>O.L. Davies and P.L. Goldsmith (eds), <em>Statistical
-Methods in Research and Production, 4th ed.</em>, Oliver and
-Boyd, (1972), section 6.5
+<p>The data are given as part of the data archive on the Journal of Statistics Education website
+and can be found on the page http://www.amstat.org/publications/jse/jse_data_archive.htm.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-str(Pastes)
-require(lattice)
-dotplot(cask ~ strength | reorder(batch, strength), Pastes,
-        strip = FALSE, strip.left = TRUE, layout = c(1, 10),
-        ylab = "Cask within batch",
-        xlab = "Paste strength", jitter.y = TRUE)
-## Modifying the factors to enhance the plot
-Pastes &lt;- within(Pastes, batch &lt;- reorder(batch, strength))
-Pastes &lt;- within(Pastes, sample &lt;- reorder(reorder(sample, strength),
-          as.numeric(batch)))
-dotplot(sample ~ strength | batch, Pastes,
-        strip = FALSE, strip.left = TRUE, layout = c(1, 10),
-        scales = list(y = list(relation = "free")),
-        ylab = "Sample within batch",
-        xlab = "Paste strength", jitter.y = TRUE)
-## Four equivalent models differing only in specification
-(fm1 &lt;- lmer(strength ~ (1|batch) + (1|sample), Pastes))
-(fm2 &lt;- lmer(strength ~ (1|batch/cask), Pastes))
-(fm3 &lt;- lmer(strength ~ (1|batch) + (1|batch:cask), Pastes))
-(fm4 &lt;- lmer(strength ~ (1|batch/sample), Pastes))
-## fm4 results in redundant labels on the sample:batch interaction
-head(ranef(fm4)[[1]])
-## compare to fm1
-head(ranef(fm1)[[1]])
-## This model is different and NOT appropriate for these data
-(fm5 &lt;- lmer(strength ~ (1|batch) + (1|cask), Pastes))
-
-L &lt;- getME(fm1, "L")
-Matrix::image(L, sub = "Structure of random effects interaction in pastes model")
-</pre>
+<p>Hanley and Hapiro, &quot;Sexual Activity and the Lifespan of Male Fruitflies: A Dataset That Gets Attention,&quot; Journal of Statistics Education
+v.2, n.1, (1994), http://www.amstat.org/publications/jse/v2n1/datasets.hanley.html
+</p>
 
 
 </body></html>

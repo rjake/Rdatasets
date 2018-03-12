@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monthly Returns from the CRSP Database</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Orange Juice Data Set</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for CRSPmon"><tr><td>CRSPmon</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Orange"><tr><td>Orange</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Monthly Returns from the CRSP Database </h2>
+<h2>The Orange Juice Data Set </h2>
 
 <h3>Description</h3>
 
-<p>monthly observations from 1969-1 to 1998-12
+<p>monthly observations from 1948-01 to 2001-06
 </p>
-<p><em>number of observations</em> :  360
+<p><em>number of observations</em> :  642
 </p>
-<p><em>observation</em> :  production units
+<p><em>observation</em> :  country
 </p>
 <p><em>country</em> :  United States
 </p>
@@ -21,7 +21,7 @@
 
 <h3>Usage</h3>
 
-<pre>data(CRSPmon)</pre>
+<pre>data(Orange)</pre>
 
 
 <h3>Format</h3>
@@ -30,13 +30,11 @@
 </p>
 
 <dl>
-<dt>ge</dt><dd><p>the return for General Electric, Permno 12060</p>
+<dt>priceoj</dt><dd><p>producer price for frozen orange juice</p>
 </dd>
-<dt>ibm</dt><dd><p> the return for IBM, Permno 12490</p>
+<dt>pricefg</dt><dd><p>producer price index for finished goods</p>
 </dd>
-<dt>mobil</dt><dd><p>the return for Mobil Corporation, Permno 15966</p>
-</dd>
-<dt>crsp</dt><dd><p> the return for the CRSP value-weighted index, including  dividends</p>
+<dt>fdd</dt><dd><p>freezing degree days (from daily minimum temperature recorded at Orlando area airports)</p>
 </dd>
 </dl>
 
@@ -44,13 +42,13 @@
 
 <h3>Source</h3>
 
-<p>Center for Research in Security Prices, Graduate School of  Business, University of Chicago,  725 South Wells - Suite 800,  Chicago, Illinois  60607,  <a href="http://www.crsp.com">http://www.crsp.com</a>.
+<p>U.S. Bureau of Labor Statistics for PPIOJ and PWFSA, National Oceanic and Atmospheric Administration (NOAA) of the U.S Department of Commerce for FDD.
 </p>
 
 
 <h3>References</h3>
 
-<p>Davidson, R.  and  James G.  MacKinnon (2004) <em>Econometric Theory and Methods</em>, New York, Oxford University Press, <a href="http://www.econ.queensu.ca/ETM/">http://www.econ.queensu.ca/ETM/</a>, chapter 13.
+<p>Stock, James H.  and  Mark W.  Watson (2003) <em>Introduction to Econometrics</em>, Addison-Wesley Educational Publishers.
 </p>
 
 

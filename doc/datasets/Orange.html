@@ -1,118 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Biomass Tillage Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth of Orange Trees</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for biomassTill"><tr><td>biomassTill</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Orange"><tr><td>Orange</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Biomass Tillage Data</h2>
+<h2>Growth of Orange Trees</h2>
 
 <h3>Description</h3>
 
-<p>An agricultural experiment in which different tillage methods were
-implemented. The effects of tillage on plant (maize) biomass were
-subsequently determined by modeling biomass accumulation for each
-tillage treatment using a 3 parameter Weibull function.
-</p>
-<p>A datset where the total biomass is modeled conditional on a
-three value factor, and hence <em>vector</em> parameters are used.
+<p>The <code>Orange</code> data frame has 35 rows and 3 columns of records of
+the growth of orange trees.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("biomassTill")</pre>
+<pre>Orange</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 58 observations on the following 3 variables.
+<p>An object of class
+<code>c("nfnGroupedData", "nfGroupedData", "groupedData", "data.frame")</code>
+containing the following columns:
 </p>
 
 <dl>
-<dt><code>Tillage</code></dt><dd><p>Tillage treatments, a <code>factor</code>
-with levels </p>
-
-<dl>
-<dt><code>CA-</code>:</dt><dd><p>a no-tillage system with plant residues removed</p>
+<dt>Tree</dt><dd>
+<p>an ordered factor indicating the tree on which the measurement is
+made.  The ordering is according to increasing maximum diameter.
+</p>
 </dd>
-<dt><code>CA+</code>:</dt><dd><p>a no-tillage system with plant residues retained</p>
+<dt>age</dt><dd>
+<p>a numeric vector giving the age of the tree (days since 1968/12/31)
+</p>
 </dd>
-<dt><code>CT</code>:</dt><dd><p>a conventionally tilled system with residues incorporated</p>
-</dd>
-</dl>
-
-</dd>
-<dt><code>DVS</code></dt><dd><p>the development stage of the maize crop.  A DVS of
-<code>1</code> represents maize anthesis (flowering), and a DVS of <code>2</code>
-represents physiological maturity.   For the data, numeric vector with
-5 different values between 0.5 and 2.</p>
-</dd>
-<dt><code>Biomass</code></dt><dd><p>accumulated biomass of maize plants from each
-tillage treatment.</p>
-</dd>
-<dt><code>Biom.2</code></dt><dd><p>the same as <code>Biomass</code>, but with three
-values replaced by &ldquo;gross errors&rdquo;.</p>
+<dt>circumference</dt><dd>
+<p>a numeric vector of trunk circumferences (mm).  This is probably
+&ldquo;circumference at breast height&rdquo;, a standard measurement in
+forestry.
+</p>
 </dd>
 </dl>
 
+
+
+<h3>Details</h3>
+
+<p>This dataset was originally part of package <code>nlme</code>, and that has
+methods (including for <code>[</code>, <code>as.data.frame</code>, <code>plot</code> and
+<code>print</code>) for its grouped-data classes.
+</p>
 
 
 <h3>Source</h3>
 
-<p>From Strahinja Stepanovic and John Laborde, Department of Agronomy &amp;
-Horticulture, University of Nebraska-Lincoln, USA
+<p>Draper, N. R. and Smith, H. (1998), <em>Applied Regression Analysis
+(3rd ed)</em>, Wiley (exercise 24.N).
+</p>
+<p>Pinheiro, J. C. and Bates, D. M. (2000) <em>Mixed-effects Models
+in S and S-PLUS</em>, Springer.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(biomassTill)
-str(biomassTill)
-require(lattice)
-## With long tailed errors
-xyplot(Biomass ~ DVS | Tillage, data = biomassTill, type=c("p","smooth"))
-## With additional 2 outliers:
-xyplot(Biom.2 ~ DVS | Tillage, data = biomassTill, type=c("p","smooth"))
-
-### Fit nonlinear Regression models: -----------------------------------
-
-## simple starting values, needed:
-m00st &lt;- list(Wm = rep(300,  3),
-               a = rep( 1.5, 3),
-               b = rep( 2.2, 3))
-
-robm &lt;- nlrob(Biomass ~ Wm[Tillage] * (-expm1(-(DVS/a[Tillage])^b[Tillage])),
-              data = biomassTill, start = m00st, maxit = 200)
-##                                               -----------
-summary(robm) ## ... 103 IRWLS iterations
-plot(sort(robm$rweights), log = "y",
-     main = "ordered robustness weights (log scale)")
-mtext(getCall(robm))
-
-## the classical (only works for the mild outliers):
-cl.m &lt;- nls(Biomass ~ Wm[Tillage] * (-expm1(-(DVS/a[Tillage])^b[Tillage])),
-            data = biomassTill, start = m00st)
-
-## now for the extra-outlier data: -- fails with singular gradient !!
-try(
-rob2 &lt;- nlrob(Biom.2 ~ Wm[Tillage] * (-expm1(-(DVS/a[Tillage])^b[Tillage])),
-              data = biomassTill, start = m00st)
-)
-## use better starting values:
-m1st &lt;- setNames(as.list(as.data.frame(matrix(
-                coef(robm), 3))),
-                c("Wm", "a","b"))
-try(# just breaks a bit later!
-rob2 &lt;- nlrob(Biom.2 ~ Wm[Tillage] * (-expm1(-(DVS/a[Tillage])^b[Tillage])),
-              data = biomassTill, start = m1st, maxit= 200, trace=TRUE)
-)
-
-## Comparison  {more to come} % once we have  "MM" working...
-rbind(start = unlist(m00st),
-      class = coef(cl.m),
-      rob   = coef(robm))
+require(stats); require(graphics)
+coplot(circumference ~ age | Tree, data = Orange, show.given = FALSE)
+fm1 &lt;- nls(circumference ~ SSlogis(age, Asym, xmid, scal),
+           data = Orange, subset = Tree == 3)
+plot(circumference ~ age, data = Orange, subset = Tree == 3,
+     xlab = "Tree age (days since 1968/12/31)",
+     ylab = "Tree circumference (mm)", las = 1,
+     main = "Orange tree data and fitted model (Tree 3 only)")
+age &lt;- seq(0, 1600, length.out = 101)
+lines(age, predict(fm1, list(age = age)))
 </pre>
 
 

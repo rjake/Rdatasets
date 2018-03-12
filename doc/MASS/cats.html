@@ -1,25 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Age of Menarche in Warsaw</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Anatomical Data from Domestic Cats</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for menarche"><tr><td>menarche</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for cats"><tr><td>cats</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Age of Menarche in Warsaw
+Anatomical Data from Domestic Cats
 </h2>
 
 <h3>Description</h3>
 
-<p>Proportions of female children at various ages during adolescence
-who have reached menarche.
+<p>The heart and body weights of samples of male and female cats used for
+<em>digitalis</em> experiments.  The cats were all adult, over 2 kg body weight.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-menarche
+cats
 </pre>
 
 
@@ -29,16 +29,16 @@ menarche
 </p>
 
 <dl>
-<dt><code>Age</code></dt><dd>
-<p>Average age of the group.  (The groups are reasonably age homogeneous.)
+<dt><code>Sex</code></dt><dd>
+<p>sex: Factor with evels <code>"F"</code> and <code>"M"</code>.
 </p>
 </dd>
-<dt><code>Total</code></dt><dd>
-<p>Total number of children in the group.
+<dt><code>Bwt</code></dt><dd>
+<p>body weight in kg.
 </p>
 </dd>
-<dt><code>Menarche</code></dt><dd>
-<p>Number who have reached menarche.
+<dt><code>Hwt</code></dt><dd>
+<p>heart weight in g.
 </p>
 </dd>
 </dl>
@@ -47,14 +47,8 @@ menarche
 
 <h3>Source</h3>
 
-<p>Milicer, H. and Szczotka, F. (1966) Age at Menarche in Warsaw girls in
-1965.
-<em>Human Biology</em> <b>38</b>, 199&ndash;203.
-</p>
-<p>The data are also given in<br />
-Aranda-Ordaz, F.J. (1981)
-On two families of transformations to additivity for binary response data.
-<em>Biometrika</em> <b>68</b>, 357&ndash;363.
+<p>R. A. Fisher (1947) The analysis of covariance method for the relation
+between a part and the whole, <em>Biometrics</em> <b>3</b>, 65&ndash;68.
 </p>
 
 
@@ -63,14 +57,6 @@ On two families of transformations to additivity for binary response data.
 <p>Venables, W. N. and Ripley, B. D. (2002)
 <em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-mprob &lt;- glm(cbind(Menarche, Total - Menarche) ~ Age,
-             binomial(link = probit), data = menarche)
-</pre>
 
 
 </body></html>

@@ -1,59 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Political</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Families in Saxony</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Political"><tr><td>Political</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Saxony"><tr><td>Saxony</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Political</h2>
+<h2>Families in Saxony</h2>
 
 <h3>Description</h3>
 
-<p>Survey of political activity for Grinnell College students
+<p>Data from Geissler, cited in Sokal &amp; Rohlf (1969) and Lindsey (1995)
+on gender distributions in families in Saxony in the 19th century.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data("Saxony")
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 59 observations on the following 9 variables.
+<p>A 1-way table giving the number of male children in 6115 families of
+size 12.  The variable and its levels are
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>Year</code> </td><td style="text-align: left;"> Class year (1 to 4)</td>
+    No </td><td style="text-align: left;"> Name </td><td style="text-align: left;"> Levels </td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Sex</code> </td><td style="text-align: left;"> <code>0</code>=male or <code>1</code>=female</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Vote</code> </td><td style="text-align: left;"> Voting status: <code>0</code>=not eligible, <code>1</code>=eligible/not registered, <code>2</code>=registered/didn't vote, <code>4</code>=voted</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Paper</code> </td><td style="text-align: left;"> Read news (per week): <code>0</code>=never, code1=less than once, <code>2</code>=once, <code>3</code>=2 or 3 times, <code>4</code>=daily</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Edit</code> </td><td style="text-align: left;"> Read editorial page? <code>0</code>=no or <code>1</code>=yes</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>TV</code> </td><td style="text-align: left;"> Watch TV news: <code>0</code>=never, code1=less than once, <code>2</code>=once, <code>3</code>=2 or 3 times, <code>4</code>=daily</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Ethics</code> </td><td style="text-align: left;"> Politics should be ruled by: <code>1</code>=ethical considerations to <code>5</code>=practical power</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Inform</code> </td><td style="text-align: left;"> How informed are you about politics?  <code>1</code>=uninformed to <code>5</code>=very well informed</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Participate</code> </td><td style="text-align: left;"> Missing if Vote=0, <code>0</code> if Vote=1 or 2, <code>1</code> if Vote=3</td>
+    1 </td><td style="text-align: left;"> nMales </td><td style="text-align: left;"> 0, 1, ..., 12 </td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -64,19 +45,37 @@
 
 
 
-<h3>Details</h3>
-
-<p>Students Jennifer Wolfson and Meredith Goulet conducted
-a survey in the spring of 1992 of Grinnell College students to ascertain patterns of political behavior.
-They took a simple random sample of 60 students who were U.S. citizens and conducted
-phone interviews. Using several &quot;call backs&quot; they obtained 59 responses.
-</p>
-
-
 <h3>Source</h3>
 
-<p>Student survey at Grinnell College
+<p>M. Friendly (2000),
+Visualizing Categorical Data, pages 40&ndash;42.
 </p>
+
+
+<h3>References</h3>
+
+<p>J. K. Lindsey (1995),
+<em>Analysis of Frequency and Count Data</em>.
+Oxford University Press, Oxford, UK.
+</p>
+<p>R. R. Sokal &amp; F. J. Rohlf (1969),
+<em>Biometry. The Principles and Practice of Statistics</em>.
+W. H. Freeman, San Francisco, CA.
+</p>
+<p>M. Friendly (2000),
+<em>Visualizing Categorical Data</em>.
+SAS Institute, Cary, NC.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data("Saxony")
+gf &lt;- goodfit(Saxony, type = "binomial")
+summary(gf)
+plot(gf)
+</pre>
 
 
 </body></html>

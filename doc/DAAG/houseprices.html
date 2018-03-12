@@ -1,74 +1,102 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Alcohol consumption in Australia and New Zealand</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Aranda House Prices</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for grog"><tr><td>grog</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for houseprices"><tr><td>houseprices</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Alcohol consumption in Australia and New Zealand</h2>
+<h2>Aranda House Prices</h2>
 
 <h3>Description</h3>
 
-<p>Data are annual apparent alcohol consumption in  Australia and New
-Zealand, in liters of pure alcohol content per annum, separately for
-beer, wine, and spirits (including spirit-based products).
+<p>The <code>houseprices</code> data frame consists of the floor
+area, price, and the number
+of bedrooms for a sample of houses sold in Aranda in 1999. 
+Aranda is a suburb of Canberra, Australia.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(grog)</pre>
+<pre>houseprices</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 18 observations on the following 5 variables.
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>Beer</code></dt><dd><p>liters per annum</p>
+<dt>area</dt><dd><p>a numeric vector giving the floor area</p>
 </dd>
-<dt><code>Wine</code></dt><dd><p>liters per annum</p>
+<dt>bedrooms</dt><dd><p>a numeric vector giving the number of bedrooms</p>
 </dd>
-<dt><code>Spirit</code></dt><dd><p>liters per annum</p>
-</dd>
-<dt><code>Country</code></dt><dd><p>a factor with levels <code>Australia</code>
-<code>NewZealand</code></p>
-</dd>
-<dt><code>Year</code></dt><dd><p>Year ending in June of the given year</p>
+<dt>sale.price</dt><dd><p>a numeric vector giving the sale price
+in thousands of Australian dollars</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>Data are total available pure alcohol content, for the three
-categories, divided by numbers of persons aged 15 years or more.  The
-source data for New Zealand included quarterly figures from December
-1997, and annual data to December for all years.  The annual New
-Zealand figure to June 1998 required an estimate for September
-1997 that was obtained by extrapolating back the third quarter trend
-line from later years.
-</p>
-
-
 <h3>Source</h3>
 
-<p>Australian data are from <a href="http://www.abs.gov.au">http://www.abs.gov.au</a>.
-For New Zealand data, go to
-<a href="http://www.stats.govt.nz/infoshare/">http://www.stats.govt.nz/infoshare/</a> Click on 'Industry sectors'
-and then on 'Alcohol Available for Consumption - ALC'.
+<p>J.H. Maindonald
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(grog)
-library(lattice)
-xyplot(Beer+Wine+Spirit ~ Year | Country, data=grog)
-xyplot(Beer+Wine+Spirit ~ Year, groups=Country, data=grog, outer=TRUE)
+plot(sale.price~area, data=houseprices)
+pause()
+
+coplot(sale.price~area|bedrooms, data=houseprices)
+pause()
+
+print("Cross-Validation - Example 5.5.2")
+
+houseprices.lm &lt;- lm(sale.price ~ area, data=houseprices)
+summary(houseprices.lm)$sigma^2
+pause()
+
+CVlm()
+pause()
+
+print("Bootstrapping - Example 5.5.3")
+houseprices.fn &lt;- function (houseprices, index){
+house.resample &lt;- houseprices[index,]
+house.lm &lt;- lm(sale.price ~ area, data=house.resample)
+coef(house.lm)[2]    # slope estimate for resampled data
+}
+require(boot)       # ensure that the boot package is loaded
+houseprices.boot &lt;- boot(houseprices, R=999, statistic=houseprices.fn)
+
+houseprices1.fn &lt;- function (houseprices, index){
+house.resample &lt;- houseprices[index,]
+house.lm &lt;- lm(sale.price ~ area, data=house.resample)
+predict(house.lm, newdata=data.frame(area=1200))
+}
+
+houseprices1.boot &lt;- boot(houseprices, R=999, statistic=houseprices1.fn)
+boot.ci(houseprices1.boot, type="perc") # "basic" is an alternative to "perc"
+houseprices2.fn &lt;- function (houseprices, index){
+house.resample &lt;- houseprices[index,]
+house.lm &lt;- lm(sale.price ~ area, data=house.resample)
+houseprices$sale.price-predict(house.lm, houseprices)  # resampled prediction errors
+}
+
+n &lt;- length(houseprices$area)
+R &lt;- 200   
+houseprices2.boot &lt;- boot(houseprices, R=R, statistic=houseprices2.fn)
+house.fac &lt;- factor(rep(1:n, rep(R, n)))
+plot(house.fac, as.vector(houseprices2.boot$t), ylab="Prediction Errors", 
+xlab="House")
+pause()
+
+plot(apply(houseprices2.boot$t,2, sd)/predict.lm(houseprices.lm, se.fit=TRUE)$se.fit,
+     ylab="Ratio of Bootstrap SE's to Model-Based SE's", xlab="House", pch=16)
+abline(1,0)
+
 </pre>
 
 

@@ -1,75 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Auto Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: PalmBeach</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Auto"><tr><td>Auto</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for PalmBeach"><tr><td>PalmBeach</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Auto Data Set
-</h2>
+<h2>PalmBeach</h2>
 
 <h3>Description</h3>
 
-<p>Gas mileage, horsepower, and other information for 392 vehicles.</p>
-
-
-<h3>Usage</h3>
-
-<pre>Auto</pre>
+<p>Votes for Geroge Bush and Pat Buchanan in Florida counties for the 2000 U.S. presidential election
+</p>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 392 observations on the following 9 variables.
+<p>A dataset with 67 observations on the following 3 variables.
 </p>
 
-<dl>
-<dt><code>mpg</code></dt><dd><p>miles per gallon</p>
-</dd>
-<dt><code>cylinders</code></dt><dd><p>Number of cylinders between 4 and 8</p>
-</dd>
-<dt><code>displacement</code></dt><dd><p>Engine displacement (cu. inches)</p>
-</dd>
-<dt><code>horsepower</code></dt><dd><p>Engine horsepower</p>
-</dd>
-<dt><code>weight</code></dt><dd><p>Vehicle weight (lbs.)</p>
-</dd>
-<dt><code>acceleration</code></dt><dd><p>Time to accelerate from 0 to 60 mph (sec.)</p>
-</dd>
-<dt><code>year</code></dt><dd><p>Model year (modulo 100)</p>
-</dd>
-<dt><code>origin</code></dt><dd><p>Origin of car (1. American, 2. European, 3. Japanese)</p>
-</dd>
-<dt><code>name</code></dt><dd><p>Vehicle name</p>
-</dd></dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>County</code> </td><td style="text-align: left;"> Name of the Florida county</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Buchanan</code> </td><td style="text-align: left;"> Number of votes for Par Buchanan</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Bush</code> </td><td style="text-align: left;"> number of votes for George Bush</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
 
-<p>The orginal data contained 408 observations but 16 observations with
-missing values were removed.</p>
+</table>
+
+
+
+<h3>Details</h3>
+
+<p>The race for the presidency of the United States in the fall of 2000 was very close, with the electoral
+votes from Florida determining the outcome. In the disputed final tally in Florida, George W. Bush won by just 537 votes over Al Gore,
+out of almost 6 million votes cast. About 2.3
+were awarded to other candidates. One of those other candidates was Pat Buchanan, who did
+much better in Palm Beach County than he did anywhere else. Palm Beach County used a unique
+&quot;butterfly ballot&quot; that had candidate names on either side of the page with &quot;chads&quot; to be punched
+in the middle. This non-standard ballot seemed to confuse some voters, who punched votes for
+Buchanan that may have been intended for a different candidate.  This dataset shows the number of votes for Bush and 
+Buchanan in each Florida county. 
+</p>
 
 
 <h3>Source</h3>
 
-<p>This dataset was taken from the StatLib library which is maintained at Carnegie Mellon University. The dataset was used in the 1983 American Statistical Association Exposition.
+<p>Florida county data for the 2000 presidential election can be found at
+http://election.dos.state.fl.us/elections/resultsarchive/Index.asp?ElectionDate=11/7/00
 </p>
-
-
-<h3>References</h3>
-
-<p>James, G., Witten, D., Hastie, T., and Tibshirani, R. (2013)
-<em>An Introduction to Statistical Learning with applications in R</em>,
-<a href="www.StatLearning.com">www.StatLearning.com</a>,
-Springer-Verlag, New York
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-pairs(Auto)
-attach(Auto)
-hist(mpg)
-</pre>
 
 
 </body></html>

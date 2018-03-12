@@ -1,45 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lifeboats on the Titanic</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wages and Education of Young Males</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Lifeboats"><tr><td>Lifeboats</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Males"><tr><td>Males</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Lifeboats on the Titanic</h2>
+<h2>Wages and Education of Young Males</h2>
 
 <h3>Description</h3>
 
-<p>Data from Mersey (1912) about the 18 (out of 20) lifeboats launched
-before the sinking of the S. S. Titanic.
+<p>A panel of 545 observations from 1980 to 1987
+</p>
+<p><em>total number of observations</em> :  4360
+</p>
+<p><em>observation</em> :  individuals
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data("Lifeboats")</pre>
+<pre>data(Males)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 18 observations and 8 variables.
+<p>A data frame containing :
 </p>
 
 <dl>
-<dt>launch</dt><dd><p>launch time in <code>"POSIXt"</code> format.</p>
+<dt>nr</dt><dd><p>identifier</p>
 </dd>
-<dt>side</dt><dd><p>factor.  Side of the boat.</p>
+<dt>year</dt><dd><p>year</p>
 </dd>
-<dt>boat</dt><dd><p>factor indicating the boat.</p>
+<dt>school</dt><dd><p>years of schooling</p>
 </dd>
-<dt>crew</dt><dd><p>number of male crew members on board.</p>
+<dt>exper</dt><dd><p>years of experience (computed as <code>age-6-school</code>)</p>
 </dd>
-<dt>men</dt><dd><p>number of men on board.</p>
+<dt>union</dt><dd><p>wage set by collective bargaining ?</p>
 </dd>
-<dt>women</dt><dd><p>number of women (including female crew) on board.</p>
+<dt>ethn</dt><dd><p>a factor with levels <code>black, hisp, other</code></p>
 </dd>
-<dt>total</dt><dd><p>total number of passengers.</p>
+<dt>married</dt><dd><p>married?</p>
 </dd>
-<dt>cap</dt><dd><p>capacity of the boat.</p>
+<dt>health</dt><dd><p>health problem ?</p>
+</dd>
+<dt>wage</dt><dd><p>log of hourly wage</p>
+</dd>
+<dt>industry</dt><dd><p>a factor with 12 levels</p>
+</dd>
+<dt>occupation</dt><dd><p>a factor with 9 levels</p>
+</dd>
+<dt>residence</dt><dd><p>a factor with levels <code>rural area, north east, northern central, south</code></p>
 </dd>
 </dl>
 
@@ -47,42 +60,17 @@ before the sinking of the S. S. Titanic.
 
 <h3>Source</h3>
 
-<p>M. Friendly (2000),
-Visualizing Categorical Data:
-<a href="http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/lifeboat.sas">http://euclid.psych.yorku.ca/ftp/sas/vcd/catdata/lifeboat.sas</a>
+<p>Journal of Applied Econometrics data archive  
+<a href="http://qed.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/">http://qed.econ.queensu.ca/jae/1998-v13.2/vella-verbeek/</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>L. Mersey (1912),
-Report on the loss of the &ldquo;Titanic&rdquo; (S. S.).
-Parliamentary command paper 6452.
+<p>Vella, F. and  M. Verbeek (1998) &ldquo;Whose Wages Do Unions Raise? A Dynamic Model of Unionism and Wage Rate Determination for Young Men&rdquo;, <em>Journal of Applied Econometrics</em>, <b>13</b>(2), pp. 163&ndash;183.
 </p>
-<p>M. Friendly (2000),
-<em>Visualizing Categorical Data</em>.
-SAS Institute, Cary, NC.
+<p>Verbeek, M. (2004) <em>A Guide to Modern Econometrics</em>, John Wiley and Sons, chapter 10.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data("Lifeboats")
-attach(Lifeboats)
-ternaryplot(
-  Lifeboats[,4:6],
-  pch = ifelse(side == "Port", 1, 19),
-  col = ifelse(side == "Port", "red", "blue"),
-  id  = ifelse(men / total &gt; 0.1, as.character(boat), NA),
-  prop_size = 2,
-  dimnames_position = "edge",
-  main = "Lifeboats on the Titanic"
-)
-grid_legend(0.8, 0.9, c(1, 19), c("red", "blue"),
-  c("Port", "Starboard"), title = "SIDE")
-detach(Lifeboats)
-</pre>
 
 
 </body></html>

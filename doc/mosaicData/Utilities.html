@@ -1,66 +1,90 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Broken Marriage Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Utility bills</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for BrokenMarriage"><tr><td>BrokenMarriage</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Utilities"><tr><td>Utilities</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Broken Marriage Data</h2>
+<h2>Utility bills</h2>
 
 <h3>Description</h3>
 
-<p>Data from the Danish Welfare Study about broken marriages or permanent
-relationships depending on gender and social rank.
+<p>Data from utility bills at a residence.
+<code>Utilities2</code>  is a similar data set with some additional variables.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-data("BrokenMarriage")
+data(Utilities)
 </pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 20 observations and 4 variables.
+<p>A data frame containing 117 observations for the following variables.
 </p>
 
-<dl>
-<dt>Freq</dt><dd><p>frequency.</p>
-</dd>
-<dt>gender</dt><dd><p>factor indicating gender (male, female).</p>
-</dd>
-<dt>rank</dt><dd><p>factor indicating social rank (I, II, III, IV, V).</p>
-</dd>
-<dt>broken</dt><dd><p>factor indicating whether the marriage or permanent
-relationship was broken (yes, no).</p>
-</dd>
-</dl>
-
+<ul>
+<li><p><code>month</code> month (coded as a number)
+</p>
+</li>
+<li><p><code>day</code> day of month on which bill was calculated
+</p>
+</li>
+<li><p><code>year</code> year of bill
+</p>
+</li>
+<li><p><code>temp</code> average temperature (F) for billing period
+</p>
+</li>
+<li><p><code>kwh</code> electricity usage (kwh)
+</p>
+</li>
+<li><p><code>ccf</code> gas usage (ccf)
+</p>
+</li>
+<li><p><code>thermsPerDay</code> a numeric vector
+</p>
+</li>
+<li><p><code>billingDays</code> number of billing days in billing period
+</p>
+</li>
+<li><p><code>totalbill</code> total bill (in dollars)
+</p>
+</li>
+<li><p><code>gasbill</code> gas bill (in dollars)
+</p>
+</li>
+<li><p><code>elecbill</code> electric bill (in dollars)
+</p>
+</li>
+<li><p><code>notes</code> notes about the billing period
+</p>
+</li></ul>
 
 
 <h3>Source</h3>
 
-<p>E. B. Andersen (1991),
-The Statistical Analysis of Categorical Data, page 177.
+<p>Daniel T. Kaplan, <em>Statistical modeling: A fresh approach</em>, 2009.
 </p>
 
 
-<h3>References</h3>
+<h3>See Also</h3>
 
-<p>E. B. Andersen (1991),
-<em>The Statistical Analysis of Categorical Data</em>.
-2nd edition.
-Springer-Verlag, Berlin.
+<p><code>Utilities2</code>.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data("BrokenMarriage")
-structable(~ ., data = BrokenMarriage)
+data(Utilities)
+if (require(lattice)) {
+  xyplot(gasbill ~ temp, Utilities)
+}
+
 </pre>
 
 

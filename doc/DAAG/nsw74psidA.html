@@ -1,39 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Documentation of names of columns in nass9702cor</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A Subset of the nsw74psid1 Data Set</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for nasshead"><tr><td>nasshead</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for nsw74psidA"><tr><td>nsw74psidA</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Documentation of names of columns in nass9702cor</h2>
+<h2>A Subset of the nsw74psid1 Data Set</h2>
 
 <h3>Description</h3>
 
-<p><code>SASname</code> and <code>longname</code> are from the SAS XPT file
-nass9702cor.XPT that is available from the webite noted below.
-The name <code>shortname</code> is the name used in the data frame
-<code>nass9702cor</code>, not included in this package, but available
-from my website that is noted below.  It is also used in
-<code>nassCDS</code>, for columns that <code>nassCDS</code> includes.
+<p>The <code>nsw74psidA</code> data frame has 252 rows and 10 columns.
+See <code>nsw74psid1</code> for more information.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(nasshead)</pre>
+<pre>nsw74psidA</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 56 observations on the following 3 variables.
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>shortname</code></dt><dd><p>a character vector</p>
+<dt>trt</dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>SASname</code></dt><dd><p>a character vector</p>
+<dt>age</dt><dd><p>a numeric vector</p>
 </dd>
-<dt><code>longname</code></dt><dd><p>a character vector</p>
+<dt>educ</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>black</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>hisp</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>marr</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>nodeg</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>re74</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>re75</dt><dd><p>a numeric vector</p>
+</dd>
+<dt>re78</dt><dd><p>a numeric vector</p>
 </dd>
 </dl>
 
@@ -41,40 +51,28 @@ from my website that is noted below.  It is also used in
 
 <h3>Details</h3>
 
-<p>For full details of the coding of values in columns of
-<code>nass9702cor</code>, consult one of the SAS format files that
-can be obtained by following the instructions on Dr Meyer's web
-site that is noted below.
+<p>This data set was obtained using:
 </p>
-
-
-<h3>Source</h3>
-
-<p><a href="http://www.stat.colostate.edu/~meyer/airbags.htm">http://www.stat.colostate.edu/~meyer/airbags.htm</a>\
-<a href="ftp://ftp.nhtsa.dot.gov/nass/">ftp://ftp.nhtsa.dot.gov/nass/</a>\
-Click, e.g., on 1997 and then on SASformats.
-See also
-<a href="http://www.maths.anu.edu.au/~johnm/datasets/airbags">http://www.maths.anu.edu.au/~johnm/datasets/airbags</a>
+<p><code>here &lt;- age &lt;= 40 &amp; re74&lt;=5000 &amp; re75 &lt;= 5000 &amp; re78 &lt; 30000</code>
 </p>
-
-
-<h3>References</h3>
-
-<p>Meyer, M.C. and Finney, T. (2005): <em>Who wants airbags?</em>. Chance
-18:3-16.
-</p>
-<p>Farmer, C.H. 2006. <em>Another look at Meyer and Finney's 'Who wants
-airbags?'</em>. Chance 19:15-22.
-</p>
-<p>Meyer, M.C. 2006.  <em>Commentary on &quot;Another look at Meyer and
-Finney's &lsquo;Who wants airbags?&rsquo;&quot;</em>. Chance 19:23-24.
+<p><code>nsw74psidA &lt;- nsw74psid1[here, ]</code>
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(nasshead)
+table(nsw74psidA$trt)
+A1.lm &lt;- lm(re78 ~ trt + (age + educ + re74 + re75) + (black +
+      hisp + marr + nodeg), data = nsw74psidA)
+summary(A1.lm)$coef
+discA.glm &lt;- glm(formula = trt ~ age + educ + black + hisp +
+  marr + nodeg + re74 + re75, family = binomial, data = nsw74psidA)
+A.scores &lt;- predict(discA.glm)
+options(digits=4)
+overlap &lt;- A.scores &gt; -3.5 &amp; A.scores &lt; 3.8
+A.lm &lt;- lm(re78 ~ trt + A.scores, data=nsw74psidA, subset = overlap)
+summary(A.lm)$coef
 </pre>
 
 

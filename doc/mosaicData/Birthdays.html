@@ -1,93 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: NCCTG Lung Cancer Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Births in 1969 - 1988</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for lung"><tr><td>lung</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Birthdays"><tr><td>Birthdays</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>NCCTG Lung Cancer Data</h2>
+<h2>US Births in 1969 - 1988</h2>
 
 <h3>Description</h3>
 
-<p>Survival in patients with advanced lung cancer from the North
-Central Cancer Treatment Group.  Performance
-scores rate how well the patient can perform usual daily activities.
+<p>A day by day record of the number of births in each US State.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-lung
-cancer
+data(Birthdays)
 </pre>
 
 
 <h3>Format</h3>
 
+<p>A data frame with 374221 observations on the following variables.
+</p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: left;">
-    inst:</td><td style="text-align: left;"> Institution code</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    time:</td><td style="text-align: left;"> Survival time in days</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    status:</td><td style="text-align: left;"> censoring status 1=censored, 2=dead</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    age:</td><td style="text-align: left;"> Age in years</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    sex:</td><td style="text-align: left;">  Male=1 Female=2</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    ph.ecog:</td><td style="text-align: left;"> ECOG performance score (0=good 5=dead)</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    ph.karno:</td><td style="text-align: left;"> Karnofsky performance score (bad=0-good=100) rated by physician</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    pat.karno:</td><td style="text-align: left;"> Karnofsky performance score as rated by patient</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    meal.cal:</td><td style="text-align: left;"> Calories consumed at meals</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-    wt.loss:</td><td style="text-align: left;"> Weight loss in last six months</td>
-</tr>
-<tr>
- <td style="text-align: left;">
-  </td>
-</tr>
-
-</table>
+<ul>
+<li><p><code>state</code> state where child was born
+</p>
+</li>
+<li><p><code>year</code> year (1969-1988)
+</p>
+</li>
+<li><p><code>month</code> month (1-12)
+</p>
+</li>
+<li><p><code>day</code> day of month
+</p>
+</li>
+<li><p><code>date</code> date as a date object
+</p>
+</li>
+<li><p><code>births</code> number of births
+</p>
+</li></ul>
 
 
+<h3>Examples</h3>
 
-<h3>Source</h3>
-
-<p>Terry Therneau</p>
-
-
-<h3>References</h3>
-
-<p>Loprinzi CL. Laurie JA. Wieand HS. Krook JE. Novotny PJ.
-Kugler JW. Bartel J. Law M. Bateman M. Klatt NE. et al.
-Prospective evaluation of prognostic variables from patient-completed
-questionnaires. North Central Cancer Treatment Group.
-Journal of Clinical Oncology. 12(3):601-7, 1994. </p>
+<pre>
+data(Birthdays)
+if (require(lattice)) {
+  xyplot(births ~ date, Birthdays, subset=state=="CA")
+  xyplot(births ~ date, Birthdays, subset=state=="CA", 
+    groups=wday, type='l')
+  if (require(mosaic)) {
+    xyplot(births ~ date, type='l',
+      data = Birthdays %&gt;% group_by(date) %&gt;% summarise(births=sum(births)))
+    }
+  }
+</pre>
 
 
 </body></html>

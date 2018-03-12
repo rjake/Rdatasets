@@ -1,95 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lawyers' Ratings of State Judges in the US Superior Court</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Failure Time of PET Film</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for USJudgeRatings"><tr><td>USJudgeRatings</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for hirose"><tr><td>hirose</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Lawyers' Ratings of State Judges in the US Superior Court</h2>
+<h2>
+Failure Time of PET Film
+</h2>
 
 <h3>Description</h3>
 
-<p>Lawyers' ratings of state judges in the US Superior Court.
+<p>The <code>hirose</code> data frame has 44 rows and 3 columns.
+</p>
+<p>PET film is used in electrical insulation.  In this accelerated life test
+the failure times for 44 samples in gas insulated transformers.  4 different
+voltage levels were used.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>USJudgeRatings</pre>
+<pre>
+hirose
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing 43 observations on 12 numeric variables.
+<p>This data frame contains the following columns:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    [,1] </td><td style="text-align: left;"> CONT </td><td style="text-align: left;"> Number of contacts of lawyer with judge.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,2] </td><td style="text-align: left;"> INTG </td><td style="text-align: left;"> Judicial integrity.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,3] </td><td style="text-align: left;"> DMNR </td><td style="text-align: left;"> Demeanor.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,4] </td><td style="text-align: left;"> DILG </td><td style="text-align: left;"> Diligence.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,5] </td><td style="text-align: left;"> CFMG </td><td style="text-align: left;"> Case flow managing.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,6] </td><td style="text-align: left;"> DECI </td><td style="text-align: left;"> Prompt decisions.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,7] </td><td style="text-align: left;"> PREP </td><td style="text-align: left;"> Preparation for trial.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,8] </td><td style="text-align: left;"> FAMI </td><td style="text-align: left;"> Familiarity with law.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,9] </td><td style="text-align: left;"> ORAL </td><td style="text-align: left;"> Sound oral rulings.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,10] </td><td style="text-align: left;"> WRIT </td><td style="text-align: left;"> Sound written rulings.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,11] </td><td style="text-align: left;"> PHYS </td><td style="text-align: left;"> Physical ability.</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,12] </td><td style="text-align: left;"> RTEN </td><td style="text-align: left;"> Worthy of retention.
-  </td>
-</tr>
-
-</table>
-
+<dl>
+<dt><code>volt</code></dt><dd>
+<p>The voltage (in kV).
+</p>
+</dd>
+<dt><code>time</code></dt><dd>
+<p>The failure or censoring time in hours.
+</p>
+</dd>
+<dt><code>cens</code></dt><dd>
+<p>The censoring indicator; <code>1</code> means right-censored data.
+</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>New Haven Register, 14 January, 1977 (from John Hartigan).
+<p>The data were obtained from
+</p>
+<p>Hirose, H. (1993) Estimation of threshold stress in accelerated life-testing.
+<em>IEEE Transactions on Reliability</em>, <b>42</b>, 650&ndash;657.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-require(graphics)
-pairs(USJudgeRatings, main = "USJudgeRatings data")
-</pre>
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+</p>
 
 
 </body></html>

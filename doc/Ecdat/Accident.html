@@ -1,41 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Exercise Histories of Eating-Disordered and Control Subjects</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ship Accidents</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Blackmore"><tr><td>Blackmore</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Accident"><tr><td>Accident</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Exercise Histories of Eating-Disordered and Control Subjects</h2>
+<h2>Ship Accidents </h2>
 
 <h3>Description</h3>
 
-<p>The <code>Blackmore</code> data frame has 945 rows and 4 columns.
-Blackmore and Davis's data on exercise histories of 138 teenaged
-girls hospitalized for eating disorders and 98 control subjects.
+<p>a cross-section
+</p>
+<p><em>number of observations</em> :  40
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>Blackmore</pre>
+<pre>data(Accident)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>subject</dt><dd><p>a factor with subject id codes.</p>
+<dt>type</dt><dd><p>ship type, a factor with levels (A,B,C,D,E)</p>
 </dd>
-<dt>age</dt><dd><p>age in years.</p>
+<dt>constr</dt><dd><p>year constructed, a factor with levels (C6064,C6569,C7074,C7579)</p>
 </dd>
-<dt>exercise</dt><dd><p>hours per week of exercise.</p>
+<dt>operate</dt><dd><p>year operated, a factor with levels (O6074,O7579)</p>
 </dd>
-<dt>group</dt><dd><p>a factor with levels:
-<code>control</code>, Control subjects;
-<code>patient</code>, Eating-disordered patients.
-</p>
+<dt>months</dt><dd><p>measure of service amount</p>
+</dd>
+<dt>acc</dt><dd><p>accidents</p>
 </dd>
 </dl>
 
@@ -43,9 +42,19 @@ girls hospitalized for eating disorders and 98 control subjects.
 
 <h3>Source</h3>
 
-<p>Personal communication from Elizabeth Blackmore and Caroline Davis,
-York University.
+<p>McCullagh, P.  and  J.  Nelder (1983) <em>Generalized linear methods</em>, New York:Chapman and Hall.
 </p>
+
+
+<h3>References</h3>
+
+<p>Greene, W.H. (2003) <em>Econometric Analysis</em>, Prentice Hall, <a href="http://www.prenhall.com/greene/greene1.html">http://www.prenhall.com/greene/greene1.html</a>, Table F21.3.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

@@ -1,143 +1,81 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Eysenck Personality Inventory (EPI) data for 3570...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Innovation and Institutional Ownership</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for epi"><tr><td>epi</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for InstInnovation"><tr><td>InstInnovation</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Eysenck Personality Inventory (EPI) data for 3570 participants</h2>
+<h2>Innovation and Institutional Ownership</h2>
 
 <h3>Description</h3>
 
-<p>The EPI is and has been a very frequently administered personality test with 57 measuring two broad dimensions, Extraversion-Introversion and Stability-Neuroticism, with an additional Lie scale. Developed by Eysenck and Eysenck, 1964.  Eventually replaced with the EPQ which measures three broad dimensions.  This data set represents 3570 observations collected in the early 1990s at the Personality, Motivation and Cognition lab at Northwestern.  The data are included here as demonstration of scale construction.
+<p>Firm-level panel data on innovation and institutional ownership from 1991 to
+1999 over 803 firms. The observations refer to different firms over different years.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(epi)
-data(epi.dictionary)</pre>
+<pre>data("InstInnovation")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 3570 observations on the following 57 variables.
+<p>A data frame containing 6208 observations on 25 variables.
 </p>
 
 <dl>
-<dt><code>V1</code></dt><dd><p>a numeric vector</p>
+<dt>company</dt><dd><p>factor. company names.</p>
 </dd>
-<dt><code>V2</code></dt><dd><p>a numeric vector</p>
+<dt>sales</dt><dd><p>numeric. sales (in millions of dollars).</p>
 </dd>
-<dt><code>V3</code></dt><dd><p>a numeric vector</p>
+<dt>acompetition</dt><dd><p>numeric. constant inverse Lerner index.</p>
 </dd>
-<dt><code>V4</code></dt><dd><p>a numeric vector</p>
+<dt>competition</dt><dd><p>numeric. varying inverse Lerner index.</p>
 </dd>
-<dt><code>V5</code></dt><dd><p>a numeric vector</p>
+<dt>capital</dt><dd><p>numeric. net stock of property, plant, and equipment.</p>
 </dd>
-<dt><code>V6</code></dt><dd><p>a numeric vector</p>
+<dt>cites</dt><dd><p>integer. future cite-weighted patents.</p>
 </dd>
-<dt><code>V7</code></dt><dd><p>a numeric vector</p>
+<dt>precites</dt><dd><p>numeric. presample average of cite-weighted patents.</p>
 </dd>
-<dt><code>V8</code></dt><dd><p>a numeric vector</p>
+<dt>dprecites</dt><dd><p>factor. indicates zero precites.</p>
 </dd>
-<dt><code>V9</code></dt><dd><p>a numeric vector</p>
+<dt>patents</dt><dd><p>integer. granted patents.</p>
 </dd>
-<dt><code>V10</code></dt><dd><p>a numeric vector</p>
+<dt>drandd</dt><dd><p>factor. indicates a zero R&amp;D stock.</p>
 </dd>
-<dt><code>V11</code></dt><dd><p>a numeric vector</p>
+<dt>randd</dt><dd><p>numeric. R&amp;D stock (in millions of dollars).</p>
 </dd>
-<dt><code>V12</code></dt><dd><p>a numeric vector</p>
+<dt>employment</dt><dd><p>numeric. employment (in 1000s).</p>
 </dd>
-<dt><code>V13</code></dt><dd><p>a numeric vector</p>
+<dt>sp500</dt><dd><p>factor. membership of firms in the S&amp;P500 index.</p>
 </dd>
-<dt><code>V14</code></dt><dd><p>a numeric vector</p>
+<dt>tobinq</dt><dd><p>numeric. Tobin's q.</p>
 </dd>
-<dt><code>V15</code></dt><dd><p>a numeric vector</p>
+<dt>value</dt><dd><p>numeric. stock market value.</p>
 </dd>
-<dt><code>V16</code></dt><dd><p>a numeric vector</p>
+<dt>institutions</dt><dd><p>numeric. proportion of stock owned by institutions.</p>
 </dd>
-<dt><code>V17</code></dt><dd><p>a numeric vector</p>
+<dt>industry</dt><dd><p>factor. four-digit industry code.</p>
 </dd>
-<dt><code>V18</code></dt><dd><p>a numeric vector</p>
+<dt>year</dt><dd><p>factor. estimation period.</p>
 </dd>
-<dt><code>V19</code></dt><dd><p>a numeric vector</p>
+<dt>top1</dt><dd><p>numeric. share of the largest institution.</p>
 </dd>
-<dt><code>V20</code></dt><dd><p>a numeric vector</p>
+<dt>quasiindexed</dt><dd><p>numeric. share of &quot;quasi-indexed&quot; institutional owners.</p>
 </dd>
-<dt><code>V21</code></dt><dd><p>a numeric vector</p>
+<dt>nonquasiindexed</dt><dd><p>numeric. share of &quot;non-quasi-indexed&quot;
+institutional owners.</p>
 </dd>
-<dt><code>V22</code></dt><dd><p>a numeric vector</p>
+<dt>transient</dt><dd><p>numeric. share of &quot;transient&quot; institutional owners.</p>
 </dd>
-<dt><code>V23</code></dt><dd><p>a numeric vector</p>
+<dt>dedicated</dt><dd><p>numeric. share of &quot;dedicated&quot; institutional owners.</p>
 </dd>
-<dt><code>V24</code></dt><dd><p>a numeric vector</p>
+<dt>competition4</dt><dd><p>numeric. varying inverse Lerner index in the firm's four-digit industry.</p>
 </dd>
-<dt><code>V25</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V26</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V27</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V28</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V29</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V30</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V31</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V32</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V33</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V34</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V35</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V36</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V37</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V38</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V39</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V40</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V41</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V42</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V43</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V44</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V45</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V46</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V47</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V48</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V49</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V50</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V51</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V52</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V53</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V54</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V55</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V56</code></dt><dd><p>a numeric vector</p>
-</dd>
-<dt><code>V57</code></dt><dd><p>a numeric vector</p>
+<dt>subsample</dt><dd><p>factor. subsample for the replication of columns
+1&ndash;5 from Table 4 in Aghion et al. (2013).</p>
 </dd>
 </dl>
 
@@ -145,41 +83,110 @@ data(epi.dictionary)</pre>
 
 <h3>Details</h3>
 
-<p>The original data were collected in a group testing framework for screening participants for subsequent studies.  The participants were enrolled in an introductory psychology class between Fall, 1991 and Spring, 1995. 
+<p>Aghion et al. (2013) combine several firm level panel datasets (e.g.,
+USPTO, SEC and Compustat) to examine the role of institutional investors
+in the governance of innovation. Their baseline to model innovation is the Poisson model,
+but they also consider negative binomial models.
+Berger et al. (2017) argue that nonlinearities in the innovation process emerge in case that the first
+innovation is especially hard to obtain in comparison to succeeding innovations.
+Then, hurdle models offer a useful way that allows for a distinction between these two processes.
+Berger et al. (2017) show that an extended analysis with negative binomial hurdle models
+differs materially from the outcomes of the single-equation Poisson
+approach of Aghion et al. (2013).
 </p>
-<p>The structure of the E scale has been shown by  Rocklin and Revelle (1981) to have two subcomponents, Impulsivity and Sociability. These were subsequently used by Revelle, Humphreys, Simon and Gilliland to examine the relationship between personality, caffeine induced arousal, and cognitive performance. 
+<p>Institutional ownership (institutions) is defined as the proportion of
+stock owney by institutions. According to Aghion et al. (2013), an
+institutional owner is defined as an institution that files a Form 13-F
+with the Securities and Exchange Commission (SEC).
+</p>
+<p>Future cite-weighted patents (cites) are used as a proxy for
+innovation. They are calculated using ultimately granted patent, dated
+by year of application, and weight these by future citations through
+2002 (see Aghion et al. (2013)).
+</p>
+<p>The presample average of cite-weighted patents (precites) is used by Aghion et
+al. (2013) as a proxy for unobserved heterogeneity, employing the
+&quot;presample mean scaling&quot; method of Blundell et al. (1999).
+</p>
+<p>The inverse Lerner index in the firm's three-digit industry is used
+as a time-varying measure for product market competition (competition), where the Lerner is
+calculated as the median gross margin from the entire Compustat database
+in the firm's three-digit industry (see Aghion et al. (2013)).
+A time-invariant measure for competition (acompetition) is constructed by averaging the
+Lerner over the sample period.
+</p>
+<p>The classification of institutions into &quot;quasiindexed&quot;, &quot;transient&quot; and
+&quot;dedicated&quot; follows Bushee (1998) and distinguishes between institutional
+investors based on their type of investing. Quasiindexed institutions are
+do not trade much and are widely diversified, dedicated institution do
+not trade much and have more concentrated holdings, and transient
+institutions often trade and have diversified holdings (see Aghion et
+al. (2013) and Bushee (1998)).
 </p>
 
 
 <h3>Source</h3>
 
-<p>Data from the PMC laboratory at Northwestern.  
+<p>Data and online appendix of Aghion et al. (2013).
 </p>
 
 
 <h3>References</h3>
 
-<p>Eysenck, H.J. and Eysenck, S. B.G. (1968). Manual for the Eysenck Personality Inventory.Educational and Industrial Testing Service, San Diego, CA.
+<p>Aghion P, Van Reenen J, Zingales L (2013).
+&ldquo;Innovation and Institutional Ownership.&rdquo;
+<em>The American Economic Review</em>, <b>103</b>(1), 277&ndash;304.
+doi: <a href="http://doi.org/10.1257/aer.103.1.277">10.1257/aer.103.1.277</a>
 </p>
-<p>Rocklin, T. and Revelle, W. (1981). The measurement of extraversion: A comparison of the Eysenck Personality Inventory and the Eysenck Personality Questionnaire.  British Journal of Social Psychology, 20(4):279-284.
+<p>Berger S, Stocker H, Zeileis A (2017).
+&ldquo;Innovation and Institutional Ownership Revisited: An Empirical Investigation with Count Data Models.&rdquo;
+<em>Empirical Economics</em>, <b>52</b>(4), 1675&ndash;1688.
+doi: <a href="http://doi.org/10.1007/s00181-016-1118-0">10.1007/s00181-016-1118-0</a>
+</p>
+<p>Blundell R, Griffith R, Van Reenen J (1999).
+&ldquo;Market Share, Market Value and Innovation in a Panel of
+British Manufacturing Firms.&rdquo;
+<em>Review of Economic Studies</em>, 66(3), 529&ndash;554.
+</p>
+<p>Bushee B (1998).
+&ldquo;The Influence of Institutional Investors on Myopic R&amp;D Investment Behavior.&rdquo;
+<em>Accounting Review</em>, <b>73</b>(3), 655&ndash;679.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(epi)
-epi.keys &lt;- make.keys(epi,list(E = c(1, 3, -5, 8, 10, 13, -15, 17, -20, 22, 25, 27,
-                -29, -32, -34, -37, 39, -41, 44, 46, 49, -51, 53, 56),
-   N=c(2, 4, 7, 9, 11, 14, 16, 19, 21, 23, 26, 28, 31, 33, 35, 38, 40,
-     43, 45, 47, 50, 52, 55, 57),
-   L = c(6, -12, -18, 24, -30, 36, -42, -48, -54),
-   I =c(1, 3, -5, 8, 10, 13, 22, 39, -41), 
-   S = c(-11, -15, 17, -20, 25, 27, -29, -32, -37, 44, 46, -51, 53)))
-scores &lt;- scoreItems(epi.keys,epi)
-  N &lt;- epi[abs(epi.keys[,"N"]) &gt;0]
-  E &lt;- epi[abs(epi.keys[,"E"]) &gt;0]
-  fa.lookup(epi.keys[,1:3],epi.dictionary) #show the items and keying information
+## Poisson models from Table I in Aghion et al. (2013)
+
+## load data set
+data("InstInnovation", package = "sandwich")
+
+## log-scale variable
+InstInnovation$lograndd &lt;- log(InstInnovation$randd)
+InstInnovation$lograndd[InstInnovation$lograndd == -Inf] &lt;- 0
+
+## regression formulas
+f1 &lt;- cites ~ institutions + log(capital/employment) + log(sales) + industry + year
+f2 &lt;- cites ~ institutions + log(capital/employment) + log(sales) +
+  industry + year + lograndd + drandd
+f3 &lt;- cites ~ institutions + log(capital/employment) + log(sales) +
+  industry + year + lograndd + drandd + dprecites + log(precites)
+
+## Poisson models
+tab_I_3_pois &lt;- glm(f1, data = InstInnovation, family = poisson)
+tab_I_4_pois &lt;- glm(f2, data = InstInnovation, family = poisson)
+tab_I_5_pois &lt;- glm(f3, data = InstInnovation, family = poisson)
+
+## one-way clustered covariances
+vCL_I_3 &lt;- vcovCL(tab_I_3_pois, cluster = InstInnovation$company)
+vCL_I_4 &lt;- vcovCL(tab_I_4_pois, cluster = InstInnovation$company)
+vCL_I_5 &lt;- vcovCL(tab_I_5_pois, cluster = InstInnovation$company)
+
+## replication of columns 3 to 5 from Table I in Aghion et al. (2013)
+cbind(coef(tab_I_3_pois), sqrt(diag(vCL_I_3)))[2:4, ]
+cbind(coef(tab_I_4_pois), sqrt(diag(vCL_I_4)))[c(2:4, 148), ]
+cbind(coef(tab_I_5_pois), sqrt(diag(vCL_I_5)))[c(2:4, 148), ]
 </pre>
 
 

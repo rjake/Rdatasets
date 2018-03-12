@@ -1,48 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Polio Field Trials Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mortality and Water Hardness</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for PolioTrials"><tr><td>PolioTrials</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for water"><tr><td>water</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Polio Field Trials Data
-</h2>
+<h2> Mortality and Water Hardness </h2>
 
 <h3>Description</h3>
 
-<p>The data frame <code>PolioTrials</code> gives the results of the 1954 field trials to test the Salk polio vaccine 
-(named for the developer, Jonas Salk), conducted by the National Foundation for Infantile Paralysis (NFIP). 
-It is adapted from data in the article by Francis et al. (1955).  
-There were actually two clinical trials, corresponding to two statistical designs (<code>Experiment</code>),
-discussed by Brownlee (1955).  The comparison of designs and results represented a
-milestone in the development of randomized clinical trials. 
+<p>The mortality and drinking water hardness for 61 cities in England and
+Wales.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(PolioTrials)</pre>
+<pre>data("water")</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 8 observations on the following 6 variables.
+<p>A data frame with 61 observations on the following 4 variables.
 </p>
 
 <dl>
-<dt><code>Experiment</code></dt><dd><p>a factor with levels <code>ObservedControl</code> <code>RandomizedControl</code></p>
+<dt>location</dt><dd><p>a factor with levels <code>North</code> and <code>South</code> indicating
+whether the town is as north as Derby.</p>
 </dd>
-<dt><code>Group</code></dt><dd><p>a factor with levels <code>Controls</code> <code>Grade2NotInoculated</code> <code>IncompleteVaccinations</code> <code>NotInoculated</code> <code>Placebo</code> <code>Vaccinated</code></p>
+<dt>town</dt><dd><p>the name of the town.</p>
 </dd>
-<dt><code>Population</code></dt><dd><p>the size of the population in each group in each experiment</p>
+<dt>mortality</dt><dd><p>averaged annual mortality per 100.000 male inhabitants.</p>
 </dd>
-<dt><code>Paralytic</code></dt><dd><p>the number of cases of paralytic polio observed in that group</p>
-</dd>
-<dt><code>NonParalytic</code></dt><dd><p>the number of cases of paralytic polio observed in that group</p>
-</dd>
-<dt><code>FalseReports</code></dt><dd><p>the number of cases initially reported as polio, but later determined
-not to be polio in that group</p>
+<dt>hardness</dt><dd><p>calcium concentration (in parts per million).</p>
 </dd>
 </dl>
 
@@ -50,53 +40,34 @@ not to be polio in that group</p>
 
 <h3>Details</h3>
 
-<p>The data frame is in the form of a single table, but actually comprises the results of two separate
-field trials, given by <code>Experiment</code>.  Each should be analyzed separately, because the designs
-differ markedly.
-</p>
-<p>The original design (<code>Experiment == "ObservedControl"</code>)
-called for vaccination of second-graders at selected schools in selected areas  
-of the country (with the consent of the children's parents, of course). 
-The <code>Vaccinated</code> second-graders  formed the treatment group. 
-The first and third-graders at the schools were not given the vaccination, and formed the 
-<code>Controls</code> group. 
-</p>
-<p>In the second design  (<code>Experiment == "RandomizedControl"</code>)
-children were selected (again in various schools in various areas), 
-all of whose parents consented to vaccination. 
-The sample was randomly divided into treatment (<code>Group == "Vaccinated"</code>),
-given the real polio vaccination, 
-and control groups (<code>Group == "Placebo"</code>), 
-a placebo dose that looked just like the real vaccine.   
-The experiment was also double blind:  neither the parents of a child in the study nor the doctors treating the child knew which group the child belonged to.  
-</p>
-<p>In both experiments, <code>NotInnoculated</code> refers to children who did not participate in the experiment.
-<code>IncompleteVaccinations</code> refers to children who received one or two, but not all three
-administrations of the vaccine.
+<p>The data were collected in an investigation
+of environmental causes of disease. They show the annual mortality
+per 100,000 for males, averaged over the years 1958-1964, and
+the calcium concentration (in parts per million) in the drinking
+water for 61 large towns in England and Wales. The higher the 
+calcium concentration, the harder the water. Towns at least   
+as far north as Derby are identified in the table. Here there
+are several questions that might be of interest including, are
+mortality and water hardness related, and do either or both variables
+differ between northern and southern towns?
 </p>
 
 
 <h3>Source</h3>
 
-<p>Kyle Siegrist, &quot;Virtual Laboratories in Probability and Statistics&quot;, <a href="http://www.math.uah.edu/stat/data/Polio.html">http://www.math.uah.edu/stat/data/Polio.html</a>
-</p>
-<p>Thomas Francis, Robert Korn, et al. (1955). &quot;An Evaluation of the 1954 Poliomyelitis Vaccine Trials&quot;, 
-<em>American Journal of Public Health</em>,  45, (50 page supplement with a 63 page appendix).
-</p>
-
-
-<h3>References</h3>
-
-<p>K. A.  Brownlee (1955). &quot;Statistics of the 1954 Polio Vaccine Trials&quot;,  
-<em>Journal of the American Statistical Association</em>,  50, 1005-1013.
+<p>D. J. Hand, F. Daly, A. D. Lunn, K. J. McConway and E. Ostrowski (1994).
+<em>A Handbook of Small Datasets</em>, Chapman and Hall/CRC, London.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(PolioTrials)
-## maybe str(PolioTrials) ; plot(PolioTrials) ...
+
+  data("water", package = "HSAUR")
+  plot(mortality ~ hardness, data = water, 
+       col = as.numeric(water$location))
+
 </pre>
 
 

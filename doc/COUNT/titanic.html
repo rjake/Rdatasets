@@ -1,61 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Survival of Rats after Radiation Doses</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: titanic</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for survival"><tr><td>survival</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for titanic"><tr><td>titanic</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Survival of Rats after Radiation Doses
-</h2>
+<h2>titanic</h2>
 
 <h3>Description</h3>
 
-<p>The <code>survival</code> data frame has 14 rows and 2 columns.
-</p>
-<p>The data measured the survival percentages of batches of rats who were given 
-varying doses of radiation.  At each of 6 doses there were two or three
-replications of the experiment.
+<p>The data is an observation-based version of the 1912 Titanic passenger survival 
+log, 
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-survival
-</pre>
+<pre>data(titanic)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 1316 observations on the following 4 variables.
 </p>
 
 <dl>
-<dt><code>dose</code></dt><dd>
-<p>The dose of radiation administered (rads).
-</p>
+<dt><code>class</code></dt><dd><p>a factor with levels <code>1st class</code> <code>2nd class</code> <code>3rd class</code> <code>crew</code></p>
 </dd>
-<dt><code>surv</code></dt><dd>
-<p>The survival rate of the batches expressed as a percentage.
+<dt><code>age</code></dt><dd><p>a factor with levels <code>child</code> <code>adults</code></p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>women</code> <code>man</code></p>
+</dd>
+<dt><code>survived</code></dt><dd><p>a factor with levels <code>no</code> <code>yes</code></p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>titanic is saved as a data frame.
+Used to assess risk ratios   
 </p>
-</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>Efron, B. (1988) Computer-intensive methods in statistical regression.
-<em>SIAM Review</em>, <b>30</b>, 421&ndash;449.
+<p>Found in many other texts
 </p>
 
 
 <h3>References</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p>Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
+Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
+Hilbe, Joseph M (2009), Logistic Regression Models, Chapman &amp; Hall/CRC
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+
+data(titanic)
+titanic$survival &lt;- titanic$survived == "yes"
+glmlr &lt;- glm(survival ~ age + sex + factor(class), family=binomial, data=titanic)
+summary(glmlr)
+
+</pre>
 
 
 </body></html>

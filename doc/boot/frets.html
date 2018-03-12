@@ -1,42 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: UK Quarterly Gas Consumption</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Head Dimensions in Brothers</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for UKgas"><tr><td>UKgas</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for frets"><tr><td>frets</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>UK Quarterly Gas Consumption</h2>
+<h2>
+Head Dimensions in Brothers
+</h2>
 
 <h3>Description</h3>
 
-<p>Quarterly UK gas consumption from 1960Q1 to 1986Q4, in millions of therms.
+<p>The <code>frets</code> data frame has 25 rows and 4 columns.
+</p>
+<p>The data consist of measurements of the length and breadth of the heads of 
+pairs of adult brothers in 25 randomly sampled families.  All measurements
+are expressed in millimetres.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>UKgas</pre>
+<pre>
+frets
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A quarterly time series of length 108.
+<p>This data frame contains the following columns:
 </p>
+
+<dl>
+<dt><code>l1</code></dt><dd>
+<p>The head length of the eldest son.
+</p>
+</dd>
+<dt><code>b1</code></dt><dd>
+<p>The head breadth of the eldest son.
+</p>
+</dd>
+<dt><code>l2</code></dt><dd>
+<p>The head length of the second son.
+</p>
+</dd>
+<dt><code>b2</code></dt><dd>
+<p>The head breadth of the second son.
+</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Durbin, J. and Koopman, S. J. (2001) <em>Time Series Analysis by
-State Space Methods.</em>  Oxford University Press.
-<a href="http://www.ssfpack.com/dkbook/">http://www.ssfpack.com/dkbook/</a>
+<p>The data were obtained from
+</p>
+<p>Frets, G.P. (1921) Heredity of head form in man. <em>Genetica</em>, <b>3</b>,
+193.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-## maybe str(UKgas) ; plot(UKgas) ...
-</pre>
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+</p>
+<p>Whittaker, J. (1990) <em>Graphical Models in Applied Multivariate Statistics</em>.
+John Wiley.
+</p>
 
 
 </body></html>

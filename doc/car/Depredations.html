@@ -1,61 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Occupational Status of Fathers and their Sons</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Minnesota Wolf Depredation Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for occupationalStatus"><tr><td>occupationalStatus</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Depredations"><tr><td>Depredations</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Occupational Status of Fathers and their Sons</h2>
+<h2>
+Minnesota Wolf Depredation Data
+</h2>
 
 <h3>Description</h3>
 
-<p>Cross-classification of a sample of British males according to each
-subject's occupational status and his father's occupational status.
+<p>Wolf depredations of livestock on Minnesota farms, 1976-1998.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>occupationalStatus</pre>
+<pre>Depredations</pre>
 
 
 <h3>Format</h3>
 
-<p>A <code>table</code> of counts, with classifying factors
-<code>origin</code> (father's occupational status; levels <code>1:8</code>)
-and <code>destination</code> (son's occupational status; levels <code>1:8</code>).
+<p>A data frame with 434 observations on the following 5 variables.
 </p>
 
+<dl>
+<dt><code>longitude</code></dt><dd><p>longitude of the farm</p>
+</dd>
+<dt><code>latitude</code></dt><dd><p>latitude of the farm</p>
+</dd>
+<dt><code>number</code></dt><dd><p>number of depredations 1976-1998</p>
+</dd>
+<dt><code>early</code></dt><dd><p>number of depredations 1991 or before</p>
+</dd>
+<dt><code>late</code></dt><dd><p>number of depredations 1992 or later</p>
+</dd>
+</dl>
 
-<h3>Source</h3>
 
-<p>Goodman, L. A. (1979)
-Simple Models for the Analysis of Association in Cross-Classifications
-having Ordered Categories.
-<em>J. Am. Stat. Assoc.</em>, <b>74</b> (367), 537&ndash;552.
+
+<h3>References</h3>
+
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
 </p>
-<p>The data set has been in package <a href="https://CRAN.R-project.org/package=gnm"><span class="pkg">gnm</span></a> and been provided by the
-package authors.
+<p>Harper, Elizabeth K. and Paul, William J. and Mech, L. David and Weisberg, Sanford (2008),
+Effectiveness of Lethal, Directed Wolf-Depredation Control in Minnesota,
+<em>Journal of Wildlife Management</em>, 72, 3, 778-784.
+<a href="http://dx.doi.org/10.2193/2007-273">http://dx.doi.org/10.2193/2007-273</a>
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(stats); require(graphics)
-
-plot(occupationalStatus)
-
-##  Fit a uniform association model separating diagonal effects
-Diag &lt;- as.factor(diag(1:8))
-Rscore &lt;- scale(as.numeric(row(occupationalStatus)), scale = FALSE)
-Cscore &lt;- scale(as.numeric(col(occupationalStatus)), scale = FALSE)
-modUnif &lt;- glm(Freq ~ origin + destination + Diag + Rscore:Cscore,
-               family = poisson, data = occupationalStatus)
-
-summary(modUnif)
-plot(modUnif) # 4 plots, with warning about  h_ii ~= 1
-</pre>
 
 
 </body></html>

@@ -1,86 +1,97 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Morphological Measurements on Leptograpsus Crabs</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Paste strength by batch and cask</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for crabs"><tr><td>crabs</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Pastes"><tr><td>Pastes</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Morphological Measurements on Leptograpsus Crabs
-</h2>
+<h2>Paste strength by batch and cask</h2>
 
 <h3>Description</h3>
 
-<p>The <code>crabs</code> data frame has 200 rows and 8 columns, describing 5
-morphological measurements on 50 crabs each of two colour forms and
-both sexes, of the species <em>Leptograpsus variegatus</em> collected at
-Fremantle, W. Australia.
+<p>Strength of a chemical paste product; its quality
+depending on the delivery batch, and the cask within the
+delivery.
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>
-crabs
-</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 60 observations on the following 4 variables.
 </p>
 
 <dl>
-<dt><code>sp</code></dt><dd>
-<p><code>species</code> - <code>"B"</code> or <code>"O"</code> for blue or orange.
-</p>
+<dt><code>strength</code></dt><dd><p>paste strength.</p>
 </dd>
-<dt><code>sex</code></dt><dd>
-<p>as it says.
-</p>
+<dt><code>batch</code></dt><dd><p>delivery batch from which the sample was
+sample.  A factor with 10 levels: &lsquo;A&rsquo; to &lsquo;J&rsquo;.</p>
 </dd>
-<dt><code>index</code></dt><dd>
-<p>index <code>1:50</code> within each of the four groups.
-</p>
+<dt><code>cask</code></dt><dd><p>cask within the delivery batch from which the
+sample was chosen.  A factor with 3 levels: &lsquo;a&rsquo; to
+&lsquo;c&rsquo;.</p>
 </dd>
-<dt><code>FL</code></dt><dd>
-<p>frontal lobe size (mm).
-</p>
-</dd>
-<dt><code>RW</code></dt><dd>
-<p>rear width (mm).
-</p>
-</dd>
-<dt><code>CL</code></dt><dd>
-<p>carapace length (mm).
-</p>
-</dd>
-<dt><code>CW</code></dt><dd>
-<p>carapace width (mm).
-</p>
-</dd>
-<dt><code>BD</code></dt><dd>
-<p>body depth (mm).
-</p>
+<dt><code>sample</code></dt><dd><p>the sample of paste whose strength was assayed,
+two assays per sample. A factor with 30 levels: &lsquo;A:a&rsquo; to
+&lsquo;J:c&rsquo;.</p>
 </dd>
 </dl>
 
 
+<h3>Details</h3>
+
+<p>The data are described in Davies and Goldsmith (1972) as
+coming from &ldquo; deliveries of a chemical paste
+product contained in casks where, in addition to sampling
+and testing errors, there are variations in quality
+between deliveries ... As a routine, three casks
+selected at random from each delivery were sampled and
+the samples were kept for reference. ... Ten of the
+delivery batches were sampled at random and two
+analytical tests carried out on each of the 30 samples&rdquo;.
+</p>
+
 
 <h3>Source</h3>
 
-<p>Campbell, N.A. and Mahon, R.J. (1974) A multivariate
-study of variation in two species of rock crab of genus
-<em>Leptograpsus.</em>
-<em>Australian Journal of  Zoology</em> <b>22</b>, 417&ndash;425.
+<p>O.L. Davies and P.L. Goldsmith (eds), <em>Statistical
+Methods in Research and Production, 4th ed.</em>, Oliver and
+Boyd, (1972), section 6.5
 </p>
 
 
-<h3>References</h3>
+<h3>Examples</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (2002)
-<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
-</p>
+<pre>
+str(Pastes)
+require(lattice)
+dotplot(cask ~ strength | reorder(batch, strength), Pastes,
+        strip = FALSE, strip.left = TRUE, layout = c(1, 10),
+        ylab = "Cask within batch",
+        xlab = "Paste strength", jitter.y = TRUE)
+## Modifying the factors to enhance the plot
+Pastes &lt;- within(Pastes, batch &lt;- reorder(batch, strength))
+Pastes &lt;- within(Pastes, sample &lt;- reorder(reorder(sample, strength),
+          as.numeric(batch)))
+dotplot(sample ~ strength | batch, Pastes,
+        strip = FALSE, strip.left = TRUE, layout = c(1, 10),
+        scales = list(y = list(relation = "free")),
+        ylab = "Sample within batch",
+        xlab = "Paste strength", jitter.y = TRUE)
+## Four equivalent models differing only in specification
+(fm1 &lt;- lmer(strength ~ (1|batch) + (1|sample), Pastes))
+(fm2 &lt;- lmer(strength ~ (1|batch/cask), Pastes))
+(fm3 &lt;- lmer(strength ~ (1|batch) + (1|batch:cask), Pastes))
+(fm4 &lt;- lmer(strength ~ (1|batch/sample), Pastes))
+## fm4 results in redundant labels on the sample:batch interaction
+head(ranef(fm4)[[1]])
+## compare to fm1
+head(ranef(fm1)[[1]])
+## This model is different and NOT appropriate for these data
+(fm5 &lt;- lmer(strength ~ (1|batch) + (1|cask), Pastes))
+
+L &lt;- getME(fm1, "L")
+Matrix::image(L, sub = "Structure of random effects interaction in pastes model")
+</pre>
 
 
 </body></html>

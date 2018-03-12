@@ -1,63 +1,100 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Measurements on Petroleum Rock Samples</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Refugee Appeals</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for rock"><tr><td>rock</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Greene"><tr><td>Greene</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Measurements on Petroleum Rock Samples</h2>
+<h2>Refugee Appeals</h2>
 
 <h3>Description</h3>
 
-<p>Measurements on 48 rock samples from a petroleum reservoir.</p>
+<p>The <code>Greene</code> data frame has 384 rows and 7 columns.
+These are cases filed in 1990, in which refugee claimants rejected
+by the Canadian Immigration and Refugee Board asked the Federal
+Court of Appeal for leave to appeal the negative ruling of the Board.
+</p>
 
 
 <h3>Usage</h3>
 
-<pre>rock</pre>
+<pre>
+Greene
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 48 rows and 4 numeric columns.
+<p>This data frame contains the following columns:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-        [,1] </td><td style="text-align: left;"> area  </td><td style="text-align: left;"> area of pores space, in pixels
-        out of 256 by 256 </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,2] </td><td style="text-align: left;"> peri  </td><td style="text-align: left;"> perimeter in pixels </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,3] </td><td style="text-align: left;"> shape </td><td style="text-align: left;"> perimeter/sqrt(area) </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-        [,4] </td><td style="text-align: left;"> perm  </td><td style="text-align: left;"> permeability in milli-Darcies
-    </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>Twelve core samples from petroleum reservoirs were sampled by 4
-cross-sections.  Each core sample was measured for permeability, and
-each cross-section has total area of pores, total perimeter of
-pores, and shape.
+<dl>
+<dt>judge</dt><dd>
+<p>Name of judge hearing case.
+A factor with levels:
+<code>Desjardins</code>, <code>Heald</code>, <code>Hugessen</code>, <code>Iacobucci</code>, <code>MacGuigan</code>, 
+<code>Mahoney</code>, <code>Marceau</code>, <code>Pratte</code>, <code>Stone</code>, <code>Urie</code>. 
 </p>
+</dd>
+<dt>nation</dt><dd>
+<p>Nation of origin of claimant.
+A factor with levels:
+<code>Argentina</code>, <code>Bulgaria</code>, <code>China</code>, <code>Czechoslovakia</code>,
+<code>El.Salvador</code>, <code>Fiji</code>, <code>Ghana</code>, <code>Guatemala</code>, 
+<code>India</code>, <code>Iran</code>, <code>Lebanon</code>, <code>Nicaragua</code>, 
+<code>Nigeria</code>, <code>Pakistan</code>, <code>Poland</code>, <code>Somalia</code>, 
+<code>Sri.Lanka</code>.
+</p>
+</dd>
+<dt>rater</dt><dd>
+<p>Judgment of independent rater.
+A factor with levels:
+<code>no</code>, case has no merit;
+<code>yes</code>, case has some merit (leave to appeal should be granted).
+</p>
+</dd>
+<dt>decision</dt><dd>
+<p>Judge's decision.
+A factor with levels:
+<code>no</code>, leave to appeal not granted;
+<code>yes</code>, leave to appeal granted.
+</p>
+</dd>
+<dt>language</dt><dd>
+<p>Language of case. 
+A factor with levels:
+<code>English</code>,
+<code>French</code>.
+</p>
+</dd>
+<dt>location</dt><dd>
+<p>Location of original refugee claim.
+A factor with levels:
+<code>Montreal</code>,
+<code>other</code>,
+<code>Toronto</code>.
+</p>
+</dd>
+<dt>success</dt><dd>
+<p>Logit of success rate, for all cases from the applicant's nation.
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>Data from BP Research, image analysis by Ronit Katz, U. Oxford.
+<p>Personal communication from Ian Greene, Department of
+Political Science, York University.
+</p>
+
+
+<h3>References</h3>
+
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
 
 

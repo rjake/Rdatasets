@@ -1,97 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Vaso Constriction Skin Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Lawyers' Ratings of State Judges in the US Superior Court</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for vaso"><tr><td>vaso</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for USJudgeRatings"><tr><td>USJudgeRatings</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Vaso Constriction Skin Data Set</h2>
+<h2>Lawyers' Ratings of State Judges in the US Superior Court</h2>
 
 <h3>Description</h3>
 
-<p>Finney's data on vaso constriction in the skin of the digits.
+<p>Lawyers' ratings of state judges in the US Superior Court.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(vaso)</pre>
+<pre>USJudgeRatings</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 39 observations on the following 3 variables.
+<p>A data frame containing 43 observations on 12 numeric variables.
 </p>
 
-<dl>
-<dt><code>Volume</code></dt><dd><p>Inhaled volume of air</p>
-</dd>
-<dt><code>Rate</code></dt><dd><p>Rate of inhalation</p>
-</dd>
-<dt><code>Y</code></dt><dd><p>vector of 0 or 1 values.</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    [,1] </td><td style="text-align: left;"> CONT </td><td style="text-align: left;"> Number of contacts of lawyer with judge.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,2] </td><td style="text-align: left;"> INTG </td><td style="text-align: left;"> Judicial integrity.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,3] </td><td style="text-align: left;"> DMNR </td><td style="text-align: left;"> Demeanor.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,4] </td><td style="text-align: left;"> DILG </td><td style="text-align: left;"> Diligence.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,5] </td><td style="text-align: left;"> CFMG </td><td style="text-align: left;"> Case flow managing.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,6] </td><td style="text-align: left;"> DECI </td><td style="text-align: left;"> Prompt decisions.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,7] </td><td style="text-align: left;"> PREP </td><td style="text-align: left;"> Preparation for trial.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,8] </td><td style="text-align: left;"> FAMI </td><td style="text-align: left;"> Familiarity with law.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,9] </td><td style="text-align: left;"> ORAL </td><td style="text-align: left;"> Sound oral rulings.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,10] </td><td style="text-align: left;"> WRIT </td><td style="text-align: left;"> Sound written rulings.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,11] </td><td style="text-align: left;"> PHYS </td><td style="text-align: left;"> Physical ability.</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    [,12] </td><td style="text-align: left;"> RTEN </td><td style="text-align: left;"> Worthy of retention.
+  </td>
+</tr>
 
+</table>
 
-
-<h3>Details</h3>
-
-<p>The data taken from Finney (1947) were obtained in a carefully
-controlled study in human physiology where a reflex
-&ldquo;vaso constriction&rdquo; may occur in the skin of the digits after taking a
-single deep breath.  The response y is the occurence (y = 1) or
-non-occurence (y = 0) of vaso constriction in the skin of the digits
-of a subject after he or she inhaled a certain volume of air at a certain
-rate.  The responses of three subjects are available.  The first
-contributed 9 responses, the second contributed 8 responses, and the
-third contributed 22 responses.
-</p>
-<p>Although the data represent repeated measurements, an analysis that
-assumes independent observations may be applied, as claimed by Pregibon
-(1981).
-</p>
 
 
 <h3>Source</h3>
 
-<p>Finney, D.J. (1947)
-The estimation from individual records of the relationship between
-dose and quantal response.
-<em>Biometrika</em> <b>34</b>, 320&ndash;334
-</p>
-
-
-<h3>References</h3>
-
-<p>Atkinson, A.C. and Riani, M. (2000)
-<em>Robust Diagnostic Regression Analysis</em>,
-First Edition. New York: Springer, Table A.23.
-</p>
-<p>Fahrmeir, L. and Tutz, G. (2001)
-<em>Multivariate Statistical Modelling Based on Generalized Linear Models</em>,
-Springer, Table 4.2.
-</p>
-<p>Kuensch, H.R., Stefanski, A. and Carrol, R.J. (1989)
-Conditionally unbiased bounded influence estimation in general
-regression models, with applications to generalized linear models,
-<em>JASA</em> <b>84</b>, 460&ndash;466.
-</p>
-<p>Pregibon, D. (1981)
-Logistic regression diagnostics,
-<em>Annals of Statistics</em> <b>9</b>, 705&ndash;724.
+<p>New Haven Register, 14 January, 1977 (from John Hartigan).
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(vaso)
-str(vaso)
-pairs(vaso)
-
-glmV &lt;- glm(Y ~ log(Volume) + log(Rate), family=binomial, data=vaso)
-summary(glmV)
-## --&gt;  example(glmrob)  showing classical &amp; robust GLM
+require(graphics)
+pairs(USJudgeRatings, main = "USJudgeRatings data")
 </pre>
 
 

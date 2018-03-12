@@ -1,83 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Refugee Appeals</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Cigarette Consumption</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Greene"><tr><td>Greene</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Cigar"><tr><td>Cigar</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Refugee Appeals</h2>
+<h2>Cigarette Consumption </h2>
 
 <h3>Description</h3>
 
-<p>The <code>Greene</code> data frame has 384 rows and 7 columns.
-These are cases filed in 1990, in which refugee claimants rejected
-by the Canadian Immigration and Refugee Board asked the Federal
-Court of Appeal for leave to appeal the negative ruling of the Board.
+<p>a panel of 46 observations  from 1963  to 1992
+</p>
+<p><em>number of observations</em> :  1380
+</p>
+<p><em>observation</em> :  regional
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-Greene
-</pre>
+<pre>data(Cigar)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>judge</dt><dd>
-<p>Name of judge hearing case.
-A factor with levels:
-<code>Desjardins</code>, <code>Heald</code>, <code>Hugessen</code>, <code>Iacobucci</code>, <code>MacGuigan</code>, 
-<code>Mahoney</code>, <code>Marceau</code>, <code>Pratte</code>, <code>Stone</code>, <code>Urie</code>. 
-</p>
+<dt>state</dt><dd><p>state abbreviation</p>
 </dd>
-<dt>nation</dt><dd>
-<p>Nation of origin of claimant.
-A factor with levels:
-<code>Argentina</code>, <code>Bulgaria</code>, <code>China</code>, <code>Czechoslovakia</code>,
-<code>El.Salvador</code>, <code>Fiji</code>, <code>Ghana</code>, <code>Guatemala</code>, 
-<code>India</code>, <code>Iran</code>, <code>Lebanon</code>, <code>Nicaragua</code>, 
-<code>Nigeria</code>, <code>Pakistan</code>, <code>Poland</code>, <code>Somalia</code>, 
-<code>Sri.Lanka</code>.
-</p>
+<dt>year</dt><dd><p>the year</p>
 </dd>
-<dt>rater</dt><dd>
-<p>Judgment of independent rater.
-A factor with levels:
-<code>no</code>, case has no merit;
-<code>yes</code>, case has some merit (leave to appeal should be granted).
-</p>
+<dt>price</dt><dd><p>price per pack of cigarettes</p>
 </dd>
-<dt>decision</dt><dd>
-<p>Judge's decision.
-A factor with levels:
-<code>no</code>, leave to appeal not granted;
-<code>yes</code>, leave to appeal granted.
-</p>
+<dt>pop</dt><dd><p>population</p>
 </dd>
-<dt>language</dt><dd>
-<p>Language of case. 
-A factor with levels:
-<code>English</code>,
-<code>French</code>.
-</p>
+<dt>pop16</dt><dd><p>population above the age of 16</p>
 </dd>
-<dt>location</dt><dd>
-<p>Location of original refugee claim.
-A factor with levels:
-<code>Montreal</code>,
-<code>other</code>,
-<code>Toronto</code>.
-</p>
+<dt>cpi</dt><dd><p>consumer price index (1983=100)</p>
 </dd>
-<dt>success</dt><dd>
-<p>Logit of success rate, for all cases from the applicant's nation.
-</p>
+<dt>ndi</dt><dd><p>per capita disposable income</p>
+</dd>
+<dt>sales</dt><dd><p>cigarette sales in packs per capita</p>
+</dd>
+<dt>pimin</dt><dd><p>minimum price in adjoining states per pack of cigarettes</p>
 </dd>
 </dl>
 
@@ -85,17 +54,23 @@ A factor with levels:
 
 <h3>Source</h3>
 
-<p>Personal communication from Ian Greene, Department of
-Political Science, York University.
+<p>Baltagi, B.H.  and  D.  Levin (1992) &ldquo;Cigarette taxation: raising revenues and reducing consumption&rdquo;, <em>Structural Changes and Economic Dynamics</em>, <b>3</b>, 321&ndash;335.
+</p>
+<p>Baltagi, B.H.,  J.M.   Griffin and  W.  Xiong (2000) &ldquo;To pool or not to pool: homogeneous versus heterogeneous estimators applied to cigarette demand&rdquo;, <em>Review of Economics and Statistics</em>, <b>82</b>, 117&ndash;126.
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. (2008)
-<em>Applied Regression Analysis and Generalized Linear Models</em>,
-Second Edition. Sage.  
+<p>Baltagi, Badi H. (2003) <em>Econometric analysis of panel data</em>, John Wiley and sons, <a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>.
 </p>
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
+</p>
+<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

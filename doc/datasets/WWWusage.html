@@ -1,84 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Canadian Women's Labour-Force Participation</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Internet Usage per Minute</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Bfox"><tr><td>Bfox</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for WWWusage"><tr><td>WWWusage</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Canadian Women's Labour-Force Participation</h2>
+<h2>Internet Usage per Minute</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Bfox</code> data frame has 30 rows and 7 columns.
-Time-series data on Canadian women's labor-force participation,
-1946&ndash;1975.
+<p>A time series of the numbers of users connected to the Internet
+through a server every minute.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-Bfox
-</pre>
+<pre>WWWusage</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
-</p>
-
-<dl>
-<dt>partic</dt><dd>
-<p>Percent of adult women in the workforce.
-</p>
-</dd>
-<dt>tfr</dt><dd>
-<p>Total fertility rate: expected births to a cohort of 1000
-women at current age-specific fertility rates.
-</p>
-</dd>
-<dt>menwage</dt><dd>
-<p>Men's average weekly wages, in constant 1935 dollars and
-adjusted for current tax rates.
-</p>
-</dd>
-<dt>womwage</dt><dd>
-<p>Women's average weekly wages.
-</p>
-</dd>
-<dt>debt</dt><dd>
-<p>Per-capita consumer debt, in constant dollars.
-</p>
-</dd>
-<dt>parttime</dt><dd>
-<p>Percent of the active workforce working 34 hours per week or
-less.
-</p>
-</dd>
-</dl>
-
-
-
-<h3>Warning</h3>
-
-<p>The value of <code>tfr</code> for 1973 is misrecorded as 2931; it should be 1931.
+<p>A time series of length 100.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Fox, B. (1980) 
-<em>Women's Domestic Labour and their Involvement 
-in Wage Work.</em> Unpublished doctoral dissertation, p. 449.
+<p>Durbin, J. and Koopman, S. J. (2001) <em>Time Series Analysis by
+State Space Methods.</em>  Oxford University Press.
+<a href="http://www.ssfpack.com/dkbook/">http://www.ssfpack.com/dkbook/</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. (2008)
-<em>Applied Regression Analysis and Generalized Linear Models</em>,
-Second Edition. Sage.  
+<p>Makridakis, S., Wheelwright, S. C. and Hyndman, R. J. (1998)
+<em>Forecasting: Methods and Applications.</em> Wiley.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+require(graphics)
+work &lt;- diff(WWWusage)
+par(mfrow = c(2, 1)); plot(WWWusage); plot(work)
+## Not run: 
+require(stats)
+aics &lt;- matrix(, 6, 6, dimnames = list(p = 0:5, q = 0:5))
+for(q in 1:5) aics[1, 1+q] &lt;- arima(WWWusage, c(0, 1, q),
+    optim.control = list(maxit = 500))$aic
+for(p in 1:5)
+   for(q in 0:5) aics[1+p, 1+q] &lt;- arima(WWWusage, c(p, 1, q),
+       optim.control = list(maxit = 500))$aic
+round(aics - min(aics, na.rm = TRUE), 2)
+
+## End(Not run)</pre>
 
 
 </body></html>

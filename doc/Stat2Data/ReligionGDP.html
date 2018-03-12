@@ -1,37 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Alfalfa</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: ReligionGDP</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Alfalfa"><tr><td>Alfalfa</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for ReligionGDP"><tr><td>ReligionGDP</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Alfalfa
-</h2>
+<h2>ReligionGDP</h2>
 
 <h3>Description</h3>
 
-<p>Growth of alfalfa sprouts in acidic conditions
+<p>Data on religiosity of countries from the Pew Global Attitudes Project
 </p>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 15 observations on the following 3 variables.
+<p>A dataset with 44 observations on the following 9 variables.
 </p>
 
 <table summary="Rd table">
 <tr>
  <td style="text-align: right;">
-    <code>Ht4</code> </td><td style="text-align: left;"> Height of alfalfa sprouts after four days</td>
+    <code>Country</code> </td><td style="text-align: left;"> Name of country</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Acid</code> </td><td style="text-align: left;"> Amount of acid: <code>1.5HCl</code>, <code>3.0HCl</code>, or <code>water</code></td>
+    <code>Religiosity</code> </td><td style="text-align: left;"> A measure of degree of religiosity for residents of the country</td>
 </tr>
 <tr>
  <td style="text-align: right;">
-    <code>Row</code> </td><td style="text-align: left;"> <code>a</code>= closest to window through  <code>e</code>=farthest from window</td>
+    <code>GDP</code> </td><td style="text-align: left;"> Per capita Gross Domestic Product in the country</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Africa</code> </td><td style="text-align: left;"> Indicator for countries in Africa </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>EastEurope</code> </td><td style="text-align: left;"> Indicator for countries in Eastern Europe </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>MiddleEast</code> </td><td style="text-align: left;"> Indicator for countries in the Middle East </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Asia</code> </td><td style="text-align: left;"> Indicator for countries in Asia </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>WestEurope</code> </td><td style="text-align: left;"> Indicator for countries in Western Europe </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Americas</code> </td><td style="text-align: left;"> Indicator for countries in North/South America</td>
 </tr>
 <tr>
  <td style="text-align: right;">
@@ -44,28 +66,21 @@ Alfalfa
 
 <h3>Details</h3>
 
-<p>Some students were interested in how an acidic environment might affect
-the growth of plants. They planted alfalfa seeds in 15 cups and randomly chose five to get plain
-water, five to get a moderate amount of acid (1.5M HCl), and five to get a stronger acid solution
-(3.0M HCl). The plants were grown in an indoor room so the students assumed that the distance
-from the main source of daylight (a window) might have an affect on growth rates. For this reason,
-they arranged the cups in five rows of three with one cup from each Acid level in each row. These
-are labeled in the data set as Row: a= farthest from the window through e=nearest to the window. 
+<p>The Pew Research Center's Global Attitudes Project surveyed
+people around the world and asked (among many other questions) whether they agreed that &quot;belief
+in God is necessary for morality,&quot; whether religion is very important in their lives, and whether
+they pray at least once per day. The variable Religiosity is the sum of the percentage of positive
+responses on these three items, measured in each of 44 countries. The dataset also includes the 
+per capita GDP for each country and indicator variables
+that record the part of the world the country is in.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Neumann, A., Richards, A.-L., and Randa, J. (2001).  
-Effects of acid rain on alfalfa plants. Unpublished manuscript, Oberlin College. 
+<p>Data from the 2007 Spring Survey conducted through the 
+Pew Global Attitudes Project at http://www.pewglobal.org.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(Alfalfa)
-</pre>
 
 
 </body></html>

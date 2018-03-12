@@ -1,40 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Individual Preferences Over Immigration Policy</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 8 cognitive variables used by Dwyer for an example.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for immigration"><tr><td>immigration</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Dwyer"><tr><td>Dwyer</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Individual Preferences Over Immigration Policy</h2>
+<h2>8 cognitive variables used by Dwyer for an example.
+</h2>
 
 <h3>Description</h3>
 
-<p>These five datasets are part of a larger set of 10 multiply
-imputed data sets describing individual preferences toward immigration
-policy.  Imputation was performed via Amelia.  
+<p>Dwyer (1937) introduced a technique for factor extension and used 8 cognitive variables from Thurstone.  This is the example data set used in his paper.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>data(Dwyer)</pre>
 
 
 <h3>Format</h3>
 
-<p>Each multiply-inputed data set consists of a table with 7 variables
-(&quot;ipip&quot;, &quot;wage1992&quot;, &quot;prtyid&quot;,
-&quot;ideol&quot;, &quot;gender&quot;) and 2,485 observations.  For variable descriptions,
-please refer to Scheve and
-Slaugher, 2001.  
+<p>The format is:
+num [1:8, 1:8] 1 0.58 -0.28 0.01 0.36 0.38 0.61 0.15 0.58 1 ...
+- attr(*, &quot;dimnames&quot;)=List of 2
+..$ : chr [1:8] &quot;V1&quot; &quot;V2&quot; &quot;V3&quot; &quot;V4&quot; ...
+..$ : chr [1:8] &quot;V1&quot; &quot;V2&quot; &quot;V3&quot; &quot;V4&quot; ...
 </p>
 
 
 <h3>Source</h3>
 
-<p>National Election Survey</p>
+<p>Data matrix retyped from the original publication. 
+</p>
 
 
 <h3>References</h3>
 
-<p>Scheve, Kenneth and Matthew Slaughter (2001). &ldquo;Labor Market Competition
-and Individual Preferences Over Immigration Policy,&rdquo; <em>The Review of
-Economics and Statistics</em>, vol. 83, no. 1, pp. 133-145.  </p>
+<p>Dwyer, Paul S. (1937), The determination of the factor loadings of a given test from the known factor loadings of other tests. Psychometrika, 3, 173-178
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(Dwyer)
+Ro &lt;- Dwyer[1:7,1:7]
+Roe &lt;- Dwyer[1:7,8]
+fo &lt;- fa(Ro,2,rotate="none")
+fa.extension(Roe,fo)
+</pre>
 
 
 </body></html>

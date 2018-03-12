@@ -1,105 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Joyner-Boore Attenuation Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Neurotransmission in Guinea Pig Brains</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for attenu"><tr><td>attenu</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for paulsen"><tr><td>paulsen</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>The Joyner&ndash;Boore Attenuation Data</h2>
+<h2>
+Neurotransmission in Guinea Pig Brains
+</h2>
 
 <h3>Description</h3>
 
-<p>This data gives peak accelerations measured at various observation
-stations for 23 earthquakes in California.  The data have been used
-by various workers to estimate the attenuating affect of distance
-on ground acceleration.
+<p>The <code>paulsen</code> data frame has 346 rows and 1 columns.  
+</p>
+<p>Sections were prepared from the brain of adult guinea pigs. Spontaneous
+currents that flowed into individual brain cells were then recorded and
+the peak amplitude of each current measured.  The aim of the experiment 
+was to see if the current flow was
+quantal in nature (i.e. that it is not a single burst but instead is built up
+of many smaller bursts of current).  If the current was indeed quantal then it
+would be expected that the distribution of the current amplitude would be
+multimodal with modes at regular intervals.  The modes would be expected to
+decrease in magnitude for higher current amplitudes.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>attenu</pre>
+<pre>
+paulsen
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 182 observations on 5 variables.
+<p>This data frame contains the following column:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    [,1] </td><td style="text-align: left;"> event   </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Event Number</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,2] </td><td style="text-align: left;"> mag     </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Moment Magnitude</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,3] </td><td style="text-align: left;"> station </td><td style="text-align: left;"> factor  </td><td style="text-align: left;"> Station Number</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,4] </td><td style="text-align: left;"> dist    </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Station-hypocenter distance (km)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [,5] </td><td style="text-align: left;"> accel   </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Peak acceleration (g)</td>
-</tr>
-
-</table>
-
+<dl>
+<dt><code>y</code></dt><dd>
+<p>The current flowing into individual brain cells. The currents are
+measured in pico-amperes.
+</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Joyner, W.B., D.M. Boore and R.D. Porcella (1981).  Peak horizontal
-acceleration and velocity from strong-motion records including
-records from the 1979 Imperial Valley, California earthquake.  USGS
-Open File report 81-365. Menlo Park, Ca.
+<p>The data were kindly made available by Dr. O. Paulsen from the Department
+of Pharmacology at the University of Oxford. 
+</p>
+<p>Paulsen, O. and Heggelund, P. (1994) The quantal size at retinogeniculate 
+synapses determined from spontaneous and evoked EPSCs in guinea-pig thalamic 
+slices. <em>Journal of Physiology</em>, <b>480</b>, 505&ndash;511. 
 </p>
 
 
 <h3>References</h3>
 
-<p>Boore, D. M. and Joyner, W.B.(1982)
-The empirical prediction of ground motion,
-<em>Bull. Seism. Soc. Am.</em>, <b>72</b>, S269&ndash;S268.
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
 </p>
-<p>Bolt, B. A. and Abrahamson, N. A. (1982)
-New attenuation relations for peak and expected accelerations of
-strong ground motion,
-<em>Bull. Seism. Soc. Am.</em>, <b>72</b>, 2307&ndash;2321.
-</p>
-<p>Bolt B. A. and Abrahamson, N. A. (1983)
-Reply to W. B. Joyner &amp; D. M. Boore's &ldquo;Comments on: New
-attenuation relations for peak and expected accelerations for peak
-and expected accelerations of strong ground motion&rdquo;,
-<em>Bull. Seism. Soc. Am.</em>, <b>73</b>, 1481&ndash;1483.
-</p>
-<p>Brillinger, D. R. and Preisler, H. K. (1984)
-An exploratory analysis of the Joyner-Boore attenuation data,
-<em>Bull. Seism. Soc. Am.</em>, <b>74</b>, 1441&ndash;1449.
-</p>
-<p>Brillinger, D. R. and Preisler, H. K. (1984)
-<em>Further analysis of the Joyner-Boore attenuation data</em>.
-Manuscript.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(graphics)
-## check the data class of the variables
-sapply(attenu, data.class)
-summary(attenu)
-pairs(attenu, main = "attenu data")
-coplot(accel ~ dist | as.factor(event), data = attenu, show.given = FALSE)
-coplot(log(accel) ~ log(dist) | as.factor(event),
-       data = attenu, panel = panel.smooth, show.given = FALSE)
-</pre>
 
 
 </body></html>

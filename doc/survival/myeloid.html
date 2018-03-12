@@ -1,80 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Goldenrod Galls</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Acute myeloid leukemia</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Goldenrod"><tr><td>Goldenrod</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for myeloid"><tr><td>myeloid</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Goldenrod Galls</h2>
+<h2>Acute myeloid leukemia</h2>
 
 <h3>Description</h3>
 
-<p>Measurements for a sample of goldenrod galls
+<p>This simulated data set is based on a trial in acute myeloid
+leukemia.
 </p>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 1055 observations on the following 9 variables.
+<p>A data frame with 646 observations on the following 9 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Gdiam03</code> </td><td style="text-align: left;"> Gall diameter in 2003 (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Stdiam03</code> </td><td style="text-align: left;"> Stem diameter in 2003 (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Wall03</code> </td><td style="text-align: left;"> Wall thickness in 2003 (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Fate03</code> </td><td style="text-align: left;"> <code>b</code>=beetle present <code>e</code>=early death <code>f</code>=living fly larva <code>g</code>=living wasp  <code>o</code>=pupal case <code>u</code>=unknown</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Gdiam04</code> </td><td style="text-align: left;"> Gall diameter in 2004 (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Stdiam04</code> </td><td style="text-align: left;"> Stem diameter in 2004 (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Wall04</code> </td><td style="text-align: left;"> Wall thickness in 2003 (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Fate04</code> </td><td style="text-align: left;"> <code>b</code>=beetle present <code>e</code>=early death <code>f</code>=living fly larva <code>g</code>=living wasp  <code>o</code>=pupal case <code>u</code>=unknown</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Fly04</code> </td><td style="text-align: left;"> Fly in 2004? <code>n</code> or <code>y</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
+<dl>
+<dt><code>id</code></dt><dd><p>subject identifier, 1-646</p>
+</dd>
+<dt><code>trt</code></dt><dd><p>treatment arm A or B</p>
+</dd>
+<dt><code>futime</code></dt><dd><p>time to death or last follow-up</p>
+</dd>
+<dt><code>death</code></dt><dd><p>1 if <code>futime</code> is a death, 0 for censoring</p>
+</dd>
+<dt><code>txtime</code></dt><dd><p>time to hematropetic stem cell transplant</p>
+</dd>
+<dt><code>crtime</code></dt><dd><p>time to complete response</p>
+</dd>
+<dt><code>rltime</code></dt><dd><p>time to relapse of disease</p>
+</dd>
+</dl>
 
 
 
 <h3>Details</h3>
 
-<p>Biology students collected measurements on goldenrod galls at the
-Brown Family Environmental Center at Kenyon College.
+<p>This data set is used to illustrate multi-state survival curves.
+The correlation between within-subject event times strongly resembles
+that from an actual trial, but none of the actual data values are
+from that source.
 </p>
 
 
-<h3>Source</h3>
+<h3>Examples</h3>
 
-<p>Thanks to the Kenyon College Department of Biology for sharing these data.
-</p>
+<pre>
+coxph(Surv(futime, death) ~ trt, data=myeloid)
+# See the mstate vignette for a more complete analysis
+</pre>
 
 
 </body></html>

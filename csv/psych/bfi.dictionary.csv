@@ -1,21 +1,29 @@
-"","Year","Ige","Fge","Cge","Iw","Fw","Cw"
-"1",1935,33.1,1170.6,97.8,12.93,191.5,1.8
-"2",1936,45,2015.8,104.4,25.9,516,0.8
-"3",1937,77.2,2803.3,118,35.05,729,7.4
-"4",1938,44.6,2039.7,156.2,22.89,560.4,18.1
-"5",1939,48.1,2256.2,172.6,18.84,519.9,23.5
-"6",1940,74.4,2132.2,186.6,28.57,628.5,26.5
-"7",1941,113,1834.1,220.9,48.51,537.1,36.2
-"8",1942,91.9,1588,287.8,43.34,561.2,60.8
-"9",1943,61.3,1749.4,319.9,37.02,617.2,84.4
-"10",1944,56.8,1687.2,321.3,37.81,626.7,91.2
-"11",1945,93.6,2007.7,319.6,39.27,737.2,92.4
-"12",1946,159.9,2208.3,346,53.46,760.5,86
-"13",1947,147.2,1656.7,456.4,55.56,581.4,111.1
-"14",1947,146.3,1604.4,543.4,49.56,662.3,130.6
-"15",1949,98.3,1431.8,618.3,32.04,583.8,141.8
-"16",1950,93.5,1610.5,647.4,32.24,635.2,136.7
-"17",1951,135.2,1819.4,671.3,54.38,723.8,129.7
-"18",1952,157.3,2079.7,726.1,71.78,864.1,145.5
-"19",1953,179.5,2371.6,800.3,90.08,1193.5,174.8
-"20",1954,189.6,2759.9,888.9,68.6,1188.9,213.5
+"","ItemLabel","Item","Giant3","Big6","Little12","Keying","IPIP100"
+"A1","q_146","Am indifferent to the feelings of others.","Cohesion","Agreeableness","Compassion",-1,"B5:A"
+"A2","q_1162","Inquire about others' well-being.","Cohesion","Agreeableness","Compassion",1,"B5:A"
+"A3","q_1206","Know how to comfort others.","Cohesion","Agreeableness","Compassion",1,"B5:A"
+"A4","q_1364","Love children.","Cohesion","Agreeableness","Compassion",1,"B5:A"
+"A5","q_1419","Make people feel at ease.","Cohesion","Agreeableness","Compassion",1,"B5:A"
+"C1","q_124","Am exacting in my work.","Stability","Conscientiousness","Orderliness",1,"B5:C"
+"C2","q_530","Continue until everything is perfect.","Stability","Conscientiousness","Orderliness",1,"B5:C"
+"C3","q_619","Do things according to a plan.","Stability","Conscientiousness","Orderliness",1,"B5:C"
+"C4","q_626","Do things in a half-way manner.","Stability","Conscientiousness","Industriousness",-1,"B5:C"
+"C5","q_1949","Waste my time.","Stability","Conscientiousness","Industriousness",-1,"B5:C"
+"E1","q_712","Don't talk a lot.","Plasticity","Extraversion","Sociability",-1,"B5:E"
+"E2","q_901","Find it difficult to approach others.","Plasticity","Extraversion","Sociability",-1,"B5:E"
+"E3","q_1205","Know how to captivate people.","Plasticity","Extraversion","Assertiveness",1,"B5:E"
+"E4","q_1410","Make friends easily.","Plasticity","Extraversion","Sociability",1,"B5:E"
+"E5","q_1768","Take charge.","Plasticity","Extraversion","Assertiveness",1,"B5:E"
+"N1","q_952","Get angry easily.","Stability","Emotional Stability","Balance",-1,"B5:N"
+"N2","q_974","Get irritated easily.","Stability","Emotional Stability","Balance",-1,"B5:N"
+"N3","q_1099","Have frequent mood swings.","Stability","Emotional Stability","Balance",-1,"B5:N"
+"N4","q_1479","Often feel blue.","Stability","Emotional Stability","Balance",-1,"B5:N"
+"N5","q_1505","Panic easily.","Stability","Emotional Stability","Balance",-1,"B5:N"
+"O1","q_128","Am full of ideas.","Plasticity","Openness","Intellect",1,"B5:O"
+"O2","q_316","Avoid difficult reading material.","Plasticity","Openness","Intellect",-1,"B5:O"
+"O3","q_492","Carry the conversation to a higher level.","Plasticity","Openness","Intellect",1,"B5:O"
+"O4","q_1738","Spend time reflecting on things.","Plasticity","Openness","Openness",1,"B5:O"
+"O5","q_1964","Will not probe deeply into a subject.","Plasticity","Openness","Openness",-1,"B5:O"
+"gender","gender","males=1, females=2",NA,NA,NA,NA,NA
+"education","education","in HS, fin HS, coll,  coll grad , grad deg",NA,NA,NA,NA,NA
+"age","age","age in years",NA,NA,NA,NA,NA

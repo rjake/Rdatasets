@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Air Quality for Californian Metropolitan Areas</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Money, National Product and Interest Rate</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Airq"><tr><td>Airq</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Mpyr"><tr><td>Mpyr</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Air Quality for Californian Metropolitan Areas </h2>
+<h2>Money, National Product and Interest Rate </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1972
+<p>annual observations from 1900 to 1989
 </p>
-<p><em>number of observations</em> :  30
+<p><em>number of observations</em> :  90
 </p>
-<p><em>observation</em> :  regional
+<p><em>observation</em> :  country
 </p>
 <p><em>country</em> :  United States
 </p>
@@ -21,40 +21,44 @@
 
 <h3>Usage</h3>
 
-<pre>data(Airq)</pre>
+<pre>data(Mpyr)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A time serie containing :
 </p>
 
 <dl>
-<dt>airq</dt><dd><p>indicator of air quality (the lower the better)</p>
+<dt>m</dt><dd><p>natural log of M1</p>
 </dd>
-<dt>vala</dt><dd><p>value added of companies (in thousands of dollars)</p>
+<dt>p</dt><dd><p>natural log of the net national product price deflator</p>
 </dd>
-<dt>rain</dt><dd><p>amount of rain (in inches)</p>
+<dt>y</dt><dd><p>natural log of the net national product</p>
 </dd>
-<dt>coas</dt><dd><p>is it a coastal area ? </p>
-</dd>
-<dt>dens</dt><dd><p>population density (per square mile)</p>
-</dd>
-<dt>medi</dt><dd><p>average income per head (in US dollars)</p>
+<dt>r</dt><dd><p>the commercial paper rate in percent at an annual rate</p>
 </dd>
 </dl>
 
 
 
+<h3>Source</h3>
+
+<p>Stock, J.  and  M.  Watson (1999) &ldquo;Testing for common trends&rdquo;, <em>Journal of the American Statistical Association</em>, <b>83</b>, 1097-1107.
+</p>
+
+
 <h3>References</h3>
 
-<p>Verbeek, Marno (2004) <em>A Guide to Modern Econometrics</em>, John Wiley and Sons, chapter 4.
+<p>Hayashi, F. (2000) <em>Econometrics</em>, Princeton University Press, <a href="http://fhayashi.fc2web.com/hayashi_econometrics.htm">http://fhayashi.fc2web.com/hayashi_econometrics.htm</a>, chapter 10, 665-667.
 </p>
 
 
 <h3>See Also</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
+</p>
+<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

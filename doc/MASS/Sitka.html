@@ -1,79 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: U.S. Senate vote on the use of force against Iraq, 2002.</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth Curves for Sitka Spruce Trees in 1988</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for iraqVote"><tr><td>iraqVote</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Sitka"><tr><td>Sitka</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-U.S. Senate vote on the use of force against Iraq, 2002.	
+Growth Curves for Sitka Spruce Trees in 1988
 </h2>
 
 <h3>Description</h3>
 
-<p>On October 11, 2002, the United States Senate
-voted 77-23 to authorize the use of military force against Iraq.  This data set lists the &ldquo;Ayes&rdquo; and &ldquo;Nays&rdquo; for each Senator and some covariates.
+<p>The <code>Sitka</code> data frame has 395 rows and 4 columns.  It gives repeated
+measurements on the log-size of 79 Sitka spruce trees, 54 of which
+were grown in ozone-enriched chambers and 25 were controls.  The size
+was measured five times in 1988, at roughly monthly intervals.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(iraqVote)</pre>
+<pre>
+Sitka
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 100 observations on the following 6 variables.
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>y</code></dt><dd><p>a numeric vector, the recorded vote (1 if Aye, 0 if Nay)</p>
+<dt><code>size</code></dt><dd><p>measured size (height times diameter squared) of
+tree, on log scale.</p>
 </dd>
-<dt><code>state.abb</code></dt><dd><p>two letter abbreviation for each state</p>
+<dt><code>Time</code></dt><dd><p>time of measurement in  days since 1 January 1988.</p>
 </dd>
-<dt><code>name</code></dt><dd><p>senator name, party and state, e.g., <code>AKAKA (D HI)</code></p>
+<dt><code>tree</code></dt><dd><p>number of tree.</p>
 </dd>
-<dt><code>rep</code></dt><dd><p>logical, <code>TRUE</code> for Republican senators</p>
-</dd>
-<dt><code>state.name</code></dt><dd><p>name of state</p>
-</dd>
-<dt><code>gorevote</code></dt><dd><p>numeric, the vote share recorded by Al Gore in the corresponding state in the 2000 Presidential election</p>
+<dt><code>treat</code></dt><dd><p>either <code>"ozone"</code> for an ozone-enriched
+chamber or <code>"control"</code>.</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>The only Republican to vote against the resolution was Lincoln
-Chafee (Rhode Island); Democrats split 29-22 in favor of the
-resolution.
-</p>
-
-
 <h3>Source</h3>
 
-<p>Keith Poole, 107th Senate Roll Call Data. <a href="https://voteview.com/static/data/out/votes/S107_votes.ord">https://voteview.com/static/data/out/votes/S107_votes.ord</a>  The Iraq vote is vote number 617.
-</p>
-<p>David Leip's Atlas of U.S. Presidential Elections.  <a href="http://uselectionatlas.org">http://uselectionatlas.org</a> 
+<p>P. J. Diggle, K.-Y. Liang and S. L. Zeger (1994)
+<em>Analysis of Longitudinal Data.</em>
+Clarendon Press, Oxford
 </p>
 
 
 <h3>References</h3>
 
-<p>Jackman, Simon. 2009.  <em>Bayesian Analysis for the Social Sciences</em>.  Wiley: Chichester.  Example 8.3.
+<p>Venables, W. N. and Ripley, B. D. (2002)
+<em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
 </p>
 
 
-<h3>Examples</h3>
+<h3>See Also</h3>
 
-<pre>
-data(iraqVote)
-## probit model
-glm1 &lt;- glm(y ~ gorevote + rep,
-            data=iraqVote,
-            family=binomial(link=probit))
-</pre>
+<p><code>Sitka89</code>.
+</p>
 
 
 </body></html>

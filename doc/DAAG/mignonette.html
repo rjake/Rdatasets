@@ -1,23 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mouse Litters</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Darwin's Wild Mignonette Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for litters"><tr><td>litters</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for mignonette"><tr><td>mignonette</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Mouse Litters</h2>
+<h2>Darwin's Wild Mignonette Data</h2>
 
 <h3>Description</h3>
 
-<p>Data on the body and brain weights of 20 mice, together
-with the size of the litter.  Two mice were taken from each
-litter size.
+<p>Data which compare the heights of crossed plants with
+self-fertilized plants.  Plants were paired within the
+pots in which they were grown, with one on one side and
+one on the other.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>litters</pre>
+<pre>mignonette</pre>
 
 
 <h3>Format</h3>
@@ -26,11 +27,11 @@ litter size.
 </p>
 
 <dl>
-<dt>lsize</dt><dd><p>litter size</p>
+<dt>cross</dt><dd><p>heights of 
+the crossed plants</p>
 </dd>
-<dt>bodywt</dt><dd><p>body weight</p>
-</dd>
-<dt>brainwt</dt><dd><p>brain weight</p>
+<dt>self</dt><dd><p>heights of
+the self-fertilized plants</p>
 </dd>
 </dl>
 
@@ -38,49 +39,21 @@ litter size.
 
 <h3>Source</h3>
 
-<p>Wainright P, Pelkman C and Wahlsten D 1989. The quantitative
-relationship between nutritional effects on preweaning growth      
-and behavioral development in mice. Developmental Psychobiology   
-22: 183-193.
+<p>Darwin, Charles. 1877.  The Effects of Cross and Self
+Fertilisation in the Vegetable Kingdom.  Appleton and Company, New
+York.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-print("Multiple Regression - Example 6.2")
+print("Is Pairing Helpful? - Example 4.3.1")
 
-pairs(litters, labels=c("lsize\n\n(litter size)", "bodywt\n\n(Body Weight)",
-                        "brainwt\n\n(Brain Weight)"))
-  # pairs(litters) gives a scatterplot matrix with less adequate labeling
-
-mice1.lm &lt;- lm(brainwt ~ lsize, data = litters) # Regress on lsize
-mice2.lm &lt;- lm(brainwt ~ bodywt, data = litters) #Regress on bodywt
-mice12.lm &lt;- lm(brainwt ~ lsize + bodywt, data = litters) # Regress on lsize &amp; bodywt
-
-summary(mice1.lm)$coef # Similarly for other coefficients.
-# results are consistent with the biological concept of brain sparing
-
-pause()
-
-hat(model.matrix(mice12.lm))  # hat diagonal
-pause()
-
-plot(lm.influence(mice12.lm)$hat, residuals(mice12.lm))
-
-print("Diagnostics - Example 6.3")
-
-mice12.lm &lt;- lm(brainwt ~ bodywt+lsize, data=litters)
-oldpar &lt;-par(mfrow = c(1,2))
-bx &lt;- mice12.lm$coef[2]; bz &lt;- mice12.lm$coef[3]
-res &lt;- residuals(mice12.lm)
-plot(litters$bodywt, bx*litters$bodywt+res, xlab="Body weight",
-  ylab="Component + Residual")
-panel.smooth(litters$bodywt, bx*litters$bodywt+res) # Overlay
-plot(litters$lsize, bz*litters$lsize+res, xlab="Litter size", 
-  ylab="Component + Residual")
-panel.smooth(litters$lsize, bz*litters$lsize+res)
-par(oldpar)
+attach(mignonette)
+plot(cross ~ self, pch=rep(c(4,1), c(3,12))); abline(0,1) 
+abline(mean(cross-self), 1, lty=2)
+detach(mignonette)
 </pre>
 
 

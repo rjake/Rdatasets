@@ -1,65 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Annual Precipitation in US Cities</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Duncan's Occupational Prestige Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for precip"><tr><td>precip</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Duncan"><tr><td>Duncan</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Annual Precipitation in US Cities</h2>
+<h2>Duncan's Occupational Prestige Data</h2>
 
 <h3>Description</h3>
 
-<p>The average amount of precipitation (rainfall) in inches for each of
-70 United States (and Puerto Rico) cities.
+<p>The <code>Duncan</code> data frame has 45 rows and 4 columns.
+Data on the prestige and other characteristics of 45 U. S. occupations in 1950.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>precip</pre>
+<pre>
+Duncan
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A named vector of length 70.
+<p>This data frame contains the following columns:
 </p>
 
-
-<h3>Note</h3>
-
-<p>The dataset version up to Nov.16, 2016 had a typo in <code>"Cincinnati"</code>'s
-name.  The examples show how to recreate that version.
+<dl>
+<dt>type</dt><dd><p> Type of occupation.
+A factor with the following levels:
+<code>prof</code>, professional and managerial;
+<code>wc</code>, white-collar;
+<code>bc</code>, blue-collar.
 </p>
+</dd>
+<dt>income</dt><dd>
+<p>Percent of males in occupation earning $3500 or more in 1950.
+</p>
+</dd>
+<dt>education</dt><dd>
+<p>Percent of males in occupation in 1950 who were high-school graduates.
+</p>
+</dd>
+<dt>prestige</dt><dd>
+<p>Percent of raters in NORC study rating occupation as excellent or good in prestige.
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>Statistical Abstracts of the United States, 1975.
+<p>Duncan, O. D. (1961) 
+A socioeconomic index for all occupations.
+In Reiss, A. J., Jr. (Ed.)
+<em>Occupations and Social Status.</em> Free Press 
+[Table VI-1].
 </p>
 
 
 <h3>References</h3>
 
-<p>McNeil, D. R. (1977)
-<em>Interactive Data Analysis</em>.
-New York: Wiley.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(graphics)
-dotchart(precip[order(precip)], main = "precip data")
-title(sub = "Average annual precipitation (in.)")
-
-## Old ("wrong") version of dataset (just name change):
-precip.O &lt;- local({
-   p &lt;- precip; names(p)[names(p) == "Cincinnati"] &lt;- "Cincinati" ; p })
-stopifnot(all(precip == precip.O),
-	  match("Cincinnati", names(precip)) == 46,
-	  identical(names(precip)[-46], names(precip.O)[-46]))
-</pre>
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+</p>
 
 
 </body></html>

@@ -1,25 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Economic Journals Dat Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wife Working Hours</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Journals"><tr><td>Journals</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Workinghours"><tr><td>Workinghours</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Economic Journals Dat Set </h2>
+<h2>Wife Working Hours </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 2000
+<p>a cross-section from 1987
 </p>
-<p><em>number of observations</em> :  180
+<p><em>number of observations</em> :  3382
 </p>
-<p><em>observation</em> :  goods
+<p><em>observation</em> :  individuals
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Journals)</pre>
+<pre>data(Workinghours)</pre>
 
 
 <h3>Format</h3>
@@ -28,25 +30,29 @@
 </p>
 
 <dl>
-<dt>title</dt><dd><p>journal title</p>
+<dt>hours</dt><dd><p>wife working hours per year</p>
 </dd>
-<dt>pub</dt><dd><p>publisher</p>
+<dt>income</dt><dd><p>the other household income in hundreds of dollars</p>
 </dd>
-<dt>society</dt><dd><p> scholarly society ?</p>
+<dt>age</dt><dd><p>age of the wife</p>
 </dd>
-<dt>libprice</dt><dd><p>library subscription price</p>
+<dt>education</dt><dd><p>education years of the wife</p>
 </dd>
-<dt>pages</dt><dd><p>number of pages</p>
+<dt>child5</dt><dd><p>number of children for ages 0 to 5</p>
 </dd>
-<dt>charpp</dt><dd><p>characters per page</p>
+<dt>child13</dt><dd><p>number of children for ages 6 to 13</p>
 </dd>
-<dt>citestot</dt><dd><p>total number of citations</p>
+<dt>child17</dt><dd><p>number of children for ages 14 to 17</p>
 </dd>
-<dt>date1</dt><dd><p>year journal was founded</p>
+<dt>nonwhite</dt><dd><p>non&ndash;white ?</p>
 </dd>
-<dt>oclc</dt><dd><p>number of library subscriptions</p>
+<dt>owned</dt><dd><p>is the home owned by the household ?</p>
 </dd>
-<dt>field</dt><dd><p>field description</p>
+<dt>mortgage</dt><dd><p>is the home on mortgage ?</p>
+</dd>
+<dt>occupation</dt><dd><p>occupation of the husband, one of mp (manager or</p>
+</dd>
+<dt>unemp</dt><dd><p>local unemployment rate in %</p>
 </dd>
 </dl>
 
@@ -54,13 +60,13 @@
 
 <h3>Source</h3>
 
-<p>Professor Theodore Bergstrom of the Department of Economics at the University of California, San Diego.
+<p>Lee, Myoung&ndash;Jae (1995) &ldquo;Semi&ndash;parametric estimation of simultaneous equations with limited dependent variables : a case study of female labour supply&rdquo;, <em>Journal of Applied Econometrics</em>, <b>10(2)</b>, april&ndash;june, 187&ndash;200.
 </p>
 
 
 <h3>References</h3>
 
-<p>Stock, James H.  and  Mark W.  Watson (2003) <em>Introduction to Econometrics</em>, Addison-Wesley Educational Publishers, chapter 6.
+<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
 </p>
 
 

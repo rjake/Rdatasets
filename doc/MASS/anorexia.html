@@ -1,27 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Remission Times of Leukaemia Patients</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Anorexia Data on Weight Change</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for gehan"><tr><td>gehan</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for anorexia"><tr><td>anorexia</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Remission Times of Leukaemia Patients
+Anorexia Data on Weight Change
 </h2>
 
 <h3>Description</h3>
 
-<p>A data frame from a trial of 42 leukaemia patients. Some were
-treated with the drug <em>6-mercaptopurine</em>
-and the rest are controls.  The trial was designed as matched pairs,
-both withdrawn from the trial when either came out of remission.
+<p>The <code>anorexia</code> data frame has 72 rows and 3 columns.
+Weight change data for young female anorexia patients.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-gehan
+anorexia
 </pre>
 
 
@@ -31,20 +29,18 @@ gehan
 </p>
 
 <dl>
-<dt><code>pair</code></dt><dd>
-<p>label for pair.
+<dt><code>Treat</code></dt><dd>
+<p>Factor of three levels: <code>"Cont"</code> (control), <code>"CBT"</code>
+(Cognitive Behavioural treatment) and  <code>"FT"</code> (family
+treatment).
 </p>
 </dd>
-<dt><code>time</code></dt><dd>
-<p>remission time in weeks.
+<dt><code>Prewt</code></dt><dd>
+<p>Weight of patient before study period, in lbs.
 </p>
 </dd>
-<dt><code>cens</code></dt><dd>
-<p>censoring, 0/1.
-</p>
-</dd>
-<dt><code>treat</code></dt><dd>
-<p>treatment, control or 6-MP.
+<dt><code>Postwt</code></dt><dd>
+<p>Weight of patient after study period, in lbs.
 </p>
 </dd>
 </dl>
@@ -53,12 +49,11 @@ gehan
 
 <h3>Source</h3>
 
-<p>Cox, D. R. and Oakes, D. (1984) <em>Analysis of Survival Data.</em>
-Chapman &amp; Hall, p. 7. Taken from
+<p>Hand, D. J., Daly, F., McConway, K., Lunn, D. and Ostrowski, E. eds (1993)
+<em>A Handbook of Small Data Sets.</em>
+Chapman &amp; Hall, Data set 285 (p. 229)
 </p>
-<p>Gehan, E.A. (1965) A generalized Wilcoxon test for comparing
-arbitrarily single-censored samples.
-<em>Biometrika</em> <b>52</b>, 203&ndash;233.
+<p>(Note that the original source mistakenly says that weights are in kg.)
 </p>
 
 
@@ -67,21 +62,6 @@ arbitrarily single-censored samples.
 <p>Venables, W. N. and Ripley, B. D. (2002)
 <em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-library(survival)
-gehan.surv &lt;- survfit(Surv(time, cens) ~ treat, data = gehan,
-     conf.type = "log-log")
-summary(gehan.surv)
-survreg(Surv(time, cens) ~ factor(pair) + treat, gehan, dist = "exponential")
-summary(survreg(Surv(time, cens) ~ treat, gehan, dist = "exponential"))
-summary(survreg(Surv(time, cens) ~ treat, gehan))
-gehan.cox &lt;- coxph(Surv(time, cens) ~ treat, gehan)
-summary(gehan.cox)
-</pre>
 
 
 </body></html>

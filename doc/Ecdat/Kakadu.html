@@ -1,91 +1,98 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: azpro</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Willingness to Pay for the Preservation of the Kakadu...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for azpro"><tr><td>azpro</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Kakadu"><tr><td>Kakadu</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-azpro
-</h2>
+<h2>Willingness to Pay for the Preservation of the Kakadu National Park </h2>
 
 <h3>Description</h3>
 
-
-<p>Data come from the 1991 Arizona cardiovascular patient files. A subset of the 
-fields was selected to model the differential length of stay for patients entering 
-the hospital to receive one of two standard cardiovascular procedures: CABG and PTCA. 
-CABG is the standard acronym for Coronary Artery Bypass Graft, where the flow of 
-blood in a diseased or blocked coronary artery or vein has been grafted to bypass 
-the diseased sections. PTCA, or Percutaneous Transluminal Coronary Angioplasty, is 
-a method of placing a balloon in a blocked coronary artery to open it to blood flow. 
-It is a much less severe method of treatment for those having coronary blockage, with 
-a corresponding reduction in risk. 
+<p>a cross-section
+</p>
+<p><em>number of observations</em> :  1827
+</p>
+<p><em>observation</em> :  individuals
+</p>
+<p><em>country</em> :  Australia
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(azpro)</pre>
+<pre>data(Kakadu)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 3589 observations on the following 6 variables.
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt><code>los</code></dt><dd><p>length of hospital stay</p>
+<dt>lower</dt><dd><p>lowerbound of willingness to pay, 0 if observation is left censored</p>
 </dd>
-<dt><code>procedure</code></dt><dd><p>1=CABG;0=PTCA</p>
+<dt>upper</dt><dd><p>upper bound of willingness to pay, 999 if observation is right censored</p>
 </dd>
-<dt><code>sex</code></dt><dd><p>1=Male; 0=female</p>
+<dt>answer</dt><dd><p>an ordered factor with levels nn (respondent answers no, no), ny (respondent answers no, yes or yes, no), yy (respondent answers yes, yes)</p>
 </dd>
-<dt><code>admit</code></dt><dd><p>1=Urgent/Emerg; 0=elective (type of admission)</p>
+<dt>recparks</dt><dd><p>the greatest value of national parks and nature reserves is in recreation activities (from 1 to 5)</p>
 </dd>
-<dt><code>age75</code></dt><dd><p>1= Age&gt;75; 0=Age&lt;=75</p>
+<dt>jobs</dt><dd><p>jobs are the most important thing in deciding how to use our natural resources  (from 1 to 5)</p>
 </dd>
-<dt><code>hospital</code></dt><dd><p>encrypted facility code (string)</p>
+<dt>lowrisk</dt><dd><p>development should be allowed to proceed where environmental damage from activities such as mining is possible but very unlikely  (from 1 to 5)</p>
+</dd>
+<dt>wildlife</dt><dd><p>it's important to have places where wildlife is preserved  (from 1 to 5)</p>
+</dd>
+<dt>future</dt><dd><p>it's important to consider future generations  (from 1 to 5)</p>
+</dd>
+<dt>aboriginal</dt><dd><p>in deciding how to use areas such as Kakadu national park, their importance to the local aboriginal people should be a major factor  (from 1 to 5)</p>
+</dd>
+<dt>finben</dt><dd><p>in deciding how to use our natural resources such as mineral deposits and forests, the most important thing is the financial benefits for Australia  (from 1 to 5)</p>
+</dd>
+<dt>mineparks</dt><dd><p>if areas within natural parks are set aside for development projects such as mining, the value of the parks is greatly reduced  (from 1 to 5)</p>
+</dd>
+<dt>moreparks</dt><dd><p>there should be more national parks created from state forests  (from 1 to 5)</p>
+</dd>
+<dt>gov</dt><dd><p>the government pays little attention to the people in making decisions  (from 1 to 4)</p>
+</dd>
+<dt>envcon</dt><dd><p>the respondent recycles things such as paper or glass and regularly buys unbleached toilet paper or environmentally friendly products ?</p>
+</dd>
+<dt>vparks</dt><dd><p>the respondent has visited a national park or bushland recreation area in the previous 12 months ?</p>
+</dd>
+<dt>tvenv</dt><dd><p>the respondent watches tv programs about the environment ?  (from 1 to 9)</p>
+</dd>
+<dt>conservation</dt><dd><p>the respondent is member of a conservation organization ?</p>
+</dd>
+<dt>sex</dt><dd><p>male,female</p>
+</dd>
+<dt>age</dt><dd><p>age</p>
+</dd>
+<dt>schooling</dt><dd><p>years of schooling</p>
+</dd>
+<dt>income</dt><dd><p>respondent's income in thousands of dollars</p>
+</dd>
+<dt>major</dt><dd><p>the respondent received the major&ndash;impact scenario of the Kakadu conservation zone survey ?</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-
-<p>azpro is saved as a data frame.
-Count models use los as response variable. 0 counts are structurally excluded  
-</p>
-
-
 <h3>Source</h3>
 
-
-<p>1991 Arizona Medpar data, cardiovascular patient files, 
-National Health Economics &amp; Research Co.
+<p>Werner, Megan (1999) &ldquo;Allowing for zeros in dichotomous&ndash;choice contingent&ndash;valuation models&rdquo;, <em>Journal of Business and Economic Statistics</em>, <b>17(4)</b>, october, 479&ndash;486.
 </p>
 
 
 <h3>References</h3>
 
-
-<p>Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
-Hilbe, Joseph M (2009), Logistic Regression Models, Chapman &amp; Hall/CRC
+<p>Journal of Business Economics and Statistics web site : <a href="http://amstat.tandfonline.com/loi/ubes20">http://amstat.tandfonline.com/loi/ubes20</a>.
 </p>
 
 
-<h3>Examples</h3>
+<h3>See Also</h3>
 
-<pre>
-data(azpro)
-glmazp &lt;- glm(los ~ procedure + sex + admit, family=poisson, data=azpro)
-summary(glmazp)
-exp(coef(glmazp))
-#glmaznb &lt; -glm.nb(los ~ procedure + sex + admit, data=azpro)
-#summary(glmaznb)
-#exp(coef(glmaznb))
-</pre>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

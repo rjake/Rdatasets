@@ -3,24 +3,24 @@
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for nsw74demo"><tr><td>nsw74demo</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for nswpsid1"><tr><td>nswpsid1</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>Labour Training Evaluation Data</h2>
 
 <h3>Description</h3>
 
-<p>This data frame contains 445 rows and 10 columns. These
-data are from an investigation of the effect of training
-on changes, between 1974-1975 and 1978, in the earnings
-of individuals who had experienced employment difficulties
-Data are for the male experimental control and treatment
-groups.
+<p>This data frame contains 2787 rows and 10 columns. These data are
+pertinent to an investigation of the way that earnings changed,
+between 1974-1975 and 1978, in the absence of training. Data for the
+experimental treatment group in <code>nswdemo</code> are combined with the
+<code>psid1</code> control data from the Panel Study of Income Dynamics
+(PSID) study.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>nsw74demo</pre>
+<pre>psid1</pre>
 
 
 <h3>Format</h3>
@@ -31,7 +31,7 @@ groups.
 <dl>
 <dt>trt</dt><dd><p>a numeric vector 
 identifying the study in which the subjects were enrolled
-(0 = PSID, 1 = NSW).</p>
+(0 = Control, 1 = treated).</p>
 </dd>
 <dt>age</dt><dd><p> age (in years).</p>
 </dd>
@@ -55,9 +55,25 @@ identifying the study in which the subjects were enrolled
 
 
 
+<h3>Details</h3>
+
+ 
+<p>The <code>cps1</code> and <code>psid1</code> data sets are two non-experimental
+&quot;control&quot; groups, alternative to that in <code>nswdemo</code>, used in
+investigating whether use of such a non-experimental control group can
+be satisfactory. <code>cps2</code> and <code>cps3</code> are subsets of <code>cps1</code>,
+designed to be better matched to the experimental data than <code>cps1</code>.
+Similary <code>psid2</code> and <code>psid3</code> are subsets of <code>psid1</code>,
+designed to be better matched to the experimental data than
+<code>psid1</code>. <code>nswpsid1</code> combines data for the experimental
+treatment group in <code>nswdemo</code> with the <code>psid1</code> control data
+from the Panel Study of Income Dynamics (PSID) study.
+</p>
+
+
 <h3>Source</h3>
 
-<p>http://www.columbia.edu/~rd247/nswdata.html
+<p><a href="http://www.nber.org/~rdehejia/nswdata.html">http://www.nber.org/~rdehejia/nswdata.html</a>
 </p>
 
 
@@ -65,11 +81,18 @@ identifying the study in which the subjects were enrolled
 
 <p>Dehejia, R.H. and Wahba, S. 1999. Causal effects in
 non-experimental studies: re-evaluating the evaluation of training
-programs. Journal of the American Statistical Association 94:
+programs. <em>Journal of the American Statistical Association</em> 94:
 1053-1062.
 </p>
 <p>Lalonde, R. 1986. Evaluating the economic evaluations of
-training programs. American Economic Review 76: 604-620.
+training programs. <em>American Economic Review</em> 76: 604-620.
+</p>
+<p>Smith, J. A. and Todd, P.E. &quot;Does Matching overcome. LaLonde?s
+critique of nonexperimental estimators&quot;, <em>Journal of
+Econometrics</em> 125: 305-353.
+</p>
+<p>Dehejia, R.H. 2005. Practical propensity score matching: a reply to
+Smith and Todd. <em>Journal of Econometrics</em> 125: 355-364.
 </p>
 
 

@@ -1,89 +1,97 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Breakage Angle of Chocolate Cakes</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Gunnels</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for cake"><tr><td>cake</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Gunnels"><tr><td>Gunnels</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Breakage Angle of Chocolate Cakes</h2>
+<h2>Gunnels</h2>
 
 <h3>Description</h3>
 
-<p>Data on the breakage angle of chocolate cakes made with
-three different recipes and baked at six different
-temperatures.  This is a split-plot design with the
-recipes being whole-units and the different temperatures
-being applied to sub-units (within replicates). The
-experimental notes suggest that the replicate numbering
-represents temporal ordering.
+<p>Presence/absence of gunnels (eels) at shoreline quadrats
 </p>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 270 observations on the following 5 variables.
+<p>A dataset with 1592 observations on the following 10 variables.
 </p>
 
-<dl>
-<dt><code>replicate</code></dt><dd><p>a factor with levels <code>1</code> to <code>15</code></p>
-</dd>
-<dt><code>recipe</code></dt><dd><p>a factor with levels <code>A</code>, <code>B</code> and <code>C</code></p>
-</dd>
-<dt><code>temperature</code></dt><dd><p>an ordered factor with levels <code>175</code>
-&lt; <code>185</code> &lt; <code>195</code> &lt; <code>205</code> &lt; <code>215</code> &lt; <code>225</code></p>
-</dd>
-<dt><code>angle</code></dt><dd><p>a numeric vector giving the angle at which the
-cake broke.</p>
-</dd>
-<dt><code>temp</code></dt><dd><p>numeric value of the baking temperature (degrees F).</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>Gunnel</code> </td><td style="text-align: left;"> 1= gunnel present in the quadrat or 0=gunnel absent</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Time</code> </td><td style="text-align: left;"> Minutes after midnight</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Fromlow</code> </td><td style="text-align: left;"> Time in minutes from low tide</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Slope</code> </td><td style="text-align: left;"> Slope (to nearest 10 degrees) perpendicular to waterline</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Rw</code> </td><td style="text-align: left;"> Percentage cover in quadrat of rockweed/algae/plants</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Amphiso</code> </td><td style="text-align: left;"> Density of crustacean food 0=none to 4=high</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Subst</code> </td><td style="text-align: left;"> Substratum: 1=solid rock, 2=rocky cobbles, 3=mixed pebbles/sand, 4=fine sand,</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    </td><td style="text-align: left;"> 5=mud, 6=mixed mud/shell detritus, 7=cobbles on solid rock, 8=cobbles on mixed pebbles/sand,</td>
+</tr>
+<tr>
+ <td style="text-align: right;"> 
+    </td><td style="text-align: left;"> 9=cobbles on fine sand, 10=cobbles on mud, 11=cobbles on mixed mud/shell detritus,</td>
+</tr>
+<tr>
+ <td style="text-align: right;"> 
+    </td><td style="text-align: left;"> 12=cobbles on shell detritus, 13=shell detritus </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Pool</code> </td><td style="text-align: left;"> Standing water deep?  1=yes or 2=no</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Water</code> </td><td style="text-align: left;"> Standing water in the quadrat?  1=yes or 2=no</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Cobble</code> </td><td style="text-align: left;"> Rocky cobbles? 1=yes or 2=no </td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
 
 
 <h3>Details</h3>
 
-<p>The <code>replicate</code> factor is nested within the
-<code>recipe</code> factor, and <code>temperature</code> is nested
-within <code>replicate</code>.
+<p>This datset comes from a study on the habitat preferences of a species
+of eel, called a gunnel. Biologist Jake Shorty sampled quadrats along a coastline and recorded whether or not
+the species was found in the quadrat.
 </p>
 
 
 <h3>Source</h3>
 
-<p>Original data were presented in Cook (1938), and reported
-in Cochran and Cox (1957, p. 300).  Also cited in Lee,
-Nelder and Pawitan (2006).
+<p>Thanks to Jake Shorty, Bowdoin biology student, for this dataset.
 </p>
-
-
-<h3>References</h3>
-
-<p>Cook, F. E. (1938) <em>Chocolate cake, I. Optimum
-baking temperature</em>. Master's Thesis, Iowa State College.
-</p>
-<p>Cochran, W. G., and Cox, G. M. (1957) <em>Experimental
-designs</em>, 2nd Ed.  New York, John Wiley \&amp; Sons.
-</p>
-<p>Lee, Y., Nelder, J. A., and Pawitan, Y. (2006)
-<em>Generalized linear models with random effects.
-Unified analysis via H-likelihood</em>. Boca Raton, Chapman
-and Hall/CRC.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-str(cake)
-## 'temp' is continuous, 'temperature' an ordered factor with 6 levels
-
-(fm1 &lt;- lmer(angle ~ recipe * temperature + (1|recipe:replicate), cake, REML= FALSE))
-(fm2 &lt;- lmer(angle ~ recipe + temperature + (1|recipe:replicate), cake, REML= FALSE))
-(fm3 &lt;- lmer(angle ~ recipe + temp        + (1|recipe:replicate), cake, REML= FALSE))
-
-## and now "choose" :
-anova(fm3, fm2, fm1)
-</pre>
 
 
 </body></html>

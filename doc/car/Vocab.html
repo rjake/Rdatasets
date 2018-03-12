@@ -1,59 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated Manufacturing Process Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Vocabulary and Education</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for capability"><tr><td>capability</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Vocab"><tr><td>Vocab</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Simulated Manufacturing Process Data
-</h2>
+<h2>Vocabulary and Education</h2>
 
 <h3>Description</h3>
 
-<p>The <code>capability</code> data frame has 75 rows and 1 columns.
-</p>
-<p>The data are simulated successive observations from a process in equilibrium.
-The process is assumed to have specification limits (5.49, 5.79).
+<p>The <code>Vocab</code> data frame has 21,638 rows and 5 columns.
+The observations are respondents to U.S. General Social Surveys, 1972-2004.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-capability
+Vocab
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following column:
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>y</code></dt><dd>
-<p>The simulated measurements.
+<dt>year</dt><dd><p>Year of the survey.</p>
+</dd>
+<dt>sex</dt><dd><p>Sex of the respondent, <code>Female</code> or <code>Male</code>.</p>
+</dd>
+<dt>education</dt><dd>
+<p>Education, in years.
 </p>
-</dd></dl>
+</dd>
+<dt>vocabulary</dt><dd>
+<p>Vocabulary test score: number correct on a 10-word test.
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>Bissell, A.F. (1990) How reliable is your capability index?
-<em>Applied Statistics</em>, <b>39</b>, 331&ndash;340.
+<p>National Opinion Research Center
+<em>General Social Survey.</em> 
+GSS Cumulative Datafile 1972-2004, downloaded from <a href="http://sda.berkeley.edu/archive.htm">http://sda.berkeley.edu/archive.htm</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>Canty, A.J. and Davison, A.C. (1996) Implementation of saddlepoint 
-approximations to resampling distributions. To appear in 
-<em>Computing Science and Statistics; Proceedings of the 28th Symposium on the Interface</em>.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
 </p>
 
 

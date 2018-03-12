@@ -1,98 +1,104 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Voting Intentions in the 1988 Chilean Plebiscite</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Countries in Banking Crises</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Chile"><tr><td>Chile</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for bankingCrises"><tr><td>bankingCrises</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Voting Intentions in the 1988 Chilean Plebiscite</h2>
+<h2>
+Countries in Banking Crises
+</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Chile</code> data frame has 2700 rows and 8 columns.
-The data are from a national survey conducted in April and May of 1988
-by FLACSO/Chile. There are some missing data.
+<p>A <code>data.frame</code> identifying which of 70 countries had a 
+banking crisis each year 1800:2010. The first column is 
+<code>year</code>.  The remaining columns carry the names of the
+countries;  those columns are 1 for years with banking 
+crises and 0 otherwise.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-Chile
-</pre>
+<pre>data(bankingCrises)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p> A <code>data.frame</code> </p>
+
+
+<h3>Details</h3>
+
+<p>This file was created using the following command:
+</p>
+<p>bankingCrises &lt;- readFinancialCrisisFiles(FinancialCrisisFiles)
+</p>
+<p>This is documented further in the help file for
+<code>readFinancialCrisisFiles</code>.
+</p>
+<p>This is an update of a subset of the data used to create 
+Figure 10.1.  Capital Mobility and the Incidence of 
+Banking Crises, All Countries, 1800-2008, Reinhart and 
+Rogoff (2009, p. 156).
+</p>
+<p>The general upward trend visible in a plot of these data 
+may be attributed to at least two different factors:  
+</p>
+<p>(1) The gradual increase in the proportion of human labor 
+that is monetized.  
+</p>
+<p>(2) An increase in the general ability of cronies of 
+those in power to gamble with other people's money in 
+forming and bankrupting financial institutions.  The 
+marked feature of this plot is the virtual absence
+of banking crises during the period of the Bretton Woods 
+agreement, 1944 to 1971.  This period ended when US 
+President Nixon in effect canceled the Bretton Woods 
+agreement by taking the US off the silver standard.
 </p>
 
-<dl>
-<dt>region</dt><dd>
-<p>A factor with levels:
-<code>C</code>, Central;
-<code>M</code>, Metropolitan Santiago area;
-<code>N</code>, North;
-<code>S</code>, South;
-<code>SA</code>, city of Santiago.
-</p>
-</dd>
-<dt>population</dt><dd>
-<p>Population size of respondent's community.
-</p>
-</dd>
-<dt>sex</dt><dd>
-<p>A factor with levels:
-<code>F</code>, female;
-<code>M</code>, male.
-</p>
-</dd>
-<dt>age</dt><dd>
-<p>in years.
-</p>
-</dd>
-<dt>education</dt><dd>
-<p>A factor with levels (note: out of order):
-<code>P</code>, Primary;
-<code>PS</code>, Post-secondary;
-<code>S</code>, Secondary.
-</p>
-</dd>
-<dt>income</dt><dd>
-<p>Monthly income, in Pesos.
-</p>
-</dd>
-<dt>statusquo</dt><dd>
-<p>Scale of support for the status-quo.
-</p>
-</dd>
-<dt>vote</dt><dd>
-<p>a factor with levels:
-<code>A</code>, will abstain; 
-<code>N</code>, will vote no (against Pinochet);
-<code>U</code>, undecided;
-<code>Y</code>, will vote yes (for Pinochet).
-</p>
-</dd>
-</dl>
 
+<h3>Author(s)</h3>
+
+<p>Spencer Graves</p>
 
 
 <h3>Source</h3>
 
-<p>Personal communication from FLACSO/Chile.
+<p><a href="http://www.reinhartandrogoff.com">http://www.reinhartandrogoff.com</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. (2008)
-<em>Applied Regression Analysis and Generalized Linear Models</em>,
-Second Edition. Sage.  
+<p>Carmen M. Reinhart and Kenneth S. Rogoff (2009) This Time Is
+Different:  Eight Centuries of Financial Folly, Princeton U. Pr.
 </p>
-<p>Fox, J. and Weisberg, S. (2011) 
-<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+
+
+<h3>See Also</h3>
+
+<p><code>readFinancialCrisisFiles</code>
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(bankingCrises)
+numberOfCrises &lt;- rowSums(bankingCrises[-1], na.rm=TRUE)
+plot(bankingCrises$year, numberOfCrises, type='b')
+
+# Write to a file for Wikimedia Commons
+svg('bankingCrises.svg')
+plot(bankingCrises$year, numberOfCrises, type='b', cex.axis=2,
+     las=1, xlab='', ylab='', bty='n', cex=0.5)
+abline(v=c(1945, 1971), lty='dashed', col='blue')
+text(1958, 14, 'Bretton Woods', srt=90, cex=2, col='blue')
+dev.off()
+</pre>
 
 
 </body></html>

@@ -1,72 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Acceleration Due to Gravity</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: azpro</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for gravity"><tr><td>gravity</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for azpro"><tr><td>azpro</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Acceleration Due to Gravity
+azpro
 </h2>
 
 <h3>Description</h3>
 
-<p>The <code>gravity</code> data frame has 81 rows and 2 columns.
-</p>
-<p>The <code>grav</code> data set has 26 rows and 2 columns.
-</p>
-<p>Between May 1934 and July 1935, the National Bureau of Standards in
-Washington D.C. conducted a series of experiments to estimate the
-acceleration due to gravity, <em>g</em>, at Washington.  Each experiment
-produced a number of replicate estimates of <em>g</em> using the same
-methodology.  Although the basic method remained the same for all
-experiments, that of the reversible pendulum, there were changes in
-configuration.
-</p>
-<p>The <code>gravity</code> data frame contains the data from all eight
-experiments.  The <code>grav</code> data frame contains the data from the
-experiments 7 and 8.  The data are expressed as deviations from 980.000
-in centimetres per second squared.
+
+<p>Data come from the 1991 Arizona cardiovascular patient files. A subset of the 
+fields was selected to model the differential length of stay for patients entering 
+the hospital to receive one of two standard cardiovascular procedures: CABG and PTCA. 
+CABG is the standard acronym for Coronary Artery Bypass Graft, where the flow of 
+blood in a diseased or blocked coronary artery or vein has been grafted to bypass 
+the diseased sections. PTCA, or Percutaneous Transluminal Coronary Angioplasty, is 
+a method of placing a balloon in a blocked coronary artery to open it to blood flow. 
+It is a much less severe method of treatment for those having coronary blockage, with 
+a corresponding reduction in risk. 
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-gravity
-</pre>
+<pre>data(azpro)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A data frame with 3589 observations on the following 6 variables.
 </p>
 
 <dl>
-<dt><code>g</code></dt><dd>
-<p>The deviation of the estimate from 980.000 centimetres per second squared.
-</p>
+<dt><code>los</code></dt><dd><p>length of hospital stay</p>
 </dd>
-<dt><code>series</code></dt><dd>
-<p>A factor describing from which experiment the estimate was derived.
+<dt><code>procedure</code></dt><dd><p>1=CABG;0=PTCA</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>1=Male; 0=female</p>
+</dd>
+<dt><code>admit</code></dt><dd><p>1=Urgent/Emerg; 0=elective (type of admission)</p>
+</dd>
+<dt><code>age75</code></dt><dd><p>1= Age&gt;75; 0=Age&lt;=75</p>
+</dd>
+<dt><code>hospital</code></dt><dd><p>encrypted facility code (string)</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+
+<p>azpro is saved as a data frame.
+Count models use los as response variable. 0 counts are structurally excluded  
 </p>
-</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>Cressie, N. (1982) Playing safe with misweighted means. 
-<em>Journal of the American Statistical Association</em>, <b>77</b>, 754&ndash;759.
+
+<p>1991 Arizona Medpar data, cardiovascular patient files, 
+National Health Economics &amp; Research Co.
 </p>
 
 
 <h3>References</h3>
 
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+
+<p>Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
+Hilbe, Joseph M (2009), Logistic Regression Models, Chapman &amp; Hall/CRC
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(azpro)
+glmazp &lt;- glm(los ~ procedure + sex + admit, family=poisson, data=azpro)
+summary(glmazp)
+exp(coef(glmazp))
+#glmaznb &lt; -glm.nb(los ~ procedure + sex + admit, data=azpro)
+#summary(glmaznb)
+#exp(coef(glmaznb))
+</pre>
 
 
 </body></html>

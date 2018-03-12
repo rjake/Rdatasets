@@ -1,21 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Full Leaf and Air Temperature Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Mortality Outcomes for Females Suffering Myocardial...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for leaftemp.all"><tr><td>leaftemp.all</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for mifem"><tr><td>mifem</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Full Leaf and Air Temperature Data Set</h2>
+<h2>Mortality Outcomes for Females Suffering Myocardial Infarction</h2>
 
 <h3>Description</h3>
 
-<p>The <code>leaftemp.all</code> data frame has 62 rows and 9 columns.
+<p>The <code>mifem</code> data frame has 1295 rows and 10 columns.  This is the
+female subset of the 'monica' data frame
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>leaftemp.all</pre>
+<pre>mifem</pre>
 
 
 <h3>Format</h3>
@@ -24,29 +25,33 @@
 </p>
 
 <dl>
-<dt>glasshouse</dt><dd><p>a factor with levels
-<code>A</code>,
-<code>B</code>,
-<code>C</code> </p>
+<dt>outcome</dt><dd><p>mortality outcome, a factor with levels <code>live</code>, 
+<code>dead</code></p>
+</dd> 
+<dt>age</dt><dd><p>age at onset</p>
 </dd>
-<dt>CO2level</dt><dd><p>a factor with Carbon Dioxide Levels:
-<code>high</code>,
-<code>low</code>,
-<code>medium</code> </p>
+<dt>yronset</dt><dd><p>year of onset</p>
 </dd>
-<dt>day</dt><dd><p>a factor</p>
+<dt>premi</dt><dd><p>previous myocardial infarction event, a 
+factor with levels <code>y</code>, <code>n</code>, <code>nk</code> not known </p>
 </dd>
-<dt>light</dt><dd><p>a numeric vector</p>
+<dt>smstat</dt><dd><p>smoking status, a factor with levels <code>c</code> 
+current, <code>x</code> ex-smoker, <code>n</code> non-smoker, <code>nk</code> not known</p>
 </dd>
-<dt>CO2</dt><dd><p>a numeric vector</p>
+<dt>diabetes</dt><dd><p>a factor with levels <code>y</code>, <code>n</code>, <code>nk</code> not 
+known</p>
 </dd>
-<dt>tempDiff</dt><dd><p>Difference between Leaf and Air Temperature</p>
+<dt>highbp</dt><dd><p>high blood pressure, a factor with levels
+<code>y</code>, <code>n</code>, <code>nk</code> not known </p>
 </dd>
-<dt>BtempDiff</dt><dd><p>a numeric vector</p>
+<dt>hichol</dt><dd><p>high cholesterol, a factor with levels
+<code>y</code>, <code>n</code> <code>nk</code> not known</p>
 </dd>
-<dt>airTemp</dt><dd><p>Air Temperature</p>
+<dt>angina</dt><dd><p>a factor with levels <code>y</code>,
+<code>n</code>, <code>nk</code> not known</p>
 </dd>
-<dt>vapPress</dt><dd><p>Vapour Pressure</p>
+<dt>stroke</dt><dd><p>a factor with levels
+<code>y</code>, <code>n</code>, <code>nk</code> not known</p>
 </dd>
 </dl>
 
@@ -54,8 +59,27 @@
 
 <h3>Source</h3>
 
-<p>J.H. Maindonald
+<p>Newcastle (Australia) centre of the Monica
+project; see the web site http://www.ktl.fi/monica
 </p>
+
+
+<h3>Examples</h3>
+
+<pre>
+print("CART - Example 10.7")
+summary(mifem)
+pause()
+
+require(rpart)
+mifem.rpart &lt;- rpart(outcome ~ ., data = mifem, cp = 0.0025)
+plotcp(mifem.rpart)
+printcp(mifem.rpart)
+pause()
+
+mifemb.rpart &lt;- prune(mifem.rpart, cp=0.006)
+print(mifemb.rpart)
+</pre>
 
 
 </body></html>

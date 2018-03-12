@@ -1,93 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Student's Sleep Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Anonymity and Cooperation</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for sleep"><tr><td>sleep</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Guyer"><tr><td>Guyer</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Student's Sleep Data</h2>
+<h2>Anonymity and Cooperation</h2>
 
 <h3>Description</h3>
 
-<p>Data which show the effect of two soporific drugs (increase in hours
-of sleep compared to control) on 10 patients.
+<p>The <code>Guyer</code> data frame has 20 rows and 3 columns.
+The data are from an experiment in which four-person groups
+played a prisoner's dilemma game for 30 trails, each person
+making either a cooperative or competitive choice on each
+trial. Choices were made either anonymously or in public;
+groups were composed either of females or of males.
+The observations are 20 groups.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>sleep</pre>
+<pre>
+Guyer
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 20 observations on 3 variables.
+<p>This data frame contains the following columns:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    [, 1] </td><td style="text-align: left;"> extra </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> increase in hours of sleep</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 2] </td><td style="text-align: left;"> group </td><td style="text-align: left;"> factor  </td><td style="text-align: left;"> drug given</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    [, 3] </td><td style="text-align: left;"> ID    </td><td style="text-align: left;"> factor  </td><td style="text-align: left;"> patient ID
-  </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>The <code>group</code> variable name may be misleading about the data:
-They represent measurements on 10 persons, not in groups.
-
+<dl>
+<dt>cooperation</dt><dd>
+<p>Number of cooperative choices (out of 120 in all).
 </p>
+</dd>
+<dt>condition</dt><dd>
+<p>A factor with levels:
+<code>A</code>, Anonymous;
+<code>P</code>, Public-Choice.
+</p>
+</dd>
+<dt>sex</dt><dd>
+<p>Sex.  A factor with levels:
+<code>F</code>, Female;
+<code>M</code>, Male.
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>Cushny, A. R. and Peebles, A. R. (1905)
-The action of optical isomers: II hyoscines.
-<em>The Journal of Physiology</em> <b>32</b>, 501&ndash;510.
-</p>
-<p>Student (1908)
-The probable error of the mean.
-<em>Biometrika</em>, <b>6</b>, 20.
+<p>Fox, J. and Guyer, M. (1978)
+Public choice and cooperation in n-person prisoner's dilemma.
+<em>Journal of Conflict Resolution</em> <b>22</b>, 469&ndash;481.
 </p>
 
 
 <h3>References</h3>
 
-<p>Scheffé, Henry (1959)
-<em>The Analysis of Variance</em>.
-New York, NY: Wiley.
+<p>Fox, J. (2008)
+<em>Applied Regression Analysis and Generalized Linear Models</em>,
+Second Edition. Sage.  
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(stats)
-## Student's paired t-test
-with(sleep,
-     t.test(extra[group == 1],
-            extra[group == 2], paired = TRUE))
-
-## The sleep *prolongations*
-sleep1 &lt;- with(sleep, extra[group == 2] - extra[group == 1])
-summary(sleep1)
-stripchart(sleep1, method = "stack", xlab = "hours",
-           main = "Sleep prolongation (n = 10)")
-boxplot(sleep1, horizontal = TRUE, add = TRUE,
-        at = .6, pars = list(boxwex = 0.5, staplewex = 0.25))
-</pre>
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
+</p>
 
 
 </body></html>

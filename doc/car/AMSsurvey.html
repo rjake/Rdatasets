@@ -1,74 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Freeny's Revenue Data</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: American Math Society Survey Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for freeny"><tr><td>freeny</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for AMSsurvey"><tr><td>AMSsurvey</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Freeny's Revenue Data</h2>
+<h2>
+American Math Society Survey Data
+</h2>
 
 <h3>Description</h3>
 
-<p>Freeny's data on quarterly revenue and explanatory variables.
+<p>Counts of new PhDs in the mathematical sciences for 2008-09 and 2011-12
+categorized by type of institution, gender, and US citizenship status.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-freeny
-freeny.x
-freeny.y
-</pre>
+<pre>AMSsurvey</pre>
 
 
 <h3>Format</h3>
 
-<p>There are three &lsquo;freeny&rsquo; data sets.
+<p>A data frame with 24 observations on the following 5 variables.
 </p>
-<p><code>freeny.y</code> is a time series with 39 observations on quarterly
-revenue from (1962,2Q) to (1971,4Q).
-</p>
-<p><code>freeny.x</code> is a matrix of explanatory variables.  The columns
-are <code>freeny.y</code> lagged 1 quarter, price index, income level, and
-market potential.
-</p>
-<p>Finally, <code>freeny</code> is a data frame with variables <code>y</code>,
-<code>lag.quarterly.revenue</code>, <code>price.index</code>, <code>income.level</code>,
-and <code>market.potential</code> obtained from the above two data objects.
+
+<dl>
+<dt>type</dt><dd><p>a factor with levels <code>I(Pu)</code> for group I
+public universities, <code>I(Pr)</code> for group I private universities, <code>II</code>
+and <code>III</code> for groups II and III, <code>IV</code> for statistics and
+biostatistics programs, and <code>Va</code> for applied mathemeatics programs.</p>
+</dd>
+<dt>sex</dt><dd><p>a factor with levels <code>Female</code>, <code>Male</code> of the
+recipient</p>
+</dd>
+<dt>citizen</dt><dd><p>a factor with levels <code>Non-US</code>, <code>US</code> giving
+citizenship status</p>
+</dd>
+<dt>count</dt><dd><p>The number of individuals of each type in 2008-09</p>
+</dd>
+<dt>count11</dt><dd><p>The number of individuals of each type in 2011-12</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>These data are produced yearly by the American Math Society.
 </p>
 
 
 <h3>Source</h3>
 
-<p>A. E. Freeny (1977)
-<em>A Portable Linear Regression Package with Test Programs</em>.
-Bell Laboratories memorandum.
+<p><a href="http://www.ams.org/employment/surveyreports.html">http://www.ams.org/employment/surveyreports.html</a>
+Supplementary Table 4 in the 2008-09 data.  See <a href="http://www.ams.org/profession/data/annual-survey/docsgrtd">http://www.ams.org/profession/data/annual-survey/docsgrtd</a> for more recent data.
 </p>
 
 
 <h3>References</h3>
 
-<p>Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988)
-<em>The New S Language</em>.
-Wadsworth &amp; Brooks/Cole.
+<p>Fox, J. and Weisberg, S. (2011) 
+<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(stats); require(graphics)
-summary(freeny)
-pairs(freeny, main = "freeny data")
-# gives warning: freeny$y has class "ts"
-
-summary(fm1 &lt;- lm(y ~ ., data = freeny))
-opar &lt;- par(mfrow = c(2, 2), oma = c(0, 0, 1.1, 0),
-            mar = c(4.1, 4.1, 2.1, 1.1))
-plot(fm1)
-par(opar)
-</pre>
+<p>Phipps, Polly, Maxwell, James W. and Rose, Colleen
+(2009), <em>2009 Annual Survey of the Mathematical Sciences</em>,
+57, 250&ndash;259, Supplementary Table 4,
+<a href="http://www.ams.org/employment/2009Survey-First-Report-Supp-Table4.pdf">http://www.ams.org/employment/2009Survey-First-Report-Supp-Table4.pdf</a>
+</p>
 
 
 </body></html>

@@ -1,27 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Budget Shares for Italian Households</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Willingness to Pay for the Preservation of the Alentejo...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for BudgetItaly"><tr><td>BudgetItaly</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for NaturalPark"><tr><td>NaturalPark</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Budget Shares for Italian Households </h2>
+<h2>Willingness to Pay for the Preservation of the Alentejo Natural Park </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1973 to 1992
+<p>a cross-section from 1987
 </p>
-<p><em>number of observations</em> :  1729
+<p><em>number of observations</em> :  312
 </p>
-<p><em>observation</em> :  households
+<p><em>observation</em> :  individuals
 </p>
-<p><em>country</em> :  Italy
+<p><em>country</em> :  Portugal
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(BudgetItaly)</pre>
+<pre>data(NaturalPark)</pre>
 
 
 <h3>Format</h3>
@@ -30,27 +30,19 @@
 </p>
 
 <dl>
-<dt>wfood</dt><dd><p>food share</p>
+<dt>bid1</dt><dd><p>initial bid, in euro</p>
 </dd>
-<dt>whouse</dt><dd><p>housing and fuels share</p>
+<dt>bidh</dt><dd><p>higher bid</p>
 </dd>
-<dt>wmisc</dt><dd><p>miscellaneous share</p>
+<dt>bidl</dt><dd><p>lower bid</p>
 </dd>
-<dt>pfood</dt><dd><p>food price</p>
+<dt>answers</dt><dd><p>a factor with levels (nn,ny,yn,yy)</p>
 </dd>
-<dt>phouse</dt><dd><p>housing and fuels price</p>
+<dt>age</dt><dd><p>age in 6 classes</p>
 </dd>
-<dt>pmisc</dt><dd><p>miscellaneous price</p>
+<dt>sex</dt><dd><p>a factor with levels (male,female) </p>
 </dd>
-<dt>totexp</dt><dd><p>total expenditure</p>
-</dd>
-<dt>year</dt><dd><p>year </p>
-</dd>
-<dt>income</dt><dd><p>income</p>
-</dd>
-<dt>size</dt><dd><p>household size</p>
-</dd>
-<dt>pct</dt><dd><p>cellule weight</p>
+<dt>income</dt><dd><p>income in 8 classes</p>
 </dd>
 </dl>
 
@@ -58,13 +50,13 @@
 
 <h3>Source</h3>
 
-<p>Bollino, Carlo Andrea,  Frederico   Perali and  Nicola  Rossi (2000) &ldquo;Linear household technologies&rdquo;, <em>Journal of Applied Econometrics</em>, <b>15(3)</b>, 253&ndash;274.
+<p>Nunes, Paulo (2000) <em>Contingent Valuation of the Benefits of natural areas and its warmglow component</em>, PhD thesis 133, FETEW, KULeuven.
 </p>
 
 
 <h3>References</h3>
 
-<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
+<p>Verbeek, Marno (2004) <em>A Guide to Modern Econometrics</em>, John Wiley and Sons, chapter 7.
 </p>
 
 

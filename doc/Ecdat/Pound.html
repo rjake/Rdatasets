@@ -1,27 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: The Cigarette Consumption Panel Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pound-dollar Exchange Rate</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Cigarette"><tr><td>Cigarette</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Pound"><tr><td>Pound</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>The Cigarette Consumption Panel Data Set </h2>
+<h2>Pound-dollar Exchange Rate </h2>
 
 <h3>Description</h3>
 
-<p>a panel of 48 observations  from 1985  to 1995
+<p>weekly observations from 1975 to 1989
 </p>
-<p><em>number of observations</em> :  528
+<p><em>number of observations</em> :  778
 </p>
-<p><em>observation</em> :  regional
+<p><em>observation</em> :  country
 </p>
-<p><em>country</em> :  United States
+<p><em>country</em> :  Germany
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Cigarette)</pre>
+<pre>data(Pound)</pre>
 
 
 <h3>Format</h3>
@@ -30,23 +30,13 @@
 </p>
 
 <dl>
-<dt>state</dt><dd><p>state</p>
+<dt>date</dt><dd><p>the date of the observation (19850104 is January, 4, 1985)</p>
 </dd>
-<dt>year</dt><dd><p>year</p>
+<dt>s</dt><dd><p>the ask price of the dollar in units of Pound in the spot market on friday of the current week</p>
 </dd>
-<dt>cpi</dt><dd><p>consumer price index</p>
+<dt>f</dt><dd><p>the ask price of the dollar in units of Pound in the 30-day forward market on friday of the current week</p>
 </dd>
-<dt>pop</dt><dd><p>state population</p>
-</dd>
-<dt>packpc</dt><dd><p>number of packs per capita</p>
-</dd>
-<dt>income</dt><dd><p>state personal income (total, nominal)</p>
-</dd>
-<dt>tax</dt><dd><p>average state, federal, and average local excise taxes for fiscal year</p>
-</dd>
-<dt>avgprs</dt><dd><p>average price during fiscal year, including sales taxes</p>
-</dd>
-<dt>taxs</dt><dd><p>average excise taxes for fiscal year, including sales taxes</p>
+<dt>s30</dt><dd><p>the bid price of the dollar in units of Pound in the spot market on the delivery date on a current forward contract</p>
 </dd>
 </dl>
 
@@ -54,13 +44,13 @@
 
 <h3>Source</h3>
 
-<p>Professor Jonathan Gruber, MIT.
+<p>Bekaert, G.  and  R.  Hodrick (1993) &ldquo;On biases in the measurement of foreign exchange risk premiums&rdquo;, <em>Journal of International Money and Finance</em>, <b>12</b>, 115-138.
 </p>
 
 
 <h3>References</h3>
 
-<p>Stock, James H.  and  Mark W.  Watson (2003) <em>Introduction to Econometrics</em>, Addison-Wesley Educational Publishers, chapter 10.
+<p>Hayashi, F. (2000) <em>Econometrics</em>, Princeton University Press, <a href="http://fhayashi.fc2web.com/hayashi_econometrics.htm">http://fhayashi.fc2web.com/hayashi_econometrics.htm</a>, chapter 6, 438-443.
 </p>
 
 

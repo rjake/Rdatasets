@@ -1,59 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wages of Lancashire Cotton Factory Workers in 1833</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ability and Intelligence Tests</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for wages1833"><tr><td>wages1833</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for ability.cov"><tr><td>ability.cov</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Wages of Lancashire Cotton Factory Workers in 1833</h2>
+<h2>Ability and Intelligence Tests</h2>
 
 <h3>Description</h3>
 
-<p>The <code>wages1833</code> data frame gives the wages 
-of Lancashire cotton factory workers in 1833. 
+<p>Six tests were given to 112 individuals. The covariance matrix is
+given in this object.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>wages1833</pre>
+<pre>ability.cov</pre>
 
 
-<h3>Format</h3>
+<h3>Details</h3>
 
-<p>This data frame contains the following columns:
+<p>The tests are described as
 </p>
 
 <dl>
-<dt>age</dt><dd><p>age in years</p>
+<dt>general:</dt><dd><p>a non-verbal measure of general intelligence using
+Cattell's culture-fair test.</p>
 </dd>
-<dt>mnum</dt><dd><p>number of male workers</p>
+<dt>picture:</dt><dd><p>a picture-completion test</p>
 </dd>
-<dt>mwage</dt><dd><p>average wage of male workers</p>
+<dt>blocks:</dt><dd><p>block design</p>
 </dd>
-<dt>fnum</dt><dd><p>number of female workers</p>
+<dt>maze:</dt><dd><p>mazes</p>
 </dd>
-<dt>fwage</dt><dd><p>average wage of female workers</p>
+<dt>reading:</dt><dd><p>reading comprehension</p>
+</dd>
+<dt>vocab:</dt><dd><p>vocabulary</p>
 </dd>
 </dl>
 
+<p>Bartholomew gives both covariance and correlation matrices,
+but these are inconsistent.  Neither are in the original paper.
+</p>
 
 
 <h3>Source</h3>
 
-<p>Boot, H.M. 1995. How Skilled Were the Lancashire Cotton Factory
-Workers in 1833? Economic History Review 48: 283-303.
+<p>Bartholomew, D. J. (1987) <em>Latent Variable Analysis and Factor
+Analysis.</em> Griffin.
+</p>
+<p>Bartholomew, D. J.  and Knott, M. (1990) <em>Latent Variable Analysis
+and Factor Analysis.</em> Second Edition, Arnold.
+</p>
+
+
+<h3>References</h3>
+
+<p>Smith, G. A. and Stanley G. (1983)
+Clocking <i>g</i>: relating intelligence and measures of timed
+performance. <em>Intelligence</em>, <b>7</b>, 353&ndash;368.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-attach(wages1833)
-plot(mwage~age,ylim=range(c(mwage,fwage[fwage&gt;0])))
-points(fwage[fwage&gt;0]~age[fwage&gt;0],pch=15,col="red")
-lines(lowess(age,mwage))
-lines(lowess(age[fwage&gt;0],fwage[fwage&gt;0]),col="red")
+require(stats)
+(ability.FA &lt;- factanal(factors = 1, covmat = ability.cov))
+update(ability.FA, factors = 2)
+## The signs of factors and hence the signs of correlations are
+## arbitrary with promax rotation.
+update(ability.FA, factors = 2, rotation = "promax")
 </pre>
 
 

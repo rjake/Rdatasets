@@ -1,63 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Synthetic Classification Problem</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Numbers of Car Insurance claims</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for synth.tr"><tr><td>synth.tr</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Insurance"><tr><td>Insurance</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Synthetic Classification Problem
+Numbers of Car Insurance claims
 </h2>
 
 <h3>Description</h3>
 
-<p>The <code>synth.tr</code> data frame has 250 rows and 3 columns.
-The <code>synth.te</code> data frame has 100 rows and 3 columns.
-It is intended that <code>synth.tr</code> be used from training and
-<code>synth.te</code> for testing.
+<p>The data given in data frame <code>Insurance</code> consist of the
+numbers of policyholders of an insurance company who were
+exposed to risk, and the numbers of car insurance claims made by
+those policyholders in the third quarter of 1973.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-synth.tr
-synth.te
+Insurance
 </pre>
 
 
 <h3>Format</h3>
 
-<p>These data frames contains the following columns:
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>xs</code></dt><dd>
-<p>x-coordinate
+<dt><code>District</code></dt><dd>
+<p>factor: district of residence of policyholder (1 to 4): 4 is major cities.
 </p>
 </dd>
-<dt><code>ys</code></dt><dd>
-<p>y-coordinate
+<dt><code>Group</code></dt><dd>
+<p>an ordered factor: group of car with levels  &lt;1 litre, 1&ndash;1.5 litre,
+1.5&ndash;2 litre, &gt;2 litre.
 </p>
 </dd>
-<dt><code>yc</code></dt><dd>
-<p>class, coded as 0 or 1.
+<dt><code>Age</code></dt><dd>
+<p>an ordered factor: the age of the insured in 4 groups labelled
+&lt;25, 25&ndash;29, 30&ndash;35, &gt;35.
 </p>
-</dd></dl>
+</dd>
+<dt><code>Holders</code></dt><dd>
+<p>numbers of policyholders.
+</p>
+</dd>
+<dt><code>Claims</code></dt><dd>
+<p>numbers of claims
+</p>
+</dd>
+</dl>
+
 
 
 <h3>Source</h3>
 
-<p>Ripley, B.D. (1994)
-Neural networks and related methods for
-classification (with discussion).
-<em>Journal of the Royal Statistical Society series B</em>
-<b>56</b>, 409&ndash;456.
+<p>L. A. Baxter, S. M. Coutts and G. A. F. Ross (1980) Applications of
+linear models in motor insurance.
+<em>Proceedings of the 21st International Congress of Actuaries, Zurich</em>
+pp. 11&ndash;29.
 </p>
-<p>Ripley, B.D. (1996)
-<em>Pattern Recognition and Neural Networks.</em>
-Cambridge: Cambridge University Press.
+<p>M. Aitkin, D. Anderson, B. Francis and J. Hinde (1989)
+<em>Statistical Modelling in GLIM.</em>
+Oxford University Press.
 </p>
+
+
+<h3>References</h3>
+
+<p>Venables, W. N. and Ripley, B. D. (1999)
+<em>Modern Applied Statistics with S-PLUS.</em> Third
+Edition. Springer.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## main-effects fit as Poisson GLM with offset
+glm(Claims ~ District + Group + Age + offset(log(Holders)),
+    data = Insurance, family = poisson)
+
+# same via loglm
+loglm(Claims ~ District + Group + Age + offset(log(Holders)),
+      data = Insurance)
+</pre>
 
 
 </body></html>

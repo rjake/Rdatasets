@@ -1,87 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: titanicgrp</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: International Expansion of U.S. Mofa's (majority-owned...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for titanicgrp"><tr><td>titanicgrp</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Mofa"><tr><td>Mofa</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>titanicgrp</h2>
+<h2>International Expansion of U.S. Mofa's (majority&ndash;owned Foreign Affiliates in Fire (finance, Insurance and Real Estate) </h2>
 
 <h3>Description</h3>
 
-<p>The data is an grouped version of the 1912 Titanic passenger survival 
-log, 
+<p>a cross-section from 1982
+</p>
+<p><em>number of observations</em> :  50
+</p>
+<p><em>observation</em> :  country
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(titanicgrp)</pre>
+<pre>data(Mofa)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 12 observations on the following 5 variables.
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt><code>survive</code></dt><dd><p>number of passengers who survived</p>
+<dt>capexp</dt><dd><p>capital expenditures made by the MOFA's of nonbank U.S. corporations in finance, insurance and real estate. Source: &quot;U.S. Direct Investment Abroad: 1982 Benchmark Survey data.&quot; Table III.C 6.</p>
 </dd>
-<dt><code>cases</code></dt><dd><p>number of passengers with same pattern of covariates</p>
+<dt>gdp</dt><dd><p>gross domestic product. Source: &quot;World Bank, World Development Report 1984.&quot; Table 3. (This variable is  scaled by a factor of 1/100,000)</p>
 </dd>
-<dt><code>age</code></dt><dd><p>1=adult; 0=child</p>
+<dt>sales</dt><dd><p>sales made by the majority owned foreign affiliates of nonbank U.S. parents in finance, insurance and real estate. Source: &quot;U.S. Direct Investment Abroad: 1982 Benchmark Survey Data.&quot; Table III.D 3. (This variable is scaled by a factor of 1/100)</p>
 </dd>
-<dt><code>sex</code></dt><dd><p>1=Male; 0=female</p>
+<dt>nbaf</dt><dd><p>the number of U.S. affiliates in the host country. Source: &quot;U.S. Direct Investment Abroad: 1982 Benchmark Survey Data.&quot; Table 5. (This variable is scaled by a factor of 1/100)</p>
 </dd>
-<dt><code>class</code></dt><dd><p>ticket class 1= 1st class; 2= second class; 3= third class</p>
+<dt>netinc</dt><dd><p>net income earned by MOFA's of nonbank U.S. corporations operating in the nonbanking financial sector of the host country. Source: &quot;U.S. Direct Investment Abroad: 1982 Benchmark Survey Data.&quot; Table III.D 6.(This variable is scaled by a factor of 1/10)</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>titanicgrp is saved as a data frame.
-Used to assess risk ratios   
-</p>
-
-
 <h3>Source</h3>
 
-<p>Found in many other texts
+<p>Ioannatos, Petros E. (1995) &ldquo;Censored regression estimation under unobserved heterogeneity : a stochastic parameter approach&rdquo;, <em>Journal of Business and Economics Statistics</em>, <b>13(3)</b>, july, 327&ndash;335.
 </p>
 
 
 <h3>References</h3>
 
-<p>Hilbe, Joseph M (2014), Modeling Count Data, Cambridge University Press
-Hilbe, Joseph M (2007, 2011), Negative Binomial Regression, Cambridge University Press
-Hilbe, Joseph M (2009), Logistic Regression Models, Chapman &amp; Hall/CRC
+<p>Journal of Business Economics and Statistics web site : <a href="http://amstat.tandfonline.com/loi/ubes20">http://amstat.tandfonline.com/loi/ubes20</a>.
 </p>
 
 
-<h3>Examples</h3>
+<h3>See Also</h3>
 
-<pre>
-library(MASS)
-library(msme)
-data(titanicgrp)
-glmlr &lt;- glm(survive ~ age + sex + factor(class) + offset(log(cases)),
-             family=poisson, data=titanicgrp)
-summary(glmlr)
-exp(coef(glmlr))
-
-lcases &lt;- titanicgrp$cases
-nb2o &lt;- nbinomial(survive ~ age + sex + factor(class), 
-                                        formula2 =~ age + sex,
-                                        offset = lcases,
-                                        mean.link="log",
-                                        scale.link="log_s",
-                                        data=titanicgrp)
-summary(nb2o)
-exp(coef(nb2o))
-
-</pre>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
 
 
 </body></html>

@@ -1,70 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: YouthRisk2009</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Political Economic Risk Data from 62 Countries in 1987</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for YouthRisk2009"><tr><td>YouthRisk2009</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for PErisk"><tr><td>PErisk</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>YouthRisk2009</h2>
+<h2>Political Economic Risk Data from 62 Countries in 1987</h2>
 
 <h3>Description</h3>
 
-<p>Survey of students in grades 9-12 concerning health-risk behiviors
+<p>Political Economic Risk Data from 62 Countries in 1987.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>data(PErisk)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 500 observations on the following 6 variables.
+ 
+<p>A data frame with 62 observations on the following 6 variables.
+All data points are from 1987. See Quinn (2004) for more
+details. 
 </p>
-
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Sleep</code></td><td style="text-align: left;"> Average hours sleep on school night, coded with <code>10 or more hours</code>, <code>9 hours</code>, </td>
-</tr>
-<tr>
- <td style="text-align: right;">
- ]tab <code>8 hours</code>, <code>7 hours</code>, <code>6 hours</code>, <code>5 hours</code>, or <code>4 or less hours</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Sleep7</code></td><td style="text-align: left;"> Seven or more hours of sleep? 0=<code>No</code>, 1=<code>Yes</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>SmokeLife</code></td><td style="text-align: left;"> Ever smoked? <code>No</code> or <code>Yes</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>SmokeDaily</code></td><td style="text-align: left;"> Regular smoker? <code>No</code> or <code>Yes</code> </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>MarijuaEver</code></td><td style="text-align: left;"> Ever smoked marijuana? 0=<code>No</code> or 1=<code>Yes</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Age</code></td><td style="text-align: left;"> Age (in years) </td>
-</tr>
-<tr>
- <td style="text-align: right;">
-   </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>Data from the Centers for Disease Control's Youth Risk Behavior Surveillance System (YRBSS). 
+<p>country: a factor with levels 'Argentina' 'Australia' 'Austria'
+'Bangladesh' 'Belgium' 'Bolivia' 'Botswana' 'Brazil' 'Burma'
+'Cameroon' 'Canada' 'Chile' 'Colombia' 'Congo-Kinshasa'
+'Costa Rica' 'Cote d'Ivoire' 'Denmark' 'Dominican Republic'
+'Ecuador' 'Finland' 'Gambia, The' 'Ghana' 'Greece' 'Hungary'
+'India' 'Indonesia' 'Iran' 'Ireland' 'Israel' 'Italy' 'Japan'
+'Kenya' 'Korea, South' 'Malawi' 'Malaysia' 'Mexico' 'Morocco'
+'New Zealand' 'Nigeria' 'Norway' 'Papua New Guinea'
+'Paraguay' 'Philippines' 'Poland' 'Portugal' 'Sierra Leone'
+'Singapore' 'South Africa' 'Spain' 'Sri Lanka' 'Sweden'
+'Switzerland' 'Syria' 'Thailand' 'Togo' 'Tunisia' 'Turkey'
+'United Kingdom' 'Uruguay' 'Venezuela' 'Zambia' 'Zimbabwe'
+</p>
+<p>courts: an ordered factor with levels '0' &lt; '1'.'courts' is an
+indicator of whether the country in question is judged to
+have an independent judiciary. From Henisz (2002).
+</p>
+<p>barb2: a numeric vector giving the natural log of the black market
+premium in each country. The black market premium is coded as
+the black market exchange rate (local currency per dollar)
+divided by the official exchange  rate minus 1. From
+Marshall, Gurr, and Harff (2002). 
+</p>
+<p>prsexp2: an ordered factor with levels '0' &lt; '1' &lt; '2' &lt; '3' &lt; '4'
+&lt; '5', giving the lack of expropriation risk. From Marshall,
+Gurr, and Harff (2002).
+</p>
+<p>prscorr2: an ordered factor with levels '0' &lt; '1' &lt; '2' &lt; '3' &lt; '4'
+&lt; '5', measuring the lack of corruption. From Marshall, Gurr,
+and Harff (2002).
+</p>
+<p>gdpw2: a numeric vector giving the natural log of real GDP per
+worker in 1985 international prices. From Alvarez et al.
+(1999).
 </p>
 
 
 <h3>Source</h3>
 
-<p>http://www.cdc.gov/HealthyYouth/yrbs/index.htm
+<p>Mike Alvarez, Jose Antonio Cheibub, Fernando Limongi, and Adam
+Przeworski. 1999. &ldquo;ACLP Political and Economic Database.&rdquo; &lt;URL:
+http://www.ssc.upenn.edu/~cheibub/data/&gt;.
+</p>
+<p>Witold J. Henisz. 2002. &ldquo;The Political Constraint Index (POLCON)
+Dataset.&rdquo; \ &lt;URL:
+http://www-management.wharton.upenn.edu/henisz/POLCON/ContactInfo.
+html&gt;.
+</p>
+<p>Monty G. Marshall, Ted Robert Gurr, and Barbara Harff. 2002.
+&ldquo;State Failure Task Force Problem Set.&rdquo; &lt;URL:
+http://www.cidcm.umd.edu/inscr/stfail/index.htm&gt;.
+</p>
+
+
+<h3>References</h3>
+
+<p>Kevin M. Quinn. 2004. &ldquo;Bayesian Factor Analysis for Mixed Ordinal
+and Continuous Response.&rdquo; <em>Political Analyis</em>. Vol. 12, pp.338&ndash;353.
 </p>
 
 

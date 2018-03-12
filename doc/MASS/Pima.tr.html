@@ -1,137 +1,99 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Yearly batting records for all major league baseball players</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diabetes in Pima Indian Women</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for baseball"><tr><td>baseball</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Pima.tr"><tr><td>Pima.tr</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Yearly batting records for all major league baseball players</h2>
+<h2>
+Diabetes in Pima Indian Women
+</h2>
 
 <h3>Description</h3>
 
-<p>This data frame contains batting statistics for a subset of players
-collected from <a href="http://www.baseball-databank.org/">http://www.baseball-databank.org/</a>. There are a total
-of 21,699 records, covering 1,228 players from 1871 to 2007. Only players
-with more 15 seasons of play are included.
+<p>A population of women who were at least 21 years old, of Pima Indian heritage
+and living near Phoenix, Arizona, was tested for diabetes
+according to World Health Organization criteria.  The data
+were collected by the US National Institute of Diabetes and Digestive and
+Kidney Diseases.  We used the 532 complete records after dropping the
+(mainly missing) data on serum insulin.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-baseball
+Pima.tr
+Pima.tr2
+Pima.te
 </pre>
 
 
 <h3>Format</h3>
 
-<p>A 21699 x 22 data frame</p>
-
-
-<h3>Variables</h3>
-
-<p>Variables:
+<p>These data frames contains the following columns:
 </p>
 
-<ul>
-<li><p> id, unique player id
+<dl>
+<dt><code>npreg</code></dt><dd>
+<p>number of pregnancies.
 </p>
-</li>
-<li><p> year, year of data
+</dd>
+<dt><code>glu</code></dt><dd>
+<p>plasma glucose concentration in an oral glucose tolerance test.
 </p>
-</li>
-<li><p> stint
+</dd>
+<dt><code>bp</code></dt><dd>
+<p>diastolic blood pressure (mm Hg).
 </p>
-</li>
-<li><p> team, team played for
+</dd>
+<dt><code>skin</code></dt><dd>
+<p>triceps skin fold thickness (mm).
 </p>
-</li>
-<li><p> lg, league
+</dd>
+<dt><code>bmi</code></dt><dd>
+<p>body mass index (weight in kg/(height in m)<i>\^2</i>).
 </p>
-</li>
-<li><p> g, number of games
+</dd>
+<dt><code>ped</code></dt><dd>
+<p>diabetes pedigree function.
 </p>
-</li>
-<li><p> ab, number of times at bat
+</dd>
+<dt><code>age</code></dt><dd>
+<p>age in years.
 </p>
-</li>
-<li><p> r, number of runs
+</dd>
+<dt><code>type</code></dt><dd>
+<p><code>Yes</code> or <code>No</code>, for diabetic according to WHO criteria.
 </p>
-</li>
-<li><p> h, hits, times reached base because of a batted, fair ball without
-error by the defense
-</p>
-</li>
-<li><p> X2b, hits on which the batter reached second base safely
-</p>
-</li>
-<li><p> X3b, hits on which the batter reached third base safely
-</p>
-</li>
-<li><p> hr, number of home runs
-</p>
-</li>
-<li><p> rbi, runs batted in
-</p>
-</li>
-<li><p> sb, stolen bases
-</p>
-</li>
-<li><p> cs, caught stealing
-</p>
-</li>
-<li><p> bb, base on balls (walk)
-</p>
-</li>
-<li><p> so, strike outs
-</p>
-</li>
-<li><p> ibb, intentional base on balls
-</p>
-</li>
-<li><p> hbp, hits by pitch
-</p>
-</li>
-<li><p> sh, sacrifice hits
-</p>
-</li>
-<li><p> sf, sacrifice flies
-</p>
-</li>
-<li><p> gidp, ground into double play
-</p>
-</li></ul>
+</dd>
+</dl>
 
 
 
-<h3>References</h3>
+<h3>Details</h3>
 
-<p><a href="http://www.baseball-databank.org/">http://www.baseball-databank.org/</a>
+<p>The training set <code>Pima.tr</code> contains a randomly selected set of 200
+subjects, and <code>Pima.te</code> contains the remaining 332 subjects.
+<code>Pima.tr2</code> contains <code>Pima.tr</code> plus 100 subjects with
+missing values in the explanatory variables.
 </p>
 
 
-<h3>Examples</h3>
+<h3>Source</h3>
 
-<pre>
-baberuth &lt;- subset(baseball, id == "ruthba01")
-baberuth$cyear &lt;- baberuth$year - min(baberuth$year) + 1
-
-calculate_cyear &lt;- function(df) {
-  mutate(df,
-    cyear = year - min(year),
-    cpercent = cyear / (max(year) - min(year))
-  )
-}
-
-baseball &lt;- ddply(baseball, .(id), calculate_cyear)
-baseball &lt;- subset(baseball, ab &gt;= 25)
-
-model &lt;- function(df) {
-  lm(rbi / ab ~ cyear, data=df)
-}
-model(baberuth)
-models &lt;- dlply(baseball, .(id), model)
-</pre>
+<p>Smith, J. W., Everhart, J. E., Dickson, W. C., Knowler, W. C.
+and Johannes, R. S. (1988)
+Using the ADAP learning algorithm to forecast the onset of
+<em>diabetes mellitus</em>.
+In <em>Proceedings of the Symposium on Computer Applications in
+Medical Care (Washington, 1988),</em> ed. R. A. Greenes,
+pp. 261&ndash;265. Los Alamitos, CA: IEEE Computer Society Press.
+</p>
+<p>Ripley, B.D. (1996)
+<em>Pattern Recognition and Neural Networks.</em>
+Cambridge: Cambridge University Press.
+</p>
 
 
 </body></html>

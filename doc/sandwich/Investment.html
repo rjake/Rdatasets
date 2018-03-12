@@ -1,83 +1,106 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 13 personality scales from the Eysenck Personality Inventory...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US Investment Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for epi.bfi"><tr><td>epi.bfi</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Investment"><tr><td>Investment</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>13 personality scales from the Eysenck Personality Inventory and Big 5 inventory</h2>
+<h2>US Investment Data</h2>
 
 <h3>Description</h3>
 
-<p>A small data set of 5 scales from the Eysenck Personality Inventory, 5 from a Big 5 inventory, a Beck Depression Inventory, and State and Trait Anxiety measures.  Used for demonstrations of correlations, regressions, graphic displays.
+<p>US data for fitting an investment equation.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(epi.bfi)</pre>
+<pre>data(Investment)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 231 observations on the following 13 variables.
+<p>An annual time series from 1963 to 1982 with 7 variables.
 </p>
 
 <dl>
-<dt><code>epiE</code></dt><dd><p>EPI Extraversion </p>
+<dt>GNP</dt><dd><p>nominal gross national product (in billion USD),</p>
 </dd>
-<dt><code>epiS</code></dt><dd><p>EPI Sociability (a subset of Extraversion items</p>
+<dt>Investment</dt><dd><p>nominal gross private domestic investment (in billion USD),</p>
 </dd>
-<dt><code>epiImp</code></dt><dd><p>EPI Impulsivity (a subset of Extraversion items</p>
+<dt>Price</dt><dd><p>price index, implicit price deflator for GNP,</p>
 </dd>
-<dt><code>epilie</code></dt><dd><p>EPI Lie scale</p>
+<dt>Interest</dt><dd><p>interest rate, average yearly discount rate
+charged by the New York Federal Reserve Bank,</p>
 </dd>
-<dt><code>epiNeur</code></dt><dd><p>EPI neuroticism</p>
+<dt>RealGNP</dt><dd><p>real GNP (= GNP/Price),</p>
 </dd>
-<dt><code>bfagree</code></dt><dd><p>Big 5 inventory (from the IPIP) measure of Agreeableness</p>
+<dt>RealInv</dt><dd><p>real investment (= Investment/Price),</p>
 </dd>
-<dt><code>bfcon</code></dt><dd><p>Big 5 Conscientiousness</p>
-</dd>
-<dt><code>bfext</code></dt><dd><p>Big 5 Extraversion</p>
-</dd>
-<dt><code>bfneur</code></dt><dd><p>Big 5 Neuroticism</p>
-</dd>
-<dt><code>bfopen</code></dt><dd><p>Big 5 Openness</p>
-</dd>
-<dt><code>bdi</code></dt><dd><p>Beck Depression scale</p>
-</dd>
-<dt><code>traitanx</code></dt><dd><p>Trait Anxiety</p>
-</dd>
-<dt><code>stateanx</code></dt><dd><p>State Anxiety</p>
+<dt>RealInt</dt><dd><p>approximation to the real interest rate
+(= Interest - 100 * diff(Price)/Price).</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>Self report personality scales tend to measure the &ldquo;Giant 2&quot; of Extraversion and Neuroticism or the &ldquo;Big 5&quot; of Extraversion, Neuroticism, Agreeableness, Conscientiousness, and Openness.  Here is a small data set from Northwestern University undergraduates with scores on the Eysenck Personality Inventory (EPI) and a Big 5 inventory taken from the International Personality Item Pool.  
-</p>
-
-
 <h3>Source</h3>
 
-<p>Data were collected at the Personality, Motivation, and Cognition Lab (PMCLab) at Northwestern by William Revelle)
-</p>
+<p>Table 15.1 in Greene (1993)</p>
 
 
 <h3>References</h3>
 
-<p><a href="http://personality-project.org/pmc.html">http://personality-project.org/pmc.html</a>
+<p>Greene W.H. (1993), <em>Econometric Analysis</em>, 2nd edition.
+Macmillan Publishing Company, New York.
+</p>
+<p>Executive Office of the President (1984), <em>Economic Report of the
+President</em>. US Government Printing Office, Washington, DC.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(epi.bfi)
-pairs.panels(epi.bfi[,1:5])
-describe(epi.bfi)
+## Willam H. Greene, Econometric Analysis, 2nd Ed.
+## Chapter 15
+## load data set, p. 411, Table 15.1
+data(Investment)
+
+## fit linear model, p. 412, Table 15.2
+fm &lt;- lm(RealInv ~ RealGNP + RealInt, data = Investment)
+summary(fm)
+
+## visualize residuals, p. 412, Figure 15.1
+plot(ts(residuals(fm), start = 1964),
+  type = "b", pch = 19, ylim = c(-35, 35), ylab = "Residuals")
+sigma &lt;- sqrt(sum(residuals(fm)^2)/fm$df.residual) ## maybe used df = 26 instead of 16 ??
+abline(h = c(-2, 0, 2) * sigma, lty = 2)
+
+if(require(lmtest)) {
+## Newey-West covariances, Example 15.3
+coeftest(fm, vcov = NeweyWest(fm, lag = 4))
+## Note, that the following is equivalent:
+coeftest(fm, vcov = kernHAC(fm, kernel = "Bartlett", bw = 5, prewhite = FALSE, adjust = FALSE))
+
+## Durbin-Watson test, p. 424, Example 15.4
+dwtest(fm)
+
+## Breusch-Godfrey test, p. 427, Example 15.6
+bgtest(fm, order = 4)
+}
+
+## visualize fitted series
+plot(Investment[, "RealInv"], type = "b", pch = 19, ylab = "Real investment")
+lines(ts(fitted(fm), start = 1964), col = 4)
+
+
+## 3-d visualization of fitted model
+if(require(scatterplot3d)) {
+s3d &lt;- scatterplot3d(Investment[,c(5,7,6)],
+  type = "b", angle = 65, scale.y = 1, pch = 16)
+s3d$plane3d(fm, lty.box = "solid", col = 4)
+}
 </pre>
 
 

@@ -1,84 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: FruitFlies</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monoclonal gammapothy data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for FruitFlies"><tr><td>FruitFlies</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for mgus2"><tr><td>mgus2</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>FruitFlies</h2>
+<h2>Monoclonal gammapothy data</h2>
 
 <h3>Description</h3>
 
-<p>Sexual activity and lifetimes of fruit flies
+<p>Natural history of 1341 sequential patients with monoclonal
+gammapothy of undetermined significance (MGUS).
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>data("mgus2")</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 125 observations on the following 7 variables.
+<p>A data frame with 1384 observations on the following 10 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>ID</code> </td><td style="text-align: left;"> a numeric vector</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Partners</code> </td><td style="text-align: left;"> Number of female partners: 0, 1, or 8</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Type</code> </td><td style="text-align: left;"> <code>0</code>=pregnant, <code>1</code>=virgin, <code>9</code>=none</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Longevity</code> </td><td style="text-align: left;"> Lifespan (in days)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Thorax</code> </td><td style="text-align: left;"> Length of thorax (in mm)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Sleep</code> </td><td style="text-align: left;"> Percent of day sleeping</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-   <code>Treatment</code> </td><td style="text-align: left;"> <code>1 pregnant</code>, <code>1 virgin</code>, <code>8 pregnant</code>, <code>8 virgin</code>, or <code>none</code></td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
+<dl>
+<dt><code>id</code></dt><dd><p>subject identifier</p>
+</dd>
+<dt><code>age</code></dt><dd><p>age at diagnosis, in years</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a factor with levels <code>F</code> <code>M</code></p>
+</dd>
+<dt><code>hgb</code></dt><dd><p>hemoglobin</p>
+</dd>
+<dt><code>creat</code></dt><dd><p>creatinine</p>
+</dd>
+<dt><code>mspike</code></dt><dd><p>size of the monoclonal serum splike</p>
+</dd>
+<dt><code>ptime</code></dt><dd><p>time until progression to a plasma cell
+malignancy (PCM) or last contact, in months</p>
+</dd>
+<dt><code>pstat</code></dt><dd><p>occurrence of PCM: 0=no, 1=yes </p>
+</dd>
+<dt><code>futime</code></dt><dd><p>time until death or last contact, in months</p>
+</dd>
+<dt><code>death</code></dt><dd><p>occurrence of death: 0=no, 1=yes</p>
+</dd>
+</dl>
 
 
 
 <h3>Details</h3>
 
-<p>Hanley and Shapiro (1994) report on a
-study conducted by Partridge and Farquhar (1981) about the sexual behavior of fruit flies. It was
-already known that increased reproduction leads to shorter life spans for female fruit flies. But the
-question remained whether an increase in sexual activity would also reduce the life spans of male
-fruit flies. The researchers designed an experiment to answer this question. They had a total of
-125 male fruit flies to use and they randomly assigned each of the 125 to one of the following five
-groups.
+<p>This is a larger follow-on study of the condition also found in data
+set <code>mgus</code>.
 </p>
 
 
 <h3>Source</h3>
 
-<p>The data are given as part of the data archive on the Journal of Statistics Education website
-and can be found on the page http://www.amstat.org/publications/jse/jse_data_archive.htm.
-</p>
+<p>Mayo Clinic data courtesy of Dr. Robert Kyle.  All patient
+identifiers have been removed, age rounded to the nearest year, and
+follow-up times rounded to the nearest month.</p>
 
 
 <h3>References</h3>
 
-<p>Hanley and Hapiro, &quot;Sexual Activity and the Lifespan of Male Fruitflies: A Dataset That Gets Attention,&quot; Journal of Statistics Education
-v.2, n.1, (1994), http://www.amstat.org/publications/jse/v2n1/datasets.hanley.html
+<p>R. Kyle, T. Therneau, V. Rajkumar, J. Offord, D. Larson, M. Plevak,
+and L. J. Melton III, A long-terms study of prognosis in monoclonal
+gammopathy of undertermined significance. New Engl J Med, 346:564-569 (2002).
 </p>
 
 

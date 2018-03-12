@@ -1,28 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nutritional and Marketing Information on US Cereals</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: data from Section 1.12</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for UScereal"><tr><td>UScereal</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for std"><tr><td>std</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Nutritional and Marketing Information on US Cereals
-</h2>
+<h2>data from Section 1.12</h2>
 
 <h3>Description</h3>
 
-<p>The <code>UScereal</code> data frame has 65 rows and 11 columns.
-The data come from the 1993 ASA Statistical Graphics Exposition,
-and are taken from the mandatory  F&amp;DA food label. The data have been
-normalized here to a portion of one American cup.
+<p>The <code>std</code> data frame has 877 rows and 3 columns.
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>
-UScereal
-</pre>
 
 
 <h3>Format</h3>
@@ -31,49 +19,100 @@ UScereal
 </p>
 
 <dl>
-<dt><code>mfr</code></dt><dd>
-<p>Manufacturer, represented by its first initial: G=General Mills,
-K=Kelloggs, N=Nabisco, P=Post, Q=Quaker Oats, R=Ralston Purina.
+<dt>obs</dt><dd>
+<p>Observation number
 </p>
 </dd>
-<dt><code>calories</code></dt><dd>
-<p>number of calories in one portion.
+<dt>race</dt><dd>
+<p>Race (W=white, B=black)
 </p>
 </dd>
-<dt><code>protein</code></dt><dd>
-<p>grams of protein in one portion.
+<dt>marital</dt><dd>
+<p>Marital status (D=divorced / separated, M=married, S=single)
 </p>
 </dd>
-<dt><code>fat</code></dt><dd>
-<p>grams of fat in one portion.
+<dt>age</dt><dd>
+<p>AGE
 </p>
 </dd>
-<dt><code>sodium</code></dt><dd>
-<p>milligrams of sodium in one portion.
+<dt>yschool</dt><dd>
+<p>Years of schooling
 </p>
 </dd>
-<dt><code>fibre</code></dt><dd>
-<p>grams of dietary fibre in one portion.
+<dt>iinfct</dt><dd>
+<p>Initial infection (1= gonorrhea, 2=chlamydia, 3=both)
 </p>
 </dd>
-<dt><code>carbo</code></dt><dd>
-<p>grams of complex carbohydrates in one portion.
+<dt>npartner</dt><dd>
+<p>Number of partners
 </p>
 </dd>
-<dt><code>sugars</code></dt><dd>
-<p>grams of sugars in one portion.
+<dt>os12m</dt><dd>
+<p>Oral sex within 12 months (1=yes, 0=no)
 </p>
 </dd>
-<dt><code>shelf</code></dt><dd>
-<p>display shelf (1, 2, or 3, counting from the floor).
+<dt>os30d</dt><dd>
+<p>Oral sex within 30 days (1=yes, 0=no)
 </p>
 </dd>
-<dt><code>potassium</code></dt><dd>
-<p>grams of potassium.
+<dt>rs12m</dt><dd>
+<p>Rectal sex within 12 months (1=yes, 0=no)
 </p>
 </dd>
-<dt><code>vitamins</code></dt><dd>
-<p>vitamins and minerals (none, enriched, or 100%).
+<dt>rs30d</dt><dd>
+<p>Rectal sex within 30 days (1=yes, 0=no)
+</p>
+</dd>
+<dt>abdpain</dt><dd>
+<p>Presence of abdominal pain (1=yes, 0=no)
+</p>
+</dd>
+<dt>discharge</dt><dd>
+<p>Sign of discharge (1=yes, 0=no)
+</p>
+</dd>
+<dt>dysuria</dt><dd>
+<p>Sign of dysuria (1=yes, 0=no)
+</p>
+</dd>
+<dt>condom</dt><dd>
+<p>Condom use (1=always, 2=sometime, 3=never)
+</p>
+</dd>
+<dt>itch</dt><dd>
+<p>Sign of itch (1=yes, 0=no)
+</p>
+</dd>
+<dt>lesion</dt><dd>
+<p>Sign of lesion (1=yes, 0=no)
+</p>
+</dd>
+<dt>rash</dt><dd>
+<p>Sign of rash (1=yes, 0=no)
+</p>
+</dd>
+<dt>lymph</dt><dd>
+<p>Sign of lymph (1=yes, 0=no)
+</p>
+</dd>
+<dt>vagina</dt><dd>
+<p>Involvement vagina at exam (1=yes, 0=no)
+</p>
+</dd>
+<dt>dchexam</dt><dd>
+<p>Discharge at exam (1=yes, 0=no)
+</p>
+</dd>
+<dt>abnode</dt><dd>
+<p>Abnormal node at exam (1=yes, 0=no)
+</p>
+</dd>
+<dt>rinfct</dt><dd>
+<p>Reinfection (1=yes, 0=no)
+</p>
+</dd>
+<dt>time</dt><dd>
+<p>Time to reinfection
 </p>
 </dd>
 </dl>
@@ -82,17 +121,16 @@ K=Kelloggs, N=Nabisco, P=Post, Q=Quaker Oats, R=Ralston Purina.
 
 <h3>Source</h3>
 
-<p>The original data are available at
-<a href="http://lib.stat.cmu.edu/datasets/1993.expo/">http://lib.stat.cmu.edu/datasets/1993.expo/</a>.
+<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
+and truncated data</em>, Springer.
 </p>
 
 
-<h3>References</h3>
+<h3>Examples</h3>
 
-<p>Venables, W. N. and Ripley, B. D. (1999)
-<em>Modern Applied Statistics with S-PLUS.</em> Third
-Edition. Springer.
-</p>
+<pre>
+data(std)
+</pre>
 
 
 </body></html>

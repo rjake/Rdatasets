@@ -1,22 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A Subset of the nsw74psid1 Data Set</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ozone Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for nsw74psidA"><tr><td>nsw74psidA</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for ozone"><tr><td>ozone</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>A Subset of the nsw74psid1 Data Set</h2>
+<h2>Ozone Data</h2>
 
 <h3>Description</h3>
 
-<p>The <code>nsw74psidA</code> data frame has 252 rows and 10 columns.
-See <code>nsw74psid1</code> for more information.
+<p>Monthly provisional mean total ozone (in Dobson units) at Halley Bay 
+(approximately corrected to Bass-Paur).
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>nsw74psidA</pre>
+<pre>ozone</pre>
 
 
 <h3>Format</h3>
@@ -25,54 +25,52 @@ See <code>nsw74psid1</code> for more information.
 </p>
 
 <dl>
-<dt>trt</dt><dd><p>a numeric vector</p>
+<dt>Year</dt><dd><p>the year</p>
 </dd>
-<dt>age</dt><dd><p>a numeric vector</p>
+<dt>Aug</dt><dd><p>August mean total ozone</p>
 </dd>
-<dt>educ</dt><dd><p>a numeric vector</p>
+<dt>Sep</dt><dd><p>September mean total ozone</p>
 </dd>
-<dt>black</dt><dd><p>a numeric vector</p>
+<dt>Oct</dt><dd><p>October mean total ozone</p>
 </dd>
-<dt>hisp</dt><dd><p>a numeric vector</p>
+<dt>Nov</dt><dd><p>November mean total ozone</p>
 </dd>
-<dt>marr</dt><dd><p>a numeric vector</p>
+<dt>Dec</dt><dd><p>December mean total ozone</p>
 </dd>
-<dt>nodeg</dt><dd><p>a numeric vector</p>
+<dt>Jan</dt><dd><p>January mean total ozone</p>
 </dd>
-<dt>re74</dt><dd><p>a numeric vector</p>
+<dt>Feb</dt><dd><p>February mean total ozone</p>
 </dd>
-<dt>re75</dt><dd><p>a numeric vector</p>
+<dt>Mar</dt><dd><p>March mean total ozone</p>
 </dd>
-<dt>re78</dt><dd><p>a numeric vector</p>
+<dt>Apr</dt><dd><p>April mean total ozone</p>
+</dd>
+<dt>Annual</dt><dd><p>Yearly mean total ozone</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
+<h3>Source</h3>
 
-<p>This data set was obtained using:
+<p>Shanklin, J. (2001) Ozone at Halley, Rothera and Vernadsky/Faraday.  
 </p>
-<p><code>here &lt;- age &lt;= 40 &amp; re74&lt;=5000 &amp; re75 &lt;= 5000 &amp; re78 &lt; 30000</code>
+<p>http://www.antarctica.ac.uk/met/jds/ozone/data/zoz5699.dat
 </p>
-<p><code>nsw74psidA &lt;- nsw74psid1[here, ]</code>
+
+
+<h3>References</h3>
+
+<p>Christie, M. (2000) The Ozone Layer: a Philosophy of Science Perspective.
+Cambridge University Press.
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-table(nsw74psidA$trt)
-A1.lm &lt;- lm(re78 ~ trt + (age + educ + re74 + re75) + (black +
-      hisp + marr + nodeg), data = nsw74psidA)
-summary(A1.lm)$coef
-discA.glm &lt;- glm(formula = trt ~ age + educ + black + hisp +
-  marr + nodeg + re74 + re75, family = binomial, data = nsw74psidA)
-A.scores &lt;- predict(discA.glm)
-options(digits=4)
-overlap &lt;- A.scores &gt; -3.5 &amp; A.scores &lt; 3.8
-A.lm &lt;- lm(re78 ~ trt + A.scores, data=nsw74psidA, subset = overlap)
-summary(A.lm)$coef
+AnnualOzone &lt;- ts(ozone$Annual, start=1956)
+plot(AnnualOzone)
 </pre>
 
 

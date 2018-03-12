@@ -1,57 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: U.S. Women's Labor-Force Participation</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Monthly Returns from the CRSP Database</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Mroz"><tr><td>Mroz</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for CRSPmon"><tr><td>CRSPmon</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>U.S. Women's Labor-Force Participation</h2>
+<h2>Monthly Returns from the CRSP Database </h2>
 
 <h3>Description</h3>
 
-<p>The <code>Mroz</code> data frame has 753 rows and 8 columns.
-The observations, from the Panel Study of Income Dynamics (PSID),
-are married women.
+<p>monthly observations from 1969-1 to 1998-12
+</p>
+<p><em>number of observations</em> :  360
+</p>
+<p><em>observation</em> :  production units
+</p>
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>Mroz</pre>
+<pre>data(CRSPmon)</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following columns:
+<p>A time serie containing :
 </p>
 
 <dl>
-<dt>lfp</dt><dd><p>labor-force participation; a factor with levels:
-<code>no</code>;
-<code>yes</code>.
-</p>
+<dt>ge</dt><dd><p>the return for General Electric, Permno 12060</p>
 </dd>
-<dt>k5</dt><dd><p>number of children 5 years old or younger.</p>
+<dt>ibm</dt><dd><p> the return for IBM, Permno 12490</p>
 </dd>
-<dt>k618</dt><dd><p>number of children 6 to 18 years old.</p>
+<dt>mobil</dt><dd><p>the return for Mobil Corporation, Permno 15966</p>
 </dd>
-<dt>age</dt><dd><p>in years.</p>
-</dd>
-<dt>wc</dt><dd><p>wife's college attendance; a factor with levels:
-<code>no</code>;
-<code>yes</code>.
-</p>
-</dd>
-<dt>hc</dt><dd><p>husband's college attendance; a factor with levels:
-<code>no</code>;
-<code>yes</code>.
-</p>
-</dd>
-<dt>lwg</dt><dd><p>log expected wage rate; for women in the labor force, the actual
-wage rate; for women not in the labor force, an imputed value based on the
-regression of <code>lwg</code> on the other variables.</p>
-</dd>
-<dt>inc</dt><dd><p>family income exclusive of wife's income.</p>
+<dt>crsp</dt><dd><p> the return for the CRSP value-weighted index, including  dividends</p>
 </dd>
 </dl>
 
@@ -59,29 +44,21 @@ regression of <code>lwg</code> on the other variables.</p>
 
 <h3>Source</h3>
 
-<p>Mroz, T. A. (1987)
-The sensitivity of an empirical model of married women's hours of work to
-economic and statistical assumptions. 
-<em>Econometrica</em> <b>55</b>, 765&ndash;799.
+<p>Center for Research in Security Prices, Graduate School of  Business, University of Chicago,  725 South Wells - Suite 800,  Chicago, Illinois  60607,  <a href="http://www.crsp.com">http://www.crsp.com</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>Fox, J. (2008)
-<em>Applied Regression Analysis and Generalized Linear Models</em>,
-Second Edition. Sage.  
+<p>Davidson, R.  and  James G.  MacKinnon (2004) <em>Econometric Theory and Methods</em>, New York, Oxford University Press, <a href="http://www.econ.queensu.ca/ETM/">http://www.econ.queensu.ca/ETM/</a>, chapter 13.
 </p>
-<p>Fox, J. (2000)
-<em>Multiple and Generalized Nonparametric Regression.</em> Sage.
+
+
+<h3>See Also</h3>
+
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
 </p>
-<p>Fox, J. and Weisberg, S. (2011) 
-<em>An R Companion to Applied Regression</em>, Second Edition, Sage.
-</p>
-<p>Long. J. S. (1997)
-<em>Regression Models for Categorical and Limited Dependent Variables.</em>
-Sage.
-</p>
+<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

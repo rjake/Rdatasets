@@ -1,44 +1,40 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pricing the C's of Diamond Stones</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Solow's Technological Change Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Diamond"><tr><td>Diamond</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Solow"><tr><td>Solow</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Pricing the C's of Diamond Stones </h2>
+<h2>Solow's Technological Change Data </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 2000
+<p>annual observations from 1909 to 1949
 </p>
-<p><em>number of observations</em> :  308
+<p><em>number of observations</em> :  41
 </p>
-<p><em>observation</em> :  goods
+<p><em>observation</em> :  country
 </p>
-<p><em>country</em> :  Singapore
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Diamond)</pre>
+<pre>data(Solow)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A time serie containing :
 </p>
 
 <dl>
-<dt>carat</dt><dd><p>weight of diamond stones in carat unit</p>
+<dt>q</dt><dd><p>output</p>
 </dd>
-<dt>colour</dt><dd><p>a factor with levels (D,E,F,G,H,I)</p>
+<dt>k</dt><dd><p>capital/labor ratio</p>
 </dd>
-<dt>clarity</dt><dd><p>a factor with levels (IF,VVS1,VVS2,VS1,VS2)</p>
-</dd>
-<dt>certification</dt><dd><p>certification body, a factor with levels (GIA,IGI,HRD)</p>
-</dd>
-<dt>price</dt><dd><p>price in Singapore \$</p>
+<dt>A</dt><dd><p>index of technology</p>
 </dd>
 </dl>
 
@@ -46,20 +42,21 @@
 
 <h3>Source</h3>
 
-<p>Chu, Singfat (2001) &ldquo;Pricing the C's of Diamond Stones&rdquo;, <em>Journal of Statistics Education</em>, <b>9(2)</b>.
+<p>Solow, R. (1957) &ldquo;Technical change and the aggregate production function&rdquo;, <em>Review of Economics and Statistics</em>, <b>39</b>, 312-320.
 </p>
 
 
 <h3>References</h3>
 
-<p>Journal of Statistics Education's data archive : 
-<a href="http://www.amstat.org/publications/jse/jse_data_archive.htm">http://www.amstat.org/publications/jse/jse_data_archive.htm</a>.
+<p>Greene, W.H. (2003) <em>Econometric Analysis</em>, Prentice Hall, <a href="http://www.prenhall.com/greene/greene1.html">http://www.prenhall.com/greene/greene1.html</a>, Table F7.2.
 </p>
 
 
 <h3>See Also</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code>,
+</p>
+<p><code>Index.Time.Series</code></p>
 
 
 </body></html>

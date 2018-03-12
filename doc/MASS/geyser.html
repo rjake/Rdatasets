@@ -1,82 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Space Shuttle Autolander Problem</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Old Faithful Geyser Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for shuttle"><tr><td>shuttle</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for geyser"><tr><td>geyser</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Space Shuttle Autolander Problem
-</h2>
+<h2>Old Faithful Geyser Data</h2>
 
 <h3>Description</h3>
 
-<p>The <code>shuttle</code> data frame has 256 rows and 7 columns.
-The first six columns are categorical variables giving example
-conditions; the seventh is the decision.  The first 253 rows are the
-training set, the last 3 the test conditions.
+<p>A version of the eruptions data from the &lsquo;Old Faithful&rsquo; geyser
+in Yellowstone National  Park,  Wyoming. This version comes from
+Azzalini and Bowman (1990) and is of continuous measurement from August
+1 to August 15, 1985.
+</p>
+<p>Some nocturnal duration measurements were coded as 2, 3 or 4 minutes,
+having originally been described as &lsquo;short&rsquo;, &lsquo;medium&rsquo;
+or &lsquo;long&rsquo;.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-shuttle
+geyser
 </pre>
 
 
 <h3>Format</h3>
 
-<p>This data frame contains the following factor columns:
+<p>A data frame with 299 observations on 2 variables.
 </p>
 
-<dl>
-<dt><code>stability</code></dt><dd>
-<p>stable positioning or not (<code>stab</code> / <code>xstab</code>).
-</p>
-</dd>
-<dt><code>error</code></dt><dd>
-<p>size of error (<code>MM</code> / <code>SS</code> / <code>LX</code> / <code>XL</code>).
-</p>
-</dd>
-<dt><code>sign</code></dt><dd>
-<p>sign of error, positive or negative (<code>pp</code> / <code>nn</code>).
-</p>
-</dd>
-<dt><code>wind</code></dt><dd>
-<p>wind sign (<code>head</code> / <code>tail</code>).
-</p>
-</dd>
-<dt><code>magn</code></dt><dd>
-<p>wind strength (<code>Light</code> / <code>Medium</code> / <code>Strong</code> /
-<code>Out of Range</code>).
-</p>
-</dd>
-<dt><code>vis</code></dt><dd>
-<p>visibility (<code>yes</code> / <code>no</code>).
-</p>
-</dd>
-<dt><code>use</code></dt><dd>
-<p>use the autolander or not. (<code>auto</code> / <code>noauto</code>.)
-</p>
-</dd>
-</dl>
+<table summary="Rd table">
+<tr>
+ <td style="text-align: left;">
+    <code>duration</code>  </td><td style="text-align: left;"> numeric  </td><td style="text-align: left;"> Eruption time in mins </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+    <code>waiting</code>   </td><td style="text-align: left;"> numeric  </td><td style="text-align: left;"> Waiting time for this eruption </td>
+</tr>
+<tr>
+ <td style="text-align: left;">
+  </td>
+</tr>
+
+</table>
 
 
 
-<h3>Source</h3>
+<h3>Note</h3>
 
-<p>D. Michie (1989)
-Problems of computer-aided concept formation. In
-<em>Applications of Expert Systems 2</em>,
-ed. J. R. Quinlan, Turing Institute Press / Addison-Wesley, pp. 310&ndash;333.
+<p>The <code>waiting</code> time was incorrectly described as the time to the
+next eruption in the original files, and corrected for <span class="pkg">MASS</span>
+version 7.3-30.
 </p>
 
 
 <h3>References</h3>
 
+<p>Azzalini, A. and Bowman, A. W. (1990) A look at some
+data on the Old Faithful geyser.  <em>Applied Statistics</em>
+<b>39</b>, 357&ndash;365.
+</p>
 <p>Venables, W. N. and Ripley, B. D. (2002)
 <em>Modern Applied Statistics with S.</em> Fourth edition.  Springer.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>faithful</code>.
+</p>
+<p>CRAN package <span class="pkg">sm</span>.
 </p>
 
 

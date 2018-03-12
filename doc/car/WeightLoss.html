@@ -1,75 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Weight Data for Domestic Cats</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Weight Loss Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for catsM"><tr><td>catsM</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for WeightLoss"><tr><td>WeightLoss</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>
-Weight Data for Domestic Cats
+Weight Loss Data
 </h2>
 
 <h3>Description</h3>
 
-<p>The <code>catsM</code> data frame has 97 rows and 3 columns.
-</p>
-<p>144 adult (over 2kg in weight) cats used for experiments with the drug
-digitalis had their heart and body weight recorded.  47 of the cats were
-female and 97 were male.  The <code>catsM</code> data frame consists of the data for
-the male cats.  The full data are in dataset <code>cats</code>
-in package <code>MASS</code>.
+<p>Contrived data on weight loss and self esteem over three months,
+for three groups of individuals: Control, Diet and Diet + Exercise.
+The data constitute a double-multivariate design.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-cats
-</pre>
+<pre>WeightLoss</pre>
 
 
 <h3>Format</h3>
 
-<p>This data frames contain the following columns:
+<p>A data frame with 34 observations on the following 7 variables.
 </p>
 
 <dl>
-<dt><code>Sex</code></dt><dd>
-<p>A factor for the sex of the cat (levels are <code>F</code> and <code>M</code>).
-</p>
+<dt><code>group</code></dt><dd><p>a factor with levels <code>Control</code> <code>Diet</code> <code>DietEx</code>.</p>
 </dd>
-<dt><code>Bwt</code></dt><dd>
-<p>Body weight in kg.
-</p>
+<dt><code>wl1</code></dt><dd><p>Weight loss at 1 month</p>
 </dd>
-<dt><code>Hwt</code></dt><dd>
-<p>Heart weight in g.
+<dt><code>wl2</code></dt><dd><p>Weight loss at 2 months</p>
+</dd>
+<dt><code>wl3</code></dt><dd><p>Weight loss at 3 months</p>
+</dd>
+<dt><code>se1</code></dt><dd><p>Self esteem at 1 month</p>
+</dd>
+<dt><code>se2</code></dt><dd><p>Self esteem at 2 months</p>
+</dd>
+<dt><code>se3</code></dt><dd><p>Self esteem at 3 months</p>
+</dd>
+</dl>
+
+
+
+<h3>Details</h3>
+
+<p>Helmert contrasts are assigned to <code>group</code>, comparing <code>Control</code> vs. (<code>Diet</code> <code>DietEx</code>)
+and <code>Diet</code> vs. <code>DietEx</code>.
 </p>
-</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from
-</p>
-<p>Fisher, R.A. (1947) The analysis of covariance method for the relation
-between a part and the whole. <em>Biometrics</em>, <b>3</b>, 65&ndash;68.
-</p>
-
-
-<h3>References</h3>
-
-<p>Davison, A.C. and Hinkley, D.V. (1997) 
-<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
-</p>
-<p>Venables, W.N. and Ripley, B.D. (1994) 
-<em>Modern Applied Statistics with S-Plus</em>. Springer-Verlag.
-</p>
-
-
-<h3>See Also</h3>
-
-<p><code>cats</code>
+<p>Originally taken from <a href="http://www.csun.edu/~ata20315/psy524/main.htm">http://www.csun.edu/~ata20315/psy524/main.htm</a>,
+but modified slightly. Courtesy of Michael Friendly.
 </p>
 
 

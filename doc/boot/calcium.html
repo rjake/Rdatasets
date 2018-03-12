@@ -1,42 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Harman Example 7.4</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Calcium Uptake Data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Harman74.cor"><tr><td>Harman74.cor</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for calcium"><tr><td>calcium</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Harman Example 7.4</h2>
+<h2>
+Calcium Uptake Data
+</h2>
 
 <h3>Description</h3>
 
-<p>A correlation matrix of 24 psychological tests given to 145 seventh and
-eight-grade children in a Chicago suburb by Holzinger and Swineford.
+<p>The <code>calcium</code> data frame has 27 rows and 2 columns.
+</p>
+<p>Howard Grimes from the Botany Department, North Carolina State University,
+conducted an experiment for biochemical analysis of intracellular storage
+and transport of calcium across plasma membrane.  Cells were
+suspended in a solution of radioactive calcium for a certain length of time and
+then the amount of radioactive calcium that was absorbed by the cells was
+measured.  The experiment was repeated independently with 9 different
+times of suspension each replicated 3 times.  
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>Harman74.cor</pre>
+<pre>
+calcium
+</pre>
+
+
+<h3>Format</h3>
+
+<p>This data frame contains the following columns:
+</p>
+
+<dl>
+<dt><code>time</code></dt><dd>
+<p>The time (in minutes) that the cells were suspended in the solution.
+</p>
+</dd>
+<dt><code>cal</code></dt><dd>
+<p>The amount of calcium uptake (nmoles/mg).
+</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>Harman, H. H. (1976)
-<em>Modern Factor Analysis</em>, Third Edition Revised,
-University of Chicago Press, Table 7.4.
+<p>The data were obtained from
+</p>
+<p>Rawlings, J.O. (1988) <em>Applied Regression Analysis</em>. 
+Wadsworth and Brooks/Cole Statistics/Probability Series.
 </p>
 
 
-<h3>Examples</h3>
+<h3>References</h3>
 
-<pre>
-require(stats)
-(Harman74.FA &lt;- factanal(factors = 1, covmat = Harman74.cor))
-for(factors in 2:5) print(update(Harman74.FA, factors = factors))
-Harman74.FA &lt;- factanal(factors = 5, covmat = Harman74.cor,
-                        rotation = "promax")
-print(Harman74.FA$loadings, sort = TRUE)
-</pre>
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
+</p>
 
 
 </body></html>

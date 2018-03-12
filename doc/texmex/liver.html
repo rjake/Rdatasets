@@ -1,50 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: InfantMortality</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Liver related laboratory data</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for InfantMortality"><tr><td>InfantMortality</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for liver"><tr><td>liver</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>InfantMortality</h2>
+<h2>Liver related laboratory data</h2>
 
 <h3>Description</h3>
 
-<p>Infant mortality rates in the United States (1920-2000)
+<p>Liver related laboratory data from a randomized, blind, parallel group
+clinical trial with 4 doses of a drug.
 </p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(liver)
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataset with 9 observations on the following 2 variables.
+<p>A data frame with 606 observations on the following 9 variables.
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>Mortality</code> </td><td style="text-align: left;"> Deaths witin one year of birth (per 1000 births</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>Year</code> </td><td style="text-align: left;"> 1920-2000 (by decades)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-  </td>
-</tr>
-
-</table>
-
+<dl>
+<dt>ALP.B</dt><dd><p>Alkaline phosphatase at baseline. A numeric vector.</p>
+</dd>
+<dt>ALT.B</dt><dd><p>Alanine aminotransferase at baseline. A numeric vector.</p>
+</dd>
+<dt>AST.B</dt><dd><p>Aspartate aminotransferase at baseline. A numeric vector.</p>
+</dd>
+<dt>TBL.B</dt><dd><p>Total bilirubin at baseline. A numeric vector.</p>
+</dd>
+<dt>ALP.M</dt><dd><p>Alkaline phosphatase after treatment. A numeric vector.</p>
+</dd>
+<dt>ALT.M</dt><dd><p>Alanine aminotransferase after treatment. A numeric vector.</p>
+</dd>
+<dt>AST.M</dt><dd><p>Aspartate aminotransferase after treatment. A numeric vector.</p>
+</dd>
+<dt>TBL.M</dt><dd><p>Total bilirubin after treatment. A numeric vector.</p>
+</dd>
+<dt>dose</dt><dd><p>The treatment group (i.e. dose group). A factor with levels <code>A</code> <code>B</code> <code>C</code> <code>D</code></p>
+</dd>
+</dl>
 
 
 <h3>Details</h3>
 
-<p>Infant mortality (deaths within one year of birth per 1,000 births) in the US from 1920 - 2000 (by decade).
+<p>Dose A is the lowest dose, dose, B the next, C the next, and D the highest
+dose. The baseline values were taken prior to any treatment being received,
+and the clinical trial had a single post-baseline visit.
 </p>
 
 
 <h3>Source</h3>
 
-<p>CDC National Vital Statistics Reports at http://www.cdc.gov/nchs/data/nvsr/nvsr57/nvsr57 14.pdf
+<p>AstraZeneca data on file.
 </p>
 
 

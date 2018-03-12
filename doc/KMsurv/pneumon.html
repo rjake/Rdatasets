@@ -1,28 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Growth Curves for Sitka Spruce Trees in 1989</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: data from Section 1.13</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Sitka89"><tr><td>Sitka89</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for pneumon"><tr><td>pneumon</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>
-Growth Curves for Sitka Spruce Trees in 1989
-</h2>
+<h2>data from Section 1.13</h2>
 
 <h3>Description</h3>
 
-<p>The <code>Sitka89</code> data frame has 632 rows and 4 columns.  It gives repeated
-measurements on the log-size of 79 Sitka spruce trees, 54 of which
-were grown in ozone-enriched chambers and 25 were controls.  The size
-was measured eight times in 1989, at roughly monthly intervals.
+<p>The <code>pneumon</code> data frame has 3470 rows and 15 columns.
 </p>
-
-
-<h3>Usage</h3>
-
-<pre>
-Sitka89
-</pre>
 
 
 <h3>Format</h3>
@@ -31,15 +19,66 @@ Sitka89
 </p>
 
 <dl>
-<dt><code>size</code></dt><dd><p>measured size (height times diameter squared) of
-tree, on log scale.</p>
+<dt>chldage</dt><dd>
+<p>Age child had pneumonia, months
+</p>
 </dd>
-<dt><code>Time</code></dt><dd><p>time of measurement in  days since 1 January 1988.</p>
+<dt>hospital</dt><dd>
+<p>Indicator for hospitalization for pneumonia (1=yes, 0=no)
+</p>
 </dd>
-<dt><code>tree</code></dt><dd><p>number of tree.</p>
+<dt>mthage</dt><dd>
+<p>Age of the mother, years
+</p>
 </dd>
-<dt><code>treat</code></dt><dd><p>either <code>"ozone"</code> for an ozone-enriched
-chamber or <code>"control"</code>.</p>
+<dt>urban</dt><dd>
+<p>Urban environment for mother (1=yes, 0=no)
+</p>
+</dd>
+<dt>alcohol</dt><dd>
+<p>Alcohol use by mother during pregnancy (1=yes, 0=no)
+</p>
+</dd>
+<dt>smoke</dt><dd>
+<p>Cigarette use by mother during pregnancy (1=yes, 0=no)
+</p>
+</dd>
+<dt>region</dt><dd>
+<p>Region of the coutry (1=northeast, 2=north central, 3=south,
+4=west)
+</p>
+</dd>
+<dt>poverty</dt><dd>
+<p>Mother at poverty level (1=yes, 0=no)
+</p>
+</dd>
+<dt>bweight</dt><dd>
+<p>Normal birthweight (&gt;5.5 lbs.) (1=yes, 0=no)
+</p>
+</dd>
+<dt>race</dt><dd>
+<p>Race of the mother (1=white, 2=black, 3=other)
+</p>
+</dd>
+<dt>education</dt><dd>
+<p>Education of the mother, years of school
+</p>
+</dd>
+<dt>nsibs</dt><dd>
+<p>Number of siblings of the child
+</p>
+</dd>
+<dt>wmonth</dt><dd>
+<p>Month the child was weaned
+</p>
+</dd>
+<dt>sfmonth</dt><dd>
+<p>Month the child on solid food
+</p>
+</dd>
+<dt>agepn</dt><dd>
+<p>Age child in the hospital for pneumonia, months 
+</p>
 </dd>
 </dl>
 
@@ -47,16 +86,17 @@ chamber or <code>"control"</code>.</p>
 
 <h3>Source</h3>
 
-<p>P. J. Diggle, K.-Y. Liang and S. L. Zeger (1994)
-<em>Analysis of Longitudinal Data.</em>
-Clarendon Press, Oxford
+<p>Klein and Moeschberger (1997) <em>Survival Analysis Techniques for Censored
+and truncated data</em>, Springer.
+<em>National Longitudinal Survey of Youth Handbook</em> The Ohio State University, 1995.
 </p>
 
 
-<h3>See Also</h3>
+<h3>Examples</h3>
 
-<p><code>Sitka</code>
-</p>
+<pre>
+data(pneumon)
+</pre>
 
 
 </body></html>

@@ -1,54 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: A sample from the SAPA Personality Inventory including an...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Backpack</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for spi"><tr><td>spi</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Backpack"><tr><td>Backpack</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>A sample from the SAPA Personality Inventory including an item dictionary and scoring keys.</h2>
+<h2>Backpack</h2>
 
 <h3>Description</h3>
 
-<p>The SPI (SAPA Personality Inventory) is a set of 135 items primarily selected from International Personality Item Pool (ipip.ori.org). This is an example data set collected using SAPA procedures the sapa-project.org web site.  This data set includes 10 demographic variables as well.  The data set with 4000 observations on 145 variables may be used for examples in scale construction and validation, as well as empirical scale construction to predict multiple criteria.  
+<p>Backpack weights for a sample of college students
 </p>
 
 
-<h3>Usage</h3>
+<h3>Format</h3>
 
-<pre>data("spi")
-data(spi.dictionary)
-data(spi.keys)
-</pre>
+<p>A dataset with 100 observations on the following 9 variables.
+</p>
+
+<table summary="Rd table">
+<tr>
+ <td style="text-align: right;">
+    <code>BackpackWeight</code> </td><td style="text-align: left;"> Backpack weight (in pounds)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>BodyWeight</code> </td><td style="text-align: left;"> Body weight (in pounds)</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Ratio</code> </td><td style="text-align: left;"> BackpackWeight/BodyWeight</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>BackProblems</code> </td><td style="text-align: left;"> 0=no or 1=yes</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Major</code> </td><td style="text-align: left;"> Code for academic major</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Year</code> </td><td style="text-align: left;"> Year in school</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Sex</code> </td><td style="text-align: left;"> a factor with levels <code>Female</code> <code>Male</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Status</code> </td><td style="text-align: left;"> Graduate or undergraduate? <code>G</code> or <code>U</code></td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+    <code>Units</code> </td><td style="text-align: left;"> Number of credits taken that quarter</td>
+</tr>
+<tr>
+ <td style="text-align: right;">
+  </td>
+</tr>
+
+</table>
+
 
 
 <h3>Details</h3>
 
-<p>Using the data contributed by about 125,000 visitors to the SAPA-project.org website, David Condon has developed a hierarchical framework for assessing personality at two levels. The higher level has the familiar five factors that have been studied extensively in personality research since the 1980s &ndash; Conscientiousness, Agreeableness, Neuroticism, Openness, and Extraversion. The lower level has 27 factors that are considerably more narrow. These were derived based on administrations of about 700 public-domain IPIP items to 3 large samples. Condon describes these scales as being &quot;empirically-derived&quot; because relatively little theory was used to select the number of factors in the hierarchy and the items in the scale for each factor (to be clear, he means relatively little personality theory though he relied on quite a lot of sampling and statistical theory). You can read all about the procedures used to develop this framework in  his book/manual. If you would like to reproduce these analyses, you can download the data files from Dataverse (links are also provided in the manual) and compile this script in R (he used knitR). Instructions are provided in the Preface to the manual.
+<p>A survey of students at California Polytechnic State University (San Luis Obispo) collected data
+to investigate the question of whether back aches might be due to carrying heavy backpacks, 
 </p>
 
 
 <h3>Source</h3>
 
-<p>https://sapa-project.org/research/SPI/SPIdevelopment.pdf.
+<p>Mintz J., Mintz J., Moore K., and Schuh K., &quot;Oh, My Aching Back! A Statistical Analysis of Backpack Weights,&quot;  Stats: The Magazine for Students of Statistics, vol. 32, 2002, pp. 1719.
 </p>
-
-
-<h3>References</h3>
-
-<p>Condon, D. (2017) The SAPA Personality Inventory:An empirically-derived, hierarchically-organized self-report personality assessment model 
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-data(spi)
-data(sapa.dictionary)
-bestScales(spi, criteria="health",dictionary=spi.dictionary)
-
-sc &lt;- scoreItems(spi.keys,spi)
-corPlot(sc$corrected,numbers=TRUE,cex=.8,xlas=2)
-</pre>
 
 
 </body></html>

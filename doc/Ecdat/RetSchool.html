@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Crime in North Carolina</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Return to Schooling</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Crime"><tr><td>Crime</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for RetSchool"><tr><td>RetSchool</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Crime in North Carolina </h2>
+<h2>Return to Schooling </h2>
 
 <h3>Description</h3>
 
-<p>a panel of 90 observations  from 1981  to 1987
+<p>a panel of 48 observations  from 1970   to 1986
 </p>
-<p><em>number of observations</em> :  630
+<p><em>number of observations</em> :  5225
 </p>
-<p><em>observation</em> :  regional
+<p><em>observation</em> :  individuals
 </p>
 <p><em>country</em> :  United States
 </p>
@@ -21,62 +21,48 @@
 
 <h3>Usage</h3>
 
-<pre>data(Crime)</pre>
+<pre>data(RetSchool)</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A time serie containing :
 </p>
 
 <dl>
-<dt>county</dt><dd><p>county identifier</p>
+<dt>wage76</dt><dd><p>wage in 1876</p>
 </dd>
-<dt>year</dt><dd><p>year from 1981 to 1987</p>
+<dt>grade76</dt><dd><p>grade level in 1976</p>
 </dd>
-<dt>crmrte</dt><dd><p>crimes committed per person</p>
+<dt>exp76</dt><dd><p>experience 1n 1976</p>
 </dd>
-<dt>prbarr</dt><dd><p>'probability' of arrest</p>
+<dt>black</dt><dd><p>black ?</p>
 </dd>
-<dt>prbconv</dt><dd><p>'probability' of conviction</p>
+<dt>south76</dt><dd><p>lived in south in 1976 ?</p>
 </dd>
-<dt>prbpris</dt><dd><p>'probability' of prison sentence</p>
+<dt>smsa76</dt><dd><p>lived in smsa in 1976 ?</p>
 </dd>
-<dt>avgsen</dt><dd><p>average sentence, days    </p>
+<dt>region</dt><dd><p>region, a factor with levels (un,midatl,enc,wnc,sa,esc,wsc,m,p)</p>
 </dd>
-<dt>polpc</dt><dd><p>police per capita</p>
+<dt>smsa66</dt><dd><p>lived in smsa in 1966 ?</p>
 </dd>
-<dt>density</dt><dd><p>people per square mile</p>
+<dt>momdad14</dt><dd><p>lived with both parents at age 14 ?</p>
 </dd>
-<dt>taxpc</dt><dd><p>tax revenue per capita</p>
+<dt>sinmom14</dt><dd><p>lived with mother only at age 14 ?</p>
 </dd>
-<dt>region</dt><dd><p>one of 'other', 'west' or 'central'</p>
+<dt>nodaded</dt><dd><p>father has no formal education ?</p>
 </dd>
-<dt>smsa</dt><dd><p>'yes' or 'no' if in SMSA</p>
+<dt>nomomed</dt><dd><p>mother has no formal education ?</p>
 </dd>
-<dt>pctmin</dt><dd><p>percentage minority in 1980</p>
+<dt>daded</dt><dd><p>mean grade level of father</p>
 </dd>
-<dt>wcon</dt><dd><p>weekly wage in construction</p>
+<dt>momed</dt><dd><p>mean grade level of mother</p>
 </dd>
-<dt>wtuc</dt><dd><p>weekly wage in trns, util, commun</p>
+<dt>famed</dt><dd><p>father's and mother's education, a factor with 9 levels</p>
 </dd>
-<dt>wtrd</dt><dd><p>weekly wage in whole sales and retail trade</p>
+<dt>age76</dt><dd><p>age in 1976</p>
 </dd>
-<dt>wfir</dt><dd><p>weekly wage in  finance, insurance and real estate</p>
-</dd>
-<dt>wser</dt><dd><p>weekly wage in service industry</p>
-</dd>
-<dt>wmfg</dt><dd><p>weekly wage in manufacturing</p>
-</dd>
-<dt>wfed</dt><dd><p>weekly wage of federal employees</p>
-</dd>
-<dt>wsta</dt><dd><p>weekly wage of state employees</p>
-</dd>
-<dt>wloc</dt><dd><p>weekly wage of local governments employees      </p>
-</dd>
-<dt>mix</dt><dd><p>offence mix: face-to-face/other</p>
-</dd>
-<dt>pctymle</dt><dd><p>percentage of young males</p>
+<dt>col4</dt><dd><p>is any 4-year college nearby ?</p>
 </dd>
 </dl>
 
@@ -84,17 +70,15 @@
 
 <h3>Source</h3>
 
-<p>Cornwell, C.  and  W.N.  Trumbull (1994) &ldquo;Estimating the economic model of crime with panel data&rdquo;, <em>Review of Economics and Statistics</em>, <b>76</b>, 360&ndash;366.
+<p>Kling, Jeffrey R. (2001) &ldquo;Interpreting Instrumental Variables Estimates of the Return to Schooling&rdquo;, <em>Journal of Business and Economic Statistics</em>, <b>19(3)</b>, july, 358&ndash;364.
 </p>
-<p>Baltagi, B. H. (forthcoming) &ldquo;Estimating an economic model of crime using panel data from North Carolina&rdquo;, <em>Journal of Applied Econometrics</em>, .
+<p>Dehejia, R.H.  and  S.  Wahba (2002) &ldquo;Propensity-score Matching Methods for Nonexperimental Causal Studies&rdquo;, <em>Restat</em>, 151&ndash;161.
 </p>
 
 
 <h3>References</h3>
 
-<p>Baltagi, Badi H. (2003) <em>Econometric analysis of panel data</em>, John Wiley and sons, <a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>,  .
-</p>
-<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
+<p>Cameron, A.C.  and  P.K.  Trivedi (2005) <em>Microeconometrics : methods and applications</em>, Cambridge.
 </p>
 
 

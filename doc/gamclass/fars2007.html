@@ -1,70 +1,122 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Level of Calculus Attained for Students Taking Advanced...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: US fatal road accident data, 2007 and 2008</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Mathlevel"><tr><td>Mathlevel</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for fars2007"><tr><td>fars2007</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Level of Calculus Attained for Students Taking Advanced Micro&ndash;economics </h2>
+<h2>
+US fatal road accident data, 2007 and 2008
+</h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1983 to 1986
-</p>
-<p><em>number of observations</em> :  609
-</p>
-<p><em>observation</em> :  individuals
-</p>
-<p><em>country</em> :  United States
+<p>Data are included on variables that may be relevant to assessing
+airbag and seatbelt effectiveness in preventing fatal injury.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Mathlevel)</pre>
+<pre>
+fars2007
+fars2008
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A dataframe containing :
+<p>A data frame with 72548 observations on the following 24 variables.
 </p>
 
 <dl>
-<dt>mathlevel</dt><dd><p>highest level of math attained , an ordered factor with levels 170, 171a, 172, 171b, 172b, 221a, 221b</p>
+<dt><code>Obs.</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>sat</dt><dd><p>sat Math score</p>
+<dt><code>state</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>language</dt><dd><p>foreign language proficiency ?</p>
+<dt><code>casenum</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>sex</dt><dd><p>male, female</p>
+<dt><code>vnum</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>major</dt><dd><p>one of  other, eco, oss (other social sciences), ns (natural sciences), hum (humanities)</p>
+<dt><code>pnum</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>mathcourse</dt><dd><p>number of courses in advanced math (0 to 3)</p>
+<dt><code>lightcond</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>physiccourse</dt><dd><p>number of courses in physics (0 to 2)</p>
+<dt><code>numfatal</code></dt><dd><p>a numeric vector</p>
 </dd>
-<dt>chemistcourse</dt><dd><p>number of courses in chemistry (0 to 2)</p>
+<dt><code>vforms</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>age</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>airbag</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>injury</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>ptype</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>restraint</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>seatpos</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>sex</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>body</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>inimpact</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>mhevent</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>vfatcount</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>numoccs</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>travspd</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>make</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>model</code></dt><dd><p>a numeric vector</p>
+</dd>
+<dt><code>modelyr</code></dt><dd><p>a numeric vector</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>Data is for automabiles where a passenger seat was occupied,
+with one observation for each such passenger.
+</p>
+
+
 <h3>Source</h3>
 
-<p>Butler, J.S.,  T. Aldrich   Finegan and  John J.  Siegfried (1998) &ldquo;Does more calculus improve student learning in intermediate micro and macroeconomic theory ?&rdquo;, <em>Journal of Applied Econometrics</em>, <b>13(2)</b>, april, 185&ndash;202.
+<p><a href="http://www-fars.nhtsa.dot.gov/Main/index.aspx">http://www-fars.nhtsa.dot.gov/Main/index.aspx</a>
 </p>
 
 
 <h3>References</h3>
 
-<p>Journal of Applied Econometrics data archive : <a href="http://qed.econ.queensu.ca/jae/">http://qed.econ.queensu.ca/jae/</a>.
+<p><a href="http://maths-people.anu.edu.au/~johnm/nzsr/taws.html">http://maths-people.anu.edu.au/~johnm/nzsr/taws.html</a>
+</p>
+<p>Olson CM, Cummings P, Rivara FP. 2006. Association of first- and
+second-generation air bags with front occupant death in car crashes: a
+matched cohort study. Am J Epidemiol 164:161-169
+</p>
+<p>Cummings, P; McKnight, B, 2010. Accounting for vehicle, crash, and occupant
+characteristics in traffic crash studies. Injury Prevention 16: 363-366
+</p>
+<p>Braver, ER; Shardell, M; Teoh, ER, 2010. <em>How have changes in air
+bag designs affected frontal crash mortality?</em> Ann Epidemiol 20:499-510.
 </p>
 
 
-<h3>See Also</h3>
+<h3>Examples</h3>
 
-<p><code>Index.Source</code>, <code>Index.Economics</code>, <code>Index.Econometrics</code>, <code>Index.Observations</code></p>
+<pre>
+data(fars2007)
+str(fars2007)
+</pre>
 
 
 </body></html>

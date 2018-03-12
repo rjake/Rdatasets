@@ -1,46 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Seasonally Unadjusted Quarterly Data on Disposable Income and...</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Panel Datas of Individual Wages</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for IncomeUK"><tr><td>IncomeUK</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Wages"><tr><td>Wages</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Seasonally Unadjusted Quarterly Data on Disposable Income and Expenditure </h2>
+<h2>Panel Datas of Individual Wages </h2>
 
 <h3>Description</h3>
 
-<p>quarterly observations from 1971&ndash;1 to 1985&ndash;2
+<p>a panel of 595 observations  from 1976  to 1982
 </p>
-<p><em>number of observations</em> :  58
+<p><em>number of observations</em> :  4165
 </p>
-<p><em>observation</em> :  country
+<p><em>observation</em> :  individuals
 </p>
-<p><em>country</em> :  United Kingdown
+<p><em>country</em> :  United States
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(IncomeUK)</pre>
+<pre>data(Wages)</pre>
 
 
 <h3>Format</h3>
 
-<p>A time serie containing :
+<p>A dataframe containing :
 </p>
 
 <dl>
-<dt>income</dt><dd><p>total disposable income  (million Pounds, current prices)</p>
+<dt>exp</dt><dd><p>years of full-time work experience</p>
 </dd>
-<dt>consumption</dt><dd><p>consumer expenditure (million Pounds, current prices)</p>
+<dt>wks</dt><dd><p>weeks worked</p>
+</dd>
+<dt>bluecol</dt><dd><p>blue collar ? </p>
+</dd>
+<dt>ind</dt><dd><p>works in a manufacturing industry ?</p>
+</dd>
+<dt>south</dt><dd><p>resides in the south ?</p>
+</dd>
+<dt>smsa</dt><dd><p>resides in a standard metropolitan statistical are ?</p>
+</dd>
+<dt>married</dt><dd><p>married ?</p>
+</dd>
+<dt>sex</dt><dd><p>a factor with levels (male,female)</p>
+</dd>
+<dt>union</dt><dd><p>individual's wage set by a union contract ?</p>
+</dd>
+<dt>ed</dt><dd><p>years of education</p>
+</dd>
+<dt>black</dt><dd><p>is the individual black ?</p>
+</dd>
+<dt>lwage</dt><dd><p>logarithm of wage</p>
 </dd>
 </dl>
 
 
 
+<h3>Source</h3>
+
+<p>Cornwell, C.  and  P.  Rupert (1988) &ldquo;Efficient estimation with panel data: an empirical comparison of instrumental variables estimators&rdquo;, <em>Journal of Applied Econometrics</em>, <b>3</b>, 149&ndash;155.
+</p>
+<p>Panel study of income dynamics.
+</p>
+
+
 <h3>References</h3>
 
-<p>Verbeek, Marno (2004) <em>A Guide to Modern Econometrics</em>, John Wiley and Sons, chapters 8 and 9.
+<p>Baltagi, Badi H. (2003) <em>Econometric analysis of panel data</em>, John Wiley and sons, <a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>.
 </p>
 
 

@@ -1,95 +1,99 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Panel Data of Individual Wages</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Diabetes in Pima Indian Women</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Wages"><tr><td>Wages</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Pima.tr"><tr><td>Pima.tr</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Panel Data of Individual Wages</h2>
+<h2>
+Diabetes in Pima Indian Women
+</h2>
 
 <h3>Description</h3>
 
-<p>A panel of 595 individuals from 1976 to 1982, taken from the Panel Study of Income Dynamics (PSID).<br /><br />
-The data are organized as a stacked time series/balanced panel, see <b>Examples</b> on how to convert to a <code>pdata.frame</code>.
-</p>
-<p><em>total number of observations</em> :  4165
-</p>
-<p><em>observation</em> :  individuals
-</p>
-<p><em>country</em> :  United States
+<p>A population of women who were at least 21 years old, of Pima Indian heritage
+and living near Phoenix, Arizona, was tested for diabetes
+according to World Health Organization criteria.  The data
+were collected by the US National Institute of Diabetes and Digestive and
+Kidney Diseases.  We used the 532 complete records after dropping the
+(mainly missing) data on serum insulin.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(Wages)</pre>
+<pre>
+Pima.tr
+Pima.tr2
+Pima.te
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame containing:
+<p>These data frames contains the following columns:
 </p>
 
 <dl>
-<dt>exp</dt><dd><p>years of full-time work experience.</p>
+<dt><code>npreg</code></dt><dd>
+<p>number of pregnancies.
+</p>
 </dd>
-<dt>wks</dt><dd><p>weeks worked.</p>
+<dt><code>glu</code></dt><dd>
+<p>plasma glucose concentration in an oral glucose tolerance test.
+</p>
 </dd>
-<dt>bluecol</dt><dd><p>blue collar?</p>
+<dt><code>bp</code></dt><dd>
+<p>diastolic blood pressure (mm Hg).
+</p>
 </dd>
-<dt>ind</dt><dd><p>works in a manufacturing industry?</p>
+<dt><code>skin</code></dt><dd>
+<p>triceps skin fold thickness (mm).
+</p>
 </dd>
-<dt>south</dt><dd><p>resides in the south?</p>
+<dt><code>bmi</code></dt><dd>
+<p>body mass index (weight in kg/(height in m)<i>\^2</i>).
+</p>
 </dd>
-<dt>smsa</dt><dd><p>resides in a standard metropolitan statistical area?</p>
+<dt><code>ped</code></dt><dd>
+<p>diabetes pedigree function.
+</p>
 </dd>
-<dt>married</dt><dd><p>married?</p>
+<dt><code>age</code></dt><dd>
+<p>age in years.
+</p>
 </dd>
-<dt>sex</dt><dd><p>a factor with levels <code>"male"</code> and <code>"female"</code></p>
-</dd>
-<dt>union</dt><dd><p>individual's wage set by a union contract?</p>
-</dd>
-<dt>ed</dt><dd><p>years of education.</p>
-</dd>
-<dt>black</dt><dd><p>is the individual black?</p>
-</dd>
-<dt>lwage</dt><dd><p>logarithm of wage.</p>
+<dt><code>type</code></dt><dd>
+<p><code>Yes</code> or <code>No</code>, for diabetic according to WHO criteria.
+</p>
 </dd>
 </dl>
 
 
 
+<h3>Details</h3>
+
+<p>The training set <code>Pima.tr</code> contains a randomly selected set of 200
+subjects, and <code>Pima.te</code> contains the remaining 332 subjects.
+<code>Pima.tr2</code> contains <code>Pima.tr</code> plus 100 subjects with
+missing values in the explanatory variables.
+</p>
+
+
 <h3>Source</h3>
 
-<p>Online complements to Baltagi (2001):
+<p>Smith, J. W., Everhart, J. E., Dickson, W. C., Knowler, W. C.
+and Johannes, R. S. (1988)
+Using the ADAP learning algorithm to forecast the onset of
+<em>diabetes mellitus</em>.
+In <em>Proceedings of the Symposium on Computer Applications in
+Medical Care (Washington, 1988),</em> ed. R. A. Greenes,
+pp. 261&ndash;265. Los Alamitos, CA: IEEE Computer Society Press.
 </p>
-<p><a href="http://www.wiley.com/legacy/wileychi/baltagi/">http://www.wiley.com/legacy/wileychi/baltagi/</a>
+<p>Ripley, B.D. (1996)
+<em>Pattern Recognition and Neural Networks.</em>
+Cambridge: Cambridge University Press.
 </p>
-<p>Online complements to Baltagi (2013):
-</p>
-<p><a href="http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452">http://bcs.wiley.com/he-bcs/Books?action=resource&amp;bcsId=4338&amp;itemId=1118672321&amp;resourceId=13452</a>
-</p>
-
-
-<h3>References</h3>
-
-<p>Baltagi, Badi H. (2001) <em>Econometric Analysis of Panel Data</em>, 2nd ed., John Wiley and Sons.
-</p>
-<p>Baltagi, Badi H. (2013) <em>Econometric Analysis of Panel Data</em>, 5th ed., John Wiley and Sons.
-</p>
-<p>Cornwell, C. and P. Rupert (1988) &ldquo;Efficient estimation with
-panel data: an empirical comparison of instrumental variables
-estimators&rdquo;, <em>Journal of Applied Econometrics</em>, <b>3</b>(2), pp. 149&ndash;155.
-</p>
-
-
-<h3>Examples</h3>
-
-<pre>
-# data set 'Wages' is organized as a stacked time series/balanced panel
-data("Wages", package = "plm")
-Wag &lt;- pdata.frame(Wages, index=595)
-</pre>
 
 
 </body></html>

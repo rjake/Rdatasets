@@ -1,108 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: New York Air Quality Measurements</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Nodal Involvement in Prostate Cancer</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for airquality"><tr><td>airquality</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for nodal"><tr><td>nodal</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>New York Air Quality Measurements</h2>
+<h2>
+Nodal Involvement in Prostate Cancer
+</h2>
 
 <h3>Description</h3>
 
-<p>Daily air quality measurements in New York, May to September 1973.
+<p>The <code>nodal</code> data frame has 53 rows and 7 columns.
+</p>
+<p>The treatment strategy for a patient diagnosed with cancer of the prostate
+depend highly on whether the cancer has spread to the surrounding lymph nodes.
+It is common to operate on the patient to get samples from the nodes which can
+then be analysed under a microscope but clearly it would be preferable if an
+accurate assessment of nodal involvement could be made without surgery.
+</p>
+<p>For a sample of 53 prostate cancer patients, a number of possible predictor
+variables were measured before surgery.  The patients then had surgery to 
+determine nodal involvement.  It was required to see if nodal involvement could 
+be accurately predicted from the predictor variables and which ones were
+most important.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>airquality</pre>
+<pre>
+nodal
+</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 154 observations on 6 variables.
+<p>This data frame contains the following columns:
 </p>
 
-<table summary="Rd table">
-<tr>
- <td style="text-align: right;">
-    <code>[,1]</code> </td><td style="text-align: left;"> <code>Ozone</code>   </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Ozone (ppb)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>[,2]</code> </td><td style="text-align: left;"> <code>Solar.R</code> </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Solar R (lang)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>[,3]</code> </td><td style="text-align: left;"> <code>Wind</code>    </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Wind (mph)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>[,4]</code> </td><td style="text-align: left;"> <code>Temp</code>    </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Temperature (degrees F)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>[,5]</code> </td><td style="text-align: left;"> <code>Month</code>   </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Month (1--12)</td>
-</tr>
-<tr>
- <td style="text-align: right;">
-    <code>[,6]</code> </td><td style="text-align: left;"> <code>Day</code>     </td><td style="text-align: left;"> numeric </td><td style="text-align: left;"> Day of month (1--31)
-  </td>
-</tr>
-
-</table>
-
-
-
-<h3>Details</h3>
-
-<p>Daily readings of the following air quality values for May 1, 1973 (a
-Tuesday) to September 30, 1973.
+<dl>
+<dt><code>m</code></dt><dd>
+<p>A column of ones.
 </p>
-
-<ul>
-<li> <p><code>Ozone</code>: Mean ozone in parts per
-billion from 1300 to 1500 hours at Roosevelt Island
+</dd>
+<dt><code>r</code></dt><dd>
+<p>An indicator of nodal involvement. 
 </p>
-</li>
-<li> <p><code>Solar.R</code>: Solar radiation
-in Langleys in the frequency band 4000&ndash;7700 Angstroms from
-0800 to 1200 hours at Central Park
+</dd>
+<dt><code>aged</code></dt><dd>
+<p>The patients age dichotomized into less than 60 (<code>0</code>) and 60 or over <code>1</code>.
 </p>
-</li>
-<li> <p><code>Wind</code>: Average wind speed in miles
-per hour at 0700 and 1000 hours at LaGuardia Airport
+</dd>
+<dt><code>stage</code></dt><dd>
+<p>A measurement of the size and position of the tumour observed by palpitation
+with the fingers via the rectum.  A value of <code>1</code> indicates a more serious
+case of the cancer.
 </p>
-</li>
-<li> <p><code>Temp</code>: Maximum daily
-temperature in degrees Fahrenheit at La Guardia Airport.
+</dd>
+<dt><code>grade</code></dt><dd>
+<p>Another indicator of the seriousness of the cancer, this one is determined by
+a pathology reading of a biopsy taken by needle before surgery.
+A value of <code>1</code> indicates a more serious case of the cancer.
 </p>
-</li></ul>
-
+</dd>
+<dt><code>xray</code></dt><dd>
+<p>A third measure of the seriousness of the cancer taken from an X-ray reading.
+A value of <code>1</code> indicates a more serious case of the cancer.
+</p>
+</dd>
+<dt><code>acid</code></dt><dd>
+<p>The level of acid phosphatase in the blood serum.
+</p>
+</dd></dl>
 
 
 <h3>Source</h3>
 
-<p>The data were obtained from the New York State Department of
-Conservation (ozone data) and the National Weather Service
-(meteorological data).
+<p>The data were obtained from
+</p>
+<p>Brown, B.W. (1980) Prediction analysis for binary data. In 
+<em>Biostatistics Casebook</em>.
+R.G. Miller, B. Efron, B.W. Brown and L.E. Moses (editors),
+3&ndash;18. John Wiley.
 </p>
 
 
 <h3>References</h3>
 
-<p>Chambers, J. M., Cleveland, W. S., Kleiner, B. and Tukey, P. A. (1983)
-<em>Graphical Methods for Data Analysis</em>.
-Belmont, CA: Wadsworth.
+<p>Davison, A.C. and Hinkley, D.V. (1997) 
+<em>Bootstrap Methods and Their Application</em>. Cambridge University Press.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-require(graphics)
-pairs(airquality, panel = panel.smooth, main = "airquality data")
-</pre>
 
 
 </body></html>

@@ -1,19 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wage Datas</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Evaluating Treatment Effect of Training on Earnings</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for Griliches"><tr><td>Griliches</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for Treatment"><tr><td>Treatment</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Wage Datas </h2>
+<h2>Evaluating Treatment Effect of Training on Earnings </h2>
 
 <h3>Description</h3>
 
-<p>a cross-section from 1980
+<p>a cross-section from 1974
 </p>
-<p><em>number of observations</em> :  758
-</p>
-<p><em>observation</em> :  individuals
+<p><em>number of observations</em> :  2675
 </p>
 <p><em>country</em> :  United States
 </p>
@@ -21,7 +19,7 @@
 
 <h3>Usage</h3>
 
-<pre>data(Griliches)</pre>
+<pre>data(Treatment)</pre>
 
 
 <h3>Format</h3>
@@ -30,45 +28,25 @@
 </p>
 
 <dl>
-<dt>rns</dt><dd><p>residency in the southern states (first observation) ?</p>
+<dt>treat</dt><dd><p>treated ?</p>
 </dd>
-<dt>rns80</dt><dd><p>same variable for 1980</p>
+<dt>age</dt><dd><p>age</p>
 </dd>
-<dt>mrt</dt><dd><p>married  (first observation) ?</p>
+<dt>educ</dt><dd><p>education in years</p>
 </dd>
-<dt>mrt80</dt><dd><p>same variable for 1980</p>
+<dt>ethn</dt><dd><p>a factor with levels (&quot;other&quot;,&quot;black&quot;,&quot;hispanic&quot;)</p>
 </dd>
-<dt>smsa</dt><dd><p>residency in metropolitan areas (first observation) ?</p>
+<dt>married</dt><dd><p>married ?</p>
 </dd>
-<dt>smsa80</dt><dd><p>same variable for 1980</p>
+<dt>re74</dt><dd><p>real annual earnings in 1974  (pre-treatment)</p>
 </dd>
-<dt>med</dt><dd><p>mother's education in years</p>
+<dt>re75</dt><dd><p>real annual earnings in 1975  (pre-treatment)</p>
 </dd>
-<dt>iq</dt><dd><p>IQ score</p>
+<dt>re78</dt><dd><p>real annual earnings in 1978  (post-treatment)</p>
 </dd>
-<dt>kww</dt><dd><p>score on the &ldquo;knowledge of the world of work&rdquo; test</p>
+<dt>u74</dt><dd><p>unemployed in 1974 ?</p>
 </dd>
-<dt>year</dt><dd><p>year of the observation</p>
-</dd>
-<dt>age</dt><dd><p>age (first observation)</p>
-</dd>
-<dt>age80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>school</dt><dd><p>completed years of schooling (first observation)</p>
-</dd>
-<dt>school80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>expr</dt><dd><p>experience in years (first observation)</p>
-</dd>
-<dt>expr80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>tenure</dt><dd><p>tenure in years (first observation)</p>
-</dd>
-<dt>tenure80</dt><dd><p>same variable for 1980</p>
-</dd>
-<dt>lw</dt><dd><p>log wage (first observation)</p>
-</dd>
-<dt>lw80</dt><dd><p>same variable for 1980</p>
+<dt>u75</dt><dd><p>unemployed in 1975 ?</p>
 </dd>
 </dl>
 
@@ -76,13 +54,17 @@
 
 <h3>Source</h3>
 
-<p>Blackburn, M.  and   Neumark D. (1992) &ldquo;Unobserved ability, efficiency wages, and interindustry wage differentials&rdquo;, <em>Quarterly Journal of Economics</em>, <b>107</b>, 1421-1436.
+<p>Lalonde, R. (1986) &ldquo;Evaluating the Econometric Evaluations of Training Programs with Experimental Data&rdquo;, <em>American Economic Review</em>, 604&ndash;620.
+</p>
+<p>Dehejia, R.H.  and  S.  Wahba (1999) &ldquo;Causal Effects in Nonexperimental Studies: reevaluating the Evaluation of Training Programs&rdquo;, <em>Jasa</em>, 1053&ndash;1062.
+</p>
+<p>Dehejia, R.H.  and  S.  Wahba (2002) &ldquo;Propensity-score Matching Methods for Nonexperimental Causal Studies&rdquo;, <em>Restat</em>, 151&ndash;161.
 </p>
 
 
 <h3>References</h3>
 
-<p>Hayashi, F. (2000) <em>Econometrics</em>, Princeton University Press, <a href="http://fhayashi.fc2web.com/hayashi_econometrics.htm">http://fhayashi.fc2web.com/hayashi_econometrics.htm</a>, chapter 3, 250-256.
+<p>Cameron, A.C.  and  P.K.  Trivedi (2005) <em>Microeconometrics : methods and applications</em>, Cambridge, pp. 889&ndash;95.
 </p>
 
 

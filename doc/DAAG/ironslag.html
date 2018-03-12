@@ -1,68 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Hawaian island chain hotspot Potassium-Argon ages</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Iron Content Measurements</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for hotspots"><tr><td>hotspots</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for ironslag"><tr><td>ironslag</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Hawaian island chain hotspot Potassium-Argon ages</h2>
+<h2>Iron Content Measurements</h2>
 
 <h3>Description</h3>
 
-<p>K-Ar Ages (millions of years) and distances (km) from Kilauea 
-along the trend of the chain of Hawaian volcanic islands and
-other seamounts that are believed to have been created by a
-moving &quot;hot spot&quot;. The age of Kilauea is given as 0-0.4 Ma.
+<p>The <code>ironslag</code> data frame has 53 rows and 2 columns.
+Two methods for measuring the iron content in samples of slag 
+were compared, a chemical and a magnetic method.  The chemical
+method requires greater effort than the magnetic method.
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>data(hotspots)</pre>
+<pre>ironslag</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 36 observations on the following 6 variables.
+<p>This data frame contains the following columns:
 </p>
 
 <dl>
-<dt><code>ID</code></dt><dd><p>Volcano identifier</p>
+<dt>chemical</dt><dd><p>a numeric vector containing the measurements
+coming from the chemical method</p>
 </dd>
-<dt><code>name</code></dt><dd><p>Name</p>
-</dd>
-<dt><code>distance</code></dt><dd><p>Distance in kilometers</p>
-</dd>
-<dt><code>age</code></dt><dd><p>K-Ar age in millions of years</p>
-</dd>
-<dt><code>error</code></dt><dd><p>Standard error of estimate?</p>
-</dd>
-<dt><code>source</code></dt><dd><p>Data source; see information on web site below.</p>
+<dt>magnetic</dt><dd><p>a numeric vector containing the measurments
+coming from the magnetic method</p>
 </dd>
 </dl>
 
 
 
-<h3>Details</h3>
-
-<p>For details of the way that errors werre calculated, refer to the
-original papers. See also the comments under <code>hotspots2006</code>.
-In general, errors do not account for geological uncertainty.
-</p>
-
-
 <h3>Source</h3>
 
-<p><a href="http://www.soest.hawaii.edu/GG/HCV/haw_formation.html">http://www.soest.hawaii.edu/GG/HCV/haw_formation.html</a>
+<p>Hand, D.J., Daly, F., McConway, K., Lunn, D., and Ostrowski, E. eds (1993)
+A Handbook of Small Data Sets. London: Chapman &amp; Hall. 
 </p>
 
 
 <h3>Examples</h3>
 
 <pre>
-data(hotspots)
-plot(age ~ distance, data=hotspots)
-abline(lm(age ~ distance, data=hotspots))
+iron.lm &lt;- lm(chemical ~ magnetic, data = ironslag)
+oldpar &lt;- par(mfrow = c(2,2))
+plot(iron.lm)
+par(oldpar)
 </pre>
 
 

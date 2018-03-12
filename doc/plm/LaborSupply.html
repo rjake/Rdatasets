@@ -1,43 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Opinions About Joint Sports</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Wages and Hours Worked</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for JointSports"><tr><td>JointSports</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for LaborSupply"><tr><td>LaborSupply</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Opinions About Joint Sports</h2>
+<h2>Wages and Hours Worked</h2>
 
 <h3>Description</h3>
 
-<p>Data from a Danish study in 1983 and 1985 about sports activities and
-the opinion about joint sports with the other gender among 16&ndash;19 year
-old high school students.
+<p>A panel of 532  observations  from 1979  to 1988
+</p>
+<p><em>number of observations</em> :  5320
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>
-data("JointSports")
-</pre>
+<pre>data(LaborSupply)</pre>
 
 
 <h3>Format</h3>
 
-<p>A data frame with 40 observations and 5 variables.
+<p>A data frame containing :
 </p>
 
 <dl>
-<dt>Freq</dt><dd><p>frequency.</p>
+<dt>lnhr</dt><dd><p>log of annual hours worked</p>
 </dd>
-<dt>opinion</dt><dd><p>factor indicating opinion about sports joint with the
-other gender (very good, good, indifferent, bad, very bad).</p>
+<dt>lnwg</dt><dd><p>log of hourly wage</p>
 </dd>
-<dt>year</dt><dd><p>factor indicating year of study (1983, 1985).</p>
+<dt>kids</dt><dd><p>number of children</p>
 </dd>
-<dt>grade</dt><dd><p>factor indicating school grade (1st, 3rd).</p>
+<dt>age</dt><dd><p>age</p>
 </dd>
-<dt>gender</dt><dd><p>factor indicating gender (Boy, Girl).</p>
+<dt>disab</dt><dd><p>bad health</p>
+</dd>
+<dt>id</dt><dd><p>id</p>
+</dd>
+<dt>year</dt><dd><p>year</p>
 </dd>
 </dl>
 
@@ -45,29 +46,18 @@ other gender (very good, good, indifferent, bad, very bad).</p>
 
 <h3>Source</h3>
 
-<p>E. B. Andersen (1991),
-The Statistical Analysis of Categorical Data, page 210.
+<p>Online complements to Ziliak (1997).
+</p>
+<p>Journal of Business Economics and Statistics web site: <a href="http://amstat.tandfonline.com/loi/ubes20/">http://amstat.tandfonline.com/loi/ubes20/</a>.
 </p>
 
 
 <h3>References</h3>
 
-<p>E. B. Andersen (1991),
-<em>The Statistical Analysis of Categorical Data</em>.
-2nd edition.
-Springer-Verlag, Berlin.
+<p>Cameron, A.C. and P.K. Trivedi (2005) <em>Microeconometrics : methods and applications</em>, Cambridge, pp. 708&ndash;15, 754&ndash;6.
 </p>
-
-
-<h3>Examples</h3>
-
-<pre>
-library(MASS)
-data("JointSports")
-tab &lt;- xtabs(Freq ~ gender + opinion + grade + year, data = JointSports)
-doubledecker(opinion ~ gender + year + grade, data = tab)
-loglm(~ opinion* (gender + grade+ year) + gender*year*grade, data = tab)
-</pre>
+<p>Ziliak, J.P. (1997) &ldquo;Efficient Estimation With Panel Data when Instruments are Predetermined: An Empirical Comparison of Moment-Condition Estimators&rdquo;, <em>Journal of Business and Economic Statistics</em>, <b>15</b>(4), pp. 419&ndash;431.
+</p>
 
 
 </body></html>

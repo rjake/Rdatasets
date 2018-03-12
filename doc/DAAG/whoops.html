@@ -1,59 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Averages by block of corn yields, for treatment 111 only</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Deaths from whooping cough, in London</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="R.css" />
 </head><body>
 
-<table width="100%" summary="page for vince111b"><tr><td>vince111b</td><td style="text-align: right;">R Documentation</td></tr></table>
+<table width="100%" summary="page for whoops"><tr><td>whoops</td><td style="text-align: right;">R Documentation</td></tr></table>
 
-<h2>Averages by block of corn yields, for treatment 111 only</h2>
+<h2>Deaths from whooping cough, in London</h2>
 
 <h3>Description</h3>
 
-<p>These data frames have averages by blocks (parcels) for the treatment
-<code>111</code>.
+<p>Deaths from whooping cough, in London from 1740 to 1881.  
 </p>
 
 
 <h3>Usage</h3>
 
-<pre>vince111b</pre>
+<pre>data(whoops)</pre>
 
 
 <h3>Format</h3>
 
-<p> A data frame with 36 observations on 8 variables.
+<p>This is a multiple time series consisting of 3 series:
+<code>wcough</code>, <code>ratio</code>, and <code>alldeaths</code>.
 </p>
-
-<dl>
-<dt>site</dt><dd><p>a factor with levels 
-<code>AGSV</code> <code>CASV</code> <code>CPSV</code>
-<code>LPSV</code> <code>MPSV</code> <code>OOSV</code> <code>OTSV</code> <code>SSSV</code> <code>UISV</code>
-</p>
-</dd>
-<dt>parcel</dt><dd><p>a factor with levels <code>I</code> <code>II</code> <code>III</code> <code>IV</code></p>
-</dd>
-<dt>code</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>island</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>id</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>plot</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>trt</dt><dd><p>a numeric vector</p>
-</dd>
-<dt>harvwt</dt><dd><p>a numeric vector</p>
-</dd>
-</dl>
-
 
 
 <h3>Source</h3>
 
-<p>Andrews DF; Herzberg AM, 1985. Data. A Collection of Problems from
-Many Fields for the Student and Research Worker. Springer-Verlag.
-(pp. 339-353)
+<p>Guy, W. A. 1882. Two hundred and fifty years of small pox in London.
+Journal of the Royal Statistical Society 399-443.
 </p>
+
+
+<h3>References</h3>
+
+<p>Lancaster, H. O. 1990. Expectations of Life. Springer.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(whoops)
+str(whoops)
+plot(whoops) 
+</pre>
 
 
 </body></html>

@@ -10,6 +10,8 @@ gh:
 	vim datasets.csv
 	vim README.rst
 	git add README.rst
+	cd doc 
+	sh ../rst.sh
 
 ghpages:
 	git checkout master csv

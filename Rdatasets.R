@@ -3,7 +3,7 @@ library(pacman)
 p_load(R2HTML, tidyverse)
 
 # Data packages
-packages = c("datasets", "boot", "DAAG", "lmec", "gamclass", "KMsurv", "robustbase", "car", "cluster", "COUNT", "Ecdat", "gap", "ggplot2", "HistData", "lattice", "MASS", "plm", "plyr", "pscl", "reshape2", "rpart", "sandwich", "sem",  "survival", "vcd", "Zelig", "HSAUR", "psych", "quantreg", "geepack", "texmex", "multgee", "evir", "lme4", "mosaicData", "ISLR", "Stat2Data", "hwde", "mi", "mediation")
+packages = c("datasets", "boot", "DAAG", "lmec", "gamclass", "KMsurv", "robustbase", "car", "carData", "cluster", "COUNT", "Ecdat", "gap", "ggplot2", "HistData", "lattice", "MASS", "plm", "plyr", "pscl", "reshape2", "rpart", "sandwich", "sem",  "survival", "vcd", "Zelig", "HSAUR", "psych", "quantreg", "geepack", "texmex", "multgee", "evir", "lme4", "mosaicData", "ISLR", "Stat2Data", "hwde", "mi", "mediation")
 p_load(char = packages)
 
 # Functions
@@ -72,8 +72,19 @@ for (i in 1:nrow(index)) {
 }
 
 # Index
+hasbeen = function(x) {
+    out = try(any(sapply(x, function(y) length(unique(na.omit(y))) == 2)), silent = TRUE)
+    if ('try-error' %in% class(out)) {
+        out = FALSE
+    } 
+    return(out)
+}
 index$Rows = sapply(data, nrow)
 index$Cols = sapply(data, ncol)
+index$has_logical = sapply(data, function(x) 'logical' %in% sapply(x, class))
+index$has_binary = sapply(data, hasbeen)
+index$has_numeric = sapply(data, function(x) 'numeric' %in% sapply(x, class))
+index$has_character = sapply(data, function(x) 'character' %in% sapply(x, class))
 index$CSV = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/',
                   index$Package, '/', index$Item, '.csv', sep='')
 index$Doc = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/doc/',

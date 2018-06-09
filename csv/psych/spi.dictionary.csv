@@ -1,17 +1,14 @@
 "","item_id","item","item_scale","resp_type"
-"age",NA,NA,NA,NA
-"sex",NA,NA,NA,NA
-"health",NA,NA,NA,NA
-"p1edu",NA,NA,NA,NA
-"p2edu",NA,NA,NA,NA
-"education",NA,NA,NA,NA
-"military",NA,NA,NA,NA
-"wellness",NA,NA,NA,NA
-"BMI",NA,NA,NA,NA
-"weight",NA,NA,NA,NA
-"exer",NA,NA,NA,NA
-"smoke",NA,NA,NA,NA
-"ER",NA,NA,NA,NA
+"age","age","age in years",NA,NA
+"sex","sex","sex (X chromosomes)",NA,"1-2"
+"health","health","self rated health (poor ... excellent) ",NA,NA
+"p1edu","p1edu","Parent 1 education",NA,NA
+"p2edu","p2edu","Parent 2 education",NA,NA
+"education","education","education (<12, ... grad/prof degree)",NA,NA
+"wellness","wellness","wellness",NA,NA
+"exer","exer","exercise (very rarely ... > 5x/wk)",NA,NA
+"smoke","smoke","smoking (never ... > 20/day)",NA,NA
+"ER","ER","ER",NA,NA
 "q_253","q_253","Am sensitive to the needs of others.","IPIP","reg"
 "q_952","q_952","Get angry easily.","IPIP","reg"
 "q_1904","q_1904","Usually like to spend my free time with people.","IPIP","reg"

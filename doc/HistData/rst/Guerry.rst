@@ -44,11 +44,11 @@ following 23 variables.
     ``Allier`` ... ``Vosges`` ``Yonne``
 
 ``Crime_pers``
-    Population per Crime against persons. Source: A2 (Compte général,
+    Population per Crime against persons. Source: A2 (Compte general,
     1825-1830)
 
 ``Crime_prop``
-    Population per Crime against property. Source: A2 (Compte général,
+    Population per Crime against property. Source: A2 (Compte general,
     1825-1830)
 
 ``Literacy``
@@ -63,7 +63,7 @@ following 23 variables.
     Longitudes, 1817-1821)
 
 ``Suicides``
-    Population per suicide. Source: A2 (Compte général, 1827-1830)
+    Population per suicide. Source: A2 (Compte general, 1827-1830)
 
 ``MainCity``
     Size of principal city ('1:Sm', '2:Med', '3:Lg'), used as a
@@ -87,12 +87,12 @@ following 23 variables.
 ``Crime_parents``
     Crimes against parents, measured by the rank of the ratio of crimes
     against parents to all crimes– Average for the years 1825-1830.
-    Source: A1 (Compte général)
+    Source: A1 (Compte general)
 
 ``Infanticide``
     Infanticides per capita. A ranked ratio of number of infanticides to
     population– Average for the years 1825-1830. Source: A1 (Compte
-    général)
+    general)
 
 ``Donation_clergy``
     Donations to the clergy. A ranked ratio of the number of bequests
@@ -130,7 +130,7 @@ following 23 variables.
 
 ``Pop1831``
     1831 population. Population in 1831, taken from Angeville (1836),
-    *Essai sur la Statistique de la Population français*, in 1000s
+    *Essai sur la Statistique de la Population fran?ais*, in 1000s
 
 Details
 ~~~~~~~
@@ -148,7 +148,7 @@ Source
 ~~~~~~
 
 Angeville, A. (1836). *Essai sur la Statistique de la Population
-française* Paris: F. Doufour.
+fran?aise* Paris: F. Doufour.
 
 Guerry, A.-M. (1833). *Essai sur la statistique morale de la France*
 Paris: Crochard. English translation: Hugh P. Whitt and Victor W.

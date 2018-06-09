@@ -118,10 +118,10 @@ A data frame with 779 observations on the following 84 variables.
     V25: Different marriage customs
 
 ``simRelig``
-    V26: Similar religeon or philosophy of life
+    V26: Similar religion or philosophy of life
 
 ``difRelig``
-    V27: Religeon or philisophy felt different
+    V27: Religion or philisophy felt different
 
 ``philanthropy``
     V28: General philanthropy
@@ -274,7 +274,7 @@ A data frame with 779 observations on the following 84 variables.
     V77: Felt stronger
 
 ``competeIntellect``
-    V78: Competed succesfully intellectual occ
+    V78: Competed successfully intellectual occ
 
 ``insecureGovt``
     V79: Government insecure

@@ -52,7 +52,7 @@ Source
 US Census: Table HINC-06. Income Distribution to $250,000 or More for
 Households: 2008
 
-http://www.census.gov/hhes/www/cpstables/032009/hhinc/new06_000.htm
+https://www.census.gov/hhes/www/cpstables/032009/hhinc/new06_000.htm
 
 Examples
 ~~~~~~~~

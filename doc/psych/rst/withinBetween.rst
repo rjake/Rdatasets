@@ -96,7 +96,7 @@ explanation and prediction. Harcourt Brace.
 
 Revelle, W. An introduction to psychometric theory with applications in
 R (in prep) Springer. Draft chapters available at
-http://personality-project.org/r/book/
+https://personality-project.org/r/book/
 
 See Also
 ~~~~~~~~

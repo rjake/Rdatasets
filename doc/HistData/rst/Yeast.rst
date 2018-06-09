@@ -69,7 +69,7 @@ Source
 D. J. Hand, F. Daly, D. Lunn, K. McConway and E. Ostrowski (1994). *A
 Handbook of Small Data Sets*. London: Chapman \\& Hall. The data may be
 found at:
-http://www.stat.duke.edu/courses/Spring98/sta113/Data/Hand/yeast.dat
+https://www2.stat.duke.edu/courses/Spring98/sta113/Data/Hand/yeast.dat
 
 References
 ~~~~~~~~~~

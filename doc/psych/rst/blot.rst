@@ -50,7 +50,7 @@ Source
 ~~~~~~
 
 The data are taken (with kind permission from Trevor Bond) from the
-webpage http://www.winsteps.com/BF3/bondfox3.htm and read using
+webpage https://www.winsteps.com/BF3/bondfox3.htm and read using
 read.fwf.
 
 References

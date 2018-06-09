@@ -45,8 +45,8 @@ Source
 Stanton, Jeffrey M. (2001) Galton, Pearson, and the Peas: A brief
 history of linear regression for statistics intstructors, Journal of
 Statistics Education, 9. (retrieved from the web from
-http://www.amstat.org/publications/jse/v9n3/stanton.html) reproduces the
-table from Galton, 1894, Table 2.
+https://www.amstat.org/publications/jse/v9n3/stanton.html) reproduces
+the table from Galton, 1894, Table 2.
 
 The data were generated from this table.
 

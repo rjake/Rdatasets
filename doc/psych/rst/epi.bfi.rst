@@ -83,7 +83,7 @@ Data were collected at the Personality, Motivation, and Cognition Lab
 References
 ~~~~~~~~~~
 
-http://personality-project.org/pmc.html
+https://personality-project.org/pmc.html
 
 Examples
 ~~~~~~~~

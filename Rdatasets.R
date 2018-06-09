@@ -3,7 +3,7 @@ library(pacman)
 p_load(R2HTML, tidyverse)
 
 # Data packages
-packages = c("datasets", "boot", "DAAG", "lmec", "gamclass", "KMsurv", "robustbase", "car", "cluster", "COUNT", "Ecdat", "gap", "ggplot2", "HistData", "lattice", "MASS", "plm", "plyr", "pscl", "reshape2", "rpart", "sandwich", "sem",  "survival", "vcd", "Zelig", "HSAUR", "psych", "quantreg", "geepack", "texmex", "multgee", "evir", "lme4", "mosaicData", "ISLR", "Stat2Data", "hwde", "mi", "mediation")
+packages = c("datasets", "boot", "DAAG", "lmec", "gamclass", "KMsurv", "robustbase", "car", "carData", "cluster", "COUNT", "Ecdat", "gap", "ggplot2", "HistData", "lattice", "MASS", "plm", "plyr", "pscl", "reshape2", "rpart", "sandwich", "sem",  "survival", "vcd", "Zelig", "HSAUR", "psych", "quantreg", "geepack", "texmex", "multgee", "evir", "lme4", "mosaicData", "ISLR", "Stat2Data", "hwde", "mi", "mediation")
 p_load(char = packages)
 
 # Functions

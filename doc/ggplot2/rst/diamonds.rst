@@ -36,8 +36,8 @@ color
     diamond colour, from J (worst) to D (best)
 
 clarity
-    a measurement of how clear the diamond is (I1 (worst), SI1, SI2,
-    VS1, VS2, VVS1, VVS2, IF (best))
+    a measurement of how clear the diamond is (I1 (worst), SI2, SI1,
+    VS2, VS1, VVS2, VVS1, IF (best))
 
 x
     length in mm (0–10.74)

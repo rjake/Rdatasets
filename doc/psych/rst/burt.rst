@@ -78,7 +78,7 @@ Source
 ~~~~~~
 
 (retrieved from the web at
-http://www.biodiversitylibrary.org/item/95822#790) Following a
+https://www.biodiversitylibrary.org/item/95822#790) Following a
 suggestion by Jan DeLeeuw.
 
 References
@@ -88,7 +88,7 @@ Burt, C.General and Specific Factors underlying the Primary Emotions.
 Reports of the British Association for the Advancement of Science, 85th
 meeting, held in Manchester, September 7-11, 1915. London, John Murray,
 1916, p. 694-696 (retrieved from the web at
-http://www.biodiversitylibrary.org/item/95822#790)
+https://www.biodiversitylibrary.org/item/95822#790)
 
 See Also
 ~~~~~~~~

@@ -23,6 +23,7 @@ Usage
 
     data(Thurstone)
     data(Thurstone.33)
+    data(Thurstone.9)
     data(Holzinger)
     data(Holzinger.9)
     data(Bechtoldt)
@@ -75,6 +76,9 @@ show a clear bifactor solution but is included as a demonstration of the
 differences between a maximimum likelihood factor analysis solution
 versus a principal axis factor solution.
 
+Tucker (1958) uses 9 variables from Thurstone and Thburstone (1941) for
+his example of ``interbattery`` factor analysis.
+
 More recent applications of the bifactor model are to the measurement of
 psychological status. The Reise data set is a correlation matrix based
 upon >35,000 observations to the Consumer Assessment of Health Care
@@ -114,6 +118,9 @@ affective variables from ``link{burt}``.
 -  Thurstone.33: Another 9 x 9 correlation matrix of ability items,
    N=4175
 
+-  Thurstone:9: And yet another 9 x 9 correlation matrix of ability
+   items, N =710
+
 Source
 ~~~~~~
 
@@ -151,6 +158,9 @@ Brothers, Inc. Ann Arbor
 
 Thurstone, Louis Leon and Thurstone, Thelma (Gwinn). (1941) Factorial
 studies of intelligence. The University of Chicago Press. Chicago, Il.
+
+Tucker, Ledyard (1958) An inter-battery method of factor analysis,
+Psychometrika, 23, 111-136.
 
 Examples
 ~~~~~~~~

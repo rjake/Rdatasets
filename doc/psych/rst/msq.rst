@@ -313,7 +313,7 @@ Details
 ~~~~~~~
 
 | The Motivational States Questionnaire (MSQ) is composed of 72 items,
-  which represent the full affective range (Revelle & Anderson, 1998).
+  which represent the full affective space (Revelle & Anderson, 1998).
   The MSQ consists of 20 items taken from the Activation-Deactivation
   Adjective Check List (Thayer, 1986), 18 from the Positive and Negative
   Affect Schedule (PANAS, Watson, Clark, & Tellegen, 1988) along with
@@ -325,7 +325,7 @@ Details
 | 0—————-1—————-2—————-3
 | Not at all A little Moderately Very much
 
-The original version of the MSQ included 72 items. Intermediate analyses
+The original version of the MSQ included 70 items. Intermediate analyses
 (done with 1840 subjects) demonstrated a concentration of items in some
 sections of the two dimensional space, and a paucity of items in others.
 To begin correcting this, 3 items from redundantly measured sections
@@ -401,7 +401,7 @@ happiness and sadness truly opposite affects? Motivation and Emotion,
 Revelle, W. and Anderson, K.J. (1998) Personality, motivation and
 cognitive performance: Final report to the Army Research Institute on
 contract MDA 903-93-K-0008.
-(http://www.personality-project.org/revelle/publications/ra.ari.98.pdf).
+(https://www.personality-project.org/revelle/publications/ra.ari.98.pdf).
 
 Thayer, R.E. (1989) The biopsychology of mood and arousal. Oxford
 University Press. New York, NY.

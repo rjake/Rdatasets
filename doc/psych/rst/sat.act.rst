@@ -49,9 +49,9 @@ Details
 ~~~~~~~
 
 hese items were collected as part of the SAPA project
-(http://sapa-project.org)to develop online measures of ability (Revelle,
-Wilt and Rosenthal, 2009). The score means are higher than national
-norms suggesting both self selection for people taking on line
+(https://sapa-project.org)to develop online measures of ability
+(Revelle, Wilt and Rosenthal, 2009). The score means are higher than
+national norms suggesting both self selection for people taking on line
 personality and ability tests and a self reporting bias in scores.
 
 See also the iq.items data set.
@@ -59,7 +59,7 @@ See also the iq.items data set.
 Source
 ~~~~~~
 
-http://personality-project.org
+https://personality-project.org
 
 References
 ~~~~~~~~~~

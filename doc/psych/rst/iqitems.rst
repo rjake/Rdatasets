@@ -81,13 +81,13 @@ Details
 ~~~~~~~
 
 16 items were sampled from 80 items given as part of the SAPA
-(http://sapa-project.org) project (Revelle, Wilt and Rosenthal, 2009;
+(https://sapa-project.org) project (Revelle, Wilt and Rosenthal, 2009;
 Condon and Revelle, 2014) to develop online measures of ability. These
 16 items reflect four lower order factors (verbal reasoning, letter
 series, matrix reasoning, and spatial rotations. These lower level
 factors all share a higher level factor ('g'). Similar data are
 available from the International Cognitive Abiity Resource at
-http://icar-project.com .
+https://icar-project.com .
 
 This data set and the associated data set (``ability`` based upon
 scoring these multiple choice items and converting them to
@@ -107,7 +107,7 @@ Source
 ~~~~~~
 
 The example data set is taken from the Synthetic Aperture Personality
-Assessment personality and ability test at http://sapa-project.org. The
+Assessment personality and ability test at https://sapa-project.org. The
 data were collected with David Condon from 8/08/12 to 8/31/12.
 
 References

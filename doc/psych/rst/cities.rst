@@ -72,7 +72,7 @@ far south.
 Source
 ~~~~~~
 
-http://www.timeanddate.com/worldclock/distance.html
+https://www.timeanddate.com/worldclock/distance.html
 
 Examples
 ~~~~~~~~

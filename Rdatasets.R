@@ -72,8 +72,19 @@ for (i in 1:nrow(index)) {
 }
 
 # Index
+hasbeen = function(x) {
+    out = try(any(sapply(x, function(y) length(unique(na.omit(y))) == 2)), silent = TRUE)
+    if ('try-error' %in% class(out)) {
+        out = FALSE
+    } 
+    return(out)
+}
 index$Rows = sapply(data, nrow)
 index$Cols = sapply(data, ncol)
+index$has_logical = sapply(data, function(x) 'logical' %in% sapply(x, class))
+index$has_binary = sapply(data, hasbeen)
+index$has_numeric = sapply(data, function(x) 'numeric' %in% sapply(x, class))
+index$has_character = sapply(data, function(x) 'character' %in% sapply(x, class))
 index$CSV = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/',
                   index$Package, '/', index$Item, '.csv', sep='')
 index$Doc = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/doc/',

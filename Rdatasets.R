@@ -85,12 +85,26 @@ hasbeen = function(x) {
     } 
     return(out)
 }
+
+n_binary = function(x) {
+  out = try(sum(sapply(x, function(y) length(unique(na.omit(y))) == 2)), silent = TRUE)
+  if ('try-error' %in% class(out)) {
+    out = FALSE
+  } 
+  return(out)
+}
+
 index$Rows = sapply(data, nrow)
 index$Cols = sapply(data, ncol)
 index$has_logical = sapply(data, function(x) 'logical' %in% sapply(x, class))
 index$has_binary = sapply(data, hasbeen)
-index$has_numeric = sapply(data, function(x) 'numeric' %in% sapply(x, class))
-index$has_character = sapply(data, function(x) 'character' %in% sapply(x, class))
+index$has_numeric = sapply(data, function(x) any(sapply(x, class) %in% c('numeric', 'integer')))
+index$has_character = sapply(data, function(x) any(sapply(x, class) %in% c('numeric', 'integer')))
+index$n_logical = sapply(data, function(x) sum('logical' %in% sapply(x, class)))
+index$n_binary = sapply(data, n_binary)
+index$n_numeric = sapply(data, function(x) sum(sapply(x, class) %in% c('numeric', 'integer')))
+index$n_character = sapply(data, function(x) sum(sapply(x, class) %in% c('character', 'factor')))
+
 index$CSV = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/csv/',
                   index$Package, '/', index$Item, '.csv', sep='')
 index$Doc = paste('https://raw.github.com/vincentarelbundock/Rdatasets/master/doc/',

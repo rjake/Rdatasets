@@ -25,56 +25,56 @@
 </p>
 
 <dl>
-<dt>company</dt><dd><p>factor. Company names.</p>
+<dt>company</dt><dd><p>factor. company names.</p>
 </dd>
-<dt>sales</dt><dd><p>numeric. Sales (in millions of dollars).</p>
+<dt>sales</dt><dd><p>numeric. sales (in millions of dollars).</p>
 </dd>
-<dt>acompetition</dt><dd><p>numeric. Constant inverse Lerner index.</p>
+<dt>acompetition</dt><dd><p>numeric. constant inverse Lerner index.</p>
 </dd>
-<dt>competition</dt><dd><p>numeric. Varying inverse Lerner index.</p>
+<dt>competition</dt><dd><p>numeric. varying inverse Lerner index.</p>
 </dd>
-<dt>capital</dt><dd><p>numeric. Net stock of property, plant, and equipment.</p>
+<dt>capital</dt><dd><p>numeric. net stock of property, plant, and equipment.</p>
 </dd>
-<dt>cites</dt><dd><p>integer. Future cite-weighted patents.</p>
+<dt>cites</dt><dd><p>integer. future cite-weighted patents.</p>
 </dd>
-<dt>precites</dt><dd><p>numeric. Presample average of cite-weighted patents.</p>
+<dt>precites</dt><dd><p>numeric. presample average of cite-weighted patents.</p>
 </dd>
-<dt>dprecites</dt><dd><p>factor. Indicates zero precites.</p>
+<dt>dprecites</dt><dd><p>factor. indicates zero precites.</p>
 </dd>
-<dt>patents</dt><dd><p>integer. Granted patents.</p>
+<dt>patents</dt><dd><p>integer. granted patents.</p>
 </dd>
-<dt>drandd</dt><dd><p>factor. Indicates a zero R&amp;D stock.</p>
+<dt>drandd</dt><dd><p>factor. indicates a zero R&amp;D stock.</p>
 </dd>
 <dt>randd</dt><dd><p>numeric. R&amp;D stock (in millions of dollars).</p>
 </dd>
-<dt>employment</dt><dd><p>numeric. Employment (in 1000s).</p>
+<dt>employment</dt><dd><p>numeric. employment (in 1000s).</p>
 </dd>
-<dt>sp500</dt><dd><p>factor. Membership of firms in the S&amp;P500 index.</p>
+<dt>sp500</dt><dd><p>factor. membership of firms in the S&amp;P500 index.</p>
 </dd>
 <dt>tobinq</dt><dd><p>numeric. Tobin's q.</p>
 </dd>
-<dt>value</dt><dd><p>numeric. Stock market value.</p>
+<dt>value</dt><dd><p>numeric. stock market value.</p>
 </dd>
-<dt>institutions</dt><dd><p>numeric. Proportion of stock owned by institutions.</p>
+<dt>institutions</dt><dd><p>numeric. proportion of stock owned by institutions.</p>
 </dd>
-<dt>industry</dt><dd><p>factor. Four-digit industry code.</p>
+<dt>industry</dt><dd><p>factor. four-digit industry code.</p>
 </dd>
-<dt>year</dt><dd><p>factor. Estimation period.</p>
+<dt>year</dt><dd><p>factor. estimation period.</p>
 </dd>
-<dt>top1</dt><dd><p>numeric. Share of the largest institution.</p>
+<dt>top1</dt><dd><p>numeric. share of the largest institution.</p>
 </dd>
-<dt>quasiindexed</dt><dd><p>numeric. Share of &quot;quasi-indexed&quot; institutional owners.</p>
+<dt>quasiindexed</dt><dd><p>numeric. share of &quot;quasi-indexed&quot; institutional owners.</p>
 </dd>
-<dt>nonquasiindexed</dt><dd><p>numeric. Share of &quot;non-quasi-indexed&quot;
+<dt>nonquasiindexed</dt><dd><p>numeric. share of &quot;non-quasi-indexed&quot;
 institutional owners.</p>
 </dd>
-<dt>transient</dt><dd><p>numeric. Share of &quot;transient&quot; institutional owners.</p>
+<dt>transient</dt><dd><p>numeric. share of &quot;transient&quot; institutional owners.</p>
 </dd>
-<dt>dedicated</dt><dd><p>numeric. Share of &quot;dedicated&quot; institutional owners.</p>
+<dt>dedicated</dt><dd><p>numeric. share of &quot;dedicated&quot; institutional owners.</p>
 </dd>
-<dt>competition4</dt><dd><p>numeric. Varying inverse Lerner index in the firm's four-digit industry.</p>
+<dt>competition4</dt><dd><p>numeric. varying inverse Lerner index in the firm's four-digit industry.</p>
 </dd>
-<dt>subsample</dt><dd><p>factor. Subsample for the replication of columns
+<dt>subsample</dt><dd><p>factor. subsample for the replication of columns
 1&ndash;5 from Table 4 in Aghion et al. (2013).</p>
 </dd>
 </dl>
@@ -179,9 +179,9 @@ tab_I_4_pois &lt;- glm(f2, data = InstInnovation, family = poisson)
 tab_I_5_pois &lt;- glm(f3, data = InstInnovation, family = poisson)
 
 ## one-way clustered covariances
-vCL_I_3 &lt;- vcovCL(tab_I_3_pois, cluster = ~ company)
-vCL_I_4 &lt;- vcovCL(tab_I_4_pois, cluster = ~ company)
-vCL_I_5 &lt;- vcovCL(tab_I_5_pois, cluster = ~ company)
+vCL_I_3 &lt;- vcovCL(tab_I_3_pois, cluster = InstInnovation$company)
+vCL_I_4 &lt;- vcovCL(tab_I_4_pois, cluster = InstInnovation$company)
+vCL_I_5 &lt;- vcovCL(tab_I_5_pois, cluster = InstInnovation$company)
 
 ## replication of columns 3 to 5 from Table I in Aghion et al. (2013)
 cbind(coef(tab_I_3_pois), sqrt(diag(vCL_I_3)))[2:4, ]

@@ -79,8 +79,58 @@ SMSA (standard metropolitan statistical area)?</p>
 </dd>
 <dt>pctymle</dt><dd><p>percentage of young males (between ages 15 to 24)</p>
 </dd>
+<dt>lcrmrte</dt><dd><p>log of crimes committed per person</p>
+</dd>
+<dt>lprbarr</dt><dd><p>log of 'probability' of arrest</p>
+</dd>
+<dt>lprbconv</dt><dd><p>log of 'probability' of conviction</p>
+</dd>
+<dt>lprbpris</dt><dd><p>log of 'probability' of prison sentence</p>
+</dd>
+<dt>lavgsen</dt><dd><p>log of average sentence, days</p>
+</dd>
+<dt>lpolpc</dt><dd><p>log of police per capita</p>
+</dd>
+<dt>ldensity</dt><dd><p>log of people per square mile</p>
+</dd>
+<dt>ltaxpc</dt><dd><p>log of tax revenue per capita</p>
+</dd>
+<dt>lpctmin</dt><dd><p>log of percentage minority in 1980</p>
+</dd>
+<dt>lwcon</dt><dd><p>log of weekly wage in construction</p>
+</dd>
+<dt>lwtuc</dt><dd><p>log of weekly wage in transportation, utilities, communications</p>
+</dd>
+<dt>lwtrd</dt><dd><p>log of weekly wage in wholesale and retail trade</p>
+</dd>
+<dt>lwfir</dt><dd><p>log of weekly wage in finance, insurance and real estate</p>
+</dd>
+<dt>lwser</dt><dd><p>log of weekly wage in service industry</p>
+</dd>
+<dt>lwmfg</dt><dd><p>log of weekly wage in manufacturing</p>
+</dd>
+<dt>lwfed</dt><dd><p>log of weekly wage in federal government</p>
+</dd>
+<dt>lwsta</dt><dd><p>log of weekly wage in state government</p>
+</dd>
+<dt>lwloc</dt><dd><p>log of weekly wage in local government</p>
+</dd>
+<dt>lmix</dt><dd><p>log of offence mix: face-to-face/other</p>
+</dd>
+<dt>lpctymle</dt><dd><p>log of percentage of young males (between ages 15 to 24)</p>
+</dd>
 </dl>
 
+
+
+<h3>Details</h3>
+
+<p>The variables l* (lcrmrte, lprbarr, ...) contain the pre-computed logarithms
+of the base variables as found in the original data set. Note that these values
+slightly differ from what R's log() function yields for the base variables.
+In order to reproduce examples from the literature, the pre-computed logs
+need to be used, otherwise the results differ slightly.
+</p>
 
 
 <h3>Source</h3>
